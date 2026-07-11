@@ -1,0 +1,83 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlphaWeave Capital Pipeline and Reports | Monitor, Restore, and Review Runs</title>
+  <meta name="description" content="AlphaWeave Capital includes run orchestration, configuration management, reporting, cache diagnostics, prompt-response pairing, and performance attribution.">
+  <link rel="icon" href="assets/alphaweave-capital-mark.png">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="./"><img src="assets/alphaweave-capital-mark.png" alt="">AlphaWeave Capital</a>
+      <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links" data-nav-links>
+      <a href="product.html">Product</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="pipeline.html" aria-current="page">Pipeline</a>
+      <a href="market-neutral.html">Market Neutral</a>
+      <a href="architecture.html">Architecture</a>
+      <a class="nav-cta" href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero compact" style="--hero-image: url('assets/framers-ai-chart-bg-04-dashboard-texture.png')">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Operations</p>
+        <h1>Run, inspect, and improve allocation experiments.</h1>
+        <p class="hero-copy">AlphaWeave Capital keeps the operational layer visible: configs, cache behavior, agent prompts, flow validation, risk summaries, and monthly performance attribution.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="ops-console">
+        <button type="button" data-click-card data-title="Pipeline GUI" data-detail="The pipeline GUI runs staged experiments and keeps status, recovery, and stage comparison visible."><span>Run</span><strong>Pipeline GUI</strong><em>Staged experiments, recovery, and stage comparison.</em></button>
+        <button type="button" data-click-card data-title="Report GUI" data-detail="The report GUI lets teams inspect monthly results, prompt pairing, cache validation, flow checks, and risk artifacts."><span>Inspect</span><strong>Report GUI</strong><em>Monthly tables, prompt-response pairing, cache checks, and risk artifacts.</em></button>
+        <button type="button" data-click-card data-title="Config Management" data-detail="Config management keeps run setup, sleeves, strategies, assets, policy, and model routing explicit."><span>Configure</span><strong>Config Management</strong><em>Sleeves, strategies, assets, routing, and policy settings.</em></button>
+      </div>
+      <button class="detail-button" type="button" data-card-detail>Click an operations surface to see what it controls.</button>
+    </section>
+
+    <section class="section band">
+      <div class="section-heading">
+        <p class="eyebrow">Audit Trail</p>
+        <h2>Every decision can be traced back to its inputs.</h2>
+      </div>
+      <div class="audit-ledger">
+        <button type="button" data-click-card data-title="Prompt Pairing" data-detail="Prompt pairing shows the exact content sent into each LLM call plus the raw response."><span>prompt</span><strong>Prompt Pairing</strong><em>Full prompt and raw response by date and agent.</em></button>
+        <button type="button" data-click-card data-title="Cache Review" data-detail="Cache review explains cache keys, hard hits, near hits, misses, stores, and matched fields."><span>cache</span><strong>Cache Review</strong><em>Hard hits, near hits, misses, stored keys, and matched fields.</em></button>
+        <button type="button" data-click-card data-title="Flow Validation" data-detail="Flow validation confirms upstream agent outputs are reaching downstream prompts."><span>flow</span><strong>Flow Validation</strong><em>Checks that upstream agent content reaches downstream prompts.</em></button>
+        <button type="button" data-click-card data-title="Performance Tables" data-detail="Performance tables isolate static base, asset pickup, strategy pickup, and AI/PSM contribution."><span>return</span><strong>Performance Tables</strong><em>Monthly pickup by asset selection, strategy switching, and AI/PSM.</em></button>
+      </div>
+      <button class="detail-button" type="button" data-card-detail>Click a report artifact to see why it matters.</button>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Diagnostics</p>
+        <h2>Reports built for debugging agent systems, not just displaying returns.</h2>
+      </div>
+      <div class="diagnostic-list">
+        <button type="button" data-click-card data-title="Model cache rebuild" data-detail="Model cache rebuild validates available model/provider routes before the run starts, reducing bad provider surprises during long backtests."><strong>Model cache rebuild</strong><span>Refresh provider/model availability before monthly performance runs.</span></button>
+        <button type="button" data-click-card data-title="Image cache validation" data-detail="Image cache validation tracks caption hits, misses, and stores so chart-derived text does not silently drift from the rendered evidence."><strong>Image cache validation</strong><span>Track chart caption hits, misses, stores, and deterministic replacements.</span></button>
+        <button type="button" data-click-card data-title="Agent flow validation" data-detail="Agent flow validation checks upstream-to-downstream agent handoffs by date and flags missing or fallback content."><strong>Agent flow validation</strong><span>Confirm upstream agent outputs arrive in downstream prompts.</span></button>
+        <button type="button" data-click-card data-title="Paired model audit" data-detail="Paired audits show one full prompt and one raw response per agent call, ordered by date and agent sequence."><strong>Paired model audit</strong><span>Review the exact prompt and raw response for each agent call.</span></button>
+        <button type="button" data-click-card data-title="Cache scope review" data-detail="Cache review records cache scope keys, hard and near matches, missed fields, and returned response text."><strong>Cache scope review</strong><span>Inspect cache keys, matched fields, hit type, and reused content.</span></button>
+        <button type="button" data-click-card data-title="Monthly rollup" data-detail="Monthly rollups combine baseline, asset pickup, strategy pickup, and overlay stages into a single performance table."><strong>Monthly rollup</strong><span>Combine stage-level runs into presentation-ready attribution tables.</span></button>
+      </div>
+      <button class="detail-button" type="button" data-card-detail>Click a diagnostic report to see what it verifies.</button>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><p>AlphaWeave Capital is research and decision-support software. It is not investment advice.</p><div class="footer-links"><a href="./">Home</a><a href="contact.html">Contact</a></div></div></footer>
+  <script src="site.js"></script>
+</body>
+</html>
+
+
+

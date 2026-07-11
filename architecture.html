@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlphaWeave Capital Architecture | Multi-Agent AI Research and Trading Pipeline</title>
+  <meta name="description" content="AlphaWeave Capital combines data, strategy, intelligence, reflection, decision, risk, portfolio construction, reporting, and memory agents for research and trading workflows.">
+  <link rel="icon" href="assets/alphaweave-capital-mark.png">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="./"><img src="assets/alphaweave-capital-mark.png" alt="">AlphaWeave Capital</a>
+      <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links" data-nav-links>
+      <a href="product.html">Product</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="pipeline.html">Pipeline</a>
+      <a href="market-neutral.html">Market Neutral</a>
+      <a href="architecture.html" aria-current="page">Architecture</a>
+      <a class="nav-cta" href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero compact" style="--hero-image: url('assets/framers-ai-chart-bg-04-dashboard-texture.png')">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Technical Architecture</p>
+        <h1>A modular agent stack for allocation research and trading.</h1>
+        <p class="hero-copy">AlphaWeave Capital separates orchestration, model calls, caching, risk, portfolio state, report generation, and monthly performance analysis into inspectable components.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="architecture-interactive">
+        <div class="feature-grid three architecture-grid">
+          <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-bg-04-dashboard-texture.png')" type="button" data-click-card data-title="Agent crews" data-detail="Agent crews coordinate data, strategies, triage, LLM reasoning, risk, portfolio construction, and reports."><h3>Agent crews</h3><p>Backtest and trade crews coordinate data, strategies, triage, LLM agents, risk managers, portfolio construction, and reports.</p></button>
+          <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-bg-02-layered-lines.png')" type="button" data-click-card data-title="Prompt templates" data-detail="Prompt templates keep agent outputs concise, parseable, and aligned with downstream schema contracts."><h3>Prompt templates</h3><p>Agent prompts are centralized, schema-driven, and tuned for concise XML outputs that downstream parsers can validate.</p></button>
+          <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-background.png')" type="button" data-click-card data-title="Cache and memory" data-detail="Cache and memory preserve prompt context, responses, image captions, semantic matches, and realized feedback."><h3>Cache and memory</h3><p>Prompt, response, image, and semantic cache artifacts can be reviewed by key, hit type, matched fields, and stored response.</p></button>
+          <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-bg-01-diagonal-candles.png')" type="button" data-click-card data-title="Model routing" data-detail="Model routing makes provider/model choices explicit instead of hidden inside agent code."><h3>Model routing</h3><p>Model selection is controlled by cacheable routing configuration so provider changes remain explicit and auditable.</p></button>
+          <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-bg-03-candles-closeup.png')" type="button" data-click-card data-title="Risk layer" data-detail="The risk layer separates exposure, sizing, neutrality, and execution controls from LLM reasoning."><h3>Risk layer</h3><p>Portfolio constraints, drawdown checks, position sizing, neutrality controls, and execution summaries are separated from LLM reasoning.</p></button>
+          <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-bg-04-dashboard-texture.png')" type="button" data-click-card data-title="Performance attribution" data-detail="Performance attribution shows what came from the base strategy, asset switching, strategy switching, and AI/PSM."><h3>Performance attribution</h3><p>Monthly reports isolate static base, asset pickup, strategy pickup, and AI/PSM contribution.</p></button>
+        </div>
+        <aside class="architecture-detail" data-card-detail>
+          Select an architecture block to inspect its role in the system.
+        </aside>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="section-heading">
+        <p class="eyebrow">Agent Chain</p>
+        <h2>Structured reasoning passes through specialized agents.</h2>
+        <p>An agent is a software role responsible for one part of the decision workflow. An LLM, or large language model, is an AI model trained to read and generate text; AlphaWeave Capital uses LLMs in selected agents to summarize evidence, compare context, and produce structured reasoning.</p>
+      </div>
+      <div class="timeline agent-chain">
+        <button class="timeline-item image-card" style="--card-image: url('assets/framers-ai-chart-bg-01-diagonal-candles.png')" type="button" data-click-card data-title="Latest Market Intelligence agent" data-detail="This agent summarizes current news, macro, earnings, and financial facts into tagged evidence."><span>01</span><h3>Latest Market Intelligence agent</h3><p>Current market facts prepared for downstream reasoning.</p></button>
+        <button class="timeline-item image-card" style="--card-image: url('assets/framers-ai-chart-bg-02-layered-lines.png')" type="button" data-click-card data-title="Past Market Intelligence agent" data-detail="This agent summarizes historical facts and comparable pattern evidence for the evaluated strategy role."><span>02</span><h3>Past Market Intelligence agent</h3><p>Historical patterns, signal facts, and comparable evidence.</p></button>
+        <button class="timeline-item image-card" style="--card-image: url('assets/framers-ai-chart-bg-03-candles-closeup.png')" type="button" data-click-card data-title="Low-level reflection agent" data-detail="This agent condenses chart evidence, signal quality, and realized decision feedback into short-, medium-, and long-horizon reasoning."><span>03</span><h3>Low-level reflection agent</h3><p>Chart context, signal behavior, and horizon-specific reasoning.</p></button>
+        <button class="timeline-item image-card" style="--card-image: url('assets/framers-ai-chart-bg-04-dashboard-texture.png')" type="button" data-click-card data-title="High-level reflection agent" data-detail="This agent reviews prior decisions, execution outcomes, and improvement guidance at a slower cadence."><span>04</span><h3>High-level reflection agent</h3><p>Decision history, performance outcome, and improvement guidance.</p></button>
+        <button class="timeline-item image-card" style="--card-image: url('assets/framers-ai-chart-background.png')" type="button" data-click-card data-title="Decision-making agent" data-detail="This agent converts upstream evidence into role judgment, action, duration, confidence, and reasoning."><span>05</span><h3>Decision-making agent</h3><p>Role judgment, action, duration, confidence, and execution context.</p></button>
+        <button class="timeline-item image-card" style="--card-image: url('assets/framers-ai-chart-bg-01-diagonal-candles.png')" type="button" data-click-card data-title="Decision review and reporting agents" data-detail="These agents compare decision profit/loss with actual position profit/loss, then write evidence back for future runs."><span>06</span><h3>Decision review and reporting agents</h3><p>Outcome review, report generation, cache validation, and memory updates.</p></button>
+      </div>
+      <button class="detail-button" type="button" data-card-detail>Click an agent to see what it contributes to the chain.</button>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Control Plane</p>
+        <h2>The operational parts that keep the agents honest.</h2>
+      </div>
+      <div class="control-plane-list">
+        <button type="button" data-click-card data-title="XML parsing and repair" data-detail="Model responses are parsed against expected XML schemas, with repair and normalization paths for common formatting issues."><span>Parse</span><strong>XML parsing and repair</strong><em>Normalize code fences, XML headers, escaped tags, and schema variants.</em></button>
+        <button type="button" data-click-card data-title="Triage policy" data-detail="Triage determines whether a date needs full language-model reasoning based on movement, events, cadence, strategy priority, and review triggers."><span>Route</span><strong>Triage policy</strong><em>Run language-model agents only when the decision context justifies it.</em></button>
+        <button type="button" data-click-card data-title="Cache scopes" data-detail="Cache scopes separate agent, asset, strategy, sleeve, date, prompt signature, image caption, hard hit, near hit, miss, and store events."><span>Reuse</span><strong>Cache scopes</strong><em>Track cache keys, prompt signatures, hard hits, near hits, misses, and stores.</em></button>
+      </div>
+      <button class="detail-button" type="button" data-card-detail>Click a control-plane block to see how it protects the system.</button>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><p>AlphaWeave Capital is research and decision-support software. It is not investment advice.</p><div class="footer-links"><a href="./">Home</a><a href="contact.html">Contact</a></div></div></footer>
+  <script src="site.js"></script>
+</body>
+</html>
+
+
+
