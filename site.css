@@ -558,9 +558,9 @@ h3 {
 
 .presentation-intro {
   padding: 78px 0 60px;
-  background: rgba(255, 255, 255, 0.012);
-  border-top: 1px solid rgba(83, 234, 217, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  border-top: 0;
+  border-bottom: 0;
 }
 
 .presentation-grid {
@@ -635,9 +635,9 @@ h3 {
 
 .intro-strip {
   padding: 54px 0;
-  background: rgba(255, 255, 255, 0.012);
-  border-top: 1px solid rgba(83, 234, 217, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  border-top: 0;
+  border-bottom: 0;
 }
 
 .intro-grid {
@@ -748,11 +748,9 @@ h3 {
 }
 
 .market-context {
-  background:
-    linear-gradient(180deg, rgba(83, 234, 217, 0.04), rgba(138, 125, 255, 0.035)),
-    rgba(255, 255, 255, 0.012);
-  border-top: 1px solid rgba(83, 234, 217, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  border-top: 0;
+  border-bottom: 0;
 }
 
 .context-panels {
@@ -1778,9 +1776,9 @@ h3 {
 }
 
 .band {
-  background: rgba(255, 255, 255, 0.012);
-  border-top: 1px solid rgba(83, 234, 217, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: transparent;
+  border-top: 0;
+  border-bottom: 0;
 }
 
 .quote-block {
