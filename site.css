@@ -598,6 +598,9 @@ h3 {
 .ribbon-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(var(--max), calc(100% - 32px));
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid rgba(83, 234, 217, 0.24);
   border-radius: 16px;
   overflow: hidden;
@@ -669,6 +672,9 @@ h3 {
 .proof-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: min(var(--max), calc(100% - 32px));
+  margin-left: auto;
+  margin-right: auto;
   gap: 1px;
   border: 1px solid rgba(83, 234, 217, 0.24);
   border-radius: 18px;
