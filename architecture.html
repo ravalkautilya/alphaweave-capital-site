@@ -11,7 +11,7 @@
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="./"><img src="assets/alphaweave-capital-mark.png" alt="">AlphaWeave Capital</a>
+      <a class="brand brand-logo" href="./" aria-label="AlphaWeave Capital home"><img src="assets/alphaweave-capital-logo.png" alt="AlphaWeave Capital"></a>
       <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button>
       <div class="nav-links" data-nav-links>
       <a href="product.html">Product</a>
@@ -25,24 +25,32 @@
   </header>
 
   <main>
-    <section class="hero compact" style="--hero-image: url('assets/framers-ai-chart-bg-04-dashboard-texture.png')">
+    <section class="hero compact" style="--hero-image: var(--stock-data-infrastructure)">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <p class="eyebrow">Technical Architecture</p>
-        <h1>A modular agent stack for allocation research and trading.</h1>
-        <p class="hero-copy">AlphaWeave Capital separates orchestration, model calls, caching, risk, portfolio state, report generation, and monthly performance analysis into inspectable components.</p>
+        <p class="eyebrow">Architecture</p>
+        <h1>Transparent AI for teams that need control.</h1>
+        <p class="hero-copy">AlphaWeave Capital breaks the allocation process into visible reviewers, deterministic controls, and audit-ready reports so AI can help without becoming a black box. The system mirrors a trading desk: evidence, review, risk, portfolio construction, execution, and memory each have a defined role.</p>
+      </div>
+    </section>
+
+    <section class="section value-ribbon">
+      <div class="container ribbon-grid">
+        <div><span>Visible</span><strong>Each reviewer has a clear job and handoff.</strong></div>
+        <div><span>Controlled</span><strong>Rules handle sleeve constraints, risk, parsing, caching, and routing.</strong></div>
+        <div><span>Auditable</span><strong>Prompts, responses, cache matches, and outcomes are inspectable.</strong></div>
       </div>
     </section>
 
     <section class="section">
       <div class="architecture-interactive">
         <div class="feature-grid three architecture-grid">
-          <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-bg-04-dashboard-texture.png')" type="button" data-click-card data-title="Agent crews" data-detail="Agent crews coordinate data, strategies, triage, LLM reasoning, risk, portfolio construction, and reports."><h3>Agent crews</h3><p>Backtest and trade crews coordinate data, strategies, triage, LLM agents, risk managers, portfolio construction, and reports.</p></button>
-          <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-bg-02-layered-lines.png')" type="button" data-click-card data-title="Prompt templates" data-detail="Prompt templates keep agent outputs concise, parseable, and aligned with downstream schema contracts."><h3>Prompt templates</h3><p>Agent prompts are centralized, schema-driven, and tuned for concise XML outputs that downstream parsers can validate.</p></button>
-          <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-background.png')" type="button" data-click-card data-title="Cache and memory" data-detail="Cache and memory preserve prompt context, responses, image captions, semantic matches, and realized feedback."><h3>Cache and memory</h3><p>Prompt, response, image, and semantic cache artifacts can be reviewed by key, hit type, matched fields, and stored response.</p></button>
-          <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-bg-01-diagonal-candles.png')" type="button" data-click-card data-title="Model routing" data-detail="Model routing makes provider/model choices explicit instead of hidden inside agent code."><h3>Model routing</h3><p>Model selection is controlled by cacheable routing configuration so provider changes remain explicit and auditable.</p></button>
-          <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-bg-03-candles-closeup.png')" type="button" data-click-card data-title="Risk layer" data-detail="The risk layer separates exposure, sizing, neutrality, and execution controls from LLM reasoning."><h3>Risk layer</h3><p>Portfolio constraints, drawdown checks, position sizing, neutrality controls, and execution summaries are separated from LLM reasoning.</p></button>
-          <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-bg-04-dashboard-texture.png')" type="button" data-click-card data-title="Performance attribution" data-detail="Performance attribution shows what came from the base strategy, asset switching, strategy switching, and AI/PSM."><h3>Performance attribution</h3><p>Monthly reports isolate static base, asset pickup, strategy pickup, and AI/PSM contribution.</p></button>
+          <button class="feature-card image-card" style="--card-image: var(--stock-team-review)" type="button" data-click-card data-title="Agent crews" data-detail="Agent crews work like a trading-floor desk: each reviewer owns a specific job, and the handoff is visible."><h3>Agent crews</h3><p>Coordinate evidence, review, risk, portfolio construction, and reporting without collapsing them into one opaque step.</p></button>
+          <button class="feature-card image-card" style="--card-image: var(--stock-research-desk)" type="button" data-click-card data-title="Prompt templates" data-detail="Prompt templates are the briefing forms: they tell each reviewer exactly what to answer and in what structure."><h3>Prompt templates</h3><p>Keep language-model output concise, structured, and easier for downstream checks to validate.</p></button>
+          <button class="feature-card image-card" style="--card-image: var(--stock-data-infrastructure)" type="button" data-click-card data-title="Cache and memory" data-detail="Cache and memory act like a research archive: prior context can be reused, but the match is still reviewable."><h3>Cache and memory</h3><p>Preserve prompt context, responses, chart commentary, semantic matches, and realized feedback.</p></button>
+          <button class="feature-card image-card" style="--card-image: var(--stock-analytics-dashboard)" type="button" data-click-card data-title="Model routing" data-detail="Model routing is the switchboard: provider and model choices stay explicit rather than buried in the code path."><h3>Model routing</h3><p>Make model selection auditable so provider changes do not quietly alter a run.</p></button>
+          <button class="feature-card image-card" style="--card-image: var(--stock-finance-review)" type="button" data-click-card data-title="Risk layer" data-detail="The risk layer is the circuit breaker: exposure, sizing, neutrality, and execution controls stay separate from narrative reasoning."><h3>Risk layer</h3><p>Separate portfolio constraints and sizing controls from AI-generated explanations.</p></button>
+          <button class="feature-card image-card" style="--card-image: var(--stock-trading-desk)" type="button" data-click-card data-title="Performance attribution" data-detail="Performance attribution is the scoreboard: it separates the base strategy from asset selection, strategy switching, and AI/PSM contribution."><h3>Performance attribution</h3><p>Show which layer added value and which layer dragged.</p></button>
         </div>
         <aside class="architecture-detail" data-card-detail>
           Select an architecture block to inspect its role in the system.
@@ -53,29 +61,44 @@
     <section class="section band">
       <div class="section-heading">
         <p class="eyebrow">Agent Chain</p>
-        <h2>Structured reasoning passes through specialized agents.</h2>
-        <p>An agent is a software role responsible for one part of the decision workflow. An LLM, or large language model, is an AI model trained to read and generate text; AlphaWeave Capital uses LLMs in selected agents to summarize evidence, compare context, and produce structured reasoning.</p>
+        <h2>Specialized reviewers, not one giant black box.</h2>
+        <p>An agent is a software reviewer responsible for one part of the workflow. An LLM, or large language model, is an AI model trained to read and generate text; AlphaWeave Capital uses LLMs where judgment and summarization help, while rules handle the parts that must be exact.</p>
       </div>
       <div class="timeline agent-chain">
-        <button class="timeline-item image-card" style="--card-image: url('assets/framers-ai-chart-bg-01-diagonal-candles.png')" type="button" data-click-card data-title="Latest Market Intelligence agent" data-detail="This agent summarizes current news, macro, earnings, and financial facts into tagged evidence."><span>01</span><h3>Latest Market Intelligence agent</h3><p>Current market facts prepared for downstream reasoning.</p></button>
-        <button class="timeline-item image-card" style="--card-image: url('assets/framers-ai-chart-bg-02-layered-lines.png')" type="button" data-click-card data-title="Past Market Intelligence agent" data-detail="This agent summarizes historical facts and comparable pattern evidence for the evaluated strategy role."><span>02</span><h3>Past Market Intelligence agent</h3><p>Historical patterns, signal facts, and comparable evidence.</p></button>
-        <button class="timeline-item image-card" style="--card-image: url('assets/framers-ai-chart-bg-03-candles-closeup.png')" type="button" data-click-card data-title="Low-level reflection agent" data-detail="This agent condenses chart evidence, signal quality, and realized decision feedback into short-, medium-, and long-horizon reasoning."><span>03</span><h3>Low-level reflection agent</h3><p>Chart context, signal behavior, and horizon-specific reasoning.</p></button>
-        <button class="timeline-item image-card" style="--card-image: url('assets/framers-ai-chart-bg-04-dashboard-texture.png')" type="button" data-click-card data-title="High-level reflection agent" data-detail="This agent reviews prior decisions, execution outcomes, and improvement guidance at a slower cadence."><span>04</span><h3>High-level reflection agent</h3><p>Decision history, performance outcome, and improvement guidance.</p></button>
-        <button class="timeline-item image-card" style="--card-image: url('assets/framers-ai-chart-background.png')" type="button" data-click-card data-title="Decision-making agent" data-detail="This agent converts upstream evidence into role judgment, action, duration, confidence, and reasoning."><span>05</span><h3>Decision-making agent</h3><p>Role judgment, action, duration, confidence, and execution context.</p></button>
-        <button class="timeline-item image-card" style="--card-image: url('assets/framers-ai-chart-bg-01-diagonal-candles.png')" type="button" data-click-card data-title="Decision review and reporting agents" data-detail="These agents compare decision profit/loss with actual position profit/loss, then write evidence back for future runs."><span>06</span><h3>Decision review and reporting agents</h3><p>Outcome review, report generation, cache validation, and memory updates.</p></button>
+        <button class="timeline-item image-card" style="--card-image: var(--stock-market-laptop)" type="button" data-click-card data-title="Current evidence reviewer" data-detail="This reviewer gathers current market facts such as news, macro, earnings, and financial data."><span>01</span><h3>Current evidence reviewer</h3><p>Prepares the market backdrop before the decision is judged.</p></button>
+        <button class="timeline-item image-card" style="--card-image: var(--stock-finance-review)" type="button" data-click-card data-title="Historical evidence reviewer" data-detail="This reviewer asks what happened in comparable historical cases before a new signal is trusted."><span>02</span><h3>Historical evidence reviewer</h3><p>Looks for prior patterns, signal behavior, and comparable evidence.</p></button>
+        <button class="timeline-item image-card" style="--card-image: var(--stock-analytics-dashboard)" type="button" data-click-card data-title="Chart and signal reviewer" data-detail="This reviewer condenses chart behavior, signal quality, and realized decision evidence across time horizons."><span>03</span><h3>Chart and signal reviewer</h3><p>Turns visual evidence into short-, medium-, and long-term context.</p></button>
+        <button class="timeline-item image-card" style="--card-image: var(--stock-research-desk)" type="button" data-click-card data-title="Longer-horizon reviewer" data-detail="This reviewer slows the process down and compares recent decisions with actual execution outcomes."><span>04</span><h3>Longer-horizon reviewer</h3><p>Checks decision history, performance outcomes, and improvement guidance.</p></button>
+        <button class="timeline-item image-card" style="--card-image: var(--stock-trading-desk)" type="button" data-click-card data-title="Decision reviewer" data-detail="This reviewer turns the evidence into a role judgment, action, duration, confidence, and explanation."><span>05</span><h3>Decision reviewer</h3><p>Converts evidence into a practical allocation decision.</p></button>
+        <button class="timeline-item image-card" style="--card-image: var(--stock-data-infrastructure)" type="button" data-click-card data-title="Outcome and reporting reviewers" data-detail="These reviewers compare the decision with actual position results and write the outcome back for future runs."><span>06</span><h3>Outcome and reporting reviewers</h3><p>Close the loop with reports, validation, and memory updates.</p></button>
       </div>
       <button class="detail-button" type="button" data-card-detail>Click an agent to see what it contributes to the chain.</button>
     </section>
 
     <section class="section">
       <div class="section-heading">
+        <p class="eyebrow">Single-bar decision flow</p>
+        <h2>Every evaluation follows the same route from data to memory.</h2>
+        <p>At each bar, AlphaWeave Capital loads data, selects assets, selects strategies, generates raw signals, triages whether deeper AI review is needed, converts conviction into portfolio intent, applies risk controls, and stores the outcome for future learning.</p>
+      </div>
+      <div class="diagnostic-list">
+        <button type="button" data-click-card data-title="Selection first" data-detail="The active asset set and strategy set are chosen before the signal is treated as a capital decision."><strong>Selection first</strong><span>Assets and strategies are co-dependent inputs, not afterthoughts.</span></button>
+        <button type="button" data-click-card data-title="AI only when useful" data-detail="A triage layer decides whether full market intelligence, reflection, and decision review are warranted."><strong>Triage before AI</strong><span>Routine bars can take the fast path; complex bars get deeper review.</span></button>
+        <button type="button" data-click-card data-title="PSM becomes capital through controls" data-detail="The position size multiplier expresses conviction, but portfolio and risk layers convert it into constrained weights."><strong>Conviction to capital</strong><span>PSM does not place trades directly; portfolio and risk layers make it executable.</span></button>
+        <button type="button" data-click-card data-title="Memory closes the loop" data-detail="Reports and realized outcomes are stored so future decisions can learn from what worked, failed, or needed adjustment."><strong>Memory closes the loop</strong><span>Decision reviews become reusable evidence.</span></button>
+      </div>
+      <button class="detail-button" type="button" data-card-detail>Click a flow checkpoint to see why it matters.</button>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
         <p class="eyebrow">Control Plane</p>
-        <h2>The operational parts that keep the agents honest.</h2>
+        <h2>The guardrails that keep the reviewers honest.</h2>
       </div>
       <div class="control-plane-list">
-        <button type="button" data-click-card data-title="XML parsing and repair" data-detail="Model responses are parsed against expected XML schemas, with repair and normalization paths for common formatting issues."><span>Parse</span><strong>XML parsing and repair</strong><em>Normalize code fences, XML headers, escaped tags, and schema variants.</em></button>
-        <button type="button" data-click-card data-title="Triage policy" data-detail="Triage determines whether a date needs full language-model reasoning based on movement, events, cadence, strategy priority, and review triggers."><span>Route</span><strong>Triage policy</strong><em>Run language-model agents only when the decision context justifies it.</em></button>
-        <button type="button" data-click-card data-title="Cache scopes" data-detail="Cache scopes separate agent, asset, strategy, sleeve, date, prompt signature, image caption, hard hit, near hit, miss, and store events."><span>Reuse</span><strong>Cache scopes</strong><em>Track cache keys, prompt signatures, hard hits, near hits, misses, and stores.</em></button>
+        <button type="button" data-click-card data-title="Structured parsing" data-detail="Structured parsing turns model prose into validated fields, with repair paths for common formatting issues."><span>Parse</span><strong>Structured parsing</strong><em>Normalize model responses before they enter the decision record.</em></button>
+        <button type="button" data-click-card data-title="Triage policy" data-detail="Triage works like a routing desk: it sends only the dates that deserve deeper language-model review."><span>Route</span><strong>Triage policy</strong><em>Reserve deeper review for meaningful decision moments.</em></button>
+        <button type="button" data-click-card data-title="Cache scopes" data-detail="Cache scopes make reuse accountable by tracking the decision context, prompt signature, image caption, match type, and stored response."><span>Reuse</span><strong>Cache scopes</strong><em>Reuse prior work only when the match can be inspected.</em></button>
       </div>
       <button class="detail-button" type="button" data-card-detail>Click a control-plane block to see how it protects the system.</button>
     </section>
@@ -85,6 +108,7 @@
   <script src="site.js"></script>
 </body>
 </html>
+
 
 
 

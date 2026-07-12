@@ -3,15 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AlphaWeave Capital | Multi-Agent AI for Adaptive Trading Systems</title>
-  <meta name="description" content="AlphaWeave Capital is a multi-agent AI allocation layer for systematic trading: strategy selection, asset rotation, market intelligence, risk controls, execution, and review.">
+  <title>AlphaWeave Capital | Decision Intelligence for Systematic Trading</title>
+  <meta name="description" content="AlphaWeave Capital helps systematic trading teams turn model signals into reviewed, risk-aware, explainable allocation decisions.">
   <link rel="icon" href="assets/alphaweave-capital-mark.png">
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
+  <svg class="icon-sprite" aria-hidden="true">
+    <symbol id="icon-database" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="5" rx="7" ry="3"></ellipse><path d="M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5"></path><path d="M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"></path>
+    </symbol>
+    <symbol id="icon-signal" viewBox="0 0 24 24">
+      <path d="M4 14h4l2-7 4 12 2-5h4"></path>
+    </symbol>
+    <symbol id="icon-compare" viewBox="0 0 24 24">
+      <path d="M7 7h11l-3-3"></path><path d="M17 17H6l3 3"></path><path d="M18 7l-3 3"></path><path d="M6 17l3-3"></path>
+    </symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24">
+      <path d="M12 3l7 3v5c0 4.8-3 8.2-7 10-4-1.8-7-5.2-7-10V6l7-3z"></path><path d="M9 12l2 2 4-5"></path>
+    </symbol>
+    <symbol id="icon-decision" viewBox="0 0 24 24">
+      <path d="M5 12l4 4L19 6"></path><path d="M4 20h16"></path>
+    </symbol>
+    <symbol id="icon-learn" viewBox="0 0 24 24">
+      <path d="M5 4h10a4 4 0 0 1 4 4v12H8a3 3 0 0 1-3-3V4z"></path><path d="M8 8h7"></path><path d="M8 12h6"></path>
+    </symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8"></circle><circle cx="12" cy="12" r="4"></circle><path d="M12 2v4"></path><path d="M12 18v4"></path><path d="M2 12h4"></path><path d="M18 12h4"></path>
+    </symbol>
+    <symbol id="icon-layers" viewBox="0 0 24 24">
+      <path d="M12 3l9 5-9 5-9-5 9-5z"></path><path d="M3 12l9 5 9-5"></path><path d="M3 16l9 5 9-5"></path>
+    </symbol>
+    <symbol id="icon-history" viewBox="0 0 24 24">
+      <path d="M4 12a8 8 0 1 0 3-6.2"></path><path d="M4 4v5h5"></path><path d="M12 8v5l3 2"></path>
+    </symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24">
+      <path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M7 16l3-4 3 2 5-7"></path>
+    </symbol>
+  </svg>
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="./"><img src="assets/alphaweave-capital-mark.png" alt="">AlphaWeave Capital</a>
+      <a class="brand brand-logo" href="./" aria-label="AlphaWeave Capital home"><img src="assets/alphaweave-capital-logo.png" alt="AlphaWeave Capital"></a>
       <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button>
       <div class="nav-links" data-nav-links>
         <a href="product.html">Product</a>
@@ -25,27 +57,147 @@
   </header>
 
   <main>
-    <section class="hero" style="--hero-image: url('assets/framers-ai-chart-bg-03-candles-closeup.png')">
+    <section class="hero" style="--hero-image: var(--stock-trading-desk)">
       <div class="container">
-        <p class="eyebrow">Adaptive strategy, asset, and risk allocation</p>
+        <p class="eyebrow">Decision intelligence for systematic trading teams</p>
         <div class="hero-grid">
           <div>
-            <h1>An AI allocation layer for systematic trading.</h1>
-            <p class="hero-copy">AlphaWeave Capital coordinates data, strategy signals, market intelligence, reflection agents, risk controls, portfolio construction, and execution logic inside a repeatable pipeline.</p>
+            <h1>Turn trading signals into capital decisions you can trust.</h1>
+            <p class="hero-copy">AlphaWeave Capital helps systematic trading teams decide which assets, strategies, and AI-assisted actions deserve allocation before capital moves. It adds review, risk controls, sizing discipline, and performance attribution on top of existing models.</p>
+            <div class="hero-bullets" aria-label="AlphaWeave Capital value proposition">
+              <span>Choose what deserves capital</span>
+              <span>Size conviction within risk limits</span>
+              <span>Measure what actually improved returns</span>
+            </div>
             <div class="hero-actions">
-              <a class="button" href="contact.html">Request a platform walkthrough</a>
-              <a class="button secondary" href="architecture.html">Explore the architecture</a>
+              <a class="button" href="contact.html">See the platform in action</a>
+              <a class="button secondary" href="product.html">View the decision layer</a>
             </div>
           </div>
-          <div class="pipeline-card" aria-label="Allocation pipeline">
-            <button type="button" data-click-card data-title="Data" data-detail="Data brings together price, volume, market events, fundamentals, and sleeve configuration. A sleeve is a portfolio mandate or allocation bucket, such as a directional long sleeve or a market-neutral basket sleeve.">Data</button>
-            <button type="button" data-click-card data-title="Strategy signals" data-detail="Strategy signals turn raw model outputs into BUY, SELL, HOLD, or basket-aware context for review.">Strategy signals</button>
-            <button type="button" data-click-card data-title="Reflection agents" data-detail="Reflection agents compare current evidence with prior decisions, market intelligence, chart context, and realized outcomes.">Reflection agents</button>
-            <button type="button" data-click-card data-title="Risk controls" data-detail="Risk controls check exposure, drawdown, liquidity, leverage, and sleeve constraints before execution.">Risk controls</button>
-            <button type="button" data-click-card data-title="Portfolio construction" data-detail="Portfolio construction converts reviewed decisions into sleeve-aware target weights and executable position intent.">Portfolio construction</button>
-            <button type="button" data-click-card data-title="Execution logic" data-detail="Execution logic handles timing, position state, sizing, and realized feedback after the decision is made.">Execution logic</button>
+          <div class="hero-review-card" aria-label="Signal review illustration">
+            <img src="assets/illustration-signal-review.svg" alt="Analyst reviewing a trading signal before capital is allocated">
+            <div>
+              <span>Allocation review desk</span>
+              <strong>Know what deserves capital, what should wait, and why.</strong>
+              <p>Strategy selection, asset fit, sleeve constraints, prior outcomes, and conviction sizing are reviewed before portfolio weights change.</p>
+            </div>
           </div>
-          <button class="detail-button hero-detail" type="button" data-card-detail>Click a pipeline block to see what it contributes.</button>
+          <div class="pipeline-card compact-pipeline" aria-label="Allocation pipeline">
+            <button type="button" data-click-card data-title="Find the opportunity" data-detail="Bring together signals, prices, events, fundamentals, and mandate rules before reviewing a trade idea."><svg class="concept-icon"><use href="#icon-database"></use></svg>Find</button>
+            <button type="button" data-click-card data-title="Validate the signal" data-detail="Check whether the current strategy signal is supported by market context and comparable history."><svg class="concept-icon"><use href="#icon-signal"></use></svg>Validate</button>
+            <button type="button" data-click-card data-title="Compare the alternatives" data-detail="Review candidate assets, candidate strategies, and similar prior decisions before capital moves."><svg class="concept-icon"><use href="#icon-compare"></use></svg>Compare</button>
+            <button type="button" data-click-card data-title="Control the downside" data-detail="Review exposure, drawdown, liquidity, leverage, net, gross, beta, and mandate limits before execution."><svg class="concept-icon"><use href="#icon-shield"></use></svg>Protect</button>
+            <button type="button" data-click-card data-title="Size conviction" data-detail="Turn reviewed evidence into an action, holding intent, and conviction-aware portfolio allocation."><svg class="concept-icon"><use href="#icon-decision"></use></svg>Size</button>
+            <button type="button" data-click-card data-title="Learn from results" data-detail="Record decision and execution outcomes so future reviews can improve."><svg class="concept-icon"><use href="#icon-learn"></use></svg>Learn</button>
+          </div>
+          <button class="detail-button hero-detail" type="button" data-card-detail>Click a step to see how AlphaWeave Capital helps improve the decision before capital moves.</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section presentation-intro">
+      <div class="container presentation-grid">
+        <div>
+          <p class="eyebrow">What AlphaWeave Capital does</p>
+          <h2>Your strategies generate signals. AlphaWeave Capital helps decide which ones deserve money.</h2>
+        </div>
+        <div class="presentation-copy">
+          <p>Systematic trading teams rarely need another black-box prediction engine. They need a disciplined way to review model output, compare alternatives, control downside, and explain why capital moved.</p>
+          <p>AlphaWeave Capital sits above existing strategies like an allocation committee for software-driven portfolios. It reviews the signal, checks market context, compares prior outcomes, applies mandate constraints, sizes conviction, and records what happened afterward.</p>
+          <p>The result is a repeatable decision layer for research and trading: clearer trade justification, cleaner performance attribution, and a memory loop that helps the next decision start from what the system has already learned.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section intro-strip">
+      <div class="container intro-grid">
+        <div>
+          <p class="eyebrow">The problem</p>
+          <h2>Signals are easy to generate. Allocation decisions are harder to trust.</h2>
+        </div>
+        <div class="intro-points">
+          <p><strong>Too many dashboards stop at BUY, SELL, or HOLD.</strong> AlphaWeave Capital asks which strategy to run, which assets to trade, and how much capital to deploy.</p>
+          <p><strong>Good strategies still need allocation judgment.</strong> The platform checks market context, sleeve mandate, risk budget, similar history, and execution quality.</p>
+          <p><strong>Performance needs attribution.</strong> See whether strategy rotation, strategy-aware asset selection, and conviction-based sizing actually added value.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section proof-strip">
+      <div class="container proof-grid">
+        <div>
+          <span>01</span>
+          <strong>Review more than the signal</strong>
+          <p>Bring market context, strategy fit, asset fit, risk, history, and sleeve mandate into one decision view.</p>
+        </div>
+        <div>
+          <span>02</span>
+          <strong>Scale conviction, not just direction</strong>
+          <p>Translate reviewed confidence into a position size multiplier before portfolio and risk constraints are applied.</p>
+        </div>
+        <div>
+          <span>03</span>
+          <strong>Learn from every outcome</strong>
+          <p>Turn realized decisions and execution outcomes into memory that improves the next review cycle.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section competitive-positioning">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Where it fits</p>
+          <h2>More adaptive than static exposures. More accountable than black-box AI.</h2>
+          <p>Leading trading infrastructure often excels at one layer: execution speed, standardized strategy exposure, or standalone model prediction. AlphaWeave Capital is built for the decision layer above those pieces.</p>
+        </div>
+        <div class="positioning-rows">
+          <div>
+            <span>Not just execution</span>
+            <strong>It helps decide how much capital a reviewed signal deserves.</strong>
+            <p>Execution quality matters, but the bigger question is whether the strategy, asset, mandate, and conviction justify the allocation.</p>
+          </div>
+          <div>
+            <span>Not a static product</span>
+            <strong>It can adapt the active strategy and asset set as conditions change.</strong>
+            <p>Instead of relying on fixed universes and fixed weights, the system reviews strategy fit, asset fit, and current market context.</p>
+          </div>
+          <div>
+            <span>Not an AI oracle</span>
+            <strong>It keeps risk, constraints, prompts, outcomes, and attribution visible.</strong>
+            <p>AI helps summarize and compare evidence; deterministic controls preserve the audit trail and portfolio discipline.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section illustrated-story">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">The pitch</p>
+          <h2>A trading-desk review process for systematic strategies.</h2>
+        </div>
+        <div class="illustration-grid">
+          <article class="illustration-panel">
+            <img src="assets/illustration-signal-review.svg" alt="Analyst reviewing a trading signal dashboard">
+            <div>
+              <h3>Review the signal</h3>
+              <p>Start with the strategy output, then ask whether today's context supports acting on it.</p>
+            </div>
+          </article>
+          <article class="illustration-panel">
+            <img src="assets/illustration-risk-guardrails.svg" alt="Risk controller checking guardrails">
+            <div>
+              <h3>Respect the guardrails</h3>
+              <p>Before capital moves, exposure, drawdown, liquidity, net, gross, and beta constraints stay visible.</p>
+            </div>
+          </article>
+          <article class="illustration-panel">
+            <img src="assets/illustration-portfolio-memory.svg" alt="Portfolio builder organizing outcome memory">
+            <div>
+              <h3>Remember the outcome</h3>
+              <p>Each decision becomes part of the research memory, so the next review starts smarter.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -53,58 +205,86 @@
     <section class="section">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Core Capabilities</p>
-          <h2>Selection, review, risk, and reporting in one governed loop.</h2>
+          <p class="eyebrow">What teams get</p>
+          <h2>Better selection. Smarter sizing. Cleaner accountability.</h2>
         </div>
         <div class="grid three">
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-bg-01-diagonal-candles.png')" type="button" data-click-card data-title="Asset Selection" data-detail="Asset selection ranks tradable symbols by realized edge, trend, volatility, drawdown, liquidity, and fit to the active sleeve, meaning the portfolio mandate being evaluated."><h3>Asset Selection</h3><p>Rank and filter tradable assets using return, trend, volatility, drawdown, liquidity, and basket fit.</p></button>
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-bg-02-layered-lines.png')" type="button" data-click-card data-title="Strategy Selection" data-detail="Strategy selection keeps incumbents unless a candidate strategy has clean realized or shadow edge in the current regime."><h3>Strategy Selection</h3><p>Evaluate candidate strategies against current regimes, recent shadow performance, and asset-specific fit.</p></button>
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-bg-03-candles-closeup.png')" type="button" data-click-card data-title="Decision Review" data-detail="Decision review retrieves comparable prior decisions and realized outcomes before new capital is committed."><h3>Decision Review</h3><p>Retrieve comparable decisions and realized outcomes before committing new capital.</p></button>
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-bg-04-dashboard-texture.png')" type="button" data-click-card data-title="Risk Controls" data-detail="Risk controls enforce portfolio limits before decisions become executable trades."><h3>Risk Controls</h3><p>Apply exposure, leverage, concentration, drawdown, and liquidity limits before trades reach execution.</p></button>
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-background.png')" type="button" data-click-card data-title="Reporting" data-detail="Reporting produces run, sleeve, asset, strategy, prompt, cache, and decision-level artifacts for audit."><h3>Reporting</h3><p>Generate run-level, sleeve-level, asset-level, strategy-level, and decision-level reports for audit.</p></button>
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-bg-01-diagonal-candles.png')" type="button" data-click-card data-title="Outcome Memory" data-detail="Outcome memory writes realized decision and position results back into future context."><h3>Outcome Memory</h3><p>Feed realized results back into future decision context.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-market-laptop)" type="button" data-click-card data-title="Which assets look best?" data-detail="Rank tradable assets by evidence, risk fit, liquidity, and portfolio mandate instead of relying only on a static list."><svg class="concept-icon card-icon"><use href="#icon-target"></use></svg><h3>Which assets look best?</h3><p>Compare tradable assets before deciding where new capital belongs.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-analytics-dashboard)" type="button" data-click-card data-title="Should we change strategy?" data-detail="Keep the current strategy unless a candidate has cleaner evidence and better fit for the current market."><svg class="concept-icon card-icon"><use href="#icon-layers"></use></svg><h3>Should we change strategy?</h3><p>Test candidate strategies before replacing what is already working.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-finance-review)" type="button" data-click-card data-title="Have similar decisions worked?" data-detail="Review comparable prior decisions, market context, chart behavior, and realized outcomes before capital moves."><svg class="concept-icon card-icon"><use href="#icon-history"></use></svg><h3>Have similar decisions worked?</h3><p>Look back before acting on a new signal.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-team-review)" type="button" data-click-card data-title="Is the risk acceptable?" data-detail="Check exposure, leverage, concentration, drawdown, and liquidity before execution."><svg class="concept-icon card-icon"><use href="#icon-shield"></use></svg><h3>Is the risk acceptable?</h3><p>Keep position size and exposure inside defined portfolio limits.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-research-desk)" type="button" data-click-card data-title="What actually changed returns?" data-detail="Separate base strategy performance from asset selection, strategy switching, AI-assisted sizing, and execution effects."><svg class="concept-icon card-icon"><use href="#icon-chart"></use></svg><h3>What changed returns?</h3><p>See which layer helped and which layer dragged.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-data-infrastructure)" type="button" data-click-card data-title="What should we learn?" data-detail="Turn realized wins, misses, and execution gaps into reusable context for future decisions."><svg class="concept-icon card-icon"><use href="#icon-learn"></use></svg><h3>What should we learn?</h3><p>Use realized outcomes to improve the next review.</p></button>
         </div>
-        <button class="detail-button" type="button" data-card-detail>Click a capability to see how it contributes to the allocation loop.</button>
+        <button class="detail-button" type="button" data-card-detail>Click a question for more detail.</button>
       </div>
     </section>
 
     <section class="section band">
       <div class="container split">
         <div>
-          <p class="eyebrow">Product Promise</p>
-          <h2>Turn strategy signals into governed decisions.</h2>
+          <p class="eyebrow">Why it matters</p>
+          <h2>Move from signal output to decision confidence.</h2>
         </div>
-        <p>AlphaWeave Capital sits above existing strategies and continuously asks what should be active, how much exposure should be taken, whether risk permits it, and whether prior outcomes support the decision.</p>
+        <p>Your strategy can say BUY, SELL, or HOLD. AlphaWeave Capital helps answer the commercial questions behind the trade: is this the right strategy, is this the right asset set, should we size it differently, what could go wrong, and what happened when we saw this before?</p>
+      </div>
+    </section>
+
+    <section class="section market-context">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Why this is different</p>
+          <h2>AI in trading needs controls, not just predictions.</h2>
+          <p>Industry guidance keeps pointing to the same tension: AI can help process information faster, but trading teams still need explainability, model risk controls, data integrity, and supervision. AlphaWeave Capital is built around that reality.</p>
+        </div>
+        <div class="context-panels">
+          <a class="context-panel" href="https://www.finra.org/rules-guidance/key-topics/fintech/report/artificial-intelligence-in-the-securities-industry/key-challenges" target="_blank" rel="noopener">
+            <span>Industry guidance</span>
+            <strong>Model risk management matters.</strong>
+            <p>AI workflows need review around explainability, data integrity, and privacy.</p>
+          </a>
+          <a class="context-panel" href="https://fmsb.com/wp-content/uploads/2026/02/FMSB-AI-in-Trading_Final_12.02.26_FINAL.pdf" target="_blank" rel="noopener">
+            <span>Trading controls</span>
+            <strong>Real-time controls stay central.</strong>
+            <p>AI trading needs monitoring and control frameworks, especially as models become less transparent.</p>
+          </a>
+          <a class="context-panel" href="https://www.sec.gov/sites/default/files/2024-01/2024-annual-regulatory-oversight-report.pdf" target="_blank" rel="noopener">
+            <span>Supervision</span>
+            <strong>Testing and explainability are not optional.</strong>
+            <p>AI use in financial workflows should be evaluated through governance, testing, and supervision.</p>
+          </a>
+        </div>
+        <p class="market-note">AlphaWeave Capital is different because it is not trying to be a one-click trading oracle. It is a strategy-agnostic allocation overlay: review evidence, select assets and strategies, apply sleeve constraints, scale conviction through PSM, preserve the audit trail, and attribute what actually changed returns.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">What The System Adds</p>
-          <h2>Not just a large language model wrapper around trades.</h2>
-          <p>A large language model, or LLM, is an AI model trained to read and generate text. AlphaWeave Capital uses LLMs only where text-based reasoning helps, alongside deterministic selection, risk, cache, and reporting logic.</p>
+          <p class="eyebrow">Why now</p>
+          <h2>Use AI where judgment helps, and rules where control matters.</h2>
+          <p>A large language model, or LLM, is an AI model trained to read and generate text. AlphaWeave Capital uses LLMs like specialist analysts for summarizing evidence and comparing context, while rules handle selection, risk, caching, and reporting.</p>
         </div>
         <div class="feature-lanes">
-          <button class="lane-item" type="button" data-click-card data-title="Triage before model calls" data-detail="Triage decides when expensive reasoning is needed, so the system avoids calling language-model agents on every bar unless the context justifies it."><span>01</span><strong>Triage before model calls</strong><em>Run deeper reasoning only when policy, movement, event, or review conditions justify it.</em></button>
-          <button class="lane-item" type="button" data-click-card data-title="Agent handoff chain" data-detail="Specialized agents pass structured context from market intelligence to historical review, reflection, decision making, and reporting."><span>02</span><strong>Agent handoff chain</strong><em>Pass context through a traceable decision sequence.</em></button>
-          <button class="lane-item" type="button" data-click-card data-title="Cache and flow validation" data-detail="Prompt cache, image cache, flow validation, and paired prompt-response reports show whether the right data reached each agent."><span>03</span><strong>Cache and flow validation</strong><em>Prove what was reused, recomputed, and delivered to each prompt.</em></button>
-          <button class="lane-item" type="button" data-click-card data-title="Stage attribution" data-detail="Monthly reports separate static base, asset pickup, strategy pickup, and AI/PSM contribution. AI/PSM means the AI overlay plus position-size multiplier logic that can preserve, reduce, or modestly increase exposure."><span>04</span><strong>Stage attribution</strong><em>Split performance by asset selection, strategy switching, and AI/PSM.</em></button>
-          <button class="lane-item" type="button" data-click-card data-title="Execution-aware review" data-detail="Decision PnL and actual position PnL are tracked separately so the system can diagnose signal quality versus execution drag."><span>05</span><strong>Execution-aware review</strong><em>Separate signal quality from execution and sizing drag.</em></button>
-          <button class="lane-item" type="button" data-click-card data-title="Fallback discipline" data-detail="Fallback summaries are allowed for continuity, but they are identified and kept out of cache paths that should only store valid parsed model outputs."><span>06</span><strong>Fallback discipline</strong><em>Label fallback content so reports do not confuse it with clean model output.</em></button>
+          <button class="lane-item" type="button" data-click-card data-title="Selective AI review" data-detail="Routine moments stay on rails; deeper AI review is reserved for context that deserves attention."><span>01</span><strong>Call AI when it matters</strong><em>Avoid expensive review on every routine bar.</em></button>
+          <button class="lane-item" type="button" data-click-card data-title="Traceable handoffs" data-detail="Market evidence, historical review, chart context, decision logic, and reporting move through a visible chain."><span>02</span><strong>Keep the trail visible</strong><em>Know what evidence reached each decision step.</em></button>
+          <button class="lane-item" type="button" data-click-card data-title="Safe reuse" data-detail="Prior work can be reused, but the system records what matched, what was recomputed, and what changed."><span>03</span><strong>Reuse without guessing</strong><em>Show what was reused, recomputed, and delivered.</em></button>
+          <button class="lane-item" type="button" data-click-card data-title="Stage attribution" data-detail="Monthly reports separate base strategy performance from asset selection, strategy switching, and AI-assisted position sizing."><span>04</span><strong>Measure each layer</strong><em>Separate asset, strategy, and AI contribution.</em></button>
+          <button class="lane-item" type="button" data-click-card data-title="Execution-aware review" data-detail="Decision results and actual position results are tracked separately so good ideas are not confused with poor timing or sizing."><span>05</span><strong>Separate idea from execution</strong><em>Distinguish signal quality from trade implementation.</em></button>
+          <button class="lane-item" type="button" data-click-card data-title="Uncertainty discipline" data-detail="When evidence is incomplete, uncertainty is labeled instead of being dressed up as confidence."><span>06</span><strong>Label uncertainty</strong><em>Keep weak evidence separate from confident review.</em></button>
         </div>
-        <button class="detail-button" type="button" data-card-detail>Click a differentiator to see why it matters.</button>
+        <button class="detail-button" type="button" data-card-detail>Click an item to see why it matters.</button>
       </div>
     </section>
 
     <section class="section">
       <div class="container cta-panel">
         <div>
-          <p class="eyebrow">Next Step</p>
-          <h2>Explore the AlphaWeave Capital platform.</h2>
-          <p>Review the product surface, decision workflow, reporting pipeline, market-neutral sleeve support, and technical architecture.</p>
+          <p class="eyebrow">Next step</p>
+          <h2>Bring an allocation review layer to your trading stack.</h2>
+          <p>Walk through how AlphaWeave Capital reviews signals, attributes performance, and keeps a reusable decision record without replacing your existing strategies.</p>
         </div>
-        <a class="button" href="product.html">Explore product</a>
+        <a class="button" href="contact.html">Request a walkthrough</a>
       </div>
     </section>
   </main>
@@ -118,5 +298,6 @@
   <script src="site.js"></script>
 </body>
 </html>
+
 
 

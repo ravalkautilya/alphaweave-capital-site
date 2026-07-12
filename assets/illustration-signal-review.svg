@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+  <title id="title">Signal review illustration</title>
+  <desc id="desc">A simplified analyst reviewing trading signals on a dashboard.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1f2b"/>
+      <stop offset="1" stop-color="#121728"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#53ead9"/>
+      <stop offset="1" stop-color="#8a7dff"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" rx="36" fill="url(#bg)"/>
+  <path d="M48 380 C168 315 260 410 390 342 C510 280 586 326 672 270" fill="none" stroke="#1e3548" stroke-width="18" stroke-linecap="round"/>
+  <rect x="300" y="94" width="292" height="202" rx="22" fill="#111827" stroke="#2b3b54" stroke-width="3"/>
+  <path d="M332 238 L374 194 L416 218 L462 154 L516 184 L558 132" fill="none" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="330" y="116" width="82" height="14" rx="7" fill="#53ead9" opacity=".75"/>
+  <rect x="330" y="268" width="212" height="10" rx="5" fill="#2d3b52"/>
+  <rect x="150" y="176" width="142" height="190" rx="24" fill="#172235"/>
+  <circle cx="220" cy="124" r="50" fill="#f0c46b"/>
+  <path d="M178 120 C192 78 248 80 262 120 C242 108 203 107 178 120Z" fill="#172235"/>
+  <path d="M176 178 C198 210 244 210 266 178 L292 366 H150Z" fill="#53ead9"/>
+  <path d="M180 258 L102 310" stroke="#f0c46b" stroke-width="20" stroke-linecap="round"/>
+  <path d="M260 258 L338 314" stroke="#f0c46b" stroke-width="20" stroke-linecap="round"/>
+  <rect x="80" y="300" width="142" height="28" rx="14" fill="#8a7dff"/>
+  <circle cx="202" cy="128" r="6" fill="#101827"/>
+  <circle cx="238" cy="128" r="6" fill="#101827"/>
+  <path d="M204 150 C216 160 230 160 242 150" fill="none" stroke="#101827" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="584" cy="90" r="36" fill="#53ead9" opacity=".16"/>
+  <path d="M574 90 L582 98 L598 78" fill="none" stroke="#53ead9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

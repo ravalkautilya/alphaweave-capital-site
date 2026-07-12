@@ -11,7 +11,7 @@
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="./"><img src="assets/alphaweave-capital-mark.png" alt="">AlphaWeave Capital</a>
+      <a class="brand brand-logo" href="./" aria-label="AlphaWeave Capital home"><img src="assets/alphaweave-capital-logo.png" alt="AlphaWeave Capital"></a>
       <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button>
       <div class="nav-links" data-nav-links>
       <a href="product.html">Product</a>
@@ -25,12 +25,20 @@
   </header>
 
   <main>
-    <section class="hero compact" style="--hero-image: url('assets/framers-ai-chart-background.png')">
+    <section class="hero compact" style="--hero-image: var(--stock-team-review)">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <p class="eyebrow">About</p>
-        <h1>Adaptive allocation infrastructure for systematic teams.</h1>
-        <p class="hero-copy">AlphaWeave Capital is built for research groups that want their strategy, asset, risk, execution, and review logic to live in one auditable loop.</p>
+        <p class="eyebrow">Walkthrough</p>
+        <h1>See how AlphaWeave Capital fits your trading workflow.</h1>
+        <p class="hero-copy">Share how your team reviews signals today. We can walk through where AlphaWeave Capital adds decision review, risk visibility, and performance attribution.</p>
+      </div>
+    </section>
+
+    <section class="section value-ribbon">
+      <div class="container ribbon-grid">
+        <div><span>Bring</span><strong>Your current strategy, asset universe, and review process.</strong></div>
+        <div><span>Review</span><strong>Where evidence, risk, and outcomes should enter the loop.</strong></div>
+        <div><span>Leave</span><strong>With a clearer map for decision intelligence.</strong></div>
       </div>
     </section>
 
@@ -39,7 +47,7 @@
         <div>
           <p class="eyebrow">Contact</p>
           <h2>Request a platform walkthrough.</h2>
-          <p>Share a short note about the workflow you want to evaluate. The form opens your email client with the message prefilled.</p>
+          <p>Share the allocation workflow you want to evaluate. A short note is enough: what you trade, how decisions are reviewed today, and where the process needs more visibility.</p>
         </div>
         <div class="contact-panel">
           <h3>Platform walkthrough</h3>
@@ -71,7 +79,7 @@
       <div class="section-heading">
         <p class="eyebrow">Disclaimer</p>
         <h2>Research software, not investment advice.</h2>
-        <p>AlphaWeave Capital supports research, monitoring, and decision workflows. It does not guarantee returns, eliminate risk, or replace independent investment judgment.</p>
+        <p>AlphaWeave Capital supports research, monitoring, and decision workflows. It is a review layer and flight recorder for allocation decisions; it does not guarantee returns, eliminate risk, or replace independent investment judgment.</p>
       </div>
     </section>
   </main>
@@ -80,6 +88,7 @@
   <script src="site.js"></script>
 </body>
 </html>
+
 
 
 

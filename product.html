@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AlphaWeave Capital Product | Adaptive Strategy, Asset, and Risk Allocation</title>
-  <meta name="description" content="Explore the AlphaWeave Capital platform: multi-sleeve orchestration, AI controls, dynamic asset and strategy selection, risk management, and execution-aware reporting.">
+  <title>AlphaWeave Capital Product | Decision Support for Systematic Portfolios</title>
+  <meta name="description" content="AlphaWeave Capital helps systematic teams review signals, rotate assets and strategies, manage risk, and understand what improved portfolio results.">
   <link rel="icon" href="assets/alphaweave-capital-mark.png">
   <link rel="stylesheet" href="site.css">
 </head>
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="./"><img src="assets/alphaweave-capital-mark.png" alt="">AlphaWeave Capital</a>
+      <a class="brand brand-logo" href="./" aria-label="AlphaWeave Capital home"><img src="assets/alphaweave-capital-logo.png" alt="AlphaWeave Capital"></a>
       <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button>
       <div class="nav-links" data-nav-links>
         <a href="product.html" aria-current="page">Product</a>
@@ -25,12 +25,20 @@
   </header>
 
   <main>
-    <section class="hero compact" style="--hero-image: url('assets/framers-ai-chart-bg-01-diagonal-candles.png')">
+    <section class="hero compact" style="--hero-image: var(--stock-market-laptop)">
       <div class="container">
         <p class="eyebrow">Product</p>
-        <h1>An AI allocation layer for systematic trading.</h1>
-        <p class="lede">AlphaWeave Capital coordinates data, strategy signals, market intelligence, reflection agents, risk controls, portfolio construction, and execution logic inside a repeatable pipeline.</p>
-        <div class="hero-actions"><a class="button" href="contact.html">Request a platform walkthrough</a></div>
+        <h1>A decision desk for systematic portfolios.</h1>
+        <p class="lede">AlphaWeave Capital helps teams move from raw strategy output to reviewed allocation action: which strategy, which asset set, how much exposure, and why now.</p>
+        <div class="hero-actions"><a class="button" href="contact.html">Request a walkthrough</a></div>
+      </div>
+    </section>
+
+    <section class="section value-ribbon">
+      <div class="container ribbon-grid">
+        <div><span>Reduce noise</span><strong>Keep weak rotations from becoming portfolio churn.</strong></div>
+        <div><span>Improve review</span><strong>Bring market context, sleeve constraints, risk, and prior outcomes into one decision view.</strong></div>
+        <div><span>Explain results</span><strong>Separate base strategy return from selection, sizing, risk, and execution contribution.</strong></div>
       </div>
     </section>
 
@@ -38,17 +46,17 @@
       <div class="container">
         <div class="section-header">
           <p class="eyebrow">Core capabilities</p>
-          <h2>Selection, review, risk, and reporting in one governed loop.</h2>
+          <h2>The checkpoints that make allocation changes easier to defend.</h2>
         </div>
         <div class="grid three">
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-bg-01-diagonal-candles.png')" type="button" data-click-card data-title="Dynamic Asset Selection" data-detail="Dynamic asset selection chooses where the active portfolio mandate should seek exposure, based on realized edge and risk fit."><h3>Dynamic Asset Selection</h3><p>Rank assets by return, trend slope, volatility, drawdown, liquidity, and constraints for the active sleeve, meaning the portfolio mandate being evaluated.</p></button>
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-bg-02-layered-lines.png')" type="button" data-click-card data-title="Dynamic Strategy Selection" data-detail="Dynamic strategy selection only rotates when candidate evidence is clean enough to beat the incumbent."><h3>Dynamic Strategy Selection</h3><p>Shadow-evaluate candidate strategies against current assets, recent market conditions, and regime fit.</p></button>
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-bg-03-candles-closeup.png')" type="button" data-click-card data-title="AI Controls" data-detail="AI controls define exactly where the overlay may act: gating, duration, size, and conviction."><h3>AI Controls</h3><p>Declare where AI can act: entry gating, duration adjustment, size adjustment, and conviction sizing.</p></button>
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-bg-04-dashboard-texture.png')" type="button" data-click-card data-title="Decision Review" data-detail="Decision review prevents isolated signals from bypassing historical evidence."><h3>Decision Review</h3><p>Retrieve prior comparable decisions, realized outcomes, and historical feedback before the next decision.</p></button>
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-background.png')" type="button" data-click-card data-title="Risk And Portfolio Control" data-detail="Risk and portfolio controls cap exposure before any role judgment becomes an execution event."><h3>Risk And Portfolio Control</h3><p>Apply exposure caps, cash reserves, drawdown limits, leverage rules, and concentration controls before execution.</p></button>
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-bg-01-diagonal-candles.png')" type="button" data-click-card data-title="Capital-Weighted Reporting" data-detail="Capital-weighted reporting keeps attribution tied to deployed exposure, not raw signal fantasy PnL."><h3>Capital-Weighted Reporting</h3><p>Report-facing PnL reflects deployed capital rather than raw per-share strategy PnL.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-market-laptop)" type="button" data-click-card data-title="Dynamic Asset Selection" data-detail="Dynamic asset selection is the scout: it looks for where the mandate has the best combination of edge, liquidity, and risk fit."><h3>Dynamic Asset Selection</h3><p>Spot stronger tradable assets without relying on a static watchlist.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-analytics-dashboard)" type="button" data-click-card data-title="Dynamic Strategy Selection" data-detail="Dynamic strategy selection is the challenger process: incumbents stay unless a candidate has cleaner evidence."><h3>Dynamic Strategy Selection</h3><p>Keep current strategies unless a candidate has a cleaner edge.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-data-infrastructure)" type="button" data-click-card data-title="AI Controls" data-detail="AI controls define where the co-pilot may help: entry review, duration, size, and conviction, without taking over the cockpit."><h3>AI Controls</h3><p>Use AI to review evidence and calibrate conviction, not to replace portfolio controls.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-finance-review)" type="button" data-click-card data-title="Decision Review" data-detail="Decision review is the investment memo before the trade: similar cases and realized outcomes are checked before capital is committed."><h3>Decision Review</h3><p>Compare new ideas against similar past decisions before committing.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-team-review)" type="button" data-click-card data-title="Risk And Portfolio Control" data-detail="Risk and portfolio controls are guardrails that keep a good idea from becoming too large, too levered, or poorly timed."><h3>Risk And Portfolio Control</h3><p>Convert conviction into constrained portfolio weights across assets, strategies, and sleeves.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-research-desk)" type="button" data-click-card data-title="Capital-Weighted Reporting" data-detail="Capital-weighted reporting is the scoreboard that counts deployed capital, not imaginary signal returns."><h3>Capital-Weighted Reporting</h3><p>Know what actually improved returns after capital was deployed.</p></button>
         </div>
-        <button class="detail-button" type="button" data-card-detail>Click a product capability to see the operational role.</button>
+        <button class="detail-button" type="button" data-card-detail>Click a capability to see the business value.</button>
       </div>
     </section>
 
@@ -56,8 +64,8 @@
       <div class="container">
         <div class="section-header">
           <p class="eyebrow">Policy Layer</p>
-          <h2>Fewer rules, stronger evidence metrics.</h2>
-          <p>AlphaWeave Capital separates policy from reasoning. The goal is not to add arbitrary gates, but to require evidence when the system rotates assets, switches strategies, or changes exposure.</p>
+          <h2>Evidence before rotation. Discipline before exposure.</h2>
+          <p>The platform is designed to avoid noisy churn. It behaves more like a disciplined investment committee than a signal chaser: change only when the evidence is strong enough.</p>
         </div>
         <div class="policy-steps">
           <button type="button" data-click-card data-title="Asset switching policy" data-detail="Rank assets by expected contribution, require realized edge, and reject obvious risk degradation."><span>Asset</span><strong>Expected contribution</strong><em>Realized edge and risk fit decide whether the asset should enter the sleeve.</em></button>
@@ -70,7 +78,7 @@
 
     <section class="section band">
       <div class="container split">
-        <div><p class="eyebrow">AI controls</p><h2>Dial the AI overlay up or down.</h2></div>
+        <div><p class="eyebrow">AI controls</p><h2>Use AI as a controlled co-pilot, not a black box.</h2></div>
         <ul class="list">
           <li><strong>Gate entries:</strong> suppress weak entries when market context conflicts with raw signal.</li>
           <li><strong>Adjust duration:</strong> shorten or extend holding expectations based on regime and risk.</li>
@@ -82,11 +90,26 @@
 
     <section class="section">
       <div class="container">
-        <div class="section-header"><p class="eyebrow">Sleeves</p><h2>Built for directional and market-neutral mandates.</h2><p>A sleeve is a portfolio mandate or allocation bucket with its own assets, strategy rules, risk limits, and execution intent.</p></div>
+        <div class="section-heading">
+          <p class="eyebrow">Positioning</p>
+          <h2>Above execution engines. More adaptive than packaged exposures.</h2>
+          <p>AlphaWeave Capital is not just an execution engine and not a packaged exposure product. It works at the decision hierarchy above the strategy: selecting the active strategy set, selecting assets, sizing conviction, and enforcing sleeve-level risk constraints.</p>
+        </div>
+        <div class="proof-grid">
+          <div><span>Not just execution</span><strong>It decides how much capital a reviewed signal deserves.</strong><p>Execution is downstream of conviction, portfolio construction, and risk.</p></div>
+          <div><span>Not fixed exposure</span><strong>Strategy and asset composition can adapt with regime and evidence.</strong><p>Rotations are evaluated against realized and shadow edge.</p></div>
+          <div><span>Not black-box AI</span><strong>Prompt trails, cache matches, risk packets, and outcomes are inspectable.</strong><p>AI contributes review context inside a controlled process.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header"><p class="eyebrow">Mandates</p><h2>Support directional and market-neutral workflows.</h2><p>A sleeve is a portfolio mandate or allocation bucket with its own assets, strategy rules, risk limits, and execution intent.</p></div>
         <div class="grid three">
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-bg-03-candles-closeup.png')" type="button" data-click-card data-title="Directional Sleeves" data-detail="Directional sleeves evaluate long or short exposure as a single-leg role against the sleeve mandate."><h3>Directional Sleeves</h3><p>Single-leg, asset-level processing for long-only or directional strategies.</p></button>
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-bg-02-layered-lines.png')" type="button" data-click-card data-title="Market-Neutral Sleeves" data-detail="Market-neutral sleeves preserve long and short legs, spread behavior, neutrality targets, and basket contribution."><h3>Market-Neutral Sleeves</h3><p>Basket or multi-leg processing with long/short constraints, beta targets, hedge logic, and sleeve-level reporting.</p></button>
-          <button class="card image-card" style="--card-image: url('assets/framers-ai-chart-bg-04-dashboard-texture.png')" type="button" data-click-card data-title="Multi-Sleeve Runs" data-detail="Multi-sleeve runs preserve identities across sleeve, leg, asset, strategy, and sub-run reports."><h3>Multi-Sleeve Runs</h3><p>Combine multiple mandates while preserving sleeve, leg, asset, strategy, and sub-run identities.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-trading-desk)" type="button" data-click-card data-title="Directional Sleeves" data-detail="Directional sleeves evaluate long or short exposure as a single-leg role against the sleeve mandate."><h3>Directional Sleeves</h3><p>Single-leg, asset-level processing for long-only or directional strategies.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-market-laptop)" type="button" data-click-card data-title="Market-Neutral Sleeves" data-detail="Market-neutral sleeves preserve long and short legs, spread behavior, neutrality targets, and basket contribution."><h3>Market-Neutral Sleeves</h3><p>Basket or multi-leg processing with long/short constraints, beta targets, hedge logic, and sleeve-level reporting.</p></button>
+          <button class="card image-card" style="--card-image: var(--stock-analytics-dashboard)" type="button" data-click-card data-title="Multi-Sleeve Runs" data-detail="Multi-sleeve runs preserve identities across sleeve, leg, asset, strategy, and sub-run reports."><h3>Multi-Sleeve Runs</h3><p>Combine multiple mandates while preserving sleeve, leg, asset, strategy, and sub-run identities.</p></button>
         </div>
         <button class="detail-button" type="button" data-card-detail>Click a sleeve type to see how AlphaWeave Capital treats it.</button>
       </div>
@@ -94,8 +117,8 @@
 
     <section class="section band">
       <div class="container cta-panel">
-        <h2>Bring governance to every signal.</h2>
-        <a class="button" href="contact.html">Request a platform walkthrough</a>
+        <h2>Make every allocation change easier to defend.</h2>
+        <a class="button" href="contact.html">Request a walkthrough</a>
       </div>
     </section>
   </main>
@@ -104,6 +127,7 @@
   <script src="site.js"></script>
 </body>
 </html>
+
 
 
 

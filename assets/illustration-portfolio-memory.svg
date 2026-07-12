@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+  <title id="title">Portfolio memory illustration</title>
+  <desc id="desc">A simplified portfolio builder organizing allocation blocks and outcome memory.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1826"/>
+      <stop offset="1" stop-color="#171d31"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="480" rx="36" fill="url(#bg)"/>
+  <rect x="82" y="92" width="238" height="278" rx="26" fill="#111827" stroke="#314058" stroke-width="3"/>
+  <rect x="112" y="128" width="78" height="78" rx="18" fill="#53ead9" opacity=".9"/>
+  <rect x="208" y="128" width="78" height="78" rx="18" fill="#8a7dff" opacity=".9"/>
+  <rect x="112" y="224" width="78" height="78" rx="18" fill="#f7c65f" opacity=".94"/>
+  <rect x="208" y="224" width="78" height="78" rx="18" fill="#ff6b8a" opacity=".9"/>
+  <path d="M132 330 H270" stroke="#394862" stroke-width="12" stroke-linecap="round"/>
+  <path d="M370 110 H604 C624 110 640 126 640 146 V338 C640 358 624 374 604 374 H370 C350 374 334 358 334 338 V146 C334 126 350 110 370 110Z" fill="#101827" stroke="#314058" stroke-width="3"/>
+  <path d="M380 306 C420 250 462 270 496 218 C530 168 568 188 604 140" fill="none" stroke="#53ead9" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="386" cy="306" r="10" fill="#53ead9"/>
+  <circle cx="496" cy="218" r="10" fill="#f7c65f"/>
+  <circle cx="604" cy="140" r="10" fill="#ff6b8a"/>
+  <rect x="382" y="324" width="190" height="14" rx="7" fill="#2c3a51"/>
+  <rect x="382" y="344" width="122" height="14" rx="7" fill="#2c3a51"/>
+  <circle cx="362" cy="386" r="46" fill="#f0c46b"/>
+  <path d="M326 386 C338 350 382 346 400 382 C378 372 348 372 326 386Z" fill="#101827"/>
+  <path d="M314 432 C328 404 400 404 414 432" fill="#53ead9"/>
+  <path d="M416 412 L480 390" stroke="#f0c46b" stroke-width="18" stroke-linecap="round"/>
+</svg>

@@ -11,7 +11,7 @@
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="./"><img src="assets/alphaweave-capital-mark.png" alt="">AlphaWeave Capital</a>
+      <a class="brand brand-logo" href="./" aria-label="AlphaWeave Capital home"><img src="assets/alphaweave-capital-logo.png" alt="AlphaWeave Capital"></a>
       <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button>
       <div class="nav-links" data-nav-links>
       <a href="product.html">Product</a>
@@ -25,32 +25,53 @@
   </header>
 
   <main>
-    <section class="hero compact" style="--hero-image: url('assets/framers-ai-chart-bg-03-candles-closeup.png')">
+    <section class="hero compact" style="--hero-image: var(--stock-trading-desk)">
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <p class="eyebrow">Basket Sleeves</p>
-        <h1>Market-neutral reasoning without losing the legs.</h1>
-        <p class="hero-copy">AlphaWeave Capital handles active long and short assets as first-class context. A sleeve is a portfolio mandate or allocation bucket; a market-neutral sleeve evaluates spread behavior, hedge integrity, and realized contribution.</p>
+        <p class="eyebrow">Basket sleeves</p>
+        <h1>Treat relative-value trades like relationships, not tickers.</h1>
+        <p class="hero-copy">AlphaWeave Capital reviews the long side, short side, spread, hedge, and realized contribution together so market-neutral decisions stay balanced and explainable. The goal is alpha capture from cross-asset relationships, not dependence on broad market direction.</p>
+      </div>
+    </section>
+
+    <section class="section value-ribbon">
+      <div class="container ribbon-grid">
+        <div><span>Pair-aware</span><strong>Judge correlation, volatility alignment, liquidity fit, and spread behavior.</strong></div>
+        <div><span>Neutrality</span><strong>Keep net, gross, beta, benchmark, and hedge intent visible.</strong></div>
+        <div><span>Outcome</span><strong>Explain whether the basket relationship produced alpha.</strong></div>
       </div>
     </section>
 
     <section class="section">
       <div class="section-heading">
         <p class="eyebrow">Basket-Aware Logic</p>
-        <h2>Built for relative-value decisions.</h2>
+        <h2>Built for pair and basket decisions.</h2>
       </div>
       <div class="feature-grid three">
-        <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-bg-01-diagonal-candles.png')" type="button" data-click-card data-title="Active legs only" data-detail="Market-neutral prompts focus on active long and short legs, while candidate assets remain available for switching."><h3>Active legs only</h3><p>Agent prompts focus on assets currently active in the sleeve while leaving candidate assets available for switching workflows.</p></button>
-        <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-bg-02-layered-lines.png')" type="button" data-click-card data-title="Long-short diagnostics" data-detail="Long-short diagnostics compare long return, short return, spread behavior, signal alignment, and combined basket contribution."><h3>Long-short diagnostics</h3><p>Basket charts and deterministic summaries compare long return, short return, spread behavior, signal alignment, and combined contribution.</p></button>
-        <button class="feature-card image-card" style="--card-image: url('assets/framers-ai-chart-bg-04-dashboard-texture.png')" type="button" data-click-card data-title="Neutrality controls" data-detail="Neutrality controls check net, gross, beta, and sleeve constraints before position construction."><h3>Neutrality controls</h3><p>Net, gross, beta, and sleeve constraints are checked before basket decisions become positions.</p></button>
+        <button class="feature-card image-card" style="--card-image: var(--stock-market-laptop)" type="button" data-click-card data-title="Active legs only" data-detail="Market-neutral review focuses on the live relationship: active long legs, active short legs, and the portfolio mandate they serve."><h3>Active legs only</h3><p>Focus on the active long and short assets while keeping candidates available for future rotation.</p></button>
+        <button class="feature-card image-card" style="--card-image: var(--stock-analytics-dashboard)" type="button" data-click-card data-title="Long-short diagnostics" data-detail="Long-short diagnostics work like a pair-trade dashboard: compare the long, the short, the spread, and the basket result together."><h3>Long-short diagnostics</h3><p>Compare long return, short return, spread behavior, signal alignment, and combined contribution.</p></button>
+        <button class="feature-card image-card" style="--card-image: var(--stock-finance-review)" type="button" data-click-card data-title="Neutrality controls" data-detail="Neutrality controls are the balance check: net, gross, beta, and mandate limits are reviewed before basket decisions become positions."><h3>Neutrality controls</h3><p>Check exposure balance before basket decisions become positions.</p></button>
       </div>
       <button class="detail-button" type="button" data-card-detail>Click a basket capability to see how it supports relative-value decisions.</button>
     </section>
 
     <section class="section band">
       <div class="split">
-        <div><p class="eyebrow">Example</p><h2>Long winners, short hedges, reviewed together.</h2></div>
-        <p>A market-neutral sleeve can evaluate an active long leg and short leg together instead of treating each asset as a standalone directional bet. The result is a cleaner view of whether the basket helped the sleeve.</p>
+        <div><p class="eyebrow">Example</p><h2>Long thesis, short hedge, one combined story.</h2></div>
+        <p>A market-neutral sleeve is a portfolio mandate for a balanced basket. Instead of judging each asset alone, AlphaWeave Capital asks whether the relationship worked: did the long side help, did the short side hedge, did beta stay within mandate, and did the spread improve the portfolio?</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Adaptive neutrality</p>
+        <h2>Do not assume the pair still works. Re-validate it.</h2>
+        <p>Traditional market-neutral workflows can treat a pair as valid because it was valid before. AlphaWeave Capital keeps re-checking whether the relationship is stable, degrading, or improving, then adjusts basket construction, strategy choice, and conviction sizing.</p>
+      </div>
+      <div class="proof-grid">
+        <div><span>Basket quality</span><strong>Screen for correlation stability, volatility similarity, liquidity compatibility, and spread mean reversion.</strong><p>A weak pair should not be treated as neutral just because it has two sides.</p></div>
+        <div><span>Strategy fit</span><strong>Rotate between spread, mean-reversion, relative momentum, and regime-sensitive behavior.</strong><p>The same relationship can require different logic as the regime changes.</p></div>
+        <div><span>Capital balance</span><strong>Use conviction sizing to adjust relative exposure while respecting sleeve constraints.</strong><p>PSM helps balance opportunity and risk across long and short legs.</p></div>
       </div>
     </section>
   </main>
@@ -59,6 +80,7 @@
   <script src="site.js"></script>
 </body>
 </html>
+
 
 
 
