@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -42,6 +42,20 @@
       </div>
     </section>
 
+    <section class="section intro-strip">
+      <div class="container intro-grid">
+        <div>
+          <p class="eyebrow">The problem</p>
+          <h2>Signals are easy to generate. Allocation decisions are harder to trust.</h2>
+        </div>
+        <div class="intro-points">
+          <p><strong>Too many dashboards stop at BUY, SELL, or HOLD.</strong> AlphaWeave Capital asks which strategy to run, which assets to trade, and how much capital to deploy.</p>
+          <p><strong>Good strategies still need allocation judgment.</strong> The platform checks market context, sleeve mandate, risk budget, similar history, and execution quality.</p>
+          <p><strong>Performance needs attribution.</strong> See whether strategy rotation, strategy-aware asset selection, and conviction-based sizing actually added value.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
         <div class="section-header">
@@ -57,7 +71,7 @@
           <button class="card image-card" style="--card-image: var(--stock-team-review)" type="button" data-click-card data-title="Risk And Portfolio Control" data-detail="Risk and portfolio controls are guardrails that keep a good idea from becoming too large, too levered, or poorly timed."><h3>Risk And Portfolio Control</h3><p>Convert conviction into constrained portfolio weights across assets, strategies, and sleeves.</p></button>
           <button class="card image-card" style="--card-image: var(--stock-research-desk)" type="button" data-click-card data-title="Capital-Weighted Reporting" data-detail="Capital-weighted reporting is the scoreboard that counts deployed capital, not imaginary signal returns."><h3>Capital-Weighted Reporting</h3><p>Know what actually improved returns after capital was deployed.</p></button>
         </div>
-        <button class="detail-button" type="button" data-card-detail>Click a capability to see the business value.</button>
+        <p class="detail-note" data-card-detail>Click a capability to see the business value.</p>
       </div>
     </section>
 
@@ -73,7 +87,7 @@
           <button type="button" data-click-card data-title="Strategy switching policy" data-detail="Require realized or shadow edge, regime compatibility, and enough hold discipline to avoid noisy churn."><span>Strategy</span><strong>Clean rotation edge</strong><em>Candidate strategies must beat incumbents with regime-compatible evidence.</em></button>
           <button type="button" data-click-card data-title="AI/PSM policy" data-detail="AI/PSM means the AI overlay plus position-size multiplier logic. The target behavior is to preserve exposure by default, add small positive uplift on clean winners, and reduce only on explicit risk or failure evidence."><span>AI/PSM</span><strong>Exposure discipline</strong><em>Preserve exposure by default; adjust only when evidence is clean.</em></button>
         </div>
-        <button class="detail-button" type="button" data-card-detail>Click a policy area to see the target behavior.</button>
+        <p class="detail-note" data-card-detail>Click a policy area to see the target behavior.</p>
       </div>
     </section>
 
@@ -104,6 +118,33 @@
       </div>
     </section>
 
+    <section class="section competitive-positioning">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Where it fits</p>
+          <h2>More adaptive than static exposures. More accountable than black-box AI.</h2>
+          <p>Leading trading infrastructure often excels at one layer: execution speed, standardized strategy exposure, or standalone model prediction. AlphaWeave Capital is built for the decision layer above those pieces.</p>
+        </div>
+        <div class="positioning-rows">
+          <div>
+            <span>Not just execution</span>
+            <strong>It helps decide how much capital a reviewed signal deserves.</strong>
+            <p>Execution quality matters, but the bigger question is whether the strategy, asset, mandate, and conviction justify the allocation.</p>
+          </div>
+          <div>
+            <span>Not a static product</span>
+            <strong>It can adapt the active strategy and asset set as conditions change.</strong>
+            <p>Instead of relying on fixed universes and fixed weights, the system reviews strategy fit, asset fit, and current market context.</p>
+          </div>
+          <div>
+            <span>Not an AI oracle</span>
+            <strong>It keeps risk, constraints, prompts, outcomes, and attribution visible.</strong>
+            <p>AI helps summarize and compare evidence; deterministic controls preserve the audit trail and portfolio discipline.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
         <div class="section-header"><p class="eyebrow">Mandates</p><h2>Support directional and market-neutral workflows.</h2><p>A sleeve is a portfolio mandate or allocation bucket with its own assets, strategy rules, risk limits, and execution intent.</p></div>
@@ -112,7 +153,7 @@
           <button class="card image-card" style="--card-image: var(--stock-market-laptop)" type="button" data-click-card data-title="Market-Neutral Sleeves" data-detail="Market-neutral sleeves preserve long and short legs, spread behavior, neutrality targets, and basket contribution."><h3>Market-Neutral Sleeves</h3><p>Basket or multi-leg processing with long/short constraints, beta targets, hedge logic, and sleeve-level reporting.</p></button>
           <button class="card image-card" style="--card-image: var(--stock-analytics-dashboard)" type="button" data-click-card data-title="Multi-Sleeve Runs" data-detail="Multi-sleeve runs preserve identities across sleeve, leg, asset, strategy, and sub-run reports."><h3>Multi-Sleeve Runs</h3><p>Combine multiple mandates while preserving sleeve, leg, asset, strategy, and sub-run identities.</p></button>
         </div>
-        <button class="detail-button" type="button" data-card-detail>Click a sleeve type to see how AlphaWeave Capital treats it.</button>
+        <p class="detail-note" data-card-detail>Click a sleeve type to see how AlphaWeave Capital treats it.</p>
       </div>
     </section>
 
@@ -128,8 +169,3 @@
   <script src="site.js"></script>
 </body>
 </html>
-
-
-
-
-

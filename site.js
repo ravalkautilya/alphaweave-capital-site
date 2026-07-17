@@ -36,23 +36,46 @@ if (contactForm) {
   });
 }
 
+document.querySelectorAll("[data-click-card]").forEach((card) => {
+  card.setAttribute("aria-expanded", "false");
+});
+
 document.querySelectorAll("[data-card-detail]").forEach((detailTarget) => {
   const scope = detailTarget.closest(".container") || detailTarget.closest(".section") || document;
   const cards = Array.from(scope.querySelectorAll("[data-click-card]"));
+  const initialText = detailTarget.textContent.trim();
 
   if (!cards.length) return;
 
   const setDetail = (card) => {
-    cards.forEach((item) => item.classList.remove("is-active"));
-    card.classList.add("is-active");
+    const isOpen = card.classList.contains("is-active");
+
+    cards.forEach((item) => {
+      item.classList.remove("is-active");
+      item.setAttribute("aria-expanded", "false");
+      item.querySelectorAll(".inline-detail").forEach((detail) => detail.remove());
+    });
+
+    if (isOpen) {
+      detailTarget.textContent = initialText;
+      return;
+    }
 
     const detail = card.dataset.detail || "";
-    detailTarget.textContent = detail || card.textContent.trim();
+    const title = card.dataset.title || card.querySelector("h3, strong")?.textContent?.trim() || "Detail";
+    const inlineDetail = document.createElement("div");
+    inlineDetail.className = "inline-detail";
+    const inlineCopy = document.createElement("span");
+    inlineCopy.textContent = detail || card.textContent.trim();
+    inlineDetail.append(inlineCopy);
+
+    card.classList.add("is-active");
+    card.setAttribute("aria-expanded", "true");
+    card.appendChild(inlineDetail);
+    detailTarget.textContent = `${title}: ${detail || card.textContent.trim()}`;
   };
 
   cards.forEach((card) => {
     card.addEventListener("click", () => setDetail(card));
   });
-
-  setDetail(cards[0]);
 });

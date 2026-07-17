@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -43,6 +43,38 @@
       </div>
     </section>
 
+    <section class="section illustrated-story">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">The review loop</p>
+          <h2>A trading-desk review process for systematic strategies.</h2>
+        </div>
+        <div class="illustration-grid">
+          <article class="illustration-panel">
+            <img src="assets/illustration-signal-review.svg" alt="Analyst reviewing a trading signal dashboard">
+            <div>
+              <h3>Review the signal</h3>
+              <p>Start with the strategy output, then ask whether today's context supports acting on it.</p>
+            </div>
+          </article>
+          <article class="illustration-panel">
+            <img src="assets/illustration-risk-guardrails.svg" alt="Risk controller checking guardrails">
+            <div>
+              <h3>Respect the guardrails</h3>
+              <p>Before capital moves, exposure, drawdown, liquidity, net, gross, and beta constraints stay visible.</p>
+            </div>
+          </article>
+          <article class="illustration-panel">
+            <img src="assets/illustration-portfolio-memory.svg" alt="Portfolio builder organizing outcome memory">
+            <div>
+              <h3>Remember the outcome</h3>
+              <p>Each decision becomes part of the research memory, so the next review starts smarter.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="section-heading">
         <p class="eyebrow">Operating loop</p>
@@ -60,7 +92,7 @@
         <button class="timeline-item image-card" style="--card-image: var(--stock-data-infrastructure)" type="button" data-click-card data-title="Risk and execution" data-detail="Risk and execution are the seatbelt check before the order reaches the portfolio: size, exposure, state, and timing all matter."><span>08</span><h3>Risk and execution</h3><p>Apply portfolio limits before the action reaches execution.</p></button>
         <button class="timeline-item image-card" style="--card-image: var(--stock-finance-review)" type="button" data-click-card data-title="Outcome memory" data-detail="Outcome memory closes the loop by turning the realized result into evidence for the next review."><span>09</span><h3>Outcome memory</h3><p>Store the result so the next decision has better context.</p></button>
       </div>
-      <button class="detail-button" type="button" data-card-detail>Click a workflow stage to see what it contributes.</button>
+      <p class="detail-note" data-card-detail>Click a workflow stage to see what it contributes.</p>
     </section>
 
     <section class="section band">
@@ -78,8 +110,3 @@
   <script src="site.js"></script>
 </body>
 </html>
-
-
-
-
-
