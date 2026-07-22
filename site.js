@@ -79,3 +79,25 @@ document.querySelectorAll("[data-card-detail]").forEach((detailTarget) => {
     card.addEventListener("click", () => setDetail(card));
   });
 });
+
+document.querySelectorAll("video").forEach((video) => {
+  const resetVideoStart = () => {
+    if (!Number.isFinite(video.duration)) return;
+    video.pause();
+    if (video.currentTime !== 0) {
+      video.currentTime = 0;
+    }
+  };
+
+  video.addEventListener("loadedmetadata", resetVideoStart, {once: true});
+  video.addEventListener("ended", resetVideoStart);
+});
+
+window.addEventListener("pageshow", () => {
+  document.querySelectorAll("video").forEach((video) => {
+    video.pause();
+    if (video.readyState > 0 && video.currentTime !== 0) {
+      video.currentTime = 0;
+    }
+  });
+});

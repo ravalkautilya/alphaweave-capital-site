@@ -621,6 +621,79 @@ h3 {
   font-size: 1.12rem;
 }
 
+.video-section {
+  padding-top: 56px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(420px, 1fr);
+  gap: 34px;
+  align-items: center;
+}
+
+.video-heading {
+  max-width: 760px;
+}
+
+.video-heading p:not(.eyebrow) {
+  color: #cbd6e8;
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 12px 0 0;
+}
+
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.video-tile {
+  min-width: 0;
+}
+
+.video-tile h3 {
+  margin: 18px 0 8px;
+}
+
+.video-tile p {
+  margin: 0;
+  color: #cbd6e8;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.video-copy {
+  max-width: 520px;
+}
+
+.video-copy p:not(.eyebrow) {
+  color: #cbd6e8;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.video-frame {
+  border: 1px solid rgba(83, 234, 217, 0.28);
+  border-radius: 18px;
+  padding: 10px;
+  background:
+    linear-gradient(135deg, rgba(83, 234, 217, 0.12), rgba(138, 125, 255, 0.1)),
+    rgba(8, 12, 20, 0.78);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.36);
+}
+
+.video-frame video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  background: #05070b;
+  object-fit: cover;
+}
+
 .value-ribbon {
   padding: 0;
   margin-top: -28px;
@@ -2105,6 +2178,8 @@ button.is-active .inline-detail,
 
   .hero-grid,
   .presentation-grid,
+  .video-grid,
+  .video-gallery,
   .intro-grid,
   .ribbon-grid,
   .proof-grid,
