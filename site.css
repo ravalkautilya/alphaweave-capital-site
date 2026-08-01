@@ -650,6 +650,14 @@ h3 {
   margin-top: 28px;
 }
 
+.demo-video-gallery {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.demo-video-section .video-frame {
+  border-color: rgba(83, 234, 217, 0.34);
+}
+
 .video-tile {
   min-width: 0;
 }
