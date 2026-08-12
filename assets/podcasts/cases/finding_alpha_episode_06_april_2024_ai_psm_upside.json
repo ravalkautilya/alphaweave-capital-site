@@ -1,0 +1,93 @@
+{
+  "case_id": "finding_alpha_episode_06_april_2024_ai_psm_upside",
+  "title": "Episode 06 - April 2024 AI/PSM Upside Case Study",
+  "month": "2024-04",
+  "sample_week_start": "2024-04-16",
+  "sample_week_end": "2024-04-29",
+  "created_at": "2026-08-10T02:10:15.856292+00:00",
+  "strategy_asset": {
+    "summary_json": "reports\\monthly_ai_impact\\strategy_asset_sampled_summary_finding_alpha_episode_06_april_2024_ai_psm_upside_20260809_204513_sa.json",
+    "detail_csv": "reports\\monthly_ai_impact\\strategy_asset_sampled_finding_alpha_episode_06_april_2024_ai_psm_upside_20260809_204513_sa_detail.csv",
+    "summary_html": "reports\\monthly_ai_impact\\strategy_asset_sampled_finding_alpha_episode_06_april_2024_ai_psm_upside_20260809_204513_sa_summary.html",
+    "target_csv": "reports\\monthly_ai_impact\\strategy_asset_sampled_2024_04_target_finding_alpha_episode_06_april_2024_ai_psm_upside_20260809_204513_sa.csv",
+    "report_roots": {
+      "baseline": [
+        "reports\\backtest\\backtest_20260810004536_ee444928"
+      ],
+      "strategy_pickup": [
+        "reports\\backtest\\backtest_20260810005438_6d21e499"
+      ],
+      "asset_pickup": [
+        "reports\\backtest\\backtest_20260810010323_1f74b22d"
+      ]
+    },
+    "performance": {
+      "baseline_return": 0.0160127783001273,
+      "strategy_return": 0.0160127783001273,
+      "asset_return": 0.0118007124483305,
+      "strategy_pickup_return": 0.0,
+      "asset_pickup_return": -0.0042120658517967,
+      "strategy_asset_total_pickup_return": -0.0042120658517967,
+      "baseline_max_drawdown": -0.0786123680228261,
+      "asset_max_drawdown": -0.0089803844798062,
+      "baseline_beta": 1.4804519366981124,
+      "asset_beta": 0.2340040653288077,
+      "beta_benchmark_return": -0.0298089257983931,
+      "baseline_assets": "GOOGL,NVDA",
+      "asset_stage_assets": "AAPL,AMZN,GOOGL,MSFT,NVDA",
+      "baseline_strategies": "buy_and_hold",
+      "asset_stage_strategies": "buy_and_hold"
+    }
+  },
+  "ai_psm": {
+    "summary_json": "reports\\monthly_ai_impact\\ai_psm_sampled_monthly_summary_finding_alpha_episode_06_april_2024_ai_psm_upside_20260809_204513_ai.json",
+    "detail_csv": "reports\\monthly_ai_impact\\ai_psm_sampled_2023_01_to_2026_06_finding_alpha_episode_06_april_2024_ai_psm_upside_20260809_204513_ai_detail.csv",
+    "summary_html": "reports\\monthly_ai_impact\\ai_psm_sampled_2023_01_to_2026_06_finding_alpha_episode_06_april_2024_ai_psm_upside_20260809_204513_ai_summary.html",
+    "target_csv": "reports\\monthly_ai_impact\\ai_psm_sampled_2024_04_target_finding_alpha_episode_06_april_2024_ai_psm_upside_20260809_204513_ai.csv",
+    "report_roots": {
+      "asset_pickup": [
+        "reports\\backtest\\backtest_20260810012334_561914b0"
+      ],
+      "overlay": [
+        "reports\\backtest\\backtest_20260810013840_73f5ccd5"
+      ]
+    },
+    "performance": {
+      "asset_return": 0.0118007124483305,
+      "overlay_return": 0.0125420443725912,
+      "ai_psm_pickup_return": 0.0007413319242606,
+      "asset_alpha": 0.0187761222682393,
+      "overlay_alpha": 0.0194994314452144,
+      "ai_psm_pickup_alpha": 0.0007233091769751,
+      "asset_beta": 0.2340040653288077,
+      "overlay_beta": 0.2333994562460472,
+      "beta_change": -0.0006046090827604,
+      "accepted_change_count": 1.0,
+      "executable_change_count": 7.0,
+      "executable_resize_count": 1.0,
+      "action_policy_change_count": 2.0,
+      "event_delta_count": 18.0,
+      "first_control_asof": "2024-04-16T19:30:00",
+      "last_control_asof": "2024-04-26T13:30:00",
+      "component_counts": "{\"action_override\": 0, \"beta_risk_participation\": 1, \"duration\": 1, \"mixed\": 1, \"none\": 5, \"profit_protect\": 6, \"resize\": 1}",
+      "block_reasons": "{\"beta_hostile_tape_press_blocked\": 5, \"conflicted_reasoning_blocked_uptick\": 1, \"preserve_participation_without_hard_risk\": 6}",
+      "edge_gate_reasons": "{\"no_ai_psm_exposure_change\": 12}",
+      "asset_events": "{\"ENTER_LONG\": 5, \"EXIT_LONG\": 5, \"NO_EXEC\": 136}",
+      "overlay_events": "{\"ENTER_LONG\": 3, \"EXIT_LONG\": 3, \"NO_EXEC\": 138, \"RESIZE_LONG\": 2}"
+    }
+  },
+  "validation": {
+    "asset_stage_alignment": "mismatch",
+    "issues": [
+      "strategy/asset asset-stage strategies differ from AI/PSM asset-stage strategies: buy_and_hold vs bollinger_bands,buy_and_hold,macd_crossover,momentum,rsi_strategy"
+    ]
+  },
+  "recommended_report_review": [
+    "summary_html",
+    "target_csv",
+    "detail_csv",
+    "multi_sleeve/decision_audit.csv",
+    "multi_sleeve/position_risk_metrics_weighted_summary.csv",
+    "multi_sleeve/decision_risk_metrics_weighted_summary.csv"
+  ]
+}

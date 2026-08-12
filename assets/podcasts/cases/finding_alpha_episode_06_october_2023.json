@@ -1,0 +1,87 @@
+{
+  "case_id": "finding_alpha_episode_06_october_2023",
+  "title": "Episode 06 - October 2023 Allocation Case Study",
+  "month": "2023-10",
+  "sample_week_start": "2023-10-16",
+  "sample_week_end": "2023-10-20",
+  "created_at": "2026-08-09T16:27:49.073639+00:00",
+  "strategy_asset": {
+    "summary_json": "reports\\monthly_ai_impact\\strategy_asset_monthly_summary_20260722_111247.json",
+    "detail_csv": "reports\\monthly_ai_impact\\strategy_asset_2023_01_to_2026_06_20260722_111247_detail.csv",
+    "summary_html": "reports\\monthly_ai_impact\\strategy_asset_2023_01_to_2026_06_20260722_111247_summary.html",
+    "target_csv": "reports\\monthly_ai_impact\\strategy_asset_2023_10_target_20260722_111247.csv",
+    "report_roots": {
+      "baseline": [
+        "reports\\backtest\\backtest_20260722174514_6dc265fe"
+      ],
+      "strategy_pickup": [
+        "reports\\backtest\\backtest_20260722175313_c8909861"
+      ],
+      "asset_pickup": [
+        "reports\\backtest\\backtest_20260722180038_242ed1ce"
+      ]
+    },
+    "performance": {
+      "baseline_return": -0.0569509322684255,
+      "strategy_return": -0.0569509322684255,
+      "asset_return": -0.0087738569894982,
+      "strategy_pickup_return": 0.0,
+      "asset_pickup_return": 0.0481770752789272,
+      "strategy_asset_total_pickup_return": 0.0481770752789272,
+      "baseline_max_drawdown": -0.0809827760753061,
+      "asset_max_drawdown": -0.0184563259933085,
+      "baseline_beta": 0.5422667647862215,
+      "asset_beta": 0.1753538565700389,
+      "beta_benchmark_return": -0.0334136145945792,
+      "baseline_assets": "NVDA,TSLA",
+      "asset_stage_assets": "AMD,COIN,GOOGL,NVDA,TSLA",
+      "baseline_strategies": "buy_and_hold",
+      "asset_stage_strategies": "buy_and_hold"
+    }
+  },
+  "ai_psm": {
+    "summary_json": "reports\\monthly_ai_impact\\ai_psm_sampled_monthly_summary_20260808_095834_b03.json",
+    "detail_csv": "reports\\monthly_ai_impact\\ai_psm_sampled_2023_01_to_2026_06_20260808_095834_b03_detail.csv",
+    "summary_html": "reports\\monthly_ai_impact\\ai_psm_sampled_2023_01_to_2026_06_20260808_095834_b03_summary.html",
+    "target_csv": "reports\\monthly_ai_impact\\ai_psm_sampled_2023_10_target_20260808_095834_b03.csv",
+    "report_roots": {
+      "asset_pickup": [
+        "reports\\backtest\\backtest_20260808232949_e620fd20"
+      ],
+      "overlay": [
+        "reports\\backtest\\backtest_20260809030456_6f5f847f"
+      ]
+    },
+    "performance": {
+      "asset_return": -0.0109416916361155,
+      "overlay_return": -0.0061475871498236,
+      "ai_psm_pickup_return": 0.0047941044862919,
+      "asset_alpha": -0.010213563882582,
+      "overlay_alpha": -0.0055551637099905,
+      "ai_psm_pickup_alpha": 0.0046584001725915,
+      "asset_beta": 0.2104172707271752,
+      "overlay_beta": 0.1712008953368463,
+      "beta_change": -0.0392163753903288,
+      "accepted_change_count": 1.0,
+      "executable_change_count": 3.0,
+      "executable_resize_count": 1.0,
+      "action_policy_change_count": 1.0,
+      "event_delta_count": 2.0,
+      "first_control_asof": "2023-10-16T13:30:00",
+      "last_control_asof": "2023-10-19T13:30:00",
+      "component_counts": "{\"action_override\": 1, \"beta_risk_participation\": 0, \"duration\": 0, \"mixed\": 1, \"none\": 3, \"profit_protect\": 2, \"resize\": 1}",
+      "block_reasons": "{\"conflicted_reasoning_blocked_uptick\": 1, \"executable_resize_applied\": 1, \"preserve_participation_without_hard_risk\": 2, \"stage_acceptance_rejected\": 2}",
+      "edge_gate_reasons": "{\"loss_or_risk_exit_exception\": 1, \"missing_required_position_edge\": 2, \"no_ai_psm_exposure_change\": 3}",
+      "asset_events": "{\"ENTER_LONG\": 11, \"EXIT_LONG\": 6, \"NO_EXEC\": 99}",
+      "overlay_events": "{\"ENTER_LONG\": 12, \"EXIT_LONG\": 7, \"NO_EXEC\": 97}"
+    }
+  },
+  "recommended_report_review": [
+    "summary_html",
+    "target_csv",
+    "detail_csv",
+    "multi_sleeve/decision_audit.csv",
+    "multi_sleeve/position_risk_metrics_weighted_summary.csv",
+    "multi_sleeve/decision_risk_metrics_weighted_summary.csv"
+  ]
+}
