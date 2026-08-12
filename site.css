@@ -1116,6 +1116,24 @@ button.timeline-item h3::before,
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.045), transparent 32%, rgba(83, 234, 217, 0.04));
 }
 
+.alpha-case-card {
+  align-items: start;
+}
+
+.alpha-case-card .episode-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin-top: 0;
+}
+
+.alpha-case-card .episode-actions .button,
+.alpha-case-card .episode-actions .text-link {
+  margin-top: 0;
+}
+
 .episode-copy,
 .podcast-episode-card .video-frame,
 .episode-actions {
