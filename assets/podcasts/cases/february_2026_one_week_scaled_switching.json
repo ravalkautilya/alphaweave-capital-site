@@ -1,0 +1,97 @@
+{
+  "case_id": "february_2026_one_week_scaled_switching",
+  "title": "February 2026 One-Week Scaled Switching Case",
+  "month": "2026-02",
+  "sample_week_start": "2026-02-12",
+  "sample_week_end": "2026-02-19",
+  "created_at": "2026-08-14T10:56:17.344833+00:00",
+  "strategy_asset": {
+    "summary_json": "reports\\monthly_ai_impact\\strategy_asset_sampled_summary_february_2026_one_week_scaled_switching_20260814_050445_sa.json",
+    "detail_csv": "reports\\monthly_ai_impact\\strategy_asset_sampled_february_2026_one_week_scaled_switching_20260814_050445_sa_detail.csv",
+    "summary_html": "reports\\monthly_ai_impact\\strategy_asset_sampled_february_2026_one_week_scaled_switching_20260814_050445_sa_summary.html",
+    "target_csv": "reports\\monthly_ai_impact\\strategy_asset_sampled_2026_02_target_february_2026_one_week_scaled_switching_20260814_050445_sa.csv",
+    "report_roots": {
+      "baseline": [
+        "reports\\backtest\\backtest_20260814090743_39a060f8"
+      ],
+      "strategy_pickup": [
+        "reports\\backtest\\backtest_20260814092108_35bb4ac5"
+      ],
+      "asset_pickup": [
+        "reports\\backtest\\backtest_20260814093131_2a225028"
+      ]
+    },
+    "performance": {
+      "baseline_return": -0.0029963426291483,
+      "strategy_return": -0.0029963426291483,
+      "asset_return": -0.0029963426291483,
+      "strategy_pickup_return": 0.0,
+      "asset_pickup_return": 0.0,
+      "strategy_asset_total_pickup_return": 0.0,
+      "baseline_max_drawdown": -0.0316727030344431,
+      "asset_max_drawdown": -0.0316727030344431,
+      "baseline_beta": 0.8165941363476356,
+      "asset_beta": 0.8165941363476356,
+      "beta_benchmark_return": -0.0328622754491018,
+      "baseline_assets": "NVDA,TSLA",
+      "asset_stage_candidate_assets": "AAPL,AMD,GOOGL,MSFT,NVDA,TSLA",
+      "baseline_strategies": "buy_and_hold",
+      "asset_stage_strategies": "buy_and_hold"
+    }
+  },
+  "ai_psm": {
+    "summary_json": "reports\\monthly_ai_impact\\ai_psm_sampled_monthly_summary_february_2026_one_week_scaled_switching_20260814_050445_ai.json",
+    "detail_csv": "reports\\monthly_ai_impact\\ai_psm_sampled_2023_01_to_2026_06_february_2026_one_week_scaled_switching_20260814_050445_ai_detail.csv",
+    "summary_html": "reports\\monthly_ai_impact\\ai_psm_sampled_2023_01_to_2026_06_february_2026_one_week_scaled_switching_20260814_050445_ai_summary.html",
+    "target_csv": "reports\\monthly_ai_impact\\ai_psm_sampled_2026_02_target_february_2026_one_week_scaled_switching_20260814_050445_ai.csv",
+    "report_roots": {
+      "asset_pickup": [
+        "reports\\backtest\\backtest_20260814094312_5ff0c1fd"
+      ],
+      "overlay": [
+        "reports\\backtest\\backtest_20260814095420_8edee6c8"
+      ]
+    },
+    "performance": {
+      "asset_return": -0.0029963426291483,
+      "overlay_return": -0.0017648110707122,
+      "ai_execution_review_return": 0.0012315315584361,
+      "asset_alpha": 0.0238387988096289,
+      "overlay_alpha": 0.0246588143577969,
+      "ai_execution_review_alpha": 0.000820015548168,
+      "asset_beta": 0.8165941363476356,
+      "overlay_beta": 0.8040716921576267,
+      "ai_execution_review_beta_change": -0.0125224441900088,
+      "asset_stage_candidate_assets": "AAPL,AMD,GOOGL,MSFT,NVDA,TSLA",
+      "overlay_candidate_assets": "AAPL,AMD,GOOGL,MSFT,NVDA,TSLA",
+      "asset_stage_strategies": "buy_and_hold",
+      "overlay_strategies": "buy_and_hold",
+      "asset_stage_configured_strategies": "bollinger_bands,buy_and_hold,macd_crossover,momentum,rsi_strategy",
+      "overlay_configured_strategies": "bollinger_bands,buy_and_hold,macd_crossover,momentum,rsi_strategy",
+      "accepted_row_count": 4.0,
+      "executable_change_count": 3.0,
+      "executable_resize_count": 0.0,
+      "action_policy_change_count": 3.0,
+      "event_delta_count": 2.0,
+      "first_control_asof": "2026-02-12T14:30:00",
+      "last_control_asof": "2026-02-18T14:30:00",
+      "component_counts": "{\"action_override\": 0, \"beta_risk_participation\": 0, \"duration\": 0, \"mixed\": 0, \"none\": 1, \"profit_protect\": 3, \"resize\": 0}",
+      "block_reasons": "{\"no_live_winning_position_blocked_resize\": 1, \"preserve_participation_without_hard_risk\": 3}",
+      "edge_gate_reasons": "{\"no_ai_psm_exposure_change\": 4}",
+      "asset_events": "{\"ENTER_LONG\": 2, \"EXIT_LONG\": 2, \"NO_EXEC\": 44}",
+      "overlay_events": "{\"ENTER_LONG\": 2, \"EXIT_LONG\": 1, \"NO_EXEC\": 45}"
+    }
+  },
+  "validation": {
+    "asset_stage_alignment": "ok",
+    "issues": []
+  },
+  "recommended_report_review": [
+    "summary_html",
+    "target_csv",
+    "detail_csv",
+    "multi_sleeve/decision_audit.csv",
+    "multi_sleeve/position_risk_metrics_weighted_summary.csv",
+    "multi_sleeve/decision_risk_metrics_weighted_summary.csv"
+  ]
+}

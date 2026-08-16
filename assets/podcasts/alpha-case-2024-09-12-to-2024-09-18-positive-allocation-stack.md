@@ -1,4 +1,4 @@
-# Alpha Case: 2024-09-12 to 2024-09-18 Positive Allocation Stack
+﻿# Alpha Case: 2024-09-12 to 2024-09-18 Positive Allocation Stack
 
 ## Case Angle
 
@@ -42,7 +42,7 @@ Asset switching did the main work.
 
 AI/PSM added a smaller improvement.
 
-- AI/PSM pickup: +0.15 percentage points
+- AI execution review return: +0.15 percentage points
 - Overlay return: +1.17%
 - Overlay beta: 0.1805 versus asset-stage beta of 0.1822
 - Report-level event path changed: asset stage had 6 ENTER_LONG and 6 EXIT_LONG events; overlay had 4 ENTER_LONG and 3 EXIT_LONG events
@@ -200,3 +200,5 @@ This keeps the story honest. The takeaway is that asset switching did the major 
 ## Closing Line
 
 Alpha is easier to claim than to prove. This dated case proves a modest but real allocation improvement: asset selection found the better book, and AI/PSM changed the executed path enough to add a little more.
+
+

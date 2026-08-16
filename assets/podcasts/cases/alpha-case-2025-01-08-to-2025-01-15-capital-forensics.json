@@ -1,0 +1,102 @@
+{
+  "case_id": "alpha-case-2025-01-08-to-2025-01-15-capital-forensics",
+  "asset_prefix": "alpha-case-2025-01-08-to-2025-01-15-capital-forensics",
+  "title": "January 2025 Capital Report Forensics",
+  "month": "2025-01",
+  "sample_week_start": "2025-01-08",
+  "sample_week_end": "2025-01-15",
+  "source_summary": "reports\\monthly_ai_impact\\full_stack_sampled_summary_20260815_100319.json",
+  "source_detail_csv": "reports\\monthly_ai_impact\\full_stack_sampled_20260815_100319_detail.csv",
+  "strategy_asset": {
+    "summary_json": "reports\\monthly_ai_impact\\full_stack_sampled_summary_20260815_100319.json",
+    "detail_csv": "reports\\monthly_ai_impact\\full_stack_sampled_20260815_100319_detail.csv",
+    "summary_html": "reports/monthly_ai_impact/full_stack_sampled_20260815_100319_summary.html",
+    "target_csv": "",
+    "report_roots": {
+      "baseline": [
+        "reports\\backtest\\backtest_20260815140332_86d735a9"
+      ],
+      "strategy_pickup": [
+        "reports\\backtest\\backtest_20260815140801_7a8a0beb"
+      ],
+      "asset_pickup": [
+        "reports\\backtest\\backtest_20260815141224_ff1ca76f"
+      ]
+    },
+    "performance": {
+      "baseline_return": -0.0883061277508702,
+      "strategy_return": -0.0883061277508702,
+      "asset_return": -0.0081271214669936,
+      "strategy_pickup_return": 0.0,
+      "asset_pickup_return": 0.0801790062838765,
+      "baseline_max_drawdown": -0.1542994423050063,
+      "strategy_max_drawdown": -0.1542994423050063,
+      "asset_max_drawdown": -0.0245708368841671,
+      "baseline_beta": 2.252598229217231,
+      "asset_beta": 0.6122385053685193,
+      "beta_benchmark_return": null,
+      "baseline_assets": "COIN,NVDA",
+      "asset_stage_candidate_assets": "AAPL,COIN,GOOGL,MSFT,NVDA,TSLA",
+      "baseline_strategies": "buy_and_hold",
+      "asset_stage_strategies": "buy_and_hold",
+      "strategy_asset_total_pickup_return": 0.0801790062838765
+    }
+  },
+  "ai_psm": {
+    "summary_json": "reports\\monthly_ai_impact\\full_stack_sampled_summary_20260815_100319.json",
+    "detail_csv": "reports\\monthly_ai_impact\\full_stack_sampled_20260815_100319_detail.csv",
+    "summary_html": "reports/monthly_ai_impact/full_stack_sampled_20260815_100319_summary.html",
+    "target_csv": "",
+    "report_roots": {
+      "asset_pickup": [
+        "reports\\backtest\\backtest_20260815141224_ff1ca76f"
+      ],
+      "overlay": [
+        "reports\\backtest\\backtest_20260815141655_b0281384"
+      ]
+    },
+    "performance": {
+      "asset_return": -0.0081271214669936,
+      "overlay_return": -0.0080214764339964,
+      "ai_execution_review_return": 0.0001056450329972,
+      "asset_alpha": -0.0018887262562158,
+      "overlay_alpha": -0.0017817469900419,
+      "ai_execution_review_alpha": 0.0001069792661739,
+      "asset_beta": 0.6122385053685193,
+      "overlay_beta": 0.6123694475256679,
+      "ai_execution_review_beta_change": 0.0001309421571485,
+      "asset_stage_candidate_assets": "AAPL,COIN,GOOGL,MSFT,NVDA,TSLA",
+      "overlay_candidate_assets": "AAPL,COIN,GOOGL,MSFT,NVDA,TSLA",
+      "asset_stage_strategies": "buy_and_hold",
+      "overlay_strategies": "buy_and_hold",
+      "asset_stage_configured_strategies": "bollinger_bands,buy_and_hold,macd_crossover,momentum,rsi_strategy",
+      "overlay_configured_strategies": "bollinger_bands,buy_and_hold,macd_crossover,momentum,rsi_strategy",
+      "overlay_ai_psm_component_counts": "{\"action_override\": 0, \"beta_risk_participation\": 0, \"duration\": 0, \"mixed\": 0, \"none\": 3, \"profit_protect\": 0, \"resize\": 0}",
+      "overlay_ai_psm_block_reason_counts": "{\"conflicted_reasoning_blocked_uptick\": 3}",
+      "overlay_ai_psm_real_executable_edge_gate_reasons": "{\"no_ai_psm_exposure_change\": 3}",
+      "overlay_ai_psm_portfolio_trade_event_counts": "{\"ENTER_LONG\": 6, \"NO_EXEC\": 202}",
+      "accepted_row_count": 3,
+      "executable_change_count": 0,
+      "executable_resize_count": 0,
+      "action_policy_change_count": 1,
+      "event_delta_count": 0,
+      "first_control_asof": "2025-01-08T14:30:00",
+      "last_control_asof": "2025-01-10T14:30:00",
+      "component_counts": "{\"action_override\": 0, \"beta_risk_participation\": 0, \"duration\": 0, \"mixed\": 0, \"none\": 3, \"profit_protect\": 0, \"resize\": 0}",
+      "block_reasons": "{\"conflicted_reasoning_blocked_uptick\": 3}",
+      "edge_gate_reasons": "{\"no_ai_psm_exposure_change\": 3}",
+      "asset_events": "{\"ENTER_LONG\": 6, \"EXIT_LONG\": 1, \"NO_EXEC\": 201}",
+      "overlay_events": "{\"ENTER_LONG\": 6, \"NO_EXEC\": 202}"
+    }
+  },
+  "validation": {
+    "asset_stage_alignment": "ok",
+    "issues": []
+  },
+  "recommended_report_review": [
+    "multi_sleeve/position_risk_metrics_weighted_summary.csv",
+    "multi_sleeve/decision_risk_metrics_weighted_summary.csv",
+    "multi_sleeve/decision_audit.csv",
+    "full_stack_sampled detail row"
+  ]
+}

@@ -1,4 +1,4 @@
-{
+﻿{
   "case_id": "alpha_case_2024_09_12_to_2024_09_18_rebased",
   "title": "September 2024 Alpha Case - Rebased Measured P and L",
   "month": "2024-09",
@@ -55,13 +55,13 @@
     "performance": {
       "asset_return": 0.0101939447215422,
       "overlay_return": 0.0117062393329594,
-      "ai_psm_pickup_return": 0.0015122946114172,
+      "ai_execution_review_return": 0.0015122946114172,
       "asset_alpha": 0.0055969788822055,
       "overlay_alpha": 0.0071531204985503,
-      "ai_psm_pickup_alpha": 0.0015561416163447,
+      "ai_execution_review_alpha": 0.0015561416163447,
       "asset_beta": 0.1822410878023896,
       "overlay_beta": 0.1805028269246218,
-      "beta_change": -0.0017382608777678,
+      "ai_execution_review_beta_change": -0.0017382608777678,
       "asset_stage_assets": "AMD,COIN,GOOGL,NVDA,TSLA",
       "overlay_assets": "AMD,COIN,GOOGL,NVDA,TSLA",
       "asset_stage_strategies": "buy_and_hold",

@@ -1,0 +1,6 @@
+report,asset,bar,dma_action,portfolio_event,final_psm
+asset stage,Google,first day AM,HOLD,ENTER_LONG,
+asset stage,NVDA,first day AM,BUY,EXIT_LONG,
+asset stage,NVDA,first day PM,HOLD,ENTER_LONG,
+AI / PSM,Google,first day AM,HOLD,ENTER_LONG,1.00
+AI / PSM,NVDA,first day AM,BUY,ENTER_LONG,1.00

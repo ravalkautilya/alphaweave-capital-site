@@ -55,13 +55,13 @@
                    "performance":  {
                                        "asset_return":  0.0101939447215422,
                                        "overlay_return":  0.0116786912249324,
-                                       "ai_psm_pickup_return":  0.0014847465033902,
+                                       "ai_execution_review_return":  0.0014847465033902,
                                        "asset_alpha":  0.0055969788822055,
                                        "overlay_alpha":  0.0071247791556423,
-                                       "ai_psm_pickup_alpha":  0.0015278002734368,
+                                       "ai_execution_review_alpha":  0.0015278002734368,
                                        "asset_beta":  0.1822410878023896,
                                        "overlay_beta":  0.1805342737512045,
-                                       "beta_change":  -0.001706814051185,
+                                       "ai_execution_review_beta_change":  -0.001706814051185,
                                        "accepted_change_count":  1.0,
                                        "executable_change_count":  2.0,
                                        "executable_resize_count":  0.0,
@@ -91,3 +91,4 @@
                                       "multi_sleeve/decision_risk_metrics_weighted_summary.csv"
                                   ]
 }
+

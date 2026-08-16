@@ -1,4 +1,4 @@
-# Episode 06 - October 2023 AI/PSM Loss-Control Case Study
+﻿# Episode 06 - October 2023 AI/PSM Loss-Control Case Study
 
 Case window: 2023-10, 2023-10-16 to 2023-10-27.
 
@@ -69,7 +69,7 @@ The clean podcast phrasing:
 4. AI/PSM detail CSV  
    `reports\monthly_ai_impact\ai_psm_sampled_2023_01_to_2026_06_finding_alpha_episode_06_october_2023_ai_psm_loss_control_20260809_145958_ai_detail.csv`
 
-   Point to `ai_psm_sample_return`, `ai_psm_sample_alpha`, `overlay_beta`, `asset_beta`, and event deltas.
+   Point to `ai_execution_review_return`, `ai_execution_review_alpha`, `overlay_beta`, `asset_beta`, and event deltas.
 
 5. Overlay decision audit  
    `reports\backtest\backtest_20260809194804_52ef73d1\multi_sleeve\decision_audit.csv`
@@ -122,3 +122,4 @@ The manifest currently flags a strategy metadata mismatch because one summary fi
 - AI/PSM summary: `reports\monthly_ai_impact\ai_psm_sampled_monthly_summary_finding_alpha_episode_06_october_2023_ai_psm_loss_control_20260809_145958_ai.json`
 - AI/PSM detail: `reports\monthly_ai_impact\ai_psm_sampled_2023_01_to_2026_06_finding_alpha_episode_06_october_2023_ai_psm_loss_control_20260809_145958_ai_detail.csv`
 - AI/PSM target: `reports\monthly_ai_impact\ai_psm_sampled_2023_10_target_finding_alpha_episode_06_october_2023_ai_psm_loss_control_20260809_145958_ai.csv`
+

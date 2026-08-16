@@ -1,4 +1,4 @@
-{
+﻿{
   "case_id": "finding_alpha_episode_06_april_2024_ai_psm_showcase",
   "title": "Episode 06 - April 2024 AI/PSM Allocation Case Study",
   "month": "2024-04",
@@ -55,13 +55,13 @@
     "performance": {
       "asset_return": 0.0160467383266071,
       "overlay_return": 0.0160467383266071,
-      "ai_psm_pickup_return": 0.0,
+      "ai_execution_review_return": 0.0,
       "asset_alpha": 0.0286668147074468,
       "overlay_alpha": 0.0286668147074468,
-      "ai_psm_pickup_alpha": 0.0,
+      "ai_execution_review_alpha": 0.0,
       "asset_beta": 0.4233656880557547,
       "overlay_beta": 0.4233656880557547,
-      "beta_change": 0.0,
+      "ai_execution_review_beta_change": 0.0,
       "accepted_change_count": 0.0,
       "executable_change_count": 0.0,
       "executable_resize_count": 0.0,

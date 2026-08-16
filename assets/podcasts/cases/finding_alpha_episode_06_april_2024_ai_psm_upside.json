@@ -1,4 +1,4 @@
-{
+﻿{
   "case_id": "finding_alpha_episode_06_april_2024_ai_psm_upside",
   "title": "Episode 06 - April 2024 AI/PSM Upside Case Study",
   "month": "2024-04",
@@ -55,13 +55,13 @@
     "performance": {
       "asset_return": 0.0118007124483305,
       "overlay_return": 0.0125420443725912,
-      "ai_psm_pickup_return": 0.0007413319242606,
+      "ai_execution_review_return": 0.0007413319242606,
       "asset_alpha": 0.0187761222682393,
       "overlay_alpha": 0.0194994314452144,
-      "ai_psm_pickup_alpha": 0.0007233091769751,
+      "ai_execution_review_alpha": 0.0007233091769751,
       "asset_beta": 0.2340040653288077,
       "overlay_beta": 0.2333994562460472,
-      "beta_change": -0.0006046090827604,
+      "ai_execution_review_beta_change": -0.0006046090827604,
       "accepted_change_count": 1.0,
       "executable_change_count": 7.0,
       "executable_resize_count": 1.0,

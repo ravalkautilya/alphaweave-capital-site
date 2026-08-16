@@ -1,4 +1,4 @@
-{
+﻿{
   "case_id": "finding_alpha_episode_06_october_2023_ai_psm_loss_control",
   "title": "Episode 06 - October 2023 AI/PSM Loss-Control Case Study",
   "month": "2023-10",
@@ -55,13 +55,13 @@
     "performance": {
       "asset_return": -0.0308743491362574,
       "overlay_return": -0.0159673434654926,
-      "ai_psm_pickup_return": 0.0149070056707647,
+      "ai_execution_review_return": 0.0149070056707647,
       "asset_alpha": -0.0129827720495642,
       "overlay_alpha": 0.0002558654395549,
-      "ai_psm_pickup_alpha": 0.0132386374891191,
+      "ai_execution_review_alpha": 0.0132386374891191,
       "asset_beta": 0.3670059279401731,
       "overlay_beta": 0.3327830637575548,
-      "beta_change": -0.0342228641826183,
+      "ai_execution_review_beta_change": -0.0342228641826183,
       "accepted_change_count": 1.0,
       "executable_change_count": 1.0,
       "executable_resize_count": 1.0,

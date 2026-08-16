@@ -1,4 +1,4 @@
-{
+﻿{
   "case_id": "finding_alpha_episode_06_october_2023",
   "title": "Episode 06 - October 2023 Allocation Case Study",
   "month": "2023-10",
@@ -55,13 +55,13 @@
     "performance": {
       "asset_return": -0.0109416916361155,
       "overlay_return": -0.0061475871498236,
-      "ai_psm_pickup_return": 0.0047941044862919,
+      "ai_execution_review_return": 0.0047941044862919,
       "asset_alpha": -0.010213563882582,
       "overlay_alpha": -0.0055551637099905,
-      "ai_psm_pickup_alpha": 0.0046584001725915,
+      "ai_execution_review_alpha": 0.0046584001725915,
       "asset_beta": 0.2104172707271752,
       "overlay_beta": 0.1712008953368463,
-      "beta_change": -0.0392163753903288,
+      "ai_execution_review_beta_change": -0.0392163753903288,
       "accepted_change_count": 1.0,
       "executable_change_count": 3.0,
       "executable_resize_count": 1.0,
