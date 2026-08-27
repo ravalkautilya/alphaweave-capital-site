@@ -1,0 +1,2619 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>AlphaWeave Capital - Institutional Allocation Intelligence and Attribution</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- Mermaid -->
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "base",
+      flowchart: {
+        useMaxWidth: true,
+        curve: "basis",
+        nodeSpacing: 40,
+        rankSpacing: 55,
+        padding: 12
+      },
+      themeVariables: {
+        fontFamily: "Inter, system-ui, sans-serif",
+        fontSize: "16px",
+        primaryColor: "#eef2ff",
+        primaryTextColor: "#0f172a",
+        primaryBorderColor: "#3b82f6",
+        lineColor: "#334155",
+        secondaryColor: "#ecfeff",
+        tertiaryColor: "#fef3c7"
+      }
+    });
+  </script>
+<style>
+    :root{
+      --bg-dark:#0b1220; --bg-light:#f8fafc;
+      --blue:#3b82f6; --cyan:#06b6d4; --green:#22c55e; --amber:#f59e0b; --rose:#f43f5e; --purple:#8b5cf6; --slate:#475569;
+      --ink:#0f172a; --muted:#64748b;
+      --shadow:0 12px 32px rgba(15,23,42,.10);
+      --border:1px solid #e5e7eb;
+    }
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg-light);color:var(--ink);line-height:1.6;}
+
+    header{
+      background:
+        radial-gradient(1000px 500px at 10% -10%, #1d4ed8, transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, #7c3aed, transparent 55%),
+        linear-gradient(135deg, #0b1220 0%, #0f172a 50%, #0b1220 100%);
+      color:#e8efff;padding:70px 28px 62px;overflow:hidden;
+    }
+    header .wrap{max-width:1200px;margin:0 auto;}
+    header h1{font-size:44px;margin:0 0 12px;font-weight:900;letter-spacing:-.02em;}
+    header p{max-width:980px;font-size:18px;opacity:.95;margin:0 0 18px;}
+    .hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+    .badge{font-size:12px;font-weight:700;letter-spacing:.02em;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.20);background:rgba(255,255,255,.08);color:#f1f5ff;backdrop-filter:blur(8px);}
+
+    main{max-width:1200px;margin:-18px auto 0;padding:0 28px 40px;}
+    section{background:#fff;border-radius:18px;padding:30px 34px;margin-bottom:28px;box-shadow:var(--shadow);border:var(--border);}
+    section.first-section{margin-top:26px;padding-top:42px;}
+
+    h2{margin-top:0;font-size:28px;font-weight:900;letter-spacing:-.01em;}
+    h3{margin-top:22px;font-size:20px;font-weight:800;}
+    p{margin:10px 0;} ul{margin:10px 0 0 20px;}
+
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 16px;}
+    .tag{font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;color:#fff;}
+    .tag.data{background:#111827;}
+    .tag.orchestration{background:#334155;}
+    .tag.research{background:var(--cyan);}
+    .tag.reflection{background:#0ea5e9;}
+    .tag.decision{background:var(--blue);}
+    .tag.risk{background:var(--rose);}
+    .tag.portfolio{background:var(--green);}
+    .tag.execution{background:var(--amber);}
+    .tag.reporting{background:var(--purple);}
+    .tag.memory{background:#38bdf8;}
+
+    .callout{
+      background:linear-gradient(135deg,#eff6ff,#ecfeff);
+      border-left:6px solid var(--blue);
+      padding:18px 20px;border-radius:14px;margin:18px 0;
+    }
+    .callout strong{color:#1d4ed8;}
+    .callout.dark{
+      background:linear-gradient(135deg,#0b1220,#0f172a);
+      color:#e8efff;border-left-color:#a78bfa;
+    }
+    .callout.dark strong{color:#c4b5fd;}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;margin-top:16px;}
+    .card{
+      background:linear-gradient(180deg,#ffffff,#f8fafc);
+      border-radius:16px;padding:18px;
+      box-shadow:0 10px 26px rgba(15,23,42,.10);
+      border:1px solid #e6e9ef;position:relative;overflow:hidden;
+    }
+    .card::before{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(400px 120px at 20% 0%, rgba(59,130,246,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .card .title{font-weight:900;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+
+    .dot{width:10px;height:10px;border-radius:999px;display:inline-block;}
+    .dot.data{background:#111827;}
+    .dot.cyan{background:var(--cyan);}
+    .dot.sky{background:#0ea5e9;}
+    .dot.blue{background:var(--blue);}
+    .dot.rose{background:var(--rose);}
+    .dot.green{background:var(--green);}
+    .dot.amber{background:var(--amber);}
+    .dot.purple{background:var(--purple);}
+    .dot.slate{background:#64748b;}
+    .meta{color:var(--muted);font-size:13px;margin-top:10px;}
+
+    .subsections{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:8px;}
+    .subcard{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:12px 12px 10px;box-shadow:0 6px 16px rgba(15,23,42,.06);}
+    .subcard h4{margin:0 0 8px;font-size:14px;font-weight:900;letter-spacing:-.01em;display:flex;align-items:center;gap:8px;}
+    .pill{display:inline-block;font-size:11px;font-weight:900;padding:2px 8px;border-radius:999px;background:#ecfeff;border:1px solid #bae6fd;color:#0f172a;}
+    .pill.ref{background:#e0f2fe;border-color:#bae6fd;}
+    .subcard ul{margin:0 0 0 18px;padding:0;}
+    .submeta{color:var(--muted);font-size:12px;margin-top:8px;font-weight:700;}
+
+    .diagram{margin-top:18px;padding:16px;border-radius:16px;background:#f8fafc;border:1px solid #e5e7eb;overflow-x:auto;}
+    .diagram.mermaid{min-height:520px;font-size:17px;}
+    .diagram.strategy-augment{min-height:860px;font-size:18px;}
+    .diagram .mermaid svg{width:100%!important;height:auto!important;}
+
+    @keyframes dash{to{stroke-dashoffset:-100;}}
+    .diagram .mermaid svg .edgePath path{
+      stroke-width:2.2px!important;stroke-linecap:round!important;
+      stroke-dasharray:6 10;animation:dash 8s linear infinite;opacity:.95;
+    }
+    .diagram .mermaid svg marker path{stroke-width:1.8px!important;}
+
+    .comparison{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:16px;}
+    .comp{border-radius:16px;border:1px solid #e6e9ef;background:linear-gradient(180deg,#ffffff,#f8fafc);padding:18px;box-shadow:0 8px 22px rgba(15,23,42,.08);}
+    .comp strong{display:block;margin-bottom:8px;font-size:16px;}
+    .comp .label{font-size:12px;font-weight:800;color:#0f172a;display:inline-block;padding:4px 10px;border-radius:999px;background:#eef2ff;border:1px solid #dbeafe;margin-bottom:10px;}
+    .comp em{font-style:normal;font-weight:800;color:#1d4ed8;}
+
+    footer{text-align:center;color:#64748b;font-size:13px;padding:30px 20px 50px;}
+
+    @media (max-width:560px){
+      header h1{font-size:34px;}
+      section{padding:22px 18px;}
+      main{padding:0 16px 40px;margin-top:-10px;}
+      section.first-section{margin-top:18px;padding-top:34px;}
+      .diagram.mermaid{min-height:440px;}
+      .diagram.strategy-augment{min-height:680px;}
+      .subsections{grid-template-columns:1fr;}
+    }
+  
+    table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:14px;border:1px solid #e5e7eb;background:#fff;}
+    th,td{padding:10px 12px;border-bottom:1px solid #e5e7eb;vertical-align:top;}
+    th{background:#f1f5f9;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:#0f172a;text-align:left;}
+    tr:last-child td{border-bottom:none;}
+    td code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:12px;background:#f8fafc;border:1px solid #e5e7eb;padding:2px 6px;border-radius:8px;}
+
+/* --- Compact table styling for executive readability --- */
+.performance-table {
+  font-size: 12px;                 /* slightly smaller */
+  line-height: 1.2;
+  table-layout: fixed;             /* CRITICAL: forces columns to fit container */
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.performance-table th,
+.performance-table td {
+  padding: 5px 6px;                /* tighter */
+  vertical-align: top;
+
+  /* CRITICAL: allow wrapping instead of expanding table */
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.performance-table th {
+  font-weight: 700;
+}
+
+/* Numeric columns tighter + aligned */
+.performance-table .num {
+  font-size: 11.5px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;             /* keep numbers compact */
+}
+
+/* Reduce header size slightly more */
+.performance-table th {
+  font-size: 11.5px;
+}
+
+
+/* Footnotes smaller */
+.performance-table + .footnote,
+.footnote {
+  font-size: 11px;
+  line-height: 1.3;
+  color: #555;
+}
+
+.performance-table th:last-child {
+  min-width: 110px;
+}
+
+/* Section subtitles slightly tighter */
+.table-title {
+  font-size: 13px;
+  margin: 10px 0 5px;
+}
+    
+  .brand-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 28px;
+  }
+
+  .brand-icon {
+    width: 74px;
+    height: 74px;
+    object-fit: contain;
+  }
+
+  .brand-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0;
+  }
+
+  .brand-subtitle {
+    font-size: 18px;
+    color: #64748b;
+    margin-top: 4px;
+  }
+
+  .gold {
+    color: #c9a646;
+  }
+  </style>
+</head>
+<body>
+<div class="wrap">
+<header class="brand-header">
+<img alt="AlphaWeave logo" class="brand-icon" src="alphaweave-icon.png"/>
+<div>
+<h1 class="brand-title">
+<span class="gold">AlphaWeave Capital</span>
+</h1>
+<div class="brand-subtitle">
+      Institutional Allocation Intelligence and Attribution
+    </div>
+</div>
+<div class="wrap">
+<p>
+      A governed allocation intelligence system for systematic research and trading - designed to
+      decide which assets, strategies, and AI-assisted actions deserve capital, and to attribute
+      what actually improved returns.
+    </p>
+<div class="hero-badges">
+<span class="badge">Data Layer</span>
+<span class="badge">Strategy-Agnostic Allocation Layer</span>
+<span class="badge">Market Intelligence: Latest + Past</span>
+<span class="badge">Reflection: Low-Level + High-Level</span>
+<span class="badge">Decision Review: Outcome Feedback</span>
+<span class="badge">Two-Tier Risk: Asset then Portfolio</span>
+<span class="badge">Sleeve Constraints: Net / Gross / Beta</span>
+<span class="badge">Attribution + Audit Trail</span>
+</div>
+</div>
+</header>
+<main>
+<section id="executive-summary">
+<h2>Executive Summary</h2>
+<p>
+    AlphaWeave Capital is a <strong>multi-layer allocation intelligence and attribution system</strong>
+    designed to improve the governance, risk profile, and measured contribution of existing strategies.
+    Rather than replacing strategies with opaque AI predictions, AlphaWeave Capital augments them
+    through a structured decision process that determines:
+    <strong>which strategy to run, which assets to trade, how to allocate capital, and how to measure what helped</strong>
+    under current market conditions.
+  </p>
+<p>
+<strong>AlphaWeave Capital is a governed allocation layer built on top of strategies - not a strategy itself.</strong>
+</p>
+<p>
+    The system operates in a <strong>sleeve-based architecture</strong>, where each sleeve represents
+    a distinct objective (e.g., directional or market-neutral). Within each sleeve,
+    <strong>AssetAllocationAgent</strong> selects the most relevant assets using a combination of
+    market data, statistical signals, and <strong>strategy-specific asset fit profiles</strong>.
+    In parallel, <strong>StrategyAllocationAgent</strong> evaluates candidate strategies based on
+    current regime conditions and recent performance, selecting the
+    <strong>most appropriate strategy or set of strategies</strong> for deployment.
+    This ensures that <strong>strategy selection and asset selection are co-dependent</strong>.
+  </p>
+<p>
+    For market-neutral or basket sleeves, AlphaWeave evaluates <strong>cross-asset relationships</strong>
+    such as correlation stability, volatility alignment, liquidity compatibility, and spread behavior.
+    This allows the system to construct portfolios aligned with the <strong>functional objective of the sleeve</strong>,
+    rather than selecting standalone assets in isolation.
+  </p>
+<p>
+    Once strategy and asset selection are determined, AlphaWeave evaluates the interaction between
+    the selected setup and the market. A triage layer determines whether compact AI/PSM underwriting
+    is worth spending LLM cycles, or whether the deterministic policy path should continue.
+    In compact mode, prior realized outcomes, cached intelligence, and transition-tape evidence are
+    compressed into the DecisionMakingAgent packet. In expanded mode, DecisionReviewAgent and the
+    intelligence/reflection agents can run as separate context builders for diagnostics.
+    The DecisionMakingAgent then produces both a <strong>trade action</strong> (BUY / SELL / HOLD) and a
+    <strong>position_size_multiplier (PSM)</strong>, which represents conviction.
+  </p>
+<p>
+    This PSM is passed to the PortfolioAgent, which converts conviction into
+    <strong>realized capital allocation</strong>. As a result, AlphaWeave does not simply refine execution -
+    it dynamically determines <strong>how much capital to deploy</strong>, scaling exposure up for
+    high-confidence opportunities and reducing exposure when conviction is weaker.
+    Execution is therefore driven by <strong>timing, holding horizon, and conviction-based sizing</strong>,
+    rather than binary trade decisions alone.
+  </p>
+<p>
+    At the portfolio level, <strong>PortfolioAgent</strong> manages both
+    <strong>intra-sleeve</strong> and <strong>inter-sleeve</strong> allocation, translating
+    PSM-adjusted signals into consistent portfolio weights across assets, strategies, and sleeves.
+    <strong>RiskManagerAgent</strong> enforces constraints and can override or scale positions when
+    risk thresholds are breached, ensuring that conviction-based allocation remains within the
+    overall risk budget.
+  </p>
+<p>
+    Empirically, this layered approach should be evaluated through stage attribution rather than
+    through a single opaque performance number. Improvements can come from two sources:
+    <strong>(1) better selection</strong> (strategy rotation and strategy-aware asset selection) and
+    <strong>(2) better execution</strong> (conviction-based capital allocation via PSM, combined with timing and risk control).
+    The result is a clearer separation between signal quality, asset selection, strategy selection,
+    AI-assisted sizing, execution quality, and risk control.
+  </p>
+<p>
+    Unless a section explicitly says otherwise, realized return figures in this presentation are measured
+    over sampled short trading windows, not annualized. The current monthly evidence uses 10-business-day
+    measured windows; simulation and market-extension sections are labeled separately when they use
+    synthetic scenarios or annualized estimates.
+  </p>
+<p>
+<strong>Bottom line:</strong> AlphaWeave Capital determines
+    <strong>what to trade, when to trade, how much capital to allocate, and what actually added value</strong>,
+    using a unified framework that integrates selection, sizing, risk management,
+    outcome memory, and performance attribution.
+  </p>
+<h3 id="competitive-placement">Competitive Placement: Where AlphaWeave Capital Fits</h3>
+<p>
+  The open-source trading ecosystem already proves there is large demand for algorithmic
+  trading infrastructure. The most popular free GitHub systems are strong, but they mostly
+  cluster around three jobs: running bots, researching models, or providing execution engines.
+  AlphaWeave Capital is positioned in a different layer: <strong>allocator-grade decision intelligence
+  and attribution</strong> across strategy selection, asset selection, AI/PSM execution review,
+  risk controls, and measured-window reporting.
+</p>
+<div class="comparison">
+<div class="comp">
+<span class="label">Freqtrade</span>
+<strong>Popular open-source crypto bot with ML-assisted strategy tooling.</strong>
+<p>
+      Freqtrade is a Python crypto trading bot with exchange support, dry-run trading,
+      backtesting, money management, WebUI/Telegram controls, and FreqAI-style adaptive
+      prediction modeling. AlphaWeave does not compete as a retail crypto bot. It answers
+      the allocator question: <em>which strategy and asset set deserved capital, what execution
+      change was accepted, and did that decision add return?</em>
+</p>
+</div>
+<div class="comp">
+<span class="label">Microsoft Qlib</span>
+<strong>AI-oriented quant research and model-development platform.</strong>
+<p>
+      Qlib is built for AI-powered quant research: data processing, model training,
+      backtesting, risk modeling, portfolio optimization, and order-execution research.
+      AlphaWeave is less a model lab and more an operational decision ledger. It decomposes
+      realized performance into baseline, strategy selection, asset selection, and AI/PSM
+      execution review, then ties the outcome back to auditable portfolio events.
+    </p>
+</div>
+<div class="comp">
+<span class="label">FinRL</span>
+<strong>Financial reinforcement-learning framework.</strong>
+<p>
+      FinRL focuses on train-test-trade workflows for deep reinforcement-learning agents.
+      AlphaWeave uses AI differently: not as an unconstrained trading oracle, but as a governed
+      reviewer whose actions are filtered through confidence, state, beta/risk evidence,
+      duration rules, and executable portfolio events.
+    </p>
+</div>
+<div class="comp">
+<span class="label">Hummingbot, LEAN, NautilusTrader</span>
+<strong>Execution, market-making, and professional trading engines.</strong>
+<p>
+      Hummingbot is oriented toward high-frequency crypto bots and market-making workflows.
+      LEAN and NautilusTrader are professional event-driven engines for backtesting and live
+      trading. AlphaWeave can sit beside this kind of infrastructure: it decides and explains
+      capital allocation before or around execution, instead of being only the execution runtime.
+    </p>
+</div>
+</div>
+<p>
+<strong>Marketable wedge:</strong> AlphaWeave Capital is not another bot, model notebook,
+  or exchange connector. It is the allocation intelligence layer that turns raw strategy
+  signals into <strong>governed capital decisions</strong>. The system records the source of truth
+  as portfolio trade events, rebases measured P and L to the evaluation window, and shows
+  whether value came from strategy selection, asset selection, AI-assisted sizing, duration
+  control, risk exits, or execution quality.
+</p>
+<p>
+<strong>Why this matters commercially:</strong> open-source engines help teams build and run
+  strategies; AlphaWeave helps investment teams defend allocation decisions. That is the
+  institutional gap: an auditable layer that explains why capital moved, what changed versus
+  the baseline, and whether the AI/PSM overlay actually improved the measured result.
+</p>
+<div class="callout dark">
+<strong>Merit over GitHub trading agents:</strong>
+  AlphaWeave Capital should not be positioned as simply "more AI" than open-source trading bots.
+  Its merit is that it solves a different problem: turning trading signals into an auditable
+  allocation process. Most free GitHub trading systems are strongest at bot execution,
+  backtesting, exchange connectivity, model research, or reinforcement-learning experimentation.
+  AlphaWeave is strongest when the buyer needs to know why capital moved, how strategy
+  switching contributed, how asset switching contributed, how AI/PSM changed return,
+  and whether the final portfolio event agrees with the decision audit and measured P and L.
+</div>
+<p>
+  AlphaWeave is an <strong>institutional allocation intelligence system</strong>
+  that measures, governs, and improves systematic trading decisions, with AI/PSM as a controlled
+  execution overlay. The LLM contributes through action review, duration control, sizing, and
+  risk response; the system makes those contributions measurable by proving which layer added value.
+</p>
+<p>
+  Popularity in open-source trading projects is not the same as demonstrated alpha. A bot framework,
+  model research platform, or execution engine can be valuable infrastructure while still leaving
+  alpha generation to the user-supplied strategy, data, costs, regime assumptions, and live execution
+  quality. AlphaWeave's advantage is that it separates those questions: strategy alpha, asset-selection
+  alpha, strategy-selection alpha, AI/PSM execution alpha, and attribution proof are measured as
+  distinct layers rather than blended into a single headline backtest.
+</p>
+<div class="callout dark">
+<strong>Research update: why AlphaWeave treats LLMs as underwriters, not oracles.</strong>
+  Recent LLM-trading research points toward the same architecture AlphaWeave is moving into:
+  quantitative policy creates the base trade path, while the LLM supplies contextual underwriting,
+  vetoes, duration changes, and capital permission only when it adds evidence beyond policy.
+</div>
+<div class="comparison">
+<div class="comp">
+<span class="label">StockBench</span>
+<strong>LLMs alone are unreliable trading engines.</strong>
+<p>
+      StockBench evaluates LLM agents in realistic multi-month stock trading and shows that strong
+      financial QA ability does not reliably become profitable trading behavior. Some agents improve
+      risk management, but many struggle against simple baselines. This argues against using the LLM
+      as the primary trading engine.
+    </p>
+<p class="caption"><a href="https://arxiv.org/abs/2510.02209">StockBench: Can LLM Agents Trade Stocks Profitably?</a></p>
+</div>
+<div class="comp">
+<span class="label">KTD-Fin</span>
+<strong>Attribution matters more than raw return.</strong>
+<p>
+      KTD-Fin argues that LLM trading benchmarks must separate passive market and style exposure
+      from transferable decision alpha. That maps directly to AlphaWeave's reporting model:
+      LLM contribution must be measured over policy-only, not hidden inside total overlay return.
+    </p>
+<p class="caption"><a href="https://arxiv.org/html/2605.28359v1">From Knowing to Doing: KTD-Fin</a></p>
+</div>
+<div class="comp">
+<span class="label">Agentic trading survey</span>
+<strong>Closed-loop evaluation is still weak across the field.</strong>
+<p>
+      A 2026 survey of LLM trading agents finds inconsistent execution semantics, limited cost
+      modeling, sparse reproducibility, and poor protocol comparability. This validates AlphaWeave's
+      emphasis on event logs, decision audit, measured-window P and L, state-machine replay, and
+      explicit portfolio trade events.
+    </p>
+<p class="caption"><a href="https://arxiv.org/html/2605.19337v1">Agentic Trading: When LLM Agents Meet Financial Markets</a></p>
+</div>
+<div class="comp">
+<span class="label">LLMs in equity markets</span>
+<strong>The promising architecture is hybrid.</strong>
+<p>
+      The 2025 equity-market LLM review highlights hybrid approaches: LLMs combined with traditional
+      quantitative models, factor models, reinforcement learning, and risk controls. AlphaWeave uses
+      that hybrid stance: policy and selection engines produce the base allocation; LLMs underwrite
+      context-sensitive increments.
+    </p>
+<p class="caption"><a href="https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1608365/full">Large Language Models in Equity Markets</a></p>
+</div>
+</div>
+<p>
+<strong>Why this approach was taken:</strong> the empirical question is no longer whether the LLM
+  can sound convincing about a trade. The question is whether it can improve a known policy path.
+  AlphaWeave therefore separates <strong>policy-only overlay</strong> from
+  <strong>triage + AI/PSM</strong>. The LLM earns value only when it improves return, reduces drawdown,
+  blocks a weak policy deviation, extends a validated winner, or justifies extra capital with
+  auditable external evidence.
+</p>
+<p class="caption">
+  Public reference set reviewed: <a href="https://github.com/freqtrade/freqtrade">Freqtrade</a>,
+  <a href="https://github.com/microsoft/qlib">Microsoft Qlib</a>,
+  <a href="https://github.com/AI4Finance-Foundation/FinRL">FinRL</a>,
+  <a href="https://github.com/hummingbot/hummingbot">Hummingbot</a>,
+  <a href="https://github.com/quantconnect/Lean">QuantConnect LEAN</a>, and
+  <a href="https://github.com/nautechsystems/nautilus_trader">NautilusTrader</a>.
+</p>
+<h3 id="end-to-end-decision-flow">End-to-End Decision Flow (Single Bar)</h3>
+<p>
+  At each evaluation point (bar), AlphaWeave executes a consistent sequence of steps.
+  This ensures that selection, decision-making, capital allocation, and risk management
+  operate as a unified system rather than independent components.
+</p>
+<ol>
+<li><strong>DataAgent:</strong> loads and normalizes market data</li>
+<li><strong>AssetAllocationAgent:</strong> selects active assets for the sleeve or leg</li>
+<li><strong>StrategyAllocationAgent:</strong> selects the active strategy set</li>
+<li><strong>StrategyAgent:</strong> generates raw signals (BUY / SELL / HOLD)</li>
+<li><strong>TriageAgent:</strong> decides whether to invoke AI reasoning or take the fast path</li>
+<li><strong>If compact AI path:</strong>
+<ul>
+<li>This is the method of choice for the reported AI/PSM numbers in this presentation</li>
+<li>Triage admits one compact underwriting call when the bar has enough reason to spend LLM cycles</li>
+<li>DecisionMakingAgent receives a single packet containing market context, selected strategy and assets, policy state, prior outcomes, transition tape, and forward-attribution evidence</li>
+<li>DecisionMakingAgent underwrites action, holding horizon, and <strong>position size multiplier (PSM)</strong> over the deterministic policy path</li>
+</ul>
+</li>
+<li><strong>If expanded full-LLM mode is enabled:</strong>
+<ul>
+<li>LatestMarketIntelligence, PastMarketIntelligence, reflection, and decision-review agents can run as separate context-building stages before DMA</li>
+<li>This mode is retained for deeper research and diagnostics, but it is not the source of the compact AI/PSM results reported here</li>
+</ul>
+</li>
+<li><strong>If fast path:</strong>
+<ul>
+<li>Use raw signal + cached intelligence + prior PSM</li>
+</ul>
+</li>
+<li><strong>RiskManagerAssetAgent:</strong> applies per-asset limits and may override or liquidate</li>
+<li><strong>PortfolioAgent:</strong> converts signals + PSM into normalized capital allocation</li>
+<li><strong>RiskManagerAgent:</strong> enforces portfolio-level constraints</li>
+<li><strong>Execution:</strong> trades are placed or simulated</li>
+<li><strong>Reporting + Memory:</strong> results, decision reviews, and outcomes are stored for future learning</li>
+</ol>
+<p>
+<strong>Key insight:</strong> PSM does not directly place trades - it becomes effective only after
+  PortfolioAgent and RiskManager layers convert it into constrained portfolio weights.
+</p>
+</section>
+<section id="performance-summary">
+<h3>Month-by-Month Sampled Performance Impact (Executive Summary)</h3>
+<p>
+    The table below summarizes the <strong>realized incremental return impact</strong>
+    from the latest completed sampled-window run for <strong>directional sleeves</strong>, relative to a
+    <strong>Static Base</strong>: one strategy, one fixed asset set, no strategy rotation,
+    no strategy-aware asset selection, and no AI execution overlay.
+  </p>
+<p>
+    The current AlphaWeave logic separates uplift into three layers:
+    <strong>(1) StrategyAllocationAgent</strong>, which selects the best strategy for the sleeve/regime;
+    <strong>(2) AssetAllocationAgent</strong>, which selects assets using return, trend, volatility,
+    drawdown, liquidity, and strategy-specific <strong>asset_fit</strong>; and
+    <strong>(3) the AI execution and review layer</strong>, where DecisionReviewAgent turns prior
+    outcomes into structured feedback, DecisionMakingAgent produces <strong>position_size_multiplier</strong>,
+    and PortfolioAgent applies that conviction to capital allocation.
+  </p>
+<p>
+    This changes the AI overlay from a light timing/risk filter into a
+    <strong>conviction-based capital allocator</strong>. High-confidence BUY decisions receive larger
+    sizing, weak signals are reduced, and PortfolioAgent converts those conviction-adjusted decisions
+    into realized portfolio weights.
+  </p>
+<p>
+<strong>DecisionReviewAgent update:</strong> the current architecture includes the newer self-learning feedback loop,
+    where prior decisions and realized outcomes become structured inputs to future decisions. The monthly
+    table reports realized sampled-window attribution; any additional learning benefit should be validated
+    in future rolling out-of-sample runs rather than treated as a forecast.
+  </p>
+<p>
+<strong>The monthly performance table now reports the latest completed sampled short-window run.</strong>
+The baseline strategy for this update is <strong>momentum</strong>, with fixed assets and no strategy
+rotation, no asset switching, and no execution overlay. The table replaces the older forecast ranges
+with realized stage attribution: strategy switching, asset switching, and AI execution/policy review.
+</p>
+<p class="assumptions">
+<strong>Run basis:</strong> Results come from the latest completed 12-window full-stack sampled run.
+  Each row uses one representative 10-business-day measured window inside the named calendar month,
+  measured at <strong>6h</strong> granularity. The baseline strategy is <strong>momentum</strong>.
+  Baseline assets, candidate assets, and rotatable strategies vary by row and are shown directly
+  in the table. The AI execution column is the combined execution overlay:
+  deterministic policy without triage plus Compact AI/PSM over that policy path.
+</p>
+<p>
+  The month labels are calendar buckets for sampling, not claims that a particular month-specific
+  narrative caused the result. The important measurement is the stage ladder: whether each layer
+  added return and whether drawdown improved or worsened relative to the prior layer.
+</p>
+<p>
+  <strong>Time frame:</strong> Each row reports returns obtained over a
+  <strong>10-business-day measured trading window</strong> selected inside the named calendar month;
+  it is not a full-month or full-year backtest. The table therefore reports realized stage behavior
+  for comparable 10-day windows, while the total row summarizes the combined sampled evidence across
+  those windows.
+</p>
+<table class="performance-table">
+<thead>
+<tr>
+<th>Month</th>
+<th>Static Base<br/>(single strategy, fixed assets)</th>
+<th>Candidate assets</th>
+<th>Asset switching</th>
+<th>Rotatable strategies</th>
+<th>Granularity</th>
+<th>Primary market conditions</th>
+<th>Allocation logic<br/>(strategy + asset selection)</th>
+<th>Strategy pickup</th>
+<th>Asset pickup</th>
+<th>AI execution + review<br/>(PSM)</th>
+<th>Total<br/>Improv</th>
+</tr>
+</thead>
+<tbody><tr><td><strong>Jan</strong></td><td>Momentum<br/><small>COIN, NVDA</small></td><td>AAPL, COIN, GOOGL, MSFT, NVDA, TSLA</td><td>1/1 accepted; switch allowed (16)</td><td>Bollinger, Momentum</td><td>6h</td><td>Sampled window: Jan 8-19</td><td>Strategy was the main drag</td><td><strong>-1.25%</strong></td><td><strong>+1.12%</strong></td><td><strong>0.00%</strong></td><td><strong>-0.13%</strong></td></tr><tr><td><strong>Feb</strong></td><td>Momentum<br/><small>NVDA, TSLA</small></td><td>AAPL, AMD, GOOGL, MSFT, NVDA, TSLA</td><td>0/4 accepted; incumbent basket retained positive not in drawdown (12)</td><td>MACD, Momentum</td><td>6h</td><td>Sampled window: Feb 12-23</td><td>Strategy was the main drag</td><td><strong>-0.44%</strong></td><td><strong>+0.44%</strong></td><td><strong>+0.01%</strong></td><td><strong>+0.01%</strong></td></tr><tr><td><strong>Mar</strong></td><td>Momentum<br/><small>COIN, TSLA</small></td><td>AMD, COIN, GOOGL, NVDA, TSLA</td><td>1/3 accepted; switch margin not met (7)</td><td>MACD, Momentum</td><td>6h</td><td>Sampled window: Mar 13-24</td><td>Execution Policy added the most</td><td><strong>-0.17%</strong></td><td><strong>-0.69%</strong></td><td><strong>+4.85%</strong></td><td><strong>+3.99%</strong></td></tr><tr><td><strong>Apr</strong></td><td>Momentum<br/><small>GOOGL, NVDA</small></td><td>AAPL, AMZN, GOOGL, MSFT, NVDA</td><td>1/6 accepted; switch allowed (9)</td><td>Bollinger, Momentum, RSI</td><td>6h</td><td>Sampled window: Apr 15-26</td><td>Strategy added the most</td><td><strong>+1.24%</strong></td><td><strong>+0.71%</strong></td><td><strong>0.00%</strong></td><td><strong>+1.96%</strong></td></tr><tr><td><strong>May</strong></td><td>Momentum<br/><small>NVDA, TSLA</small></td><td>AAPL, AMZN, GOOGL, NVDA, TSLA</td><td>0/5 accepted; incumbent basket retained positive not in drawdown (18)</td><td>Buy and hold, Momentum</td><td>6h</td><td>Sampled window: May 15-26</td><td>Strategy added the most</td><td><strong>+1.07%</strong></td><td><strong>-1.07%</strong></td><td><strong>+0.27%</strong></td><td><strong>+0.27%</strong></td></tr><tr><td><strong>Jun</strong></td><td>Momentum<br/><small>COIN, NVDA</small></td><td>AMD, COIN, NVDA, TSLA</td><td>1/3 accepted; incumbent basket retained positive not in drawdown (10)</td><td>Momentum, RSI</td><td>6h</td><td>Sampled window: Jun 5-16</td><td>Asset added the most</td><td><strong>0.00%</strong></td><td><strong>+1.25%</strong></td><td><strong>+0.10%</strong></td><td><strong>+1.35%</strong></td></tr><tr><td><strong>Jul</strong></td><td>Momentum<br/><small>GOOGL, NVDA</small></td><td>AAPL, AMZN, GOOGL, MSFT, NVDA</td><td>0/9 accepted; incumbent basket retained positive not in drawdown (10)</td><td>Momentum, RSI</td><td>6h</td><td>Sampled window: Jul 1-12</td><td>Strategy was the main drag</td><td><strong>-0.21%</strong></td><td><strong>+0.11%</strong></td><td><strong>-0.02%</strong></td><td><strong>-0.11%</strong></td></tr><tr><td><strong>Aug</strong></td><td>Momentum<br/><small>COIN, TSLA</small></td><td>AMD, COIN, GOOGL, NVDA, TSLA</td><td>0/6 accepted; incumbent basket retained positive not in drawdown (15)</td><td>Momentum, RSI</td><td>6h</td><td>Sampled window: Aug 19-30</td><td>Asset was the main drag</td><td><strong>+2.29%</strong></td><td><strong>-2.37%</strong></td><td><strong>0.00%</strong></td><td><strong>-0.08%</strong></td></tr><tr><td><strong>Sep</strong></td><td>Momentum<br/><small>COIN, NVDA</small></td><td>AMD, COIN, GOOGL, NVDA, TSLA</td><td>2/6 accepted; switch allowed (5)</td><td>Momentum</td><td>6h</td><td>Sampled window: Sep 2-13</td><td>Asset added the most</td><td><strong>0.00%</strong></td><td><strong>+0.03%</strong></td><td><strong>0.00%</strong></td><td><strong>+0.03%</strong></td></tr><tr><td><strong>Oct</strong></td><td>Momentum<br/><small>NVDA, TSLA</small></td><td>AMD, COIN, GOOGL, NVDA, TSLA</td><td>1/12 accepted; candidate asset fit edge below switch policy (10)</td><td>MACD, Momentum</td><td>6h</td><td>Sampled window: Oct 16-27</td><td>Asset was the main drag</td><td><strong>+2.27%</strong></td><td><strong>-3.16%</strong></td><td><strong>0.00%</strong></td><td><strong>-0.89%</strong></td></tr><tr><td><strong>Nov</strong></td><td>Momentum<br/><small>NVDA, TSLA</small></td><td>AAPL, AMZN, GOOGL, NVDA, TSLA</td><td>0/5 accepted; incumbent basket retained positive not in drawdown (18)</td><td>Buy and hold, Momentum</td><td>6h</td><td>Sampled window: Nov 6-17</td><td>Strategy was the main drag</td><td><strong>-2.01%</strong></td><td><strong>+2.01%</strong></td><td><strong>+0.08%</strong></td><td><strong>+0.08%</strong></td></tr><tr><td><strong>Dec</strong></td><td>Momentum<br/><small>NVDA, TSLA</small></td><td>AAPL, GOOGL, MSFT, NVDA, TSLA</td><td>1/4 accepted; switch allowed (12)</td><td>Buy and hold, Momentum</td><td>6h</td><td>Sampled window: Dec 4-15</td><td>Asset added the most</td><td><strong>-0.12%</strong></td><td><strong>+0.59%</strong></td><td><strong>+0.01%</strong></td><td><strong>+0.48%</strong></td></tr></tbody>
+<tfoot><tr><td><strong>Total</strong></td><td>Additive sampled pickups</td><td></td><td></td><td></td><td>6h</td><td>12 ten-day windows</td><td>Realized sum across sampled 10-day windows</td><td><strong>+2.68%</strong></td><td><strong>-1.01%</strong></td><td><strong>+5.29%</strong></td><td><strong>+6.97%</strong></td></tr></tfoot></table>
+</section>
+<section id="market-neutral-sleeves">
+<h2>Market-Neutral Sleeves: Alpha Capture Independent of Market Direction</h2>
+<p>
+    In <strong>market-neutral (risk-neutral) sleeves</strong>, the expected return of a
+    <strong>Static Base (single strategy, 2 fixed assets)</strong> is approximately
+    <strong>0%</strong> over time, because long and short exposures are designed to hedge
+    out most broad market beta.
+  </p>
+<p>
+    <strong>Time frame:</strong> The measured figures in this section are not long-horizon annual returns. They are sampled
+    10-business-day attribution results from the latest completed run, summed across the same 12
+    calendar-month buckets used in the monthly performance table.
+  </p>
+<p>
+    The numeric table below is evidenced by the latest <strong>directional full-stack sampled run</strong>.
+    It proves the stage-attribution ladder over sampled 10-business-day windows. It should not be read
+    as a completed market-neutral sleeve backtest; market-neutral sleeves use the same attribution
+    structure but require their own dedicated validation run.
+  </p>
+<p class="assumptions">
+<strong>Run basis for measured component values:</strong> The table uses the same
+  latest completed directional sampled run as the monthly table: twelve representative
+  10-business-day measured windows, <strong>6h</strong> bars, <strong>momentum</strong> baseline,
+  row-specific baseline assets and candidate universes shown in the monthly evidence table, and
+  Compact AI/PSM measured only as incremental over deterministic policy.
+</p>
+<p>
+    AlphaWeave extends this framework by replacing static pairs with a
+    <strong>dynamic basket construction and selection process</strong>. Rather than fixing two assets,
+    the system evaluates a universe of candidates and constructs
+    <strong>long-short baskets</strong> based on correlation structure, volatility alignment,
+    liquidity compatibility, and spread behavior. This ensures that neutrality is not assumed,
+    but <strong>continuously re-validated</strong> through data.
+  </p>
+<p>
+    The opportunity comes from <strong>alpha capture</strong>:
+    selecting better relative-value assets, rotating among more effective spread and regime-sensitive strategies,
+    and applying AI to improve <strong>timing, holding horizon, and conviction-based capital allocation</strong>.
+    In this setting, AlphaWeave is not relying on market direction - it is extracting value from
+    <em>cross-asset relationships</em>, <em>strategy-asset fit</em>, and
+    <strong>relative capital deployment between long and short exposures</strong>.
+  </p>
+<p>
+<strong>AssetAllocationAgent</strong> evaluates baskets using:
+    correlation stability, volatility similarity, liquidity matching, and
+    <strong>spread mean-reversion characteristics</strong>. This allows the system to avoid
+    structurally weak pairs and construct baskets with <strong>repeatable relative-value behavior</strong>.
+    <strong>StrategyAllocationAgent</strong> selects among strategies such as
+    <strong>mean-reversion, spread trading, momentum-relative value, and regime-switching models</strong>,
+    depending on whether relationships are stable, breaking down, or transitioning.
+  </p>
+<p>
+    Sleeve neutrality is now documented as an explicit <strong>mandate constraint</strong>, not just
+    a descriptive sleeve label. A market-neutral sleeve can declare <code>net_target</code>,
+    <code>gross_target</code>, <code>beta_target</code>, and a <code>beta_benchmark_ticker</code>
+    such as <code>SPY</code>. <strong>SleeveConstraintAgent</strong> reads the sleeve's final
+    portfolio weights, pulls the benchmark price history from the same <code>market_data</code>
+    context as the tradable assets, estimates asset betas over <code>beta_lookback_bars</code>,
+    and records whether the sleeve remained inside its mandate.
+  </p>
+<div class="callout">
+<strong>Benchmark path:</strong>
+    the benchmark is configured on the sleeve, loaded by the data layer into <code>market_data</code>,
+    and consumed by <code>SleeveConstraintAgent</code> to compute portfolio beta before final reporting
+    and execution handoff. If benchmark data is missing, the agent records a warning instead of
+    silently claiming beta neutrality.
+  </div>
+<table class="performance-table">
+<thead>
+<tr><th>Component</th><th>Measured pickup<br/>aggregate / average window</th><th>Primary source of alpha</th><th>Observed / expected risk note</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Static Base (single strategy, fixed assets)</strong></td>
+<td class="num"><strong>0% / 0%</strong></td>
+<td>Fixed momentum incumbent over the sampled 10-day windows</td>
+<td>Measured-window risk starts from zero P and L</td>
+</tr>
+<tr>
+<td><strong>+ Strategy selection (StrategyAllocationAgent)</strong></td>
+<td class="num"><strong>+2.68% / +0.22%</strong></td>
+<td>Realized strategy-selection contribution across 12 sampled 10-day windows</td>
+<td>Positive in aggregate, but still uneven by month bucket</td>
+</tr>
+<tr>
+<td><strong>+ Dynamic basket construction (AssetAllocationAgent)</strong></td>
+<td class="num"><strong>-1.01% / -0.08%</strong></td>
+<td>Realized asset-selection contribution across 12 sampled 10-day windows</td>
+<td>Negative in aggregate; this is a current improvement target, not an assumed benefit</td>
+</tr>
+<tr>
+<td><strong>+ AI execution layer (PSM-driven)</strong></td>
+<td class="num"><strong>+5.29% / +0.44%</strong></td>
+<td>Policy-only execution plus compact triage/AI review across 12 sampled 10-day windows</td>
+<td>Improved sampled return and reduced worst drawdown versus the static baseline path</td>
+</tr>
+<tr>
+<td><strong>Total measured improvement vs Static Base</strong></td>
+<td class="num"><strong>+6.97% / +0.58%</strong></td>
+<td>Strategy + asset + execution/review across the latest 12 sampled 10-day windows</td>
+<td>Aggregate result is realized attribution across separate windows, not a single-period or annualized claim</td>
+</tr>
+</tbody>
+</table>
+<p>
+<strong>Key distinction:</strong> traditional market-neutral systems assume that a pair remains valid.
+    AlphaWeave instead continuously evaluates whether relationships are <strong>stable, degrading,
+    or improving</strong>, and dynamically adjusts both the composition of the basket and the
+    <strong>capital allocated to each side of the trade</strong>. This transforms market-neutral trading
+    from a static hedge into an <strong>adaptive, conviction-weighted alpha-generation process</strong>.
+  </p>
+</section>
+<section id="sleeve-constraint-agent">
+<h2>SleeveConstraintAgent: Mandate Enforcement and Beta Benchmarking</h2>
+<p>
+<strong>SleeveConstraintAgent</strong> is the sleeve-level mandate checker. It runs after the system has
+    produced decision or position weights and before those weights are treated as final evidence for
+    execution and reporting. Its purpose is to make sleeve intent auditable: directional sleeves should
+    remain directional, market-neutral sleeves should remain close to their net/gross/beta targets, and
+    shorting constraints should be enforced when the sleeve disallows shorts.
+  </p>
+<div class="comparison">
+<div class="comp">
+<span class="label">Inputs</span>
+<strong>What the agent reads</strong>
+<ul>
+<li><code>risk_capped_position_portfolio_weights</code> or <code>position_portfolio_weights</code></li>
+<li><code>risk_capped_decision_portfolio_weights</code> or <code>decision_portfolio_weights</code></li>
+<li><code>net_target</code>, <code>gross_target</code>, <code>beta_target</code></li>
+<li><code>allow_short</code> and <code>constraints_enabled</code></li>
+<li><code>beta_benchmark_ticker</code> and benchmark data inside <code>market_data</code></li>
+</ul>
+</div>
+<div class="comp">
+<span class="label">Benchmark</span>
+<strong>How beta is computed</strong>
+<ul>
+<li>The benchmark ticker, for example <code>SPY</code>, is configured at sleeve level.</li>
+<li>DataAgent includes the benchmark's price frame in <code>market_data</code>.</li>
+<li>The agent computes percentage returns for each asset and the benchmark.</li>
+<li>Asset beta is estimated as covariance(asset returns, benchmark returns) divided by benchmark variance.</li>
+<li>Portfolio beta is the weighted sum of asset betas using the sleeve's current weights.</li>
+</ul>
+</div>
+<div class="comp">
+<span class="label">Outputs</span>
+<strong>What gets written back</strong>
+<ul>
+<li><code>sleeve_constrained_position_portfolio_weights</code></li>
+<li><code>sleeve_constrained_decision_portfolio_weights</code></li>
+<li><code>sleeve_constraint_audit</code></li>
+<li><code>sleeve_constraint_status</code>: <code>PASS</code>, <code>WARN</code>, or <code>BLOCK</code></li>
+<li><code>sleeve_constraint_summary</code> for ReportAgent and metadata output</li>
+</ul>
+</div>
+</div>
+<h3>Configuration fields</h3>
+<table class="performance-table">
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+<th>Typical market-neutral value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>constraints_enabled</code></td>
+<td>Turns sleeve mandate checks on or off.</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>net_target</code></td>
+<td>Target signed exposure after long and short weights offset.</td>
+<td><code>0.00</code></td>
+</tr>
+<tr>
+<td><code>gross_target</code></td>
+<td>Target total absolute exposure across long and short weights.</td>
+<td><code>0.80</code></td>
+</tr>
+<tr>
+<td><code>beta_target</code></td>
+<td>Target benchmark-relative portfolio beta.</td>
+<td><code>0.00</code></td>
+</tr>
+<tr>
+<td><code>beta_benchmark_ticker</code></td>
+<td>Benchmark used for beta estimation; must be present in market data.</td>
+<td><code>SPY</code></td>
+</tr>
+<tr>
+<td><code>beta_lookback_bars</code></td>
+<td>Number of return bars used for beta estimation.</td>
+<td><code>60</code></td>
+</tr>
+<tr>
+<td><code>net_tolerance</code>, <code>gross_tolerance</code>, <code>beta_tolerance</code></td>
+<td>Optional tolerance bands. If blank, the tolerance is not applied.</td>
+<td><code>0.02</code>, <code>0.02</code>, <code>0.05</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout dark">
+<strong>Design rule:</strong>
+    sleeve targets are not strategy parameters. They describe the mandate of the sleeve itself.
+    StrategyAllocationAgent and AssetAllocationAgent decide what to trade; PortfolioAgent converts
+    decisions into weights; SleeveConstraintAgent verifies that the final expression still matches
+    the sleeve's declared mandate.
+  </div>
+</section>
+<section id="policy-files">
+<h2>Policy Files: The Governance Layer Behind the Agents</h2>
+<p>
+    AlphaWeave Capital does not rely on a single prompt, a hidden model opinion, or a hard-coded
+    trading rule to decide whether capital moves. The system uses explicit policy files as the
+    governance layer between agent judgment and portfolio execution. These files define what counts
+    as enough evidence, when an LLM is allowed to run, when a switch is accepted, when AI/PSM can
+    change size or duration, and how every decision must be audited.
+  </p>
+<p>
+    External research platforms such as <strong>Seeking Alpha</strong> fit into this architecture as
+    <strong>context providers</strong>, not execution authorities. Seeking Alpha publishes market news,
+    investing analysis, contributor commentary, ratings context, portfolio tools, and earnings-call
+    transcripts. AlphaWeave can use that material inside LatestMarketIntelligence and
+    PastMarketIntelligence to describe catalysts, management commentary, crowd consensus, or
+    post-earnings narrative shifts. The information still has to be converted into structured
+    evidence, checked against price/strategy behavior, and passed through policy gates before it
+    can affect action, duration, or position size multiplier.
+  </p>
+<div class="comparison">
+<div class="comp">
+<span class="label">Triage policy</span>
+<strong><code>config/triage-policy-registry.json</code></strong>
+<p>
+        Controls when expensive AI reasoning is permitted. It separates ordinary bars from
+        material bars: first selected entries, hard risk, adverse moves, signal flips, earnings,
+        macro events, asset-switch control points, and live-winner resize opportunities. It also
+        enforces daily LLM cadence, date-only event timing, cache suppression, repeated-action
+        suppression, and urgent exceptions.
+      </p>
+</div>
+<div class="comp">
+<span class="label">Asset switching policy</span>
+<strong><code>config/asset-switch-policy.json</code></strong>
+<p>
+        Governs when the asset basket can change. The policy protects working incumbents, requires
+        realized contribution edge, checks candidate drawdown quality, limits turnover, evaluates
+        strategy-fit improvement, and penalizes underinvestment unless risk evidence justifies it.
+        This is where asset selection becomes an auditable allocation decision instead of a simple
+        top-score replacement.
+      </p>
+</div>
+<div class="comp">
+<span class="label">Strategy switching policy</span>
+<strong><code>config/strategy-switch-policy.json</code></strong>
+<p>
+        Governs when the active strategy set can change. It uses shadow returns, rolling returns,
+        regime fit, drawdown degradation, executable exposure difference, min-hold, cooldown, and
+        persistence checks. Trend and breakout candidates face additional confirmation rules so
+        a fresh exposure collapse or fragile local edge cannot masquerade as durable alpha.
+      </p>
+</div>
+<div class="comp">
+<span class="label">AI/PSM acceptance</span>
+<strong><code>config/stage-acceptance-policy.json</code></strong>
+<p>
+        Controls whether AI/PSM changes are executable. The current contract treats the LLM as a
+        <strong>contextual underwriter over policy</strong>: policy proposes the base action and base
+        PSM, while the LLM may approve, veto, cap, press, reduce, extend, or shorten only when
+        confidence and external evidence justify the increment. The file defines state-machine bands
+        for fresh entries, open winners, strong winners, rebound watch, open losers, hard risk, and
+        asset-switching-stage winners.
+      </p>
+</div>
+</div>
+<table class="performance-table">
+<thead>
+<tr>
+<th>Policy family</th>
+<th>Agent using it</th>
+<th>What the policy protects</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LLM call gating</strong></td>
+<td>TriageAgent</td>
+<td>Cost, latency, repeated calls, event timing, and measured-period boundaries</td>
+<td>Keeps AI from becoming an every-bar co-manager while still opening review on material alpha or risk events.</td>
+</tr>
+<tr>
+<td><strong>Switch acceptance</strong></td>
+<td>AssetAllocationAgent and StrategyAllocationAgent</td>
+<td>Incumbent winners, turnover, weak candidate edges, fragile trend switches, and noisy short windows</td>
+<td>Forces rotation to prove that it is economically better than staying with the current asset or strategy.</td>
+</tr>
+<tr>
+<td><strong>AI/PSM state machine</strong></td>
+<td>DecisionMakingAgent</td>
+<td>Weak LLM actions, unproven resizes, beta-hostile presses, stale overrides, and premature winner exits</td>
+<td>Lets AI express judgment through action, duration, and PSM only when the state supports an executable edge.</td>
+</tr>
+<tr>
+<td><strong>Execution invariants</strong></td>
+<td>BacktestCrew and TradeCrew</td>
+<td>PositionTracker scope, asset/strategy switch resets, portfolio trade events, and measured-window P and L</td>
+<td>Ensures the reportable source of truth is the executed portfolio event, not a stale signal or shadow suggestion.</td>
+</tr>
+<tr>
+<td><strong>Audit and learning</strong></td>
+<td>ReportAgent and DecisionReviewAgent</td>
+<td>Decision audit, PSM ledger, risk rows, missed opportunities, false positives, and forward attribution</td>
+<td>Turns failures into named policy cases that can be tested in simulation before being promoted into runtime behavior.</td>
+</tr>
+</tbody>
+</table>
+<div class="callout dark">
+<strong>Design rule:</strong>
+    agents produce evidence and candidate actions; policy files produce the base path; LLM/DMA acts
+    as a contextual underwriter over that path. The LLM is not allowed to become an unbounded trading
+    oracle. Its incremental value is measured as the difference between policy-only overlay and
+    triage + AI/PSM, with every accepted change tied to a portfolio event, PSM ledger row, duration
+    decision, veto, cap, or risk exit.
+  </div>
+<div class="callout">
+<strong>Current AI/PSM structure:</strong>
+    the default live/backtest path now uses <code>ai_psm_llm_stack_mode=compact_underwriter</code>.
+    Triage still decides when an LLM call is worth spending. When admitted, DMA receives one compact
+    underwriting packet containing policy state, selected strategy and asset state, position/risk
+    state, beta context, and relevant news, macro, or earnings triggers. The older
+    Latest/Past/Low-Level/High-Level reflection chain remains available as
+    <code>full_stack</code> for ablation, forensic review, and cases where deep evidence generation
+    must prove its incremental value.
+  </div>
+<p>
+    The current target state is summarized in <code>config/policy-target-state.json</code>:
+    deterministic strategy and asset selection remain primary, AI/PSM is an exception and alpha
+    overlay rather than a constant co-manager, hard risk and execution invariants remain non-negotiable,
+    and learned recommendations stay audit-only until they are deliberately promoted into policy.
+  </p>
+</section>
+<section class="first-section" id="multi-agentic-ai-components">
+<h2>Multi-Agentic AI Components (Core Value Proposition)</h2>
+<div class="tags">
+<span class="tag data">Data</span>
+<span class="tag orchestration">Orchestration</span>
+<span class="tag research">Intelligence</span>
+<span class="tag reflection">Reflection</span>
+<span class="tag decision">Decision</span>
+<span class="tag risk">Risk</span>
+<span class="tag portfolio">Portfolio</span>
+<span class="tag reporting">Reporting</span>
+<span class="tag memory">Memory</span>
+<span class="tag execution">Execution</span>
+</div>
+<p>
+      AlphaWeave is built around a <strong>multi-agent architecture</strong> where each agent performs a narrow,
+      desk-like function. The system behaves like a trading organization: data ingestion, asset selection,
+      strategy selection, review and reflection, decision review, decision, risk veto, intra-sleeve allocation, inter-sleeve
+      capital management, execution, and post-trade learning.
+    </p>
+<div class="grid">
+<div class="card">
+<div class="title"><span class="dot data"></span>Data Layer (Unified Ingestion)</div>
+<ul>
+<li>Normalize OHLCV across equities, crypto, futures, options</li>
+<li>Unify alignment and timestamps into consistent Date series</li>
+<li>Provide clean, strategy-ready frames for any strategy plug-in</li>
+</ul>
+<div class="meta">Analog: data engineering + market data team</div>
+</div>
+<div class="card">
+<div class="title"><span class="dot slate"></span>AssetAllocationAgent</div>
+<ul>
+<li>Selects the <strong>active assets inside each sleeve or leg over time</strong> from the configured candidate universe.</li>
+<li>Scores assets using <strong>recent return, lookback return, trend slope, volatility, drawdown, and liquidity</strong>.</li>
+<li>Adjusts scores using each active/candidate strategy's <strong>direction-aware asset_fit profile</strong>, including separate <code>long_fit</code> and <code>short_fit</code> behavior when available.</li>
+<li>In <strong>directional asset mode</strong>, selects a top-ranked subset using <code>top_k</code>, with min-hold, cooldown, and switch-margin controls.</li>
+<li>In <strong>basket / market-neutral mode</strong>, activates the full eligible sleeve or leg asset set, rather than simply picking standalone top-k names.</li>
+<li>Persists <code>selected_assets</code>, <code>active_assets</code>, <code>active_asset_map</code>, <code>asset_selection_scores</code>, <code>asset_strategy_fit_scores</code>, <code>strategy_asset_fit_used</code>, and basket fit diagnostics.</li>
+</ul>
+<div class="meta">
+    Analog: selects which instruments belong in the sleeve or leg, using market behavior plus strategy- and direction-aware fit.
+  </div>
+</div>
+<div class="card">
+<div class="title"><span class="dot slate"></span>StrategyAllocationAgent</div>
+<ul>
+<li>Selects the <strong>active strategy set inside each sleeve or leg over time</strong> from configured candidate strategies.</li>
+<li>Supports <strong>multi-strategy activation</strong>, capped by <code>target_active_strategies</code>; PortfolioAgent later weights the active strategies.</li>
+<li>Shadow-runs candidate strategies and scores them using <strong>rolling return, rolling Sharpe, rolling drawdown, regime fit, DMA overlay, and asset-fit compatibility</strong>.</li>
+<li>Runs in either <strong>asset mode</strong> for directional sleeves or <strong>basket mode</strong> for market-neutral / multi-leg sleeves.</li>
+<li>Uses sleeve and leg scope, including <code>leg_id</code>, <code>leg_side</code>, <code>sleeve_id</code>, <code>sleeve_type</code>, and <code>strategy_asset_allocation_group_id</code>.</li>
+<li>Applies controlled switching with min-hold, cooldown, and switch-margin logic so strategies are added, removed, or replaced only when the new active set is meaningfully better.</li>
+<li>Persists <code>selected_strategies</code>, <code>active_strategies</code>, <code>strategy_scores</code>, <code>strategy_ranked</code>, <code>strategy_shadow_state</code>, and <code>strategy_asset_fit_profiles</code>.</li>
+</ul>
+<div class="meta">
+    Analog: selects which playbooks run in each sleeve or leg, then passes the active set to PortfolioAgent for weighting.
+  </div>
+</div>
+<div class="card">
+<div class="title"><span class="dot cyan"></span>Market Intelligence</div>
+<div class="subsections">
+<div class="subcard">
+<h4><span class="pill">Latest</span>Detect fresh catalysts (including calendars)</h4>
+<ul>
+<li>Earnings, guidance, macro prints, breaking news</li>
+<li><strong>Macro-economic release dates</strong> and release-driven news context</li>
+<li><strong>Earnings calendar dates</strong> and near-event context</li>
+<li><strong>External research context:</strong> sources such as Seeking Alpha articles, news, analyst commentary, ratings context, and earnings-call transcripts can be summarized as supporting evidence</li>
+<li>Short-horizon context for the next decision window</li>
+<li>Designed for speed and recency: what changed since last bar</li>
+</ul>
+<div class="submeta">Analog: morning meeting / real-time news desk</div>
+</div>
+<div class="subcard">
+<h4><span class="pill">Past</span>Regime context and playbooks</h4>
+<ul>
+<li>Similar historical episodes, prior reactions</li>
+<li>Longer-horizon memory: how the strategy behaves in comparable conditions</li>
+<li>Transcript and research history can be compared with realized outcomes so narrative evidence is treated as a testable input, not a trade by itself</li>
+<li>Prevents recency bias and improves consistency</li>
+</ul>
+<div class="submeta">Analog: thematic research / playbook archive</div>
+</div>
+</div>
+<div class="meta">
+          Implementation note: in expanded full-agent mode this is split into
+          <strong>LatestMarketIntelligence</strong> and <strong>PastMarketIntelligence</strong>
+          outputs. In compact AI/PSM mode, the same category of evidence is supplied as cached
+          context inside the DecisionMakingAgent underwriting packet. Seeking Alpha-style content
+          is external context only: the system must still pass triage, policy, state-machine,
+          risk, and attribution gates before any action, duration change, or PSM change is executable.
+        </div>
+</div>
+<div class="card">
+<div class="title"><span class="dot slate"></span>Triage and Cost Control</div>
+<p>
+<strong>Triage is AlphaWeave's "should we spend tokens/latency now?" gate.</strong>
+          On every bar (daily or intraday), it decides whether to run AI reasoning or take the fast path.
+          The default measured path is compact AI/PSM underwriting. Depending on configuration,
+          the admitted reasoning path can be the full LLM stack
+          (<em>Latest -&gt; Past -&gt; Reflections -&gt; Decision Review -&gt; Decision</em>) or the compact
+          DecisionMakingAgent underwriting packet.
+          The goal is to preserve performance and cost while still escalating when the tape changes materially.
+        </p>
+<div class="subsections">
+<div class="subcard">
+<h4><span class="pill">Gate</span>When triage runs heavy reasoning</h4>
+<ul>
+<li><strong>Event proximity:</strong> earnings / macro releases / known calendar catalysts</li>
+<li><strong>Volatility jump:</strong> realized / forecast / IV proxy spikes</li>
+<li><strong>Regime break:</strong> trend-to-chop, gap events, repeated whipsaws</li>
+<li><strong>First actionable bar:</strong> force-call on the first eligible bar in a window (optional)</li>
+</ul>
+<div class="submeta">Output: <code>triage_should_call</code> (True/False) + reason tags</div>
+</div>
+<div class="subcard">
+<h4><span class="pill">Cache</span>Reuse work across bars</h4>
+<ul>
+<li>Cache retrieved intelligence so unchanged bars don't re-fetch / re-summarize</li>
+<li>Cache "aux images" cadence so plots aren't regenerated every bar</li>
+<li>Use run_id + asset + granularity keys so caches are deterministic and auditable</li>
+</ul>
+<div class="submeta">Output: stable, replayable inputs for downstream agents</div>
+</div>
+<div class="subcard">
+<h4><span class="pill">Fast Path</span>What happens when triage skips</h4>
+<ul>
+<li>Keep the base strategy's raw signal as the primary intent</li>
+<li>Still run <strong>risk</strong> and <strong>portfolio</strong> gates (cheap + safety-critical)</li>
+<li>Apply <strong>baseline sizing / cached PSM</strong> so capital allocation remains consistent even without fresh AI reasoning</li>
+<li>Optionally reuse the last cached intelligence snapshot for context</li>
+</ul>
+<div class="submeta">Analog: "no new info" -&gt; execute playbook + risk checks</div>
+</div>
+</div>
+<p>
+<strong>State continuity:</strong>
+  When triage skips AI reasoning, the system does not reset.
+  It carries forward:
+</p>
+<ul>
+<li>Previous <strong>position_size_multiplier (PSM)</strong></li>
+<li>Previous <strong>decision context</strong> (BUY/SELL/HOLD state)</li>
+<li>Cached market intelligence and reflections</li>
+</ul>
+<p>
+  This ensures that skipping reasoning does not introduce discontinuities
+  in capital allocation or trade behavior. Triage therefore controls
+  <strong>when reasoning updates occur</strong>, not whether the system has state.
+</p>
+<div class="meta">Analog: desk discipline - escalate only when it matters, but always run risk.</div>
+</div>
+<div class="card">
+<div class="title"><span class="dot sky"></span>Reflection</div>
+<div class="subsections">
+<div class="subcard">
+<h4><span class="pill ref">Low-Level</span>Recent decision patterns</h4>
+<ul>
+<li>Trade-by-trade review in the recent window</li>
+<li>Identify what just worked, failed, or drifted</li>
+<li>Recommend near-term calibrations to signals and sizing</li>
+</ul>
+<div class="submeta">Analog: daily post-close review</div>
+</div>
+<div class="subcard">
+<h4><span class="pill ref">High-Level</span>Regime lessons learned</h4>
+<ul>
+<li>Generalize behavior across regimes and longer horizons</li>
+<li>Find recurring failure modes and stable edge conditions</li>
+<li>Write durable playbook guidance for the decision committee</li>
+</ul>
+<div class="submeta">Analog: weekly / quarterly strategy review</div>
+</div>
+</div>
+<div class="meta">
+          Implementation note: in expanded full-agent mode this is represented by
+          <strong>LowLevelReflectionAgent</strong> and <strong>HighLevelReflectionAgent</strong>.
+          In compact AI/PSM mode, prior reflection and review summaries are included in the DMA
+          packet when available instead of forcing separate LLM calls.
+        </div>
+</div>
+<div class="card">
+<div class="title"><span class="dot sky"></span>DecisionReviewAgent</div>
+<ul>
+<li><strong>Closes the self-learning loop:</strong> prior decisions and realized outcomes become structured feedback for future decisions.</li>
+<li>Retrieves prior decisions, realized outcomes, and review notes for the current sleeve, leg, asset, strategy, and regime.</li>
+<li>Converts post-trade evidence into structured guidance before the next DecisionMakingAgent call; compact mode passes this as packet evidence, while expanded mode can run it as a separate agent step.</li>
+<li>Separates <strong>what the strategy signaled</strong> from <strong>how well the prior decision worked</strong>, so the system can learn without rewriting the base strategy.</li>
+<li>Feeds decision_action, role_judgment, success/failure counts, and review summaries into compact underwriting, reflection, and decision context.</li>
+</ul>
+<div class="meta">
+          Analog: post-trade review desk that brings realized outcome feedback into the next investment committee meeting.
+        </div>
+</div>
+<div class="card">
+<div class="title"><span class="dot blue"></span>Decision Committee</div>
+<ul>
+<li>Combines raw signals, policy state, market intelligence, reflection outputs, and DecisionReviewAgent outcome feedback into a unified decision packet</li>
+<li>Runs by default in <strong>compact underwriting mode</strong> with one concentrated LLM call over the policy path; <strong>full mode</strong> remains available for broader-agent diagnostics</li>
+<li>Outputs final action: <strong>BUY / SELL / HOLD</strong> plus <strong>position_size_multiplier (PSM)</strong> representing conviction</li>
+<li>PSM acts as the <strong>bridge between decision and capital allocation</strong>, directly driving PortfolioAgent weights</li>
+<li>Decides holding horizon / urgency (short vs medium vs long) alongside sizing</li>
+</ul>
+<p>
+<strong>Important distinction:</strong>
+</p>
+<ul>
+<li><strong>Signal:</strong> direction (BUY / SELL / HOLD)</li>
+<li><strong>PSM:</strong> conviction (how strongly to express the signal)</li>
+<li><strong>Portfolio weights:</strong> actual capital allocation after normalization and risk constraints</li>
+</ul>
+<p>
+  This separation ensures that decision logic remains independent from capital constraints,
+  allowing PortfolioAgent and RiskManagerAgent to enforce stability and consistency.
+</p>
+<div class="meta">Analog: PM committee / investment committee with dynamic capital allocation authority</div>
+</div>
+<div class="card">
+<div class="title"><span class="dot rose"></span>Risk Committees (Two Levels)</div>
+<ul>
+<li><strong>Asset risk:</strong> enforces limits, stops, and liquidation rules per asset, adjusting or overriding <strong>PSM-driven positions</strong> when risk thresholds are breached</li>
+<li><strong>Portfolio risk:</strong> enforces exposure caps, leverage limits, correlation concentration, and drawdown constraints across sleeves and strategies</li>
+<li>Acts as a <strong>constraint layer on conviction-based sizing</strong>, ensuring PSM scaling does not violate risk budgets or destabilize the portfolio</li>
+<li>Produces risk metrics used in attribution, feedback loops, and strategy/agent learning</li>
+</ul>
+<p>
+<strong>Layer separation:</strong>
+</p>
+<ul>
+<li>
+<strong>RiskManagerAssetAgent</strong> operates at the <strong>trade level</strong>,
+    enforcing per-asset constraints such as stops, limits, and liquidation rules
+  </li>
+<li>
+<strong>RiskManagerAgent</strong> operates at the <strong>portfolio level</strong>,
+    enforcing exposure caps, leverage, correlation limits, and drawdown constraints
+  </li>
+</ul>
+<p>
+  This separation ensures that both local trade risks and global portfolio risks
+  are controlled independently, preventing concentration or systemic instability.
+</p>
+<div class="meta">
+    Analog: name risk desk + book risk desk (CRO layer) that governs and constrains capital allocation decisions
+  </div>
+</div>
+<div class="card">
+<div class="title"><span class="dot amber"></span>SleeveConstraintAgent</div>
+<ul>
+<li>Applies <strong>sleeve-level mandate constraints</strong> after portfolio construction and risk review.</li>
+<li>Checks and can adjust <strong>gross exposure</strong>, <strong>net exposure</strong>, and <strong>portfolio beta</strong> against configured sleeve targets.</li>
+<li>Uses <code>beta_benchmark_ticker</code>, <code>beta_lookback_bars</code>, and benchmark market data to estimate asset betas from return covariance.</li>
+<li>Preserves auditability through <code>sleeve_constraint_audit</code>, <code>sleeve_constraint_status</code>, and <code>sleeve_constraint_summary</code>.</li>
+<li>Can block short actions when <code>allow_short=false</code>, protecting directional sleeves from accidental short exposure.</li>
+<li>Treats missing tolerances as <strong>not applicable</strong>; constraints are only tolerance-banded when a tolerance is explicitly configured.</li>
+</ul>
+<div class="meta">
+    Analog: sleeve mandate officer that verifies the book still matches its declared mandate before execution and reporting.
+  </div>
+</div>
+<div class="card">
+<div class="title"><span class="dot green"></span>PortfolioAgent</div>
+<ul>
+<li>Converts DecisionMakingAgent outputs into <strong>realized capital allocation</strong>, using <strong>position_size_multiplier (PSM)</strong> as the primary driver of conviction-based sizing</li>
+<li>Transforms <strong>signals + PSM</strong> into normalized portfolio weights, ensuring capital is allocated proportionally across assets, strategies, and sleeves</li>
+<li>Weights <strong>assets inside each strategy</strong> based on quality, risk characteristics, and PSM-adjusted conviction</li>
+<li>Weights <strong>strategies inside each sleeve or leg</strong>, allowing dynamic capital rotation across active strategies in multi-strategy configurations</li>
+<li>Supports both <strong>directional</strong> and <strong>market-neutral / basket</strong> sleeves, preserving leg-level context (long vs short, hedge roles, sleeve purpose)</li>
+<li>Ensures portfolio consistency by <strong>normalizing, scaling, and reconciling PSM outputs</strong> under portfolio and risk constraints</li>
+<li>Produces final <strong>asset-level, strategy-level, sleeve-level, and portfolio-level weights</strong> for execution, risk management, and reporting</li>
+</ul>
+<div class="meta">
+    Analog: allocation desk / capital committee that converts conviction into capital deployment across assets and strategies
+  </div>
+</div>
+<div class="card">
+<div class="title"><span class="dot purple"></span>Reporting + Memory</div>
+<ul>
+<li>Generates explainable artifacts (plots, tables, summaries)</li>
+<li>Stores decisions, DecisionReviewAgent summaries, outcomes, and lessons learned</li>
+<li>Supports auditability and regression testing across runs</li>
+</ul>
+<div class="meta">Analog: performance attribution / trade journal / audit</div>
+</div>
+</div>
+<div class="callout dark">
+<strong>Summary:</strong>
+      AlphaWeave flows from data ingestion to asset selection, then strategy selection inside each sleeve.
+The measured AI path then uses compact AI/PSM underwriting: triage admits selected bars, and
+DecisionMakingAgent receives a compact packet containing market context, policy state, selected
+assets and strategies, prior outcomes, transition-tape evidence, and forward attribution.
+The expanded latest/past intelligence, reflection, and decision-review agents remain available
+as full-stack diagnostics when deeper evidence generation is needed.
+These decisions produce both <strong>actions and position_size_multiplier (PSM)</strong>, which flow into
+PortfolioAgent to determine capital allocation across assets, strategies, and sleeves.
+Risk layers then constrain and adjust these allocations before execution, with reporting and memory
+closing the loop for continuous improvement through DecisionReviewAgent outcome feedback.
+SleeveConstraintAgent adds a final mandate check for sleeve-specific net, gross, shorting, and beta targets.
+    </div>
+</section>
+<section id="synthetic-market-data-simulation">
+<h2>Synthetic Market Data Simulation for Backtests</h2>
+<p>
+      When you want a backtest to produce <strong>dense trading activity</strong> (and therefore lots of LLM/triage decisions)
+      without relying on real-world price history, AlphaWeave can generate synthetic OHLCV bars on demand.
+      This is wired through <code>DataAgent</code> and the <code>data_simulator.py</code> profiles system.
+    </p>
+<div class="callout">
+<strong>Use cases:</strong>
+      diagnostics_smoke / CI, stress-testing risk logic, creating frequent strategy triggers (RSI/Bollinger/momentum),
+      and generating repeatable "eventful" regimes for regression tests.
+      <em>Note:</em> the aggressive profiles are intentionally unrealistic - they're designed to force signals.
+    </div>
+<h3>How DataAgent enables simulation</h3>
+<p>
+  Simulation operates at the <strong>sleeve level</strong> in the AlphaWeave pipeline.
+  For directional sleeves, each asset is simulated independently.
+  For <strong>market-neutral / basket sleeves</strong>, simulated assets must be interpreted jointly,
+  as downstream agents (PortfolioAgent and RiskManagerAgent) evaluate cross-asset relationships
+  such as spread stability, correlation, and relative volatility.
+</p>
+<p>
+<code>DataAgent</code> passes two optional keys downstream to the market-data loader:
+      <code>generate</code> and <code>simulator</code>. These can be defined globally on the run context or per-asset.
+      Per-asset settings override the global defaults.
+    </p>
+<pre><code class="language-yaml">asset_map:
+  META:
+    asset_type: stock
+    granularity: 6h
+    generate: simulate
+    simulator:
+      profile_name: volatility_breakout
+      seed: 123
+      overrides:
+        force_breaches: true
+        force_breach_every_n: 4
+        force_breach_mult: 0.50
+        force_breach_first: down</code></pre>
+<div class="grid">
+<div class="card">
+<div class="title"><span class="dot blue"></span><code>generate</code> (mode selector)</div>
+<ul>
+<li><code>source</code> (default): pull real provider data (yfinance / alpaca / ibkr, etc.)</li>
+<li><code>simulate</code>: call the simulator and return synthetic bars</li>
+</ul>
+</div>
+<div class="card">
+<div class="title"><span class="dot cyan"></span><code>simulator</code> (configuration)</div>
+<ul>
+<li><code>profile_name</code>: which profile to load from YAML (e.g., <code>bollinger_bands</code>)</li>
+<li><code>seed</code>: repeatable randomness per asset/run</li>
+<li><code>overrides</code>: optional parameter tweaks layered on top of the profile</li>
+</ul>
+</div>
+<div class="card">
+<div class="title"><span class="dot green"></span>Warm-start behavior stays intact</div>
+<ul>
+<li><code>RunSetupAgent</code> may set <code>data_start_date</code> to fetch more history for indicators</li>
+<li><code>DataAgent</code> temporarily swaps <code>start_date</code> to <code>data_start_date</code> for the fetch</li>
+<li>Then restores the evaluation window start for downstream agents</li>
+</ul>
+</div>
+</div>
+<h3>Profiles: aggressive "noisy + spikes" regimes</h3>
+<p>
+<code>data_simulator_profiles_aggressive.yaml</code> defines multiple profiles under <code>profiles:</code>.
+      They're calibrated to create frequent volatility bursts, jumps, and (optionally) deterministic "breach" spikes.
+    </p>
+<p>
+  Signal density is determined by the interaction between the simulator profile and the active strategy.
+  For example:
+</p>
+<ul>
+<li><strong>Bollinger strategies:</strong> respond strongly to forced breaches and volatility spikes</li>
+<li><strong>RSI strategies:</strong> require sustained directional moves to trigger signals</li>
+<li><strong>Momentum strategies:</strong> react to drift + jump regimes</li>
+</ul>
+<p>
+  As a result, aggressive profiles are designed to <strong>intentionally over-trigger strategies</strong>,
+  ensuring sufficient downstream activity for triage, LLM reasoning, and risk evaluation.
+</p>
+<p>
+      Point the simulator at this profile file by setting
+      <code>DATA_SIM_PROFILES_YAML</code> (for example, to use the aggressive set):
+    </p>
+<pre><code class="language-bash"># Windows PowerShell:
+$env:DATA_SIM_PROFILES_YAML = "data_simulator_profiles_aggressive.yaml"
+
+# Bash:
+export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></pre>
+<table>
+<thead>
+<tr>
+<th>Profile</th>
+<th>Intent</th>
+<th>Why it's useful for AI / triage demos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>default</code></td>
+<td>Noisy baseline + periodic spikes</td>
+<td>Produces lots of regime changes; good for general smoke tests.</td>
+</tr>
+<tr>
+<td><code>bollinger_bands</code></td>
+<td>Band pressure + bursts + jumps + forced breaches</td>
+<td>Maximizes band crossings - great for demonstrating frequent BUY/SELL flips.</td>
+</tr>
+<tr>
+<td><code>volatility_breakout</code></td>
+<td>Wide intrabar ranges + strong spikes</td>
+<td>Triggers breakout / range-based rules and stresses risk limits.</td>
+</tr>
+</tbody>
+</table>
+<h3>Forced breaches: guaranteeing strategy triggers</h3>
+<p>
+      The simulator supports deterministic price shocks that intentionally breach thresholds (especially useful for Bollinger-based strategies):
+      when <code>force_breaches=true</code>, the generator injects alternating +/-moves every N bars, and you can force the first breach direction.
+    </p>
+<pre><code class="language-yaml">simulator:
+  profile_name: bollinger_bands
+  seed: 42
+  overrides:
+    force_breaches: true
+    force_breach_every_n: 5
+    force_breach_mult: 0.40
+    force_breach_first: down   # down =&gt; BUY-breach first; up =&gt; SELL-breach first</code></pre>
+<h3>Exchange-hours filtering (intraday)</h3>
+<p>
+      To mimic <code>UnifiedDataLoader</code> behavior, the simulator can filter intraday stock bars to exchange-open minutes.
+      Set <code>ALLOW_AFTER_HOURS=1</code> to disable filtering for tests where you want stable, dense bar indices.
+    </p>
+<div class="callout dark">
+<strong>Practical tip:</strong>
+  Use <code>generate=simulate</code> + aggressive profiles + <code>force_breaches</code> to create
+  high-frequency signal environments. This leads to:
+  <ul>
+<li>More <strong>triage decisions</strong> (TriageAgent)</li>
+<li>Higher <strong>LLM invocation frequency</strong> (when not gated)</li>
+<li>Richer <strong>DecisionMakingAgent and reflection outputs</strong></li>
+<li>More complete <strong>ReportAgent diagnostics</strong></li>
+</ul>
+</div>
+</section>
+<section id="triage-performance">
+<h2>Triage Agent: Measured Performance Impact</h2>
+<p>
+    The table below uses the latest completed 12-window full-stack sampled run
+    to separate deterministic policy from compact LLM underwriting. The baseline is
+    <strong>policy without triage</strong>; the second row is the incremental effect of allowing
+    compact triage + AI/PSM on top of it.
+  </p>
+<p>
+    <strong>Run basis:</strong> Twelve representative 10-business-day measured windows,
+    <strong>6h</strong> bars, <strong>momentum</strong> baseline, and row-specific assets/candidate
+    universes shown in the monthly performance table. The table below reports measured-window
+    deltas, not annualized return claims.
+  </p>
+<ul>
+<li><strong>Baseline strategy:</strong> momentum</li>
+<li><strong>Assets:</strong> row-specific baseline and candidate assets from the same sampled monthly run</li>
+<li><strong>Granularity:</strong> 6h</li>
+<li><strong>Policy path:</strong> deterministic state-machine overlay without LLM triage</li>
+<li><strong>AI path:</strong> compact underwriter mode, measured as incremental over policy</li>
+<li><strong>Deltas:</strong> Incremental versus the preceding stage in the measured window</li>
+</ul>
+<table class="performance-table">
+<thead>
+<tr><th>Configuration</th><th>Sampled-window return delta</th><th>Delta Max Drawdown</th><th>Interpretation</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Policy without triage (baseline)</strong></td>
+<td>0% (baseline)</td>
+<td>0% (baseline)</td>
+<td>Deterministic AI/PSM policy path without LLM triage.</td>
+</tr>
+<tr>
+<td><strong>Compact triage + AI/PSM</strong></td>
+<td>+0.39%</td>
+<td>+0.01%</td>
+<td>Measured compact LLM underwriting contribution over policy-only across the same 12 sampled 10-day windows.</td>
+</tr>
+</tbody>
+</table>
+<p>
+  Interpretation of triage impact:
+</p>
+<ul>
+<li>Positive return improvement indicates <strong>noise filtering</strong> or useful compact underwriting over policy-only</li>
+<li>Reduced drawdown reflects <strong>better timing of exits and avoidance of adverse regimes</strong></li>
+<li>Lower performance may indicate <strong>over-filtering</strong>, where valid opportunities are skipped</li>
+</ul>
+<p>
+  Within the AlphaWeave pipeline, TriageAgent sits between StrategyAgent and DecisionMakingAgent,
+  controlling when higher-cost reasoning is applied. This makes it a key lever for both
+  <strong>performance optimization</strong> and <strong>computational efficiency</strong>.
+</p>
+<p>
+  In practice, triage acts as a <strong>control layer between strategy signals and AI reasoning</strong>,
+  balancing responsiveness with stability.
+</p>
+<p class="footnote">
+<em>
+      Conclusion: Triage is structurally risk-positive and approximately return-neutral over the measured
+      short-window evaluation. Any persistent measured-window return drag greater than ~1% indicates overly conservative escalation
+      thresholds rather than a flaw in triage itself.
+    </em>
+</p>
+</section>
+<section id="strategy-ai-controls">
+<h2>Strategy AI Controls</h2>
+<p>
+      Each strategy declares an <code>ai_controls</code> block that tells AlphaWeave how much discretion the AI overlay is allowed to take.
+      This keeps behavior consistent across strategies: some should be "rules-only," while others benefit from LLM escalation.
+      This includes control over whether AI can influence <strong>trade decisions</strong>,
+<strong>holding duration</strong>, and <strong>capital allocation via position sizing (PSM)</strong>.
+    </p>
+<p>
+      <strong>Time frame:</strong> The controls comparison is periodic in the same way as the triage test: each configuration is
+      evaluated on the same short measured window so that duration control, PSM control, and full
+      AI/PSM can be compared against the same price path. The periodicity is part of the experiment,
+      because short windows stress whether the control can add value quickly without leaking training
+      capital or pre-measured P and L.
+    </p>
+<p class="assumptions">
+<strong>Measured-run basis:</strong> The AI-controls numbers below use the latest completed
+      12-window full-stack sampled run: twelve representative 10-business-day windows, <strong>6h</strong>
+      granularity, <strong>momentum</strong> as the static baseline strategy, row-specific baseline
+      and candidate assets from the monthly table, and Compact AI/PSM as the LLM path.
+</p>
+<div class="callout">
+<strong>Why this matters:</strong> Sub-runs like <code>00</code> vs <code>05</code> are only comparable if you understand what the strategy permits.
+      If a strategy sets <code>gate_entries=false</code>, then the LLM-heavy decision path is intentionally bypassed and "05" will resemble "00" (except for risk-only effects).
+    </div>
+<h3>ai_controls fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+<th>What changes in the pipeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>gate_entries</code></td>
+<td>Allow the AI overlay to influence the final entry/exit decision.</td>
+<td>
+<strong>True:</strong> Triage may run the LLM stack and Decision can override raw signals.<br/>
+<strong>False:</strong> "strategy-only" path: decision follows the base signal; triage/LLM is skipped.
+          </td>
+</tr>
+<tr>
+<td><code>adjust_duration</code></td>
+<td>Allow the Decision agent to adjust holding horizon / urgency.</td>
+<td>
+<strong>True:</strong> Decision may set a new duration/horizon.<br/>
+<strong>False:</strong> Keep the existing duration (or duration agent output) unchanged.
+          </td>
+</tr>
+<tr>
+<td><code>adjust_size</code></td>
+<td>Allow the AI to control <strong>conviction-based capital allocation</strong> via position sizing.</td>
+<td>
+<strong>True:</strong> Decision outputs a <code>position_size_multiplier (PSM)</code>, which determines
+    how much capital is deployed and is passed to PortfolioAgent for final allocation.<br/>
+<strong>False:</strong> Force multiplier to 1.0 (full size), disabling conviction-based sizing and
+    treating capital allocation as fixed.
+  </td>
+</tr>
+</tbody>
+</table>
+<h3>Typical presets by strategy type</h3>
+<div class="grid">
+<div class="card">
+<div class="title"><span class="dot blue"></span>Trend / Momentum / Breakout</div>
+<ul>
+<li><code>gate_entries=true</code> - benefit from regime/news-aware gating</li>
+<li><code>adjust_duration=true</code> - horizon changes can reduce whipsaws</li>
+<li><code>adjust_size=true</code> -  enable conviction-based capital allocation via PSM</li>
+</ul>
+</div>
+<div class="card">
+<div class="title"><span class="dot cyan"></span>Rule-based Mean Reversion</div>
+<ul>
+<li><code>gate_entries=false</code> - rules are stable; avoid overfitting</li>
+<li><code>adjust_duration=false</code> - keep rule intent consistent</li>
+<li><code>adjust_size=true</code> - still allow risk-based sizing</li>
+</ul>
+</div>
+<div class="card">
+<div class="title"><span class="dot green"></span>Always-on Exposure (Buy &amp; Hold)</div>
+<ul>
+<li><code>gate_entries=false</code> - entry is deterministic</li>
+<li><code>adjust_duration=false</code> - horizon is structural</li>
+<li><code>adjust_size=true</code> - allow risk overlays to scale exposure</li>
+</ul>
+</div>
+</div>
+<div class="callout">
+<strong>Operational note:</strong> Even when <code>gate_entries=false</code>, AlphaWeave still runs
+      asset-level and portfolio-level risk checks. Risk can veto, limit, or liquidate positions, and can also constrain PSM-driven sizing when allocations exceed risk thresholds.
+    </div>
+<h3 id="incremental-ai-controls">Incremental Impact of AI Controls (Counterfactual View)</h3>
+<p class="assumptions">
+<strong>Run basis:</strong> This table is populated from the latest completed 12-window
+      full-stack sampled run. The run used twelve representative 10-business-day measured windows,
+      <strong>6h</strong> bars, a <strong>momentum</strong> baseline, row-specific baseline assets
+      and candidate universes shown in the monthly performance table, and the official four-stage
+      ladder: strategy switching, asset switching, policy-only overlay without triage, and Compact
+      AI/PSM over that policy path.
+      Return and drawdown values are sampled-window deltas: strategy over baseline, asset over strategy,
+      deterministic policy over asset, and Compact AI/PSM over policy. They are not annualized returns.
+</p>
+<table class="performance-table">
+<thead>
+<tr><th>Configuration</th><th>Sampled-window return delta</th><th>Delta Max Drawdown</th><th>What this configuration represents</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Strategy only baseline</strong></td>
+<td>0% (baseline)</td>
+<td>0% (baseline)</td>
+<td>Fixed baseline execution for the sampled 10-day measured windows.</td>
+</tr>
+<tr>
+<td><strong>Strategy switching</strong></td>
+<td>+2.68%</td>
+<td>+12.29%</td>
+<td>StrategyAllocationAgent contribution over the baseline, summed across the sampled 10-day windows.</td>
+</tr>
+<tr>
+<td><strong>Asset switching</strong></td>
+<td>-1.01%</td>
+<td>+2.65%</td>
+<td>AssetAllocationAgent contribution over the strategy stage; negative aggregate contribution is flagged for policy tuning.</td>
+</tr>
+<tr>
+<td><strong>Policy without triage</strong></td>
+<td>+4.90%</td>
+<td>+3.22%</td>
+<td>Deterministic AI/PSM state-machine contribution without LLM, summed across the sampled 10-day windows.</td>
+</tr>
+<tr>
+<td><strong>Compact triage + AI/PSM</strong></td>
+<td>+0.39%</td>
+<td>+0.01%</td>
+<td>Incremental compact LLM underwriting over policy-only, summed across the sampled 10-day windows.</td>
+</tr>
+</tbody>
+</table>
+<p class="footnote">
+<em>
+    Key point: the latest sampled-window run shows positive aggregate contribution from strategy selection and execution review, while asset selection was negative in aggregate. These are realized sampled-window deltas, not annualized projections.
+  </em>
+</p>
+</section>
+<section id="tradecrew">
+<h2>TradeCrew: Live / Paper Trading Orchestration Layer</h2>
+<p>
+<strong>TradeCrew</strong> is AlphaWeave's live and paper-trading orchestrator.
+    It runs the production decision stack in a <strong>sleeve-first</strong> execution pattern,
+    supports <strong>dry run / paper / simulate / live-style</strong> modes, and coordinates
+    strategy selection, asset selection, per-asset execution, sleeve-level portfolio construction,
+    risk review, and reporting.
+  </p>
+<div class="callout">
+<strong>Intuition:</strong>
+    If <em>BacktestCrew</em> asks, <em>"what would have happened historically?"</em>,
+    then <em>TradeCrew</em> asks,
+    <em>"given today's market state, which sleeve should run which strategy on which assets,
+    how should capital be allocated, and how do we execute and report it safely?"</em>
+</div>
+<h3>Where TradeCrew sits in the architecture</h3>
+<p><strong>Run setup -&gt; Data -&gt; Sleeve execution -&gt; Portfolio -&gt; Portfolio risk -&gt; Reporting</strong></p>
+<p>
+    TradeCrew does not replace strategy logic and does not bypass risk.
+    Its job is orchestration: it prepares the trade context, loads data, runs the agent stack
+    sleeve by sleeve and date by date, inserts trade rows, refreshes marks when available,
+    and produces both sleeve-level and aggregate trade reports.
+  </p>
+<p>
+<strong>Backtest vs live consistency:</strong>
+  TradeCrew mirrors the same agent sequence and sleeve-first execution structure used in backtesting.
+  This ensures that results observed in backtests are structurally consistent with live execution,
+  with differences arising only from market data and execution conditions.
+</p>
+<h3>What TradeCrew currently does (end-to-end)</h3>
+<h4>1. Normalizes and enriches the trade context</h4>
+<ul>
+<li>Runs <code>RunSetupAgent</code> to standardize the execution window and run metadata</li>
+<li>Applies capital and exposure defaults such as <code>initial_capital</code>, cash reserve,
+        gross/net exposure limits, max position weight, and leverage flags</li>
+<li>Initializes margin settings for long/short positions so the <code>PositionTracker</code> can enforce realistic constraints</li>
+<li>Sets <code>run_type="trade"</code>, assigns a <code>run_id</code>, and injects an <code>LLMTool</code></li>
+</ul>
+<h4>2. Supports multiple execution modes</h4>
+<ul>
+<li><strong>dryrun / noop:</strong> full orchestration without real broker submission</li>
+<li><strong>paper:</strong> simulated broker-style execution path</li>
+<li><strong>simulate:</strong> enables an in-memory <code>PositionTracker</code> so positions, marks, and capital can be tracked over time</li>
+<li><strong>live-style configuration:</strong> context can still carry broker and execution parameters even when safety flags disable actual execution</li>
+</ul>
+<h4>3. Loads data and prepares active assets before trading</h4>
+<ul>
+<li>Calls <code>DataAgent</code> to fetch and normalize market data</li>
+<li>Calls <code>AssetAllocationAgent</code> before trading so the current active asset set can be narrowed or rotated</li>
+<li>Preserves sleeve identifiers such as <code>sleeve_id</code>, <code>sleeve_type</code>, and <code>position_mode</code> for downstream agents</li>
+</ul>
+<h4>4. Runs in a sleeve-first structure</h4>
+<p>
+    TradeCrew builds a list of executable sleeve specs from the configured
+    <code>sleeves</code>, <code>asset_groups</code>, <code>strategy_groups</code>,
+    and <code>strategy_asset_allocation_groups</code>.
+    Each sleeve carries:
+  </p>
+<ul>
+<li>its own asset universe</li>
+<li>its own active strategy</li>
+<li>its own candidate strategies for switching</li>
+<li>its own type: <strong>directional</strong> or <strong>basket / market-neutral</strong></li>
+</ul>
+<h4>5. Executes the trade loop date by date and sleeve by sleeve</h4>
+<p>
+    For each strategy context, TradeCrew iterates over dates using an anchor asset's market calendar,
+    then processes each sleeve for that date.
+    This keeps the live trading path aligned with the newer sleeve-first backtest design.
+  </p>
+<h4>6. Runs the per-sleeve agent stack, with compact AI/PSM as the preferred LLM path</h4>
+<p>
+    Inside each sleeve/date step, TradeCrew runs the deterministic selection, signal, risk,
+    execution, and reporting stack. When AI/PSM is enabled, the preferred path is
+    <strong>compact underwriting</strong>: TriageAgent decides whether the bar deserves an LLM call,
+    then DecisionMakingAgent receives one compact packet containing market context, selected strategy
+    and assets, policy state, prior outcomes, transition tape, and forward-attribution evidence.
+  </p>
+<ol>
+<li><code>DurationAgent</code></li>
+<li><code>AssetAllocationAgent</code> (date-level active asset refresh)</li>
+<li><code>StrategyAllocationAgent</code></li>
+<li><code>StrategyAgent</code></li>
+<li><code>TriageAgent</code> decides whether Compact AI/PSM should run or the deterministic policy path should continue</li>
+<li><code>DecisionMakingAgent</code> runs in compact underwriter mode when admitted by triage; otherwise it preserves the policy path</li>
+<li><code>RiskManagerAssetAgent</code></li>
+<li><code>TradeAgent</code> for per-asset execution</li>
+<li><code>PortfolioAgent</code> at sleeve scope after the sleeve's asset loop</li>
+<li><code>RiskManagerAgent</code> at sleeve scope after portfolio construction</li>
+<li><code>SleeveConstraintAgent</code> at sleeve scope to check net, gross, shorting, and beta mandates</li>
+<li><code>ReportAgent</code> at sleeve scope</li>
+</ol>
+<p>
+    The expanded full-LLM chain remains available for diagnostics and deeper research. In that mode,
+    <code>LatestMarketIntelligenceAgent</code>, <code>PastMarketIntelligenceAgent</code>,
+    <code>LowLevelReflectionAgent</code>, <code>HighLevelReflectionAgent</code>, and
+    <code>DecisionReviewAgent</code> can run as separate context-building agents before
+    <code>DecisionMakingAgent</code>. Those expanded calls are not the default source of the
+    Compact AI/PSM results reported in this presentation.
+  </p>
+<h4>7. Treats directional and market-neutral sleeves differently</h4>
+<ul>
+<li><strong>Directional sleeves:</strong> processed asset by asset, then aggregated through PortfolioAgent and RiskManagerAgent</li>
+<li><strong>Basket / market-neutral sleeves:</strong> still execute asset-level trade logic for the sleeve constituents, but reporting, portfolio construction, portfolio risk, and sleeve constraint checks happen once at sleeve scope</li>
+</ul>
+<h4>8. Inserts trade rows and refreshes capital state during execution</h4>
+<ul>
+<li>When <code>TradeAgent.execute_day(...)</code> returns a trade row, TradeCrew inserts it into <code>trade_table</code></li>
+<li>If a <code>PositionTracker</code> is available and a trade price is known, TradeCrew refreshes marks and stores the resulting capital snapshot back into context</li>
+</ul>
+<h4>9. Produces both sleeve-level and aggregate trade reporting</h4>
+<ul>
+<li>Each sleeve run sets <code>report_scope="single_sleeve"</code> and calls <code>ReportAgent</code></li>
+<li>After all sleeves complete, TradeCrew can build an aggregate context spanning all sleeves</li>
+<li>This aggregate context supports <code>report_scope="multi_sleeve_trade"</code>, enabling a combined trade report across sleeves</li>
+</ul>
+<h4>10. Supports batch execution across multiple contexts</h4>
+<p>
+    At the launcher level, <strong>TradeLauncher</strong> can:
+  </p>
+<ul>
+<li>load explicit contexts from YAML</li>
+<li>expand simplified <code>TRADE_SPECS</code> into full contexts</li>
+<li>run multiple trade contexts in parallel via <code>ThreadPoolExecutor</code></li>
+</ul>
+<div class="callout dark">
+<strong>Summary:</strong>
+    TradeCrew is now a <strong>sleeve-first live trading orchestrator</strong>.
+    It prepares trade contexts, loads data, refreshes asset and strategy selection,
+    executes per-asset trading inside each sleeve, then applies sleeve-level portfolio construction,
+    portfolio risk, sleeve reporting, and aggregate multi-sleeve trade reporting.
+  </div>
+</section>
+<section id="asset-selection">
+<h2>How Assets Are Selected (AssetAllocationAgent)</h2>
+<p>
+    The <strong>AssetAllocationAgent</strong> selects assets dynamically at each decision point,
+    based on both <strong>market behavior</strong> and <strong>strategy compatibility</strong>.
+    Instead of using a fixed asset universe, AlphaWeave continuously ranks and filters assets
+    to determine which ones should be actively traded.
+  </p>
+<p>
+    Each candidate asset is scored using a combination of:
+    <strong>recent returns</strong> (short-term and lookback),
+    <strong>trend strength</strong>,
+    <strong>volatility</strong>,
+    <strong>drawdown</strong>, and
+    <strong>liquidity</strong>.
+    These metrics are combined into a base score that reflects the asset's current trading quality.
+  </p>
+<p>
+    This base score is then adjusted using the strategy's <strong>asset_fit profile</strong>.
+    For example:
+  </p>
+<ul>
+<li><strong>Momentum strategies</strong> prefer assets with strong trend persistence and high liquidity.</li>
+<li><strong>Mean-reversion strategies</strong> prefer range-bound assets with frequent reversals.</li>
+<li><strong>MACD / breakout strategies</strong> prefer assets with clean directional moves and volatility expansion.</li>
+</ul>
+<p>
+    Assets that do not match the active strategy's behavior are <strong>penalized or excluded</strong>,
+    even if their standalone performance is strong. This ensures that asset selection is
+    <strong>strategy-aware rather than purely statistical</strong>.
+  </p>
+<p>
+    In <strong>directional sleeves</strong>, the agent selects the top-ranked assets using
+    a <strong>top-k selection process</strong>, with additional controls such as
+    <strong>minimum holding periods</strong>, <strong>cooldowns</strong>, and
+    <strong>switch thresholds</strong> to avoid excessive turnover.
+  </p>
+<p>
+    In <strong>market-neutral or basket sleeves</strong>, assets are evaluated jointly.
+    The agent selects combinations of assets that satisfy:
+    <strong>correlation stability</strong>,
+    <strong>volatility alignment</strong>,
+    <strong>liquidity compatibility</strong>, and
+    <strong>spread mean-reversion characteristics</strong>.
+    This ensures that selected assets function as a coherent <strong>long-short or relative-value structure</strong>,
+    rather than independent trades.
+  </p>
+<p>
+    The result is a continuously evolving asset set that reflects both
+    <strong>current market conditions</strong> and the
+    <strong>behavioral requirements of the active strategy</strong>.
+  </p>
+</section>
+<section id="strategy-selection">
+<h2>How Strategies Are Selected (StrategyAllocationAgent)</h2>
+<p>
+    The <strong>StrategyAllocationAgent</strong> determines which strategy should be active
+    within each sleeve at any point in time. Rather than committing to a single strategy,
+    AlphaWeave continuously evaluates a <strong>set of candidate strategies</strong> and
+    selects the one best suited to current conditions.
+  </p>
+<p>
+    Each candidate strategy is <strong>shadow-run</strong> on the currently selected assets.
+    The agent evaluates recent performance using:
+    <strong>rolling return</strong>,
+    <strong>Sharpe ratio</strong>,
+    <strong>drawdown</strong>, and
+    <strong>consistency</strong>.
+  </p>
+<p>
+    In addition to realized performance, strategies are evaluated using
+    <strong>regime compatibility</strong>:
+  </p>
+<ul>
+<li><strong>Momentum strategies</strong> perform best in trending environments.</li>
+<li><strong>Mean-reversion strategies</strong> perform best in range-bound markets.</li>
+<li><strong>Breakout or MACD strategies</strong> perform best during volatility expansion.</li>
+<li><strong>Relative-value strategies</strong> perform best when cross-asset relationships are stable.</li>
+</ul>
+<p>
+    The agent also incorporates each strategy's <strong>asset_fit profile</strong>,
+    ensuring that strategies are only selected when the current asset set supports them.
+    This prevents situations where a strategy is selected in a regime where its underlying assumptions do not hold.
+  </p>
+<p>
+    Strategy switching is controlled by:
+    <strong>minimum holding periods</strong>,
+    <strong>cooldown periods</strong>, and
+    <strong>switch thresholds</strong>.
+    A new strategy is only activated if it is <strong>meaningfully better</strong>
+    than the current one, preventing unnecessary churn.
+  </p>
+<p>
+    In <strong>market-neutral sleeves</strong>, strategy selection operates at the
+    <strong>basket level</strong>, choosing between relative-value, spread,
+    and regime-sensitive strategies depending on whether asset relationships are
+    <strong>stable, dislocating, or breaking down</strong>.
+  </p>
+<p>
+    The result is a system that continuously adapts not only
+    <strong>what assets are traded</strong>, but also
+    <strong>how those assets are traded</strong>,
+    ensuring that the active strategy is always aligned with both
+    market conditions and asset behavior.
+  </p>
+<p>
+<strong>Multi-strategy execution:</strong>
+</p>
+<p>
+  When multiple strategies are active within a sleeve, they are not executed independently.
+  Instead, their outputs are combined through <strong>PortfolioAgent weighting</strong>.
+</p>
+<ul>
+<li>Each strategy produces signals and a <strong>PSM (conviction)</strong></li>
+<li>PortfolioAgent assigns weights across strategies based on relative quality and risk</li>
+<li>Final exposure reflects a <strong>weighted combination of strategy views</strong></li>
+</ul>
+<p>
+  This allows AlphaWeave to express multiple strategies simultaneously,
+  rather than forcing a single "winner," improving stability across regimes.
+</p>
+</section>
+<section id="augment-any-strategy">
+<h2>How AlphaWeave Augments Any Strategy</h2>
+<p>
+    AlphaWeave is <strong>strategy-agnostic</strong>. A base strategy still generates raw signals,
+    but AlphaWeave augments that strategy through <strong>two coordinated allocation layers</strong>
+    before any trade is executed:
+    <strong>StrategyAllocationAgent</strong>, which determines the <strong>active strategy set</strong> within each sleeve or leg,
+    and <strong>AssetAllocationAgent</strong>, which determines the <strong>active assets</strong> that those strategies operate on.
+  </p>
+<p>
+    These layers operate <strong>jointly rather than sequentially</strong>. Strategy selection depends on
+    how well candidate strategies perform on the current asset set, while asset selection depends on
+    how well assets match each strategy's <strong>asset_fit</strong> profile. This creates a
+    <strong>continuous feedback loop between strategies and assets</strong>, ensuring that capital is deployed
+    only when both are aligned with current market conditions.
+  </p>
+<p>
+    The system supports both <strong>single-strategy</strong> and <strong>multi-strategy</strong> configurations.
+    Strategies are added, removed, or replaced over time using <strong>switching thresholds</strong>,
+    <strong>minimum holding periods</strong>, and <strong>cooldown constraints</strong>, ensuring that
+    rotation is <strong>deliberate and stable</strong> rather than reactive to short-term noise.
+  </p>
+<p>
+    Once the strategy-asset configuration is determined, the AI stack refines
+    <em>how</em> that setup is executed through a <strong>conviction-based execution layer</strong>.
+    AlphaWeave supports two LLM run modes. In <strong>full LLM mode</strong>, market intelligence,
+    reflection, decision review, and decision agents each contribute context. In
+    <strong>compact underwriting mode</strong>, the system sends one concentrated decision packet to
+    the DecisionMakingAgent so the LLM acts as an underwriter over the policy path rather than
+    replacing strategy and asset selection.
+  </p>
+<p>
+    The DecisionMakingAgent produces both <strong>action</strong> (BUY / SELL / HOLD) and a
+    <strong>position_size_multiplier (PSM)</strong>, which expresses the approved capital scale for the signal.
+    This PSM is passed to the PortfolioAgent, which converts conviction into
+    <strong>realized capital allocation</strong>. As a result, AlphaWeave does not simply decide
+    <em>whether</em> to trade - it determines <strong>how much capital to deploy</strong>,
+    dynamically scaling exposure up for high-confidence opportunities and down for weaker signals.
+  </p>
+<p>
+    Execution is therefore driven by:
+    <strong>timing, holding horizon, conviction-based sizing (PSM), and risk control</strong>,
+    with a triage layer determining when compact AI/PSM underwriting is required. Expanded full-agent
+    reasoning is reserved for diagnostics, ablation, and deeper evidence generation.
+  </p>
+<h3 id="learning-from-history">What learning from historic behavior means</h3>
+<p>
+    In <strong>Compact AI+PSM mode</strong>, historic behavior is compressed into a single execution packet:
+    training-window strategy fit, selected-asset behavior, live measured-window state, prior policy
+    actions, transition-tape evidence, and forward attribution from earlier runs. The LLM does not
+    rediscover the strategy from scratch; it underwrites whether the current strategy/asset state
+    deserves a change in action, holding horizon, or position size.
+  </p>
+<ul>
+<li><strong>Strategy selection:</strong> use training and shadow strategy behavior to decide whether a strategy change has enough evidence to beat the incumbent path</li>
+<li><strong>Asset selection:</strong> use strategy-specific asset fit, realized drawdown, and selection persistence to avoid rotating away from working baskets too quickly</li>
+<li><strong>Strategy-asset interaction:</strong> learn which combinations of strategies and assets produce robust outcomes, not just strong standalone performance</li>
+<li><strong>State underwriting:</strong> classify the live setup as a new entry, working winner, rebound watch, profit-protect case, risk-exit case, or no-edge case before changing exposure</li>
+<li><strong>Signal calibration:</strong> map compact LLM confidence to action throttles and <strong>position size multiplier (PSM)</strong> limits instead of treating confidence as a standalone trade signal</li>
+<li><strong>Horizon tuning:</strong> learn when external conditions justify extending a clean winner or shortening a weakening trade</li>
+<li><strong>Asset risk adaptation:</strong> adjust per-asset exposure and liquidation behavior based on volatility, drawdown, beta context, and realized path quality</li>
+<li><strong>Portfolio risk adaptation:</strong> control capital allocation across assets, strategies, sleeves, and legs, including concentration, leverage, and drawdown management</li>
+<li><strong>Allocation persistence:</strong> maintain a working state unless the compact underwriter sees evidence strong enough to justify rotation, tapering, or exit</li>
+<li><strong>Forward attribution:</strong> compare accepted and rejected policy decisions against later bars so policies can be retained, revised, or deactivated after evidence accumulates</li>
+<li><strong>Explainability:</strong> maintain transition tapes and decision history that tie strategy selection, asset selection, policy decisions, compact LLM confidence, and execution adjustments to measured outcomes</li>
+</ul>
+<div class="diagram mermaid strategy-augment">
+flowchart TD
+
+  subgraph D0[Data Layer]
+    direction TB
+    DL[DataAgent: load + normalize market data]
+    BM[Benchmark data: beta_benchmark_ticker history]
+  end
+
+  subgraph L1[Sleeve Allocation Layer]
+    direction TB
+    AA[AssetAllocationAgent: choose active assets in sleeve]
+    SA[StrategyAllocationAgent: choose active strategy in sleeve]
+    S[Base Strategy]
+    RS[Raw Signal]
+  end
+
+  subgraph L2[AI Overlay Layer]
+    direction TB
+    TI[Triage: admit Compact AI+PSM?]
+    FAST[Fast Path: deterministic policy state machine]
+    HIST[Historic behavior learning: training fit + prior outcomes + forward attribution]
+    PKT[Compact AI+PSM packet: market context + selected strategy/assets + policy state + transition tape]
+    DEC[DecisionMakingAgent: compact LLM underwriting]
+    PSM[AI/PSM output: action + horizon + position size multiplier]
+    FULL[Optional full-LLM diagnostics: LMI + PMI + reflections + decision review]
+  end
+
+  subgraph L3[Asset Risk Layer]
+    direction TB
+    RISK_A[Asset Risk Committee: veto / limits / liquidation]
+  end
+
+  subgraph L4[Portfolio Layer]
+    direction TB
+    PORT[PortfolioAgent: inter-sleeve + intra-sleeve capital weighting]
+    RISK_P[Portfolio Risk Committee: exposure caps / leverage / concentration]
+    SC[SleeveConstraintAgent: net / gross / beta mandate check]
+  end
+
+  subgraph L5[Execution, Reporting, Memory Layer]
+    direction TB
+    EXEC[Execution]
+    REP[Reporting + Audit]
+    MEM[Memory Store]
+  end
+
+  DL --&gt; AA --&gt; SA --&gt; S --&gt; RS --&gt; TI
+  DL --&gt; BM
+  TI --&gt;|Skip| FAST
+  TI --&gt;|Run Compact AI+PSM| PKT --&gt; DEC --&gt; PSM
+  HIST --&gt; PKT
+  FULL -. optional research context .-&gt; PKT
+
+  FAST --&gt; RISK_A
+  PSM --&gt; RISK_A
+  RISK_A --&gt; PORT --&gt; RISK_P --&gt; SC --&gt; EXEC --&gt; REP --&gt; MEM
+  BM --&gt; SC
+  MEM --&gt; HIST
+  MEM -. diagnostic history .-&gt; FULL
+
+  classDef data fill:#111827,stroke:#0f172a,stroke-width:2.8px,color:#f8fafc;
+  classDef strategy fill:#eef2ff,stroke:#3b82f6,stroke-width:2.5px,color:#0f172a;
+  classDef alloc fill:#dbeafe,stroke:#2563eb,stroke-width:2.8px,color:#0f172a;
+  classDef ai fill:#ecfeff,stroke:#06b6d4,stroke-width:2.5px,color:#0f172a;
+  classDef reflection fill:#e0f2fe,stroke:#0ea5e9,stroke-width:3.0px,color:#0f172a;
+  classDef decision fill:#e6f0ff,stroke:#2563eb,stroke-width:2.8px,color:#0f172a;
+
+  classDef riskA fill:#ffe4e6,stroke:#f43f5e,stroke-width:3.0px,color:#0f172a;
+  classDef portfolio fill:#dcfce7,stroke:#22c55e,stroke-width:2.8px,color:#0f172a;
+  classDef riskP fill:#fff1f2,stroke:#e11d48,stroke-width:3.0px,color:#0f172a;
+  classDef constraint fill:#fffbeb,stroke:#d97706,stroke-width:3.0px,color:#0f172a;
+
+  classDef exec fill:#fef3c7,stroke:#f59e0b,stroke-width:2.8px,color:#0f172a;
+  classDef report fill:#ede9fe,stroke:#8b5cf6,stroke-width:2.8px,color:#0f172a;
+  classDef memory fill:#e0f2fe,stroke:#38bdf8,stroke-width:2.8px,color:#0f172a;
+
+  class DL data;
+  class SA,AA alloc;
+  class S,RS strategy;
+  class TI,FAST,HIST,PKT ai;
+  class FULL reflection;
+  class DEC,PSM decision;
+
+  class RISK_A riskA;
+  class PORT portfolio;
+  class RISK_P riskP;
+  class SC,BM constraint;
+
+  class EXEC exec;
+  class REP report;
+  class MEM memory;
+
+  style D0 fill:#f8fafc,stroke:#cbd5e1,stroke-width:2px,rx:12,ry:12;
+  style L1 fill:#f8fafc,stroke:#cbd5e1,stroke-width:2px,rx:12,ry:12;
+  style L2 fill:#f8fafc,stroke:#cbd5e1,stroke-width:2px,rx:12,ry:12;
+  style L3 fill:#f8fafc,stroke:#cbd5e1,stroke-width:2px,rx:12,ry:12;
+  style L4 fill:#f8fafc,stroke:#cbd5e1,stroke-width:2px,rx:12,ry:12;
+  style L5 fill:#f8fafc,stroke:#cbd5e1,stroke-width:2px,rx:12,ry:12;
+  </div>
+<div class="callout">
+<strong>Interpretation:</strong>
+    AlphaWeave no longer augments a strategy only at the point of signal refinement.
+    It first decides <em>which strategy</em> should be active in a sleeve,
+    then <em>which assets</em> should be traded inside that sleeve,
+    and only then applies the AI overlay to refine timing, duration, position size, and risk.
+    PortfolioAgent converts those decisions into weights, RiskManagerAgent evaluates portfolio risk,
+    and SleeveConstraintAgent verifies the resulting sleeve against its declared mandate, including
+    benchmark-relative beta where configured.
+    This means augmentation now occurs at three levels:
+    <strong>strategy choice</strong>, <strong>asset choice</strong>, <strong>execution quality</strong>,
+    and <strong>sleeve mandate compliance</strong>.
+  </div>
+</section>
+<section id="granularity-effects">
+<h2>Effect of Granularity on AI Performance</h2>
+<p>
+    This section quantifies how the full AlphaWeave stage ladder behaves when the same measured
+    window is run at different bar granularities. The ladder is:
+    strategy switching, asset switching, policy-only overlay without triage, and Compact AI/PSM
+    over that policy path.
+  </p>
+<p>
+    <strong>Time frame:</strong> Periodicity is explicit here: all variants use the same measured start and end dates, while only
+    the bar interval changes. A 1d run therefore has fewer decision points in the same calendar
+    window, while 6h, 3h, 1h, and 15m runs expose progressively more opportunities for triage,
+    duration changes, and PSM changes. The comparison should be read as "same period, different bar
+    cadence."
+  </p>
+<p><strong>Assumptions and scope for all results below:</strong></p>
+<ul>
+<li><strong>Run basis:</strong> completed full-stack granularity sweep <code>two_day_full_stack_granularity_20260825_172309</code></li>
+<li><strong>Period:</strong> August 17, 2026 through August 18, 2026</li>
+<li><strong>Baseline assets:</strong> COIN + NVDA</li>
+<li><strong>Candidate assets:</strong> AMD, COIN, GOOGL, NVDA, TSLA</li>
+<li><strong>Baseline strategy:</strong> momentum</li>
+<li><strong>Candidate strategies:</strong> Bollinger Bands, buy and hold, MACD crossover, momentum, RSI</li>
+<li><strong>Compared granularities:</strong> 15m, 1h, 3h, 6h, and 1d over the same measured dates</li>
+<li><strong>Deltas:</strong> each pickup is incremental versus the preceding stage; total improvement is final overlay return minus baseline return</li>
+</ul>
+<p>
+  The <strong>TriageAgent</strong> is not only a cost-reduction mechanism. It performs:
+</p>
+<ul>
+<li><strong>LLM gating:</strong> decides whether to invoke Compact AI/PSM underwriting, or optional full-stack reasoning agents in diagnostic mode</li>
+<li><strong>Event forcing:</strong> triggers evaluation around earnings, macro events, and regime boundaries</li>
+<li><strong>Duration enforcement:</strong> forces exits when holding periods are exceeded</li>
+<li><strong>Cadence control:</strong> ensures periodic reevaluation even in low-signal regimes</li>
+</ul>
+<p>
+    The key insight is that <strong>AI impact scales with granularity</strong>.
+    At coarser resolutions, AI has fewer opportunities to intervene.
+    As bar frequency increases, confidence updates, duration decisions,
+    and <strong>PSM-driven capital allocation</strong> occur more often.
+    This allows the system to continuously reallocate capital toward
+    higher-conviction opportunities and away from weaker signals,
+    creating a compounding effect on both return and risk.
+  </p>
+<p>
+    At higher granularities, AlphaWeave behaves less like a static strategy
+    and more like a <strong>continuously re-optimizing capital allocation system</strong>,
+    where each bar provides an opportunity to rebalance conviction across positions.
+  </p>
+<p>
+  The completed sweep shows a practical limit: finer bars created more opportunities for
+  strategy and asset selection to add value in this short window, but Compact AI/PSM did not add
+  material incremental return over policy in this specific two-day sample. Coarser bars were more
+  stable but produced fewer stage changes. These are not annualized values. Conceptually, the
+  granularities still balance:
+</p>
+<ul>
+<li><strong>Signal persistence:</strong> enough time for trends or reversals to develop</li>
+<li><strong>Update frequency:</strong> sufficient opportunities to adjust PSM and duration</li>
+<li><strong>Noise control:</strong> avoiding excessive microstructure noise at very high frequency</li>
+</ul>
+<table class="performance-table">
+<thead>
+<tr><th>Granularity</th><th>Baseline return</th><th>Strategy pickup</th><th>Asset pickup</th><th>Policy pickup</th><th>Compact AI/PSM pickup</th><th>Total improvement</th><th>Overlay return</th><th>Overlay max drawdown</th><th>DD delta</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>15m</strong></td>
+<td>-0.82%</td>
+<td>+0.15%</td>
+<td>+0.52%</td>
+<td>+0.00%</td>
+<td>-0.00%</td>
+<td>+0.67%</td>
+<td>-0.16%</td>
+<td>-0.87%</td>
+<td>+0.80%</td>
+</tr>
+<tr>
+<td><strong>1h</strong></td>
+<td>+0.17%</td>
+<td>+0.18%</td>
+<td>-0.18%</td>
+<td>-0.00%</td>
+<td>-0.01%</td>
+<td>-0.01%</td>
+<td>+0.16%</td>
+<td>-1.88%</td>
+<td>-0.01%</td>
+</tr>
+<tr>
+<td><strong>3h</strong></td>
+<td>+0.73%</td>
+<td>+0.00%</td>
+<td>+0.00%</td>
+<td>+0.00%</td>
+<td>+0.00%</td>
+<td>+0.00%</td>
+<td>+0.73%</td>
+<td>-1.70%</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td><strong>6h</strong></td>
+<td>+0.84%</td>
+<td>+0.00%</td>
+<td>+0.00%</td>
+<td>+0.00%</td>
+<td>+0.00%</td>
+<td>+0.00%</td>
+<td>+0.84%</td>
+<td>-1.68%</td>
+<td>+0.00%</td>
+</tr>
+<tr>
+<td><strong>1d</strong></td>
+<td>+1.82%</td>
+<td>+0.00%</td>
+<td>-0.60%</td>
+<td>+0.00%</td>
+<td>+0.00%</td>
+<td>-0.60%</td>
+<td>+1.22%</td>
+<td>-0.60%</td>
+<td>+0.33%</td>
+</tr>
+</tbody>
+</table>
+<p class="footnote">
+<em>
+      Interpretation: This full-stack sweep completed on live data for August 17-18, 2026.
+      It validates the same four-stage attribution ladder across 15m, 1h, 3h, 6h, and 1d.
+      In this short sample, 15m captured the strongest stage improvement, 3h and 6h were
+      effectively unchanged from baseline, and 1d reduced drawdown but gave up return through
+      asset selection.
+    </em>
+</p>
+</section>
+<section id="ai-extensions">
+<h2>Market Extensions: Shorts, Derivatives, and Crypto</h2>
+<p>
+    This section summarizes <strong>conservative, unvalidated estimates</strong> for the expected performance impact of expanding the tradable universe
+    to include <strong>short positions</strong>, <strong>futures and options</strong>, and
+    <strong>crypto assets</strong>, evaluated under the same AI framework described earlier. These figures
+    are not presented as completed measured-run results, and they should be read as validation targets rather
+    than claims of realized alpha.
+  </p>
+<p>
+    <strong>Time frame:</strong> Return ranges in this section are annualized estimates for future
+    validation. They are separate from the realized 10-business-day sampled-window results elsewhere
+    in the presentation.
+  </p>
+<p>
+    Results are shown relative to a <strong>restricted baseline</strong>:
+    a long-only, equity-only implementation of the same strategy and AI execution layer,
+    without access to shorts, derivatives, or crypto.
+  </p>
+<p>
+    This isolates the <strong>incremental value of expanded market access</strong>,
+    rather than differences in strategy logic or execution. These capabilities can also hurt returns:
+    borrow availability, funding costs, futures roll behavior, options theta/volatility mispricing risk,
+    crypto spread/slippage, liquidity gaps, and cross-asset correlation during stress can all overwhelm
+    the intended edge. The ranges therefore include downside cases until each market extension is validated
+    with its own measured run.
+  </p>
+<p>
+    The return argument is not that adding instruments magically creates alpha. The argument is that
+    AlphaWeave already separates <strong>selection</strong>, <strong>execution policy</strong>,
+    <strong>Compact AI/PSM underwriting</strong>, and <strong>risk control</strong>. New instruments
+    become useful only when they give that machinery a cleaner expression of an already-detected state:
+    downside participation through shorts, market-beta control through index futures, bounded-risk
+    convexity through options, or higher-volatility continuation/reversal through crypto. The estimated
+    ranges are therefore small and conditional: they assume the system can identify the state, size it
+    conservatively, and avoid overtrading when costs dominate.
+  </p>
+<p>
+    The expected-return ranges are sized as <strong>net incremental contribution</strong> over the
+    restricted long-only equity baseline. They are lower than the gross opportunity because each extension
+    must survive three filters before it counts: a tradable signal must exist, the policy/AI layer must
+    improve expression of that signal, and risk/cost controls must leave enough net edge after execution.
+    If those filters fail, the downside end of the range is the more realistic outcome.
+  </p>
+<ul>
+<li><strong>Representative strategies:</strong> RSI + Bollinger, Fast MACD</li>
+<li><strong>Representative assets:</strong> NVDA, COIN, ES futures, BTC</li>
+<li><strong>Granularity:</strong> 6h</li>
+<li><strong>Baseline:</strong> Long-only equities with the same strategy and AI execution layer</li>
+<li><strong>Deltas:</strong> Estimated incremental vs baseline, annualized, before being accepted into the main performance claims</li>
+</ul>
+<table class="performance-table">
+<thead>
+<tr>
+<th>Market capability enabled</th>
+<th>Estimated Delta Annual Return<br/>(Current AI)</th>
+<th>Estimated Max Drawdown Reduction<br/>(Current AI)</th>
+<th>Estimated Delta Annual Return<br/>(AI + Enhancements)</th>
+<th>Estimated Max Drawdown Reduction<br/>(AI + Enhancements)</th>
+<th>Primary driver of improvement</th>
+<th>Why a return pickup could exist</th>
+<th>What can erase it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Short selling (equities)</strong></td>
+<td><strong>-0.5% to +0.8%</strong></td>
+<td>0-15%</td>
+<td><strong>-0.3% to +1.2%</strong></td>
+<td><strong>0-20%</strong></td>
+<td>Monetizes downside moves; symmetry across regimes</td>
+<td>When the long-only strategy sees a negative regime or failed winner, shorts let the same state machine express the view instead of only reducing exposure.</td>
+<td>Borrow cost, squeezes, gap risk, and forced buy-ins can turn correct direction into poor realized return.</td>
+</tr>
+<tr>
+<td><strong>Equity index futures</strong></td>
+<td>-0.2% to +1.0%</td>
+<td><strong>0-25%</strong></td>
+<td><strong>0.0% to +1.5%</strong></td>
+<td><strong>5-30%</strong></td>
+<td>Cleaner macro exposure; reduced single-name noise</td>
+<td>When the stock signal is good but market beta is hostile, futures can separate single-name selection from broad-index exposure.</td>
+<td>Basis risk, roll cost, leverage, and wrong hedge ratios can remove the expected benefit; return pickup may show mostly as drawdown reduction.</td>
+</tr>
+<tr>
+<td><strong>Options (directional &amp; spreads)</strong></td>
+<td>-0.8% to +0.7%</td>
+<td><strong>0-25%</strong></td>
+<td><strong>-0.4% to +1.2%</strong></td>
+<td><strong>5-35%</strong></td>
+<td>Convex payoff; bounded downside risk</td>
+<td>Options can express high-conviction event or breakout states with capped downside, especially when the state machine wants participation but not full stock exposure.</td>
+<td>Theta decay, wide spreads, volatility overpayment, and timing error can make the option lose even when the underlying thesis is directionally reasonable.</td>
+</tr>
+<tr>
+<td><strong>Crypto spot / perpetuals</strong></td>
+<td><strong>-1.0% to +1.2%</strong></td>
+<td>0-20%</td>
+<td><strong>-0.5% to +2.0%</strong></td>
+<td><strong>0-30%</strong></td>
+<td>Higher volatility amplifies AI timing and sizing</td>
+<td>Crypto adds persistent 24/7 volatility where triage, duration, and PSM can matter more because state changes occur outside equity-market hours.</td>
+<td>Funding, weekend gaps, fragmented liquidity, exchange risk, and violent regime breaks can overwhelm signal quality.</td>
+</tr>
+<tr>
+<td><strong>All extensions combined</strong></td>
+<td><strong>-1.5% to +2.5%</strong></td>
+<td><strong>0-35%</strong></td>
+<td><strong>-0.8% to +3.5%</strong></td>
+<td><strong>5-45%</strong></td>
+<td>Diversified return sources with AI-controlled exposure</td>
+<td>Different instruments let the same forecast state choose the cleanest expression: equity, hedge, convex payoff, or cross-asset volatility.</td>
+<td>The combined range is discounted because correlations rise in stress, risk controls overlap, and individual extension benefits are not additive.</td>
+</tr>
+</tbody>
+</table>
+<p class="footnote">
+<em>
+      Notes: "Current AI" refers to Agents + Duration + Position Size Modulation (PSM).
+      "AI + Enhancements" additionally includes improved PSM calibration, confidence slope tracking,
+      and loss-velocity controls. Market-extension figures are estimates, not completed
+      measured-run results. Negative return values are possible and explicitly shown because a capability is only valuable
+      if its gross opportunity survives transaction costs, borrow or funding cost, slippage, execution timing,
+      and risk caps. Effects are indicative and not strictly additive due to correlations between mechanisms.
+    </em>
+</p>
+<p>
+<strong>Key takeaway:</strong>
+    Expanding market access increases the opportunity set, but also introduces additional sources of risk.
+    The AI stack converts this flexibility into improved outcomes by dynamically controlling
+    exposure, duration, and conviction-based capital allocation, enabling shorts, derivatives,
+    and crypto to be used within a disciplined and risk-aware framework.
+  </p>
+</section>
+<section id="ai-enhancements">
+<h2>Current Capabilities and Next-Stage Enhancements</h2>
+<p>
+    AlphaWeave has evolved from a pure <strong>AI execution overlay</strong> into a
+    <strong>multi-layer allocation and execution system</strong>. The architecture now includes:
+    <strong>strategy selection</strong>, <strong>asset selection</strong>, <strong>capital allocation</strong>,
+    <strong>decision review feedback</strong>, and a <strong>PSM-driven AI execution layer</strong>.
+  </p>
+<p>
+    Many previously "planned" features are now part of the <strong>baseline system</strong>.
+    The focus going forward is on improving <strong>interaction between layers</strong>,
+    especially how conviction signals translate into capital deployment.
+  </p>
+<p>
+    <strong>Time frame:</strong> Return figures in this enhancement section are <strong>directional annualized estimates</strong>
+    for future validation work. They are separate from the realized 10-day sampled-window returns
+    reported in the monthly performance table above.
+  </p>
+<div class="callout">
+<strong>Key message:</strong>
+    AlphaWeave's value has shifted from execution optimization to
+    <strong>selection and allocation intelligence</strong>, with the execution layer now acting as a
+    <strong>conviction-based capital amplifier</strong> via position sizing (PSM).
+  </div>
+<h3>Tier 1: Strategy and Asset Allocation (Already active, with selection-methodology enhancements)</h3>
+<p>
+  AlphaWeave already performs dynamic <strong>strategy selection</strong> and
+  <strong>asset selection</strong> at the sleeve or leg level using market conditions,
+  historical performance, regime fit, and strategy-specific <code>asset_fit</code> profiles.
+  The current methodology maps each strategy's declared fit profile into numeric
+  <code>score_weights</code>, which are applied to computed asset metrics such as lookback return,
+  short-term return, trend slope, volatility, drawdown, and liquidity.
+</p>
+<ul>
+<li>Selects the most appropriate strategy or active strategy set for the current regime</li>
+<li>Selects assets whose measured behavior best matches each strategy's <code>asset_fit</code> profile</li>
+<li>Uses direction-aware fit logic for long vs short legs when <code>long_fit</code> or <code>short_fit</code> is defined</li>
+<li>Supports directional sleeves and market-neutral / basket sleeves</li>
+<li>Allocates capital across selected strategies and selected assets via PortfolioAgent</li>
+</ul>
+<p>
+<strong>What it already does:</strong>
+</p>
+<ul>
+<li>Uses explicit strategy metadata such as <code>selection_mode</code>, <code>preferred_regimes</code>, <code>direction_aware</code>, and <code>basket_fit</code></li>
+<li>Uses numeric <code>score_weights</code> to translate strategy fit intent into asset-ranking adjustments</li>
+<li>Ranks assets by combining a base market-quality score with a strategy-specific asset-fit score</li>
+<li>Ranks strategies using shadow performance, regime fit, DMA overlay, and coarse asset-fit compatibility</li>
+</ul>
+<p>
+<strong>What it does not yet fully do (enhancement opportunity):</strong>
+</p>
+<ul>
+<li>
+<strong>Behavior-word-to-metric compiler:</strong> automatically translate strategy descriptors such as
+    <code>range_bound</code>, <code>trend_persistence</code>, <code>mean_reverting</code>,
+    <code>gap_prone</code>, or <code>clean_follow_through</code> into computed feature requirements,
+    instead of relying primarily on manually defined <code>score_weights</code>.
+  </li>
+<li>
+<strong>Strategy-conditional feature engineering:</strong> compute features specific to each strategy family,
+    such as band-touch frequency, RSI reversal success rate, whipsaw frequency, breakout follow-through,
+    return autocorrelation, and mean-reversion half-life.
+  </li>
+<li>
+<strong>Regime-conditioned asset fit:</strong> evaluate how each asset behaves inside specific market regimes,
+    rather than using only one generic metric set across all conditions.
+  </li>
+<li>
+<strong>Basket-aware asset selection:</strong> score market-neutral baskets using cross-asset features such as
+    rolling correlation, spread stability, hedge ratio, volatility ratio, beta neutrality,
+    cointegration, and factor exposure balance.
+  </li>
+<li>
+<strong>Joint strategy-asset optimization:</strong> optimize the active strategy set and active asset set together,
+    instead of approximating the interaction through sequential scoring.
+  </li>
+</ul>
+<p>
+<strong>Measured impact:</strong>
+  Allocation improvements in the current evidence set are measured as incremental performance versus a fixed
+  <strong>momentum</strong> baseline with no strategy switching, no asset switching, and no AI execution layer.
+  The measured run is the latest completed 12-window full-stack sampled run: twelve representative 10-business-day windows,
+  <strong>6h</strong> bars, and row-specific baseline/candidate assets shown in the monthly table.
+  <strong>Time frame:</strong> The realized evidence shown earlier is over sampled 10-business-day measured windows; the expected
+  contribution below is an annualized validation target, not a completed measured-window result.
+  Selection-methodology enhancements should also be measured by comparing the current
+  <code>score_weights</code>-based allocator against an enhanced allocator that adds
+  strategy-specific, regime-conditioned, and cross-asset features.
+</p>
+<p>
+<strong>Expected contribution:</strong>
+  Directional estimates for allocation logic are
+  <strong>+3-8% annual return improvement</strong> under broader validation.
+  The enhanced selection methodology is estimated to add another
+  <strong>+0.5-2.0% annual return improvement</strong>,
+  primarily through better asset-strategy matching,
+  fewer poor-regime selections, improved basket construction,
+  improved Sharpe, and reduced drawdown.
+</p>
+<h3>Tier 2: AI Execution Layer (PSM-based capital allocation)</h3>
+<p>
+  AlphaWeave already adjusts <strong>position sizing and holding duration</strong>
+  using a conviction-based signal (<code>position_size_multiplier</code>, or PSM).
+  PSM translates decision confidence into deployed exposure after the asset and strategy
+  have already been selected.
+</p>
+<ul>
+<li>Scales exposure based on confidence in each signal</li>
+<li>Reduces capital allocation in uncertain or high-risk conditions</li>
+<li>Adjusts holding duration dynamically based on signal persistence</li>
+<li>Applies execution logic consistently across assets, strategies, sleeves, and legs</li>
+</ul>
+<p>
+<strong>What it already does:</strong>
+</p>
+<ul>
+<li>Uses <code>position_size_multiplier</code> to increase or reduce exposure relative to normal size</li>
+<li>Passes conviction-adjusted sizing into PortfolioAgent so sizing becomes capital allocation, not just a signal annotation</li>
+<li>Allows RiskManagerAgent to cap, reduce, or liquidate exposure after PSM is applied</li>
+<li>Supports direction-aware execution through sleeve and leg context</li>
+</ul>
+<p>
+<strong>What it does not yet fully do (enhancement opportunity):</strong>
+</p>
+<ul>
+<li>
+<strong>Nonlinear PSM calibration:</strong> map confidence to exposure using calibrated curves
+    instead of a simple linear multiplier.
+  </li>
+<li>
+<strong>Selection-aware PSM:</strong> adjust PSM based on asset-fit quality and strategy-fit quality,
+    so a high-confidence signal in a weakly matched asset receives less capital than the same signal
+    in a strongly matched asset.
+  </li>
+<li>
+<strong>Portfolio-aware PSM:</strong> size each position based on current portfolio concentration,
+    correlation, sleeve exposure, and available risk budget.
+  </li>
+<li>
+<strong>Regime-dependent sizing curves:</strong> use different PSM behavior in trending,
+    range-bound, high-volatility, and risk-off regimes.
+  </li>
+<li>
+<strong>Loss-velocity throttling:</strong> reduce PSM automatically when losses accumulate faster
+    than expected, even before formal drawdown limits are breached.
+  </li>
+</ul>
+<p>
+<strong>Measured impact:</strong>
+  Execution improvements are measured as incremental performance versus the same strategy and asset selection
+  with <code>adjust_size=False</code> and <code>adjust_duration=False</code>.
+  In the current evidence set, that means the latest completed 12-window full-stack sampled run: twelve representative
+  10-business-day windows, <strong>6h</strong> bars, <strong>momentum</strong> baseline, and the
+  row-specific assets shown in the monthly table.
+  <strong>Time frame:</strong> In the current evidence set, this is measured over sampled 10-business-day windows. The expected
+  contribution below is annualized only as a future validation target.
+  Enhanced PSM should be measured against the current PSM implementation while holding
+  selected strategies and selected assets constant.
+</p>
+<p>
+<strong>Expected contribution:</strong>
+  Directional estimates for PSM-based execution are
+  <strong>+2-6% annual return improvement</strong> under broader validation.
+  Enhanced PSM calibration is estimated to add another
+  <strong>+0.5-1.5% annual return improvement</strong>,
+  primarily through better capital efficiency,
+  improved risk-adjusted sizing,
+  reduced over-sizing of weak signals,
+  faster loss throttling,
+  and improved Sharpe.
+</p>
+<h3>Tier 3: Learning and Feedback (Evidence capture active; calibration still being validated)</h3>
+<p>
+  AlphaWeave already records <strong>trade outcomes, strategy performance, attribution data,
+  decision history, asset-selection history, strategy-selection history, and agent reasoning</strong>.
+  DecisionReviewAgent can turn these records into explicit outcome feedback, and the compact
+  AI/PSM path can include prior outcomes, transition-tape evidence, and forward attribution inside
+  the underwriting packet. That makes the system auditable and feedback-ready, but it should not be
+  presented as fully automatic online policy learning until repeated run evidence validates the
+  calibration loop.
+</p>
+<p class="assumptions">
+<strong>Policy-learning boundary:</strong> AlphaWeave can replay outcomes in the simulator, classify
+  policy wins and losses, and generate policy activation/deactivation evidence. It does not
+  automatically insert new trading policy into production. Policy changes remain review-driven:
+  the evidence is inspected, simulator replay is used to test the proposed change, and only then is
+  a policy promoted, disabled, or adjusted deliberately.
+</p>
+<ul>
+<li>Logs decision-level and position-level outcomes</li>
+<li>Uses DecisionReviewAgent to retrieve prior decision outcomes and convert them into guidance</li>
+<li>Generates attribution reports across strategies, assets, sleeves, and agents</li>
+<li>Stores historical context and prior reasoning for retrieval by downstream agents</li>
+<li>Uses historical outcomes as evidence for compact underwriting, policy review, and simulator-based policy tuning</li>
+<li>Keeps policy insertion human-reviewed rather than automatically rewriting runtime rules from a single backtest</li>
+</ul>
+<p>
+<strong>What it already does:</strong>
+</p>
+<ul>
+<li>Captures realized outcomes, transition tapes, and policy attribution for later review</li>
+<li>Feeds available prior-outcome summaries into compact AI/PSM underwriting when the path is enabled</li>
+<li>Feeds historical strategy performance into strategy selection</li>
+<li>Stores strategy <code>asset_fit</code> profiles and selection history for reporting and diagnostics</li>
+<li>Uses attribution and risk results to support policy activation/deactivation review</li>
+<li>Produces simulator-ready transition tapes so proposed policy edits can be replayed before activation</li>
+<li>Allows PSM and decision confidence to be constrained by prior performance context when that evidence is present</li>
+</ul>
+<p>
+<strong>What it does not yet fully do (enhancement opportunity):</strong>
+</p>
+<ul>
+<li>
+<strong>Learn asset-fit weights from realized outcomes:</strong>
+    update <code>score_weights</code> based on which asset features
+    actually predicted profitable trades for each strategy.
+  </li>
+<li>
+<strong>Learn behavior-word mappings:</strong>
+    validate whether descriptors such as <code>range_bound</code>,
+    <code>trend_persistence</code>, and <code>mean_reverting</code>
+    are correctly represented by the current metrics.
+  </li>
+<li>
+<strong>Counterfactual selection testing:</strong>
+    compare selected assets and strategies against rejected alternatives
+    to determine whether the allocator made the correct decision.
+  </li>
+<li>
+<strong>Agent influence weighting:</strong>
+    quantify which agent's recommendation improved or hurt performance
+    and adjust that agent's future influence weight.
+  </li>
+<li>
+<strong>Online calibration:</strong>
+    continuously recalibrate strategy weights, asset-fit weights,
+    and PSM mappings after each rolling evaluation window.
+  </li>
+</ul>
+<p>
+<strong>Measured impact:</strong>
+  Learning improvements should be measured by comparing rolling out-of-sample backtests
+  before and after feedback updates. Evaluation should track annual return, Sharpe,
+  max drawdown, turnover, selection stability, asset-switch accuracy,
+  strategy-switch accuracy, and whether selected assets outperform rejected candidates
+  under the same strategy.
+  The current measured evidence is limited to the latest completed 12-window full-stack sampled run: twelve representative
+  10-business-day windows, <strong>6h</strong> bars, <strong>momentum</strong> baseline, row-specific
+  assets from the monthly table, and Compact AI/PSM as the LLM path.
+  <strong>Time frame:</strong> No annual learning-return result is claimed here from the short-window run; the return range below
+  is a longer-horizon validation target.
+</p>
+<p>
+<strong>Expected contribution:</strong>
+  Directional estimates for learning and feedback are
+  <strong>+0.5-1.5% annual improvement</strong> under broader validation.
+  Enhanced selection-learning and calibration is estimated to add another
+  <strong>+0.25-1.0% annual improvement</strong>,
+  mainly from reducing repeated selection mistakes,
+  improving strategy-specific asset fit,
+  stabilizing rotations,
+  and making PSM calibration more data-driven.
+</p>
+<p class="footnote">
+<em>
+    Because AlphaWeave already implements dynamic selection,
+    allocation, and conviction-based execution,
+    the remaining enhancement opportunities are expected to improve
+    calibration, robustness, and risk-adjusted performance
+    more than raw return generation.
+  </em>
+</p>
+</section>
+</main>
+<footer>
+  AlphaWeave - Multi-agentic AI trading architecture (presentation layout)
+</footer>
+</div></body>
+</html>

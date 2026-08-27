@@ -1,0 +1,47 @@
+{
+  "case_id": "presentation-20260816-walkthrough",
+  "title": "AlphaWeave Capital Presentation Walkthrough",
+  "presentation": "docs/presentation-20260816.html",
+  "script": "docs/podcasts/presentation-20260816-walkthrough.md",
+  "site_script": "docs/site/assets/podcasts/presentation-20260816-walkthrough.md",
+  "audio": "docs/site/assets/podcasts/presentation-20260816-walkthrough.mp3",
+  "video": "docs/site/assets/podcasts/presentation-20260816-walkthrough.mp4",
+  "poster": "docs/site/assets/podcasts/presentation-20260816-walkthrough-poster.png",
+  "section_screenshots": "docs/site/assets/podcasts/cases/presentation-20260816-sections",
+  "remotion": {
+    "source": "remotion/src/FindingAlphaPodcast.tsx",
+    "composition_id": "Presentation20260816Walkthrough",
+    "render_script": "npm run render:presentation:20260816",
+    "poster_script": "npm run poster:presentation:20260816"
+  },
+  "voice": {
+    "provider": "edge",
+    "voice": "en-US-AvaNeural",
+    "rate": "-6%",
+    "pitch": "-2Hz",
+    "volume": "+0%"
+  },
+  "sections_reviewed": [
+    "Title / framing",
+    "Executive summary",
+    "Competitive placement",
+    "End-to-end decision flow",
+    "Monthly sampled performance",
+    "Market-neutral sleeves",
+    "Sleeve constraints",
+    "Policy files",
+    "Multi-agent AI components",
+    "Synthetic market data simulation",
+    "TriageAgent",
+    "Strategy AI controls",
+    "Incremental AI controls",
+    "TradeCrew runtime",
+    "Asset selection",
+    "Strategy selection",
+    "How AlphaWeave augments any strategy",
+    "Simulator feedback loop",
+    "Granularity",
+    "Market extensions",
+    "Enhancement roadmap"
+  ]
+}
