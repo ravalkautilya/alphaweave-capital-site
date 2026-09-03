@@ -1,0 +1,2033 @@
+{
+  "db_path": "db\\strategies.db",
+  "run_id": "trade_dashboard_specimen_20260903_082451",
+  "mode": "historic",
+  "config_path": "",
+  "granularity": "",
+  "measured_start_date": "2026-02-02T13:30:00",
+  "live_start_rowid": 0,
+  "events": [
+    {
+      "rowid": 40650278,
+      "created_at": "2026-09-03 12:24:51",
+      "asof_date": "2026-02-02T13:30:00",
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "stage": "DecisionMakingAgent",
+      "sleeve_id": "monthly_ai_rotatable_directional",
+      "asset": "AAPL",
+      "strategy": "buy_and_hold",
+      "raw_signal": "BUY",
+      "model_action": "BUY",
+      "final_action": "BUY",
+      "command": "BUY",
+      "portfolio_trade_event": "ENTER_LONG",
+      "event": "ENTER_LONG",
+      "price": 187.25,
+      "price_source": "trade_table.price",
+      "psm": 0.92,
+      "confidence": 0.92,
+      "pnl": null,
+      "position_return": null,
+      "capital_line_value": null,
+      "capital_used": 95000,
+      "gross_exposure": 1,
+      "net_exposure": 1,
+      "beta_exposure": null,
+      "drawdown": null,
+      "risk_breach": null,
+      "hard_risk": null,
+      "reason": "initial measured-window allocation",
+      "content_type": "decision_audit_event",
+      "is_executable": true,
+      "measured_start_date": "2026-02-02T13:30:00",
+      "tracker_exec_event": "ENTER_LONG",
+      "tracker_exec_detail": "OPEN_LONG",
+      "asset_weight": 0.475
+    },
+    {
+      "rowid": 40650279,
+      "created_at": "2026-09-03 12:24:51",
+      "asof_date": "2026-02-02T13:30:00",
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "stage": "DecisionMakingAgent",
+      "sleeve_id": "monthly_ai_rotatable_directional",
+      "asset": "MSFT",
+      "strategy": "buy_and_hold",
+      "raw_signal": "BUY",
+      "model_action": "BUY",
+      "final_action": "BUY",
+      "command": "BUY",
+      "portfolio_trade_event": "ENTER_LONG",
+      "event": "ENTER_LONG",
+      "price": 409.4,
+      "price_source": "trade_table.price",
+      "psm": 0.92,
+      "confidence": 0.92,
+      "pnl": null,
+      "position_return": null,
+      "capital_line_value": null,
+      "capital_used": 95000,
+      "gross_exposure": 1,
+      "net_exposure": 1,
+      "beta_exposure": null,
+      "drawdown": null,
+      "risk_breach": null,
+      "hard_risk": null,
+      "reason": "initial measured-window allocation",
+      "content_type": "decision_audit_event",
+      "is_executable": true,
+      "measured_start_date": "2026-02-02T13:30:00",
+      "tracker_exec_event": "ENTER_LONG",
+      "tracker_exec_detail": "OPEN_LONG",
+      "asset_weight": 0.475
+    },
+    {
+      "rowid": 40650280,
+      "created_at": "2026-09-03 12:24:51",
+      "asof_date": "2026-02-03T19:30:00",
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "stage": "DecisionMakingAgent",
+      "sleeve_id": "monthly_ai_rotatable_directional",
+      "asset": "AAPL",
+      "strategy": "buy_and_hold",
+      "raw_signal": "SELL",
+      "model_action": "SELL",
+      "final_action": "SELL",
+      "command": "SELL",
+      "portfolio_trade_event": "EXIT_LONG",
+      "event": "EXIT_LONG",
+      "price": 189.1,
+      "price_source": "trade_table.price",
+      "psm": 0.86,
+      "confidence": 0.86,
+      "pnl": null,
+      "position_return": null,
+      "capital_line_value": null,
+      "capital_used": 95494,
+      "gross_exposure": 1,
+      "net_exposure": 1,
+      "beta_exposure": null,
+      "drawdown": null,
+      "risk_breach": null,
+      "hard_risk": null,
+      "reason": "rotation out after weaker relative momentum",
+      "content_type": "decision_audit_event",
+      "is_executable": true,
+      "measured_start_date": "2026-02-02T13:30:00",
+      "tracker_exec_event": "EXIT_LONG",
+      "tracker_exec_detail": "CLOSE_LONG",
+      "asset_weight": 0.475
+    },
+    {
+      "rowid": 40650281,
+      "created_at": "2026-09-03 12:24:51",
+      "asof_date": "2026-02-03T19:30:00",
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "stage": "DecisionMakingAgent",
+      "sleeve_id": "monthly_ai_rotatable_directional",
+      "asset": "NVDA",
+      "strategy": "buy_and_hold",
+      "raw_signal": "BUY",
+      "model_action": "BUY",
+      "final_action": "BUY",
+      "command": "BUY",
+      "portfolio_trade_event": "ENTER_LONG",
+      "event": "ENTER_LONG",
+      "price": 704.8,
+      "price_source": "trade_table.price",
+      "psm": 0.86,
+      "confidence": 0.86,
+      "pnl": null,
+      "position_return": null,
+      "capital_line_value": null,
+      "capital_used": 95494,
+      "gross_exposure": 1,
+      "net_exposure": 1,
+      "beta_exposure": null,
+      "drawdown": null,
+      "risk_breach": null,
+      "hard_risk": null,
+      "reason": "rotation into stronger risk-adjusted momentum",
+      "content_type": "decision_audit_event",
+      "is_executable": true,
+      "measured_start_date": "2026-02-02T13:30:00",
+      "tracker_exec_event": "ENTER_LONG",
+      "tracker_exec_detail": "OPEN_LONG"
+    },
+    {
+      "rowid": 40650282,
+      "created_at": "2026-09-03 12:24:51",
+      "asof_date": "2026-02-05T13:30:00",
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "stage": "DecisionMakingAgent",
+      "sleeve_id": "monthly_ai_rotatable_directional",
+      "asset": "MSFT",
+      "strategy": "buy_and_hold",
+      "raw_signal": "BUY",
+      "model_action": "BUY",
+      "final_action": "BUY",
+      "command": "RESIZE",
+      "portfolio_trade_event": "RESIZE_LONG",
+      "event": "RESIZE_LONG",
+      "price": 414.55,
+      "price_source": "trade_table.price",
+      "psm": 0.78,
+      "confidence": 0.78,
+      "pnl": null,
+      "position_return": null,
+      "capital_line_value": null,
+      "capital_used": 96786,
+      "gross_exposure": 1,
+      "net_exposure": 1,
+      "beta_exposure": null,
+      "drawdown": null,
+      "risk_breach": null,
+      "hard_risk": null,
+      "reason": "PSM resize after lower portfolio drawdown pressure",
+      "content_type": "decision_audit_event",
+      "is_executable": true,
+      "measured_start_date": "2026-02-02T13:30:00",
+      "tracker_exec_event": "RESIZE_LONG",
+      "tracker_exec_detail": "RESIZE_LONG",
+      "asset_weight": 0.38
+    },
+    {
+      "rowid": 40650283,
+      "created_at": "2026-09-03 12:24:51",
+      "asof_date": "2026-02-06T19:30:00",
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "stage": "DecisionMakingAgent",
+      "sleeve_id": "monthly_ai_rotatable_directional",
+      "asset": "COIN",
+      "strategy": "buy_and_hold",
+      "raw_signal": "BUY",
+      "model_action": "BUY",
+      "final_action": "BUY",
+      "command": "BUY",
+      "portfolio_trade_event": "ENTER_LONG",
+      "event": "ENTER_LONG",
+      "price": 154.2,
+      "price_source": "trade_table.price",
+      "psm": 0.84,
+      "confidence": 0.84,
+      "pnl": null,
+      "position_return": null,
+      "capital_line_value": null,
+      "capital_used": 97764.5,
+      "gross_exposure": 1,
+      "net_exposure": 1,
+      "beta_exposure": null,
+      "drawdown": null,
+      "risk_breach": null,
+      "hard_risk": null,
+      "reason": "asset switch adds COIN as higher-beta crypto-linked exposure after stronger relative fit",
+      "content_type": "decision_audit_event",
+      "is_executable": true,
+      "measured_start_date": "2026-02-02T13:30:00",
+      "tracker_exec_event": "ENTER_LONG",
+      "tracker_exec_detail": "OPEN_LONG",
+      "asset_weight": 0.2375
+    },
+    {
+      "rowid": 40650284,
+      "created_at": "2026-09-03 12:24:51",
+      "asof_date": "2026-02-10T13:30:00",
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "stage": "DecisionMakingAgent",
+      "sleeve_id": "monthly_ai_rotatable_directional",
+      "asset": "MSFT",
+      "strategy": "buy_and_hold",
+      "raw_signal": "SELL",
+      "model_action": "SELL",
+      "final_action": "SELL",
+      "command": "SELL",
+      "portfolio_trade_event": "EXIT_LONG",
+      "event": "EXIT_LONG",
+      "price": 418.9,
+      "price_source": "trade_table.price",
+      "psm": 0.81,
+      "confidence": 0.81,
+      "pnl": null,
+      "position_return": null,
+      "capital_line_value": null,
+      "capital_used": 98572,
+      "gross_exposure": 1,
+      "net_exposure": 1,
+      "beta_exposure": null,
+      "drawdown": null,
+      "risk_breach": null,
+      "hard_risk": null,
+      "reason": "capital moved from lower signal strength",
+      "content_type": "decision_audit_event",
+      "is_executable": true,
+      "measured_start_date": "2026-02-02T13:30:00",
+      "tracker_exec_event": "EXIT_LONG",
+      "tracker_exec_detail": "CLOSE_LONG"
+    },
+    {
+      "rowid": 40650285,
+      "created_at": "2026-09-03 12:24:51",
+      "asof_date": "2026-02-10T13:30:00",
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "stage": "DecisionMakingAgent",
+      "sleeve_id": "monthly_ai_rotatable_directional",
+      "asset": "AMD",
+      "strategy": "buy_and_hold",
+      "raw_signal": "BUY",
+      "model_action": "BUY",
+      "final_action": "BUY",
+      "command": "BUY",
+      "portfolio_trade_event": "ENTER_LONG",
+      "event": "ENTER_LONG",
+      "price": 172.35,
+      "price_source": "trade_table.price",
+      "psm": 0.81,
+      "confidence": 0.81,
+      "pnl": null,
+      "position_return": null,
+      "capital_line_value": null,
+      "capital_used": 98572,
+      "gross_exposure": 1,
+      "net_exposure": 1,
+      "beta_exposure": null,
+      "drawdown": null,
+      "risk_breach": null,
+      "hard_risk": null,
+      "reason": "new semiconductor exposure selected",
+      "content_type": "decision_audit_event",
+      "is_executable": true,
+      "measured_start_date": "2026-02-02T13:30:00",
+      "tracker_exec_event": "ENTER_LONG",
+      "tracker_exec_detail": "OPEN_LONG",
+      "asset_weight": 0.2375
+    },
+    {
+      "rowid": 40650286,
+      "created_at": "2026-09-03 12:24:51",
+      "asof_date": "2026-02-11T19:30:00",
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "stage": "DecisionMakingAgent",
+      "sleeve_id": "monthly_ai_rotatable_directional",
+      "asset": "COIN",
+      "strategy": "buy_and_hold",
+      "raw_signal": "BUY",
+      "model_action": "BUY",
+      "final_action": "BUY",
+      "command": "RESIZE",
+      "portfolio_trade_event": "RESIZE_LONG",
+      "event": "RESIZE_LONG",
+      "price": 160.15,
+      "price_source": "trade_table.price",
+      "psm": 0.74,
+      "confidence": 0.74,
+      "pnl": null,
+      "position_return": null,
+      "capital_line_value": null,
+      "capital_used": 99389,
+      "gross_exposure": 1,
+      "net_exposure": 1,
+      "beta_exposure": null,
+      "drawdown": null,
+      "risk_breach": null,
+      "hard_risk": null,
+      "reason": "PSM resize with positive path but higher volatility",
+      "content_type": "decision_audit_event",
+      "is_executable": true,
+      "measured_start_date": "2026-02-02T13:30:00",
+      "tracker_exec_event": "RESIZE_LONG",
+      "tracker_exec_detail": "RESIZE_LONG",
+      "asset_weight": 0.3325
+    },
+    {
+      "rowid": 40650287,
+      "created_at": "2026-09-03 12:24:51",
+      "asof_date": "2026-02-13T13:30:00",
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "stage": "DecisionMakingAgent",
+      "sleeve_id": "monthly_ai_rotatable_directional",
+      "asset": "NVDA",
+      "strategy": "buy_and_hold",
+      "raw_signal": "SELL",
+      "model_action": "SELL",
+      "final_action": "SELL",
+      "command": "RESIZE",
+      "portfolio_trade_event": "RESIZE_LONG",
+      "event": "RESIZE_LONG",
+      "price": 719.5,
+      "price_source": "trade_table.price",
+      "psm": 0.88,
+      "confidence": 0.88,
+      "pnl": null,
+      "position_return": null,
+      "capital_line_value": null,
+      "capital_used": 100120.5,
+      "gross_exposure": 1,
+      "net_exposure": 1,
+      "beta_exposure": null,
+      "drawdown": null,
+      "risk_breach": null,
+      "hard_risk": null,
+      "reason": "trim to respect risk-capped position weights",
+      "content_type": "decision_audit_event",
+      "is_executable": true,
+      "measured_start_date": "2026-02-02T13:30:00",
+      "tracker_exec_event": "RESIZE_LONG",
+      "tracker_exec_detail": "RESIZE_LONG",
+      "asset_weight": 0.2375
+    },
+    {
+      "rowid": 40650288,
+      "created_at": "2026-09-03 12:24:51",
+      "asof_date": "2026-02-13T19:30:00",
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "stage": "DecisionMakingAgent",
+      "sleeve_id": "monthly_ai_rotatable_directional",
+      "asset": "AMD",
+      "strategy": "buy_and_hold",
+      "raw_signal": "SELL",
+      "model_action": "SELL",
+      "final_action": "SELL",
+      "command": "SELL",
+      "portfolio_trade_event": "EXIT_LONG",
+      "event": "EXIT_LONG",
+      "price": 176.45,
+      "price_source": "trade_table.price",
+      "psm": 0.9,
+      "confidence": 0.9,
+      "pnl": null,
+      "position_return": null,
+      "capital_line_value": null,
+      "capital_used": 100624,
+      "gross_exposure": 1,
+      "net_exposure": 1,
+      "beta_exposure": null,
+      "drawdown": null,
+      "risk_breach": null,
+      "hard_risk": null,
+      "reason": "end-of-window risk reduction",
+      "content_type": "decision_audit_event",
+      "is_executable": true,
+      "measured_start_date": "2026-02-02T13:30:00",
+      "tracker_exec_event": "EXIT_LONG",
+      "tracker_exec_detail": "CLOSE_LONG",
+      "asset_weight": 0.285
+    },
+    {
+      "rowid": 40650289,
+      "created_at": "2026-09-03 12:24:51",
+      "asof_date": "2026-02-13T19:30:00",
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "stage": "DecisionMakingAgent",
+      "sleeve_id": "monthly_ai_rotatable_directional",
+      "asset": "AAPL",
+      "strategy": "buy_and_hold",
+      "raw_signal": "BUY",
+      "model_action": "BUY",
+      "final_action": "BUY",
+      "command": "BUY",
+      "portfolio_trade_event": "ENTER_LONG",
+      "event": "ENTER_LONG",
+      "price": 193.05,
+      "price_source": "trade_table.price",
+      "psm": 0.9,
+      "confidence": 0.9,
+      "pnl": null,
+      "position_return": null,
+      "capital_line_value": null,
+      "capital_used": 100624,
+      "gross_exposure": 1,
+      "net_exposure": 1,
+      "beta_exposure": null,
+      "drawdown": null,
+      "risk_breach": null,
+      "hard_risk": null,
+      "reason": "fresh allocation after measured recovery",
+      "content_type": "decision_audit_event",
+      "is_executable": true,
+      "measured_start_date": "2026-02-02T13:30:00",
+      "tracker_exec_event": "ENTER_LONG",
+      "tracker_exec_detail": "OPEN_LONG"
+    }
+  ],
+  "summary": {
+    "event_count": 12,
+    "latest_rowid": 40650289,
+    "event_counts": {
+      "BUY": 6,
+      "SELL": 3,
+      "RESIZE": 3
+    },
+    "asset_counts": {
+      "AAPL": 3,
+      "MSFT": 3,
+      "NVDA": 2,
+      "COIN": 2,
+      "AMD": 2
+    },
+    "risk_metrics": {
+      "last_psm": 0.9,
+      "max_psm": 0.92,
+      "last_confidence": 0.9,
+      "max_beta_exposure": null,
+      "risk_breach_count": 0,
+      "hard_risk_count": 0
+    }
+  },
+  "allocation_state": {
+    "run_id": "trade_dashboard_specimen_20260903_082451",
+    "position_sleeve_weights": {
+      "monthly_ai_rotatable_directional": 1
+    },
+    "decision_sleeve_weights": {},
+    "position_asset_weights_by_sleeve": {
+      "monthly_ai_rotatable_directional": {
+        "AMD": 0.3,
+        "COIN": 0.45,
+        "NVDA": 0.25
+      }
+    },
+    "decision_asset_weights_by_sleeve": {},
+    "position_portfolio_weights": {},
+    "decision_portfolio_weights": {},
+    "position_portfolio_weights_pre_cap": {},
+    "decision_portfolio_weights_pre_cap": {},
+    "position_portfolio_weights_raw_from_portfolio_agent": {},
+    "decision_portfolio_weights_raw_from_portfolio_agent": {},
+    "position_strategy_asset_weights": {},
+    "decision_strategy_asset_weights": {},
+    "position_strategy_in_sleeve_weights": {
+      "monthly_ai_rotatable_directional": {
+        "buy_and_hold": 1
+      }
+    },
+    "decision_strategy_in_sleeve_weights": {},
+    "position_conviction_weight_adjustments": {},
+    "decision_conviction_weight_adjustments": {},
+    "risk_pnl_capital_weighting": {},
+    "risk_capped_position_portfolio_weights": {
+      "AMD": 0.285,
+      "COIN": 0.4275,
+      "NVDA": 0.2375
+    },
+    "risk_capped_decision_portfolio_weights": {},
+    "latest_asof_date": "2026-02-13T19:30:00"
+  },
+  "allocation_timeline": [
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AAPL": 0.5,
+          "MSFT": 0.5
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AAPL": 0.475,
+        "MSFT": 0.475
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-02T13:30:00",
+      "asof_date": "2026-02-02T13:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AAPL": 0.5,
+          "MSFT": 0.5
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AAPL": 0.475,
+        "MSFT": 0.475
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-02T19:30:00",
+      "asof_date": "2026-02-02T19:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AAPL": 0.5,
+          "MSFT": 0.5
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AAPL": 0.475,
+        "MSFT": 0.475
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-03T13:30:00",
+      "asof_date": "2026-02-03T13:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AAPL": 0.5,
+          "MSFT": 0.5
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AAPL": 0.475,
+        "MSFT": 0.475
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-03T19:30:00",
+      "asof_date": "2026-02-03T19:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AAPL": 0.35,
+          "MSFT": 0.4,
+          "NVDA": 0.25
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AAPL": 0.3325,
+        "MSFT": 0.38,
+        "NVDA": 0.2375
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-04T13:30:00",
+      "asof_date": "2026-02-04T13:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AAPL": 0.35,
+          "MSFT": 0.4,
+          "NVDA": 0.25
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AAPL": 0.3325,
+        "MSFT": 0.38,
+        "NVDA": 0.2375
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-04T19:30:00",
+      "asof_date": "2026-02-04T19:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AAPL": 0.35,
+          "MSFT": 0.4,
+          "NVDA": 0.25
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AAPL": 0.3325,
+        "MSFT": 0.38,
+        "NVDA": 0.2375
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-05T13:30:00",
+      "asof_date": "2026-02-05T13:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AAPL": 0.35,
+          "MSFT": 0.4,
+          "NVDA": 0.25
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AAPL": 0.3325,
+        "MSFT": 0.38,
+        "NVDA": 0.2375
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-05T19:30:00",
+      "asof_date": "2026-02-05T19:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "COIN": 0.25,
+          "MSFT": 0.3,
+          "NVDA": 0.45
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "COIN": 0.2375,
+        "MSFT": 0.285,
+        "NVDA": 0.4275
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-06T13:30:00",
+      "asof_date": "2026-02-06T13:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "COIN": 0.25,
+          "MSFT": 0.3,
+          "NVDA": 0.45
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "COIN": 0.2375,
+        "MSFT": 0.285,
+        "NVDA": 0.4275
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-06T19:30:00",
+      "asof_date": "2026-02-06T19:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "COIN": 0.25,
+          "MSFT": 0.3,
+          "NVDA": 0.45
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "COIN": 0.2375,
+        "MSFT": 0.285,
+        "NVDA": 0.4275
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-09T13:30:00",
+      "asof_date": "2026-02-09T13:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "COIN": 0.25,
+          "MSFT": 0.3,
+          "NVDA": 0.45
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "COIN": 0.2375,
+        "MSFT": 0.285,
+        "NVDA": 0.4275
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-09T19:30:00",
+      "asof_date": "2026-02-09T19:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AMD": 0.25,
+          "COIN": 0.35,
+          "NVDA": 0.4
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AMD": 0.2375,
+        "COIN": 0.3325,
+        "NVDA": 0.38
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-10T13:30:00",
+      "asof_date": "2026-02-10T13:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AMD": 0.25,
+          "COIN": 0.35,
+          "NVDA": 0.4
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AMD": 0.2375,
+        "COIN": 0.3325,
+        "NVDA": 0.38
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-10T19:30:00",
+      "asof_date": "2026-02-10T19:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AMD": 0.25,
+          "COIN": 0.35,
+          "NVDA": 0.4
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AMD": 0.2375,
+        "COIN": 0.3325,
+        "NVDA": 0.38
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-11T13:30:00",
+      "asof_date": "2026-02-11T13:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AMD": 0.25,
+          "COIN": 0.35,
+          "NVDA": 0.4
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AMD": 0.2375,
+        "COIN": 0.3325,
+        "NVDA": 0.38
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-11T19:30:00",
+      "asof_date": "2026-02-11T19:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AMD": 0.3,
+          "COIN": 0.45,
+          "NVDA": 0.25
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AMD": 0.285,
+        "COIN": 0.4275,
+        "NVDA": 0.2375
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-12T13:30:00",
+      "asof_date": "2026-02-12T13:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AMD": 0.3,
+          "COIN": 0.45,
+          "NVDA": 0.25
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AMD": 0.285,
+        "COIN": 0.4275,
+        "NVDA": 0.2375
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-12T19:30:00",
+      "asof_date": "2026-02-12T19:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AMD": 0.3,
+          "COIN": 0.45,
+          "NVDA": 0.25
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AMD": 0.285,
+        "COIN": 0.4275,
+        "NVDA": 0.2375
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-13T13:30:00",
+      "asof_date": "2026-02-13T13:30:00"
+    },
+    {
+      "run_id": "trade_dashboard_specimen_20260903_082451",
+      "position_sleeve_weights": {
+        "monthly_ai_rotatable_directional": 1
+      },
+      "decision_sleeve_weights": {},
+      "position_asset_weights_by_sleeve": {
+        "monthly_ai_rotatable_directional": {
+          "AMD": 0.3,
+          "COIN": 0.45,
+          "NVDA": 0.25
+        }
+      },
+      "decision_asset_weights_by_sleeve": {},
+      "position_portfolio_weights": {},
+      "decision_portfolio_weights": {},
+      "position_portfolio_weights_pre_cap": {},
+      "decision_portfolio_weights_pre_cap": {},
+      "position_portfolio_weights_raw_from_portfolio_agent": {},
+      "decision_portfolio_weights_raw_from_portfolio_agent": {},
+      "position_strategy_asset_weights": {},
+      "decision_strategy_asset_weights": {},
+      "position_strategy_in_sleeve_weights": {
+        "monthly_ai_rotatable_directional": {
+          "buy_and_hold": 1
+        }
+      },
+      "decision_strategy_in_sleeve_weights": {},
+      "position_conviction_weight_adjustments": {},
+      "decision_conviction_weight_adjustments": {},
+      "risk_pnl_capital_weighting": {},
+      "risk_capped_position_portfolio_weights": {
+        "AMD": 0.285,
+        "COIN": 0.4275,
+        "NVDA": 0.2375
+      },
+      "risk_capped_decision_portfolio_weights": {},
+      "latest_asof_date": "2026-02-13T19:30:00",
+      "asof_date": "2026-02-13T19:30:00"
+    }
+  ],
+  "report_risk_metrics": {
+    "source": "C:\\Users\\kauti\\AlphaWeave\\reports\\backtest\\trade_dashboard_specimen_20260903_082451\\multi_sleeve\\position_risk_metrics_weighted_summary.csv",
+    "max_drawdown": 0.0148,
+    "volatility": 0.193,
+    "sharpe_ratio": 1.37,
+    "sortino_ratio": null,
+    "annual_return": 0.512,
+    "profit_factor": 1.42,
+    "win_loss_ratio": 1.18,
+    "average_trade_return": 0.0026,
+    "breach": 0.01,
+    "selected_strategies": null,
+    "active_strategies": null,
+    "risk_capped_position_size_multiplier": 0.94,
+    "capital_in_use": 100624,
+    "capital_available": 5296,
+    "capital_total": 105920,
+    "deployable_capital": 100624,
+    "gross_exposure": 0.95,
+    "net_exposure": 0.95,
+    "unrealized_pnl_total": 5920,
+    "measured_start_date": "2026-02-02T13:30:00",
+    "psm_packet": {}
+  },
+  "plot_data": {
+    "run_id": "trade_dashboard_specimen_20260903_082451",
+    "measured_start_date": "2026-02-02T13:30:00",
+    "source": "position_portfolio_series",
+    "portfolio_series": [
+      {
+        "date": "2026-02-02T13:30:00",
+        "capital": 1,
+        "pnl_pct": 0
+      },
+      {
+        "date": "2026-02-02T19:30:00",
+        "capital": 1.0026,
+        "pnl_pct": 0.25999999999999357
+      },
+      {
+        "date": "2026-02-03T13:30:00",
+        "capital": 0.9989,
+        "pnl_pct": -0.10999999999999899
+      },
+      {
+        "date": "2026-02-03T19:30:00",
+        "capital": 1.0052,
+        "pnl_pct": 0.5200000000000093
+      },
+      {
+        "date": "2026-02-04T13:30:00",
+        "capital": 1.0114,
+        "pnl_pct": 1.1400000000000077
+      },
+      {
+        "date": "2026-02-04T19:30:00",
+        "capital": 1.0072,
+        "pnl_pct": 0.7200000000000095
+      },
+      {
+        "date": "2026-02-05T13:30:00",
+        "capital": 1.0188,
+        "pnl_pct": 1.8799999999999928
+      },
+      {
+        "date": "2026-02-05T19:30:00",
+        "capital": 1.0226,
+        "pnl_pct": 2.2599999999999953
+      },
+      {
+        "date": "2026-02-06T13:30:00",
+        "capital": 1.0164,
+        "pnl_pct": 1.639999999999997
+      },
+      {
+        "date": "2026-02-06T19:30:00",
+        "capital": 1.0291,
+        "pnl_pct": 2.9099999999999904
+      },
+      {
+        "date": "2026-02-09T13:30:00",
+        "capital": 1.0342,
+        "pnl_pct": 3.420000000000001
+      },
+      {
+        "date": "2026-02-09T19:30:00",
+        "capital": 1.0288,
+        "pnl_pct": 2.8799999999999937
+      },
+      {
+        "date": "2026-02-10T13:30:00",
+        "capital": 1.0376,
+        "pnl_pct": 3.760000000000008
+      },
+      {
+        "date": "2026-02-10T19:30:00",
+        "capital": 1.0413,
+        "pnl_pct": 4.129999999999989
+      },
+      {
+        "date": "2026-02-11T13:30:00",
+        "capital": 1.0351,
+        "pnl_pct": 3.509999999999991
+      },
+      {
+        "date": "2026-02-11T19:30:00",
+        "capital": 1.0462,
+        "pnl_pct": 4.620000000000002
+      },
+      {
+        "date": "2026-02-12T13:30:00",
+        "capital": 1.0508,
+        "pnl_pct": 5.079999999999996
+      },
+      {
+        "date": "2026-02-12T19:30:00",
+        "capital": 1.0474,
+        "pnl_pct": 4.740000000000011
+      },
+      {
+        "date": "2026-02-13T13:30:00",
+        "capital": 1.0539,
+        "pnl_pct": 5.390000000000006
+      },
+      {
+        "date": "2026-02-13T19:30:00",
+        "capital": 1.0592,
+        "pnl_pct": 5.919999999999992
+      }
+    ],
+    "tracker_trade_events": [
+      {
+        "rowid": "trade:3486",
+        "sort_rowid": 3486,
+        "created_at": "2026-09-03 12:24:51",
+        "asof_date": "2026-02-02T13:30:00",
+        "run_id": "trade_dashboard_specimen_20260903_082451",
+        "stage": "PositionTracker",
+        "sleeve_id": "monthly_ai_rotatable_directional",
+        "asset": "AAPL",
+        "strategy": "buy_and_hold",
+        "raw_signal": "BUY",
+        "model_action": "BUY",
+        "final_action": "BUY",
+        "command": "BUY",
+        "portfolio_trade_event": "ENTER_LONG",
+        "tracker_exec_event": "ENTER_LONG",
+        "tracker_exec_detail": "OPEN_LONG",
+        "event": "ENTER_LONG",
+        "price": 187.25,
+        "price_source": "trade_table.price",
+        "psm": 0.92,
+        "asset_weight": 0.475,
+        "target_notional": null,
+        "base_qty": null,
+        "broker_side": null,
+        "execution_intent": null,
+        "confidence": 0.92,
+        "pnl": null,
+        "position_return": null,
+        "capital_line_value": null,
+        "capital_used": 95000,
+        "gross_exposure": 1,
+        "net_exposure": 1,
+        "beta_exposure": null,
+        "drawdown": null,
+        "risk_breach": false,
+        "hard_risk": false,
+        "reason": "initial measured-window allocation",
+        "content_type": "trade_table",
+        "is_executable": true,
+        "measured_start_date": "2026-02-02T13:30:00"
+      },
+      {
+        "rowid": "trade:3487",
+        "sort_rowid": 3487,
+        "created_at": "2026-09-03 12:24:51",
+        "asof_date": "2026-02-02T13:30:00",
+        "run_id": "trade_dashboard_specimen_20260903_082451",
+        "stage": "PositionTracker",
+        "sleeve_id": "monthly_ai_rotatable_directional",
+        "asset": "MSFT",
+        "strategy": "buy_and_hold",
+        "raw_signal": "BUY",
+        "model_action": "BUY",
+        "final_action": "BUY",
+        "command": "BUY",
+        "portfolio_trade_event": "ENTER_LONG",
+        "tracker_exec_event": "ENTER_LONG",
+        "tracker_exec_detail": "OPEN_LONG",
+        "event": "ENTER_LONG",
+        "price": 409.4,
+        "price_source": "trade_table.price",
+        "psm": 0.92,
+        "asset_weight": 0.475,
+        "target_notional": null,
+        "base_qty": null,
+        "broker_side": null,
+        "execution_intent": null,
+        "confidence": 0.92,
+        "pnl": null,
+        "position_return": null,
+        "capital_line_value": null,
+        "capital_used": 95000,
+        "gross_exposure": 1,
+        "net_exposure": 1,
+        "beta_exposure": null,
+        "drawdown": null,
+        "risk_breach": false,
+        "hard_risk": false,
+        "reason": "initial measured-window allocation",
+        "content_type": "trade_table",
+        "is_executable": true,
+        "measured_start_date": "2026-02-02T13:30:00"
+      },
+      {
+        "rowid": "trade:3488",
+        "sort_rowid": 3488,
+        "created_at": "2026-09-03 12:24:51",
+        "asof_date": "2026-02-03T19:30:00",
+        "run_id": "trade_dashboard_specimen_20260903_082451",
+        "stage": "PositionTracker",
+        "sleeve_id": "monthly_ai_rotatable_directional",
+        "asset": "AAPL",
+        "strategy": "buy_and_hold",
+        "raw_signal": "SELL",
+        "model_action": "SELL",
+        "final_action": "SELL",
+        "command": "SELL",
+        "portfolio_trade_event": "EXIT_LONG",
+        "tracker_exec_event": "EXIT_LONG",
+        "tracker_exec_detail": "CLOSE_LONG",
+        "event": "EXIT_LONG",
+        "price": 189.1,
+        "price_source": "trade_table.price",
+        "psm": 0.86,
+        "asset_weight": 0.475,
+        "target_notional": null,
+        "base_qty": null,
+        "broker_side": null,
+        "execution_intent": null,
+        "confidence": 0.86,
+        "pnl": null,
+        "position_return": null,
+        "capital_line_value": null,
+        "capital_used": 95494,
+        "gross_exposure": 1,
+        "net_exposure": 1,
+        "beta_exposure": null,
+        "drawdown": null,
+        "risk_breach": false,
+        "hard_risk": false,
+        "reason": "rotation out after weaker relative momentum",
+        "content_type": "trade_table",
+        "is_executable": true,
+        "measured_start_date": "2026-02-02T13:30:00"
+      },
+      {
+        "rowid": "trade:3489",
+        "sort_rowid": 3489,
+        "created_at": "2026-09-03 12:24:51",
+        "asof_date": "2026-02-03T19:30:00",
+        "run_id": "trade_dashboard_specimen_20260903_082451",
+        "stage": "PositionTracker",
+        "sleeve_id": "monthly_ai_rotatable_directional",
+        "asset": "NVDA",
+        "strategy": "buy_and_hold",
+        "raw_signal": "BUY",
+        "model_action": "BUY",
+        "final_action": "BUY",
+        "command": "BUY",
+        "portfolio_trade_event": "ENTER_LONG",
+        "tracker_exec_event": "ENTER_LONG",
+        "tracker_exec_detail": "OPEN_LONG",
+        "event": "ENTER_LONG",
+        "price": 704.8,
+        "price_source": "trade_table.price",
+        "psm": 0.86,
+        "asset_weight": null,
+        "target_notional": null,
+        "base_qty": null,
+        "broker_side": null,
+        "execution_intent": null,
+        "confidence": 0.86,
+        "pnl": null,
+        "position_return": null,
+        "capital_line_value": null,
+        "capital_used": 95494,
+        "gross_exposure": 1,
+        "net_exposure": 1,
+        "beta_exposure": null,
+        "drawdown": null,
+        "risk_breach": false,
+        "hard_risk": false,
+        "reason": "rotation into stronger risk-adjusted momentum",
+        "content_type": "trade_table",
+        "is_executable": true,
+        "measured_start_date": "2026-02-02T13:30:00"
+      },
+      {
+        "rowid": "trade:3490",
+        "sort_rowid": 3490,
+        "created_at": "2026-09-03 12:24:51",
+        "asof_date": "2026-02-05T13:30:00",
+        "run_id": "trade_dashboard_specimen_20260903_082451",
+        "stage": "PositionTracker",
+        "sleeve_id": "monthly_ai_rotatable_directional",
+        "asset": "MSFT",
+        "strategy": "buy_and_hold",
+        "raw_signal": "BUY",
+        "model_action": "BUY",
+        "final_action": "BUY",
+        "command": "RESIZE",
+        "portfolio_trade_event": "RESIZE_LONG",
+        "tracker_exec_event": "RESIZE_LONG",
+        "tracker_exec_detail": "RESIZE_LONG",
+        "event": "RESIZE_LONG",
+        "price": 414.55,
+        "price_source": "trade_table.price",
+        "psm": 0.78,
+        "asset_weight": 0.38,
+        "target_notional": null,
+        "base_qty": null,
+        "broker_side": null,
+        "execution_intent": null,
+        "confidence": 0.78,
+        "pnl": null,
+        "position_return": null,
+        "capital_line_value": null,
+        "capital_used": 96786,
+        "gross_exposure": 1,
+        "net_exposure": 1,
+        "beta_exposure": null,
+        "drawdown": null,
+        "risk_breach": false,
+        "hard_risk": false,
+        "reason": "PSM resize after lower portfolio drawdown pressure",
+        "content_type": "trade_table",
+        "is_executable": true,
+        "measured_start_date": "2026-02-02T13:30:00"
+      },
+      {
+        "rowid": "trade:3491",
+        "sort_rowid": 3491,
+        "created_at": "2026-09-03 12:24:51",
+        "asof_date": "2026-02-06T19:30:00",
+        "run_id": "trade_dashboard_specimen_20260903_082451",
+        "stage": "PositionTracker",
+        "sleeve_id": "monthly_ai_rotatable_directional",
+        "asset": "COIN",
+        "strategy": "buy_and_hold",
+        "raw_signal": "BUY",
+        "model_action": "BUY",
+        "final_action": "BUY",
+        "command": "BUY",
+        "portfolio_trade_event": "ENTER_LONG",
+        "tracker_exec_event": "ENTER_LONG",
+        "tracker_exec_detail": "OPEN_LONG",
+        "event": "ENTER_LONG",
+        "price": 154.2,
+        "price_source": "trade_table.price",
+        "psm": 0.84,
+        "asset_weight": 0.2375,
+        "target_notional": null,
+        "base_qty": null,
+        "broker_side": null,
+        "execution_intent": null,
+        "confidence": 0.84,
+        "pnl": null,
+        "position_return": null,
+        "capital_line_value": null,
+        "capital_used": 97764.5,
+        "gross_exposure": 1,
+        "net_exposure": 1,
+        "beta_exposure": null,
+        "drawdown": null,
+        "risk_breach": false,
+        "hard_risk": false,
+        "reason": "asset switch adds COIN as higher-beta crypto-linked exposure after stronger relative fit",
+        "content_type": "trade_table",
+        "is_executable": true,
+        "measured_start_date": "2026-02-02T13:30:00"
+      },
+      {
+        "rowid": "trade:3492",
+        "sort_rowid": 3492,
+        "created_at": "2026-09-03 12:24:51",
+        "asof_date": "2026-02-10T13:30:00",
+        "run_id": "trade_dashboard_specimen_20260903_082451",
+        "stage": "PositionTracker",
+        "sleeve_id": "monthly_ai_rotatable_directional",
+        "asset": "MSFT",
+        "strategy": "buy_and_hold",
+        "raw_signal": "SELL",
+        "model_action": "SELL",
+        "final_action": "SELL",
+        "command": "SELL",
+        "portfolio_trade_event": "EXIT_LONG",
+        "tracker_exec_event": "EXIT_LONG",
+        "tracker_exec_detail": "CLOSE_LONG",
+        "event": "EXIT_LONG",
+        "price": 418.9,
+        "price_source": "trade_table.price",
+        "psm": 0.81,
+        "asset_weight": null,
+        "target_notional": null,
+        "base_qty": null,
+        "broker_side": null,
+        "execution_intent": null,
+        "confidence": 0.81,
+        "pnl": null,
+        "position_return": null,
+        "capital_line_value": null,
+        "capital_used": 98572,
+        "gross_exposure": 1,
+        "net_exposure": 1,
+        "beta_exposure": null,
+        "drawdown": null,
+        "risk_breach": false,
+        "hard_risk": false,
+        "reason": "capital moved from lower signal strength",
+        "content_type": "trade_table",
+        "is_executable": true,
+        "measured_start_date": "2026-02-02T13:30:00"
+      },
+      {
+        "rowid": "trade:3493",
+        "sort_rowid": 3493,
+        "created_at": "2026-09-03 12:24:51",
+        "asof_date": "2026-02-10T13:30:00",
+        "run_id": "trade_dashboard_specimen_20260903_082451",
+        "stage": "PositionTracker",
+        "sleeve_id": "monthly_ai_rotatable_directional",
+        "asset": "AMD",
+        "strategy": "buy_and_hold",
+        "raw_signal": "BUY",
+        "model_action": "BUY",
+        "final_action": "BUY",
+        "command": "BUY",
+        "portfolio_trade_event": "ENTER_LONG",
+        "tracker_exec_event": "ENTER_LONG",
+        "tracker_exec_detail": "OPEN_LONG",
+        "event": "ENTER_LONG",
+        "price": 172.35,
+        "price_source": "trade_table.price",
+        "psm": 0.81,
+        "asset_weight": 0.2375,
+        "target_notional": null,
+        "base_qty": null,
+        "broker_side": null,
+        "execution_intent": null,
+        "confidence": 0.81,
+        "pnl": null,
+        "position_return": null,
+        "capital_line_value": null,
+        "capital_used": 98572,
+        "gross_exposure": 1,
+        "net_exposure": 1,
+        "beta_exposure": null,
+        "drawdown": null,
+        "risk_breach": false,
+        "hard_risk": false,
+        "reason": "new semiconductor exposure selected",
+        "content_type": "trade_table",
+        "is_executable": true,
+        "measured_start_date": "2026-02-02T13:30:00"
+      },
+      {
+        "rowid": "trade:3494",
+        "sort_rowid": 3494,
+        "created_at": "2026-09-03 12:24:51",
+        "asof_date": "2026-02-11T19:30:00",
+        "run_id": "trade_dashboard_specimen_20260903_082451",
+        "stage": "PositionTracker",
+        "sleeve_id": "monthly_ai_rotatable_directional",
+        "asset": "COIN",
+        "strategy": "buy_and_hold",
+        "raw_signal": "BUY",
+        "model_action": "BUY",
+        "final_action": "BUY",
+        "command": "RESIZE",
+        "portfolio_trade_event": "RESIZE_LONG",
+        "tracker_exec_event": "RESIZE_LONG",
+        "tracker_exec_detail": "RESIZE_LONG",
+        "event": "RESIZE_LONG",
+        "price": 160.15,
+        "price_source": "trade_table.price",
+        "psm": 0.74,
+        "asset_weight": 0.3325,
+        "target_notional": null,
+        "base_qty": null,
+        "broker_side": null,
+        "execution_intent": null,
+        "confidence": 0.74,
+        "pnl": null,
+        "position_return": null,
+        "capital_line_value": null,
+        "capital_used": 99389,
+        "gross_exposure": 1,
+        "net_exposure": 1,
+        "beta_exposure": null,
+        "drawdown": null,
+        "risk_breach": false,
+        "hard_risk": false,
+        "reason": "PSM resize with positive path but higher volatility",
+        "content_type": "trade_table",
+        "is_executable": true,
+        "measured_start_date": "2026-02-02T13:30:00"
+      },
+      {
+        "rowid": "trade:3495",
+        "sort_rowid": 3495,
+        "created_at": "2026-09-03 12:24:51",
+        "asof_date": "2026-02-13T13:30:00",
+        "run_id": "trade_dashboard_specimen_20260903_082451",
+        "stage": "PositionTracker",
+        "sleeve_id": "monthly_ai_rotatable_directional",
+        "asset": "NVDA",
+        "strategy": "buy_and_hold",
+        "raw_signal": "SELL",
+        "model_action": "SELL",
+        "final_action": "SELL",
+        "command": "RESIZE",
+        "portfolio_trade_event": "RESIZE_LONG",
+        "tracker_exec_event": "RESIZE_LONG",
+        "tracker_exec_detail": "RESIZE_LONG",
+        "event": "RESIZE_LONG",
+        "price": 719.5,
+        "price_source": "trade_table.price",
+        "psm": 0.88,
+        "asset_weight": 0.2375,
+        "target_notional": null,
+        "base_qty": null,
+        "broker_side": null,
+        "execution_intent": null,
+        "confidence": 0.88,
+        "pnl": null,
+        "position_return": null,
+        "capital_line_value": null,
+        "capital_used": 100120.5,
+        "gross_exposure": 1,
+        "net_exposure": 1,
+        "beta_exposure": null,
+        "drawdown": null,
+        "risk_breach": false,
+        "hard_risk": false,
+        "reason": "trim to respect risk-capped position weights",
+        "content_type": "trade_table",
+        "is_executable": true,
+        "measured_start_date": "2026-02-02T13:30:00"
+      },
+      {
+        "rowid": "trade:3496",
+        "sort_rowid": 3496,
+        "created_at": "2026-09-03 12:24:51",
+        "asof_date": "2026-02-13T19:30:00",
+        "run_id": "trade_dashboard_specimen_20260903_082451",
+        "stage": "PositionTracker",
+        "sleeve_id": "monthly_ai_rotatable_directional",
+        "asset": "AMD",
+        "strategy": "buy_and_hold",
+        "raw_signal": "SELL",
+        "model_action": "SELL",
+        "final_action": "SELL",
+        "command": "SELL",
+        "portfolio_trade_event": "EXIT_LONG",
+        "tracker_exec_event": "EXIT_LONG",
+        "tracker_exec_detail": "CLOSE_LONG",
+        "event": "EXIT_LONG",
+        "price": 176.45,
+        "price_source": "trade_table.price",
+        "psm": 0.9,
+        "asset_weight": 0.285,
+        "target_notional": null,
+        "base_qty": null,
+        "broker_side": null,
+        "execution_intent": null,
+        "confidence": 0.9,
+        "pnl": null,
+        "position_return": null,
+        "capital_line_value": null,
+        "capital_used": 100624,
+        "gross_exposure": 1,
+        "net_exposure": 1,
+        "beta_exposure": null,
+        "drawdown": null,
+        "risk_breach": false,
+        "hard_risk": false,
+        "reason": "end-of-window risk reduction",
+        "content_type": "trade_table",
+        "is_executable": true,
+        "measured_start_date": "2026-02-02T13:30:00"
+      },
+      {
+        "rowid": "trade:3497",
+        "sort_rowid": 3497,
+        "created_at": "2026-09-03 12:24:51",
+        "asof_date": "2026-02-13T19:30:00",
+        "run_id": "trade_dashboard_specimen_20260903_082451",
+        "stage": "PositionTracker",
+        "sleeve_id": "monthly_ai_rotatable_directional",
+        "asset": "AAPL",
+        "strategy": "buy_and_hold",
+        "raw_signal": "BUY",
+        "model_action": "BUY",
+        "final_action": "BUY",
+        "command": "BUY",
+        "portfolio_trade_event": "ENTER_LONG",
+        "tracker_exec_event": "ENTER_LONG",
+        "tracker_exec_detail": "OPEN_LONG",
+        "event": "ENTER_LONG",
+        "price": 193.05,
+        "price_source": "trade_table.price",
+        "psm": 0.9,
+        "asset_weight": null,
+        "target_notional": null,
+        "base_qty": null,
+        "broker_side": null,
+        "execution_intent": null,
+        "confidence": 0.9,
+        "pnl": null,
+        "position_return": null,
+        "capital_line_value": null,
+        "capital_used": 100624,
+        "gross_exposure": 1,
+        "net_exposure": 1,
+        "beta_exposure": null,
+        "drawdown": null,
+        "risk_breach": false,
+        "hard_risk": false,
+        "reason": "fresh allocation after measured recovery",
+        "content_type": "trade_table",
+        "is_executable": true,
+        "measured_start_date": "2026-02-02T13:30:00"
+      }
+    ],
+    "capital_used_series": [
+      {
+        "date": "2026-02-02T13:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-02T19:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-03T13:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-03T19:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-04T13:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-04T19:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-05T13:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-05T19:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-06T13:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-06T19:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-09T13:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-09T19:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-10T13:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-10T19:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-11T13:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-11T19:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-12T13:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-12T19:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-13T13:30:00",
+        "capital_used": 0.95
+      },
+      {
+        "date": "2026-02-13T19:30:00",
+        "capital_used": 0.95
+      }
+    ],
+    "sleeve_count": 1,
+    "sleeves": [
+      "monthly_ai_rotatable_directional"
+    ]
+  },
+  "server_time": 1788455407.6569908
+}

@@ -4,56 +4,58 @@ Presentation: docs/presentation-20260816.html
 
 ## Narration Draft
 
-This episode walks through the current AlphaWeave Capital presentation from top to bottom, using the presentation sections themselves on screen.
+This episode moves through the AlphaWeave Capital presentation section by section. For each section, I am going to state the conclusion the slide is making, not just name the subject.
 
-The title frame sets the claim: AlphaWeave Capital is institutional allocation intelligence and attribution. The deck is about proving which decision layer changed the measured result.
+The title frame's conclusion is that AlphaWeave Capital is not being positioned as another trading bot. The finding is that the product claim lives in allocation intelligence and attribution: the system has to prove which decision layer changed the measured result.
 
-The executive summary starts with the basic architecture. AlphaWeave is not a strategy by itself. It is a decision layer above strategies. It asks which strategy should be active, which assets fit that strategy, how much capital should be deployed, and whether the resulting decision improved the measured path.
+The executive summary's conclusion is that the core product is a decision layer above strategies. The finding is that AlphaWeave chooses the active strategy, chooses the assets that fit it, sizes the capital, and then proves whether those choices improved the realized path.
 
-The competitive placement section makes the first distinction. Most open trading systems are bot frameworks, model research stacks, or execution engines. AlphaWeave is positioned around staged attribution, policy files, audit trails, and measured capital reports. The point is not that a portfolio went up. The point is knowing what changed, why it changed, and which layer earned credit.
+The competitive placement section concludes that AlphaWeave occupies a different lane from model research notebooks, bot frameworks, brokers, and generic execution systems. The finding is that its defensible edge is the evidence stack: staged attribution, policy files, audit trails, and measured capital reports.
 
-The end-to-end decision flow shows the single-bar pipeline. Data enters first. Asset selection and strategy selection define the candidate trading world. Triage decides whether compact AI and PSM underwriting is worth an LLM call. PSM means position size multiplier: the capital dial after policy and risk checks.
+The end-to-end decision flow concludes that a single bar is enough to audit the whole system. The finding is that data, asset selection, strategy selection, triage, compact AI, PSM, risk, portfolio construction, execution, and reporting all have named handoffs. PSM means position size multiple.
 
-The month-by-month sampled performance section is the main evidence table. The baseline is momentum with fixed starting assets. The rows use sampled ten-business-day windows, so the numbers are short-window measurements, not annualized claims. The table separates strategy pickup, asset pickup, policy-only execution, compact AI and PSM, total improvement, and drawdown behavior.
+The monthly sampled performance section's conclusion is numerical: across the 12 sampled ten-day windows, AlphaWeave produced plus 6.97% total measured improvement. The finding is that strategy selection added plus 2.68%, asset selection subtracted 1.01%, and AI execution plus review added plus 5.29%. The drawdown conclusion is that strategy selection, asset selection, policy execution, and compact AI all show positive drawdown deltas in the staged table, so the strongest result is not only higher return, but higher return with measured drawdown reduction.
 
-The market-neutral sleeves section explains a different design goal. Directional sleeves can make money from direction, but market-neutral sleeves make the alpha question cleaner by controlling beta, net exposure, gross exposure, and spread behavior.
+The market-neutral sleeves section concludes that beta control makes the alpha question cleaner. The finding is that directional sleeves can still be useful, but market-neutral sleeves force the system to account for net exposure, gross exposure, hedge behavior, and spread quality before calling something alpha.
 
-The SleeveConstraintAgent section is the enforcement layer for those mandates. It checks whether a sleeve is allowed to carry the exposures it has, and whether beta or gross/net exposure violates the stated objective.
+The SleeveConstraintAgent section concludes that sleeve mandates need enforcement, not just naming. The finding is that a market-neutral sleeve, directional sleeve, or hedge sleeve has to obey exposure rules, beta limits, and gross and net boundaries or the reported result is not comparable.
 
-The policy files section is the governance layer behind the agents. Policies define what evidence is enough, when an LLM is allowed to run, when switching is allowed, how state transitions are handled, and when a policy should be reviewed, disabled, or promoted.
+The policy files section concludes that the agents are governed by explicit rules. The finding is that switching, LLM admission, state transitions, no-harm protections, and policy retirement are controlled by policy files that can be audited and simplified.
 
-The multi-agent AI section explains the full architecture. The full chain can still run latest market intelligence, past intelligence, low-level reflection, high-level reflection, decision review, and DMA as separate stages. The measured AI path now emphasizes compact AI and PSM: one underwriting packet sent to DecisionMakingAgent when triage admits the bar.
+The multi-agent AI section concludes that the full AI chain is available, but the measured path should be compact. The finding is that latest intelligence, past intelligence, reflections, and DMA can exist as separate layers, while production measurement prefers compact underwriting admitted by triage.
 
-The synthetic market data simulation section explains why simulated regimes matter. Synthetic data is useful for forcing edge cases: spikes, noisy trends, drawdown breaks, strategy flips, and policy failures that may be rare in a short real run.
+The synthetic market data section concludes that simulation is how rare failures become testable. The finding is that spikes, noisy trends, drawdown breaks, strategy flips, and policy failures can be forced in synthetic paths before they surprise the live or historical workflow.
 
-The triage section asks whether LLM calls are worth their cost. Triage is not supposed to block all thinking. It is supposed to admit compact underwriting when the tape changes, when a real event matters, or when a position state deserves review.
+The TriageAgent section concludes that LLM calls should be earned. The finding is that triage should not suppress useful intelligence, but it should admit compact AI only when the tape, state, risk, or candidate opportunity creates a real reason to spend the call.
 
-The strategy AI controls section defines the controls around execution. This is where duration, sizing, confidence, policy-only behavior, and compact AI behavior are separated so the system can measure what the AI layer actually added.
+The strategy AI controls section concludes that AI value has to be separable from policy value. The finding is that duration, action, confidence, sizing, policy-only behavior, and compact AI behavior are isolated so the system can tell whether the AI layer added anything beyond deterministic rules.
 
-The incremental AI controls table is the counterfactual view. It separates policy without triage from compact triage plus AI and PSM. That split matters because the LLM only earns credit for what it adds over the deterministic policy path.
+The incremental AI controls section's conclusion is that AI has to earn credit over policy, and in this run it did so modestly. The finding is that deterministic policy supplied most of the execution pickup, while compact triage plus AI and PSM added another plus 0.39% of sampled-window return and a small plus 0.01% drawdown improvement over policy-only. That is the right kind of AI contribution: incremental, measured, and tied to a risk result.
 
-The TradeCrew section shows how this becomes runnable software. TradeCrew normalizes context, loads data, runs date by date and sleeve by sleeve, applies strategy and asset selection, invokes compact AI and PSM when admitted, and then sends the final decision through risk, portfolio, constraints, execution, and reporting.
+The TradeCrew section concludes that the architecture is runnable, not just conceptual. The finding is that TradeCrew can normalize context, restore state, process dates and sleeves, apply asset and strategy selection, run compact AI when admitted, and send decisions through risk, portfolio, constraints, execution, and reports.
 
-The asset-selection section explains how AssetAllocationAgent chooses names. It looks for assets that fit the current strategy and window, not just assets that happened to move recently.
+The asset-selection section concludes that asset choice is a source of alpha only when it improves fit for the active strategy. The finding is that the system should rotate names based on strategy fit, measured behavior, liquidity, drawdown, and risk contribution, not just recent price movement.
 
-The strategy-selection section explains how StrategyAllocationAgent chooses the active strategy. It compares candidates under the current window, while respecting thresholds, turnover discipline, training evidence, and measured-window behavior.
+The strategy-selection section concludes that switching strategies should be harder than observing a temporary winner. The finding is that candidates must clear thresholds, turnover discipline, training evidence, and measured-window behavior before replacing the incumbent.
 
-The strategy augmentation section ties the layers together. AlphaWeave can sit above a simple incumbent strategy, then add strategy selection, asset selection, policy-only execution, and compact AI and PSM as separately measured stages.
+The strategy-augmentation section concludes that AlphaWeave can sit above a simple incumbent and add layers without losing attribution. The finding is that strategy selection, asset selection, policy execution, compact AI, PSM, risk, and reporting are all separately measurable increments.
 
-The historic-learning section explains what learning means here. It is not vague memory. It is outcome evidence: what was selected, what was rejected, what happened next, which policies helped, and which policies should be retired.
+The historic-learning section concludes that learning means outcome accountability. The finding is that the system must remember what was selected, what was rejected, what happened next, which policies helped, which policies hurt, and which failures should be replayed in simulation.
 
-The granularity section shows why timing matters. The same system was compared across fifteen-minute, one-hour, three-hour, six-hour, and one-day bars over a recent window. The point is not that the finest bar always wins. The point is that granularity changes how many chances the system has to switch, resize, or protect capital.
+The granularity section's conclusion is also numerical: bar size changes both return capture and drawdown behavior. The finding is that fifteen-minute bars captured the strongest short-window improvement, with plus 0.67% overlay return and a plus 0.80% drawdown delta, while three-hour and six-hour bars were mostly unchanged from baseline. Daily bars reduced drawdown by plus 0.33%, but gave up return through asset selection. The conclusion is that granularity is an economic choice: more bars can create more chances to improve return, but coarser bars may sometimes protect drawdown with fewer interventions.
 
-The market-extension section is deliberately conservative. Shorts, futures, options, and crypto are presented as estimates, not completed performance claims. Each can help only if it gives the same governed state machine a cleaner way to express an already-detected opportunity after costs, liquidity, and risk controls.
+The market-extension section concludes that new instruments only matter if they improve expression after cost and risk controls. The finding is that shorts, futures, options, and crypto are useful only when they give the same governed state machine a cleaner way to express an already-detected opportunity.
 
-The current-capabilities and next-stage enhancements section is the roadmap. It organizes improvement into selection, AI execution, and learning feedback. The next stage is not blindly adding more rules. It is simplifying policies, deactivating weak ones, replaying failures in simulation, and using compact AI only where it can add value over policy.
+The current-capabilities and next-stage roadmap concludes that the next improvement loop is simplification, not rule accumulation. The finding is that the return evidence is already concentrated: strategy selection helped at plus 2.68%, asset selection was the weak link at minus 1.01%, and execution policy plus compact AI carried the largest pickup at plus 5.29%. The policy implication is to preserve the drawdown-reducing controls, simplify the asset-switching rules that hurt return, and use compact AI only where it improves return or drawdown over policy.
 
-That is the core message of the presentation: AlphaWeave is an allocation and evidence system. Every layer has to be answerable: strategy, asset, policy, compact AI and PSM, risk, capital, and reporting.
+The presentation's final conclusion is that AlphaWeave is an allocation and evidence system. The finding across the whole deck is that every layer has to be answerable: strategy, asset, policy, compact AI and PSM, risk, capital, execution, and reporting. The return conclusion is that the measured presentation case improved by plus 6.97% across the sampled windows. Strategy selection added plus 2.68%, but asset selection gave back 1.01%, leaving plus 1.67% from selection before execution review. The additional return over the strategy-and-asset run came from policy execution and compact AI/PSM, which added plus 5.29% more. The risk-management conclusion is that this later execution layer did not merely chase return; it carried the drawdown-reduction controls, so the best AlphaWeave result came from adding capital discipline and AI underwriting on top of the strategy and asset choices.
 
 ## Episode Takeaways
 
-- The presentation now frames AlphaWeave as a decision layer, not a standalone strategy.
+- The presentation frames AlphaWeave as a decision layer, not a standalone strategy.
 - Compact AI/PSM is the preferred measured LLM path.
 - Policy-only overlay and compact AI/PSM are separated so LLM value can be tested honestly.
+- The sampled-window return conclusion is plus 6.97% total improvement, with the largest contribution from execution policy and compact AI/PSM.
+- Drawdown deltas are part of the finding, not a side note; return pickup is strongest when it comes with reduced drawdown.
 - Report evidence, transition tapes, and simulator replay are central to the workflow.
-- The performance numbers are tied to sampled windows, not broad annualized promises.
+- Each presentation section now resolves to a concrete finding, not just a topic description.

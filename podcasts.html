@@ -60,7 +60,7 @@
         <div class="presentation-copy">
           <p>Alpha means improvement beyond a fair comparison. It is not just a positive return; it is evidence that a decision added value versus the baseline, benchmark, or risk profile it should be judged against.</p>
           <p>In AlphaWeave Capital, alpha is decomposed by layer: strategy selection, asset selection, AI/PSM decisions, sizing, duration, and final portfolio events. The point of the podcast is to show which layer helped, which layer did not, and whether the report evidence supports the claim.</p>
-          <p>PSM means position size multiplier. When AI/PSM is discussed, the question is whether AI-assisted action, duration, or size-multiplier changes improved the executed portfolio path after risk and attribution are accounted for.</p>
+          <p>PSM means position size multiple. When AI/PSM is discussed, the question is whether AI-assisted action, duration, or size changes improved the executed portfolio path after risk and attribution are accounted for.</p>
         </div>
       </div>
     </section>
@@ -154,6 +154,34 @@
             <a class="text-link" href="assets/podcasts/cases/alpha-case-2025-01-08-to-2025-01-15-capital-forensics-psm-decision-ledger.csv">PSM decision ledger</a>
           </div>
         </article>
+        <article class="podcast-episode-card alpha-case-card" id="trade-dashboard-specimen-play-forward">
+          <div class="episode-copy">
+            <div class="episode-kicker"><span class="episode-number">Dashboard specimen</span><span class="episode-badge">Play-forward replay</span></div>
+            <h3>Trade Dashboard Specimen: Play-Forward Blotter.</h3>
+            <p>This replay follows one directional sleeve from measured start: strategy state, asset switching, grouped BUY and SELL rotations, PSM-driven RESIZE events, changing risk-capped weights, and populated risk metrics. PSM means position size multiple.</p>
+            <ul class="episode-points">
+              <li>Run id: trade_dashboard_specimen_20260903_082451</li>
+              <li>Measured start: February 2, 2026 at 13:30</li>
+              <li>Execution mix: 6 BUY, 3 SELL, and 3 RESIZE tracker events</li>
+              <li>Risk-capped weights change across 20 allocation snapshots</li>
+              <li>Risk cards are populated: PSM, drawdown, annual return, Sharpe, exposure, and capital</li>
+            </ul>
+          </div>
+          <div class="video-frame podcast-video-frame">
+            <video
+              controls
+              preload="metadata"
+              poster="assets/podcasts/trade-dashboard-specimen-play-forward-poster.png"
+              src="assets/podcasts/trade-dashboard-specimen-play-forward-voiced.mp4"
+            ></video>
+          </div>
+          <div class="episode-actions">
+            <a class="button" href="assets/podcasts/trade-dashboard-specimen-play-forward.md">Read specimen script</a>
+            <a class="text-link" href="assets/podcasts/cases/trade-dashboard-specimen/trade-dashboard-specimen-manifest.json">View specimen manifest</a>
+            <a class="text-link" href="assets/podcasts/cases/trade-dashboard-specimen/trade-dashboard-specimen-events.csv">Tracker event rows</a>
+            <a class="text-link" href="assets/podcasts/cases/trade-dashboard-specimen/trade-dashboard-specimen-risk-capped-weights.csv">Risk-capped weights</a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -162,18 +190,19 @@
         <div class="section-heading" id="presentation-walkthrough">
           <p class="eyebrow">Presentation walkthrough</p>
           <h2>AlphaWeave Capital presentation walkthrough.</h2>
-          <p>This video is a deck review, not a dated alpha case. It walks through the current presentation section by section and explains the measured evidence, compact AI/PSM path, policy governance, simulator feedback loop, and next-stage roadmap.</p>
+          <p>This video is a deck review, not a dated alpha case. It walks through the current presentation section by section and states the conclusion of each section, including sampled-window returns, drawdown deltas, compact AI/PSM contribution, policy governance, simulator feedback, and the next-stage roadmap.</p>
         </div>
         <article class="podcast-episode-card alpha-case-card" id="presentation-20260816-walkthrough">
           <div class="episode-copy">
             <div class="episode-kicker"><span class="episode-number">Presentation</span><span class="episode-badge">Deck walkthrough</span></div>
             <h3>AlphaWeave Capital Presentation Walkthrough.</h3>
-            <p>This episode walks through the current presentation: competitive placement, single-bar decision flow, monthly evidence, policy governance, compact AI/PSM, TradeCrew, asset and strategy selection, simulator feedback, granularity, market extensions, and next-stage enhancements.</p>
+            <p>This episode walks through the current presentation and states the findings: total sampled-window improvement, which layers added or hurt returns, where drawdown was reduced, why compact AI/PSM is measured over policy, and how the roadmap turns that evidence into policy simplification.</p>
             <ul class="episode-points">
               <li>Presentation version: August 16, 2026</li>
+              <li>Total sampled-window improvement: +6.97%</li>
+              <li>Return attribution: strategy +2.68%, asset -1.01%, AI execution/review +5.29%</li>
               <li>Compact AI/PSM is the preferred measured LLM path</li>
-              <li>Policy-only overlay and compact AI/PSM are separated</li>
-              <li>Performance claims are tied to sampled windows or labeled estimates</li>
+              <li>Drawdown deltas are discussed alongside return pickup</li>
               <li>Report evidence and simulator replay anchor the improvement loop</li>
             </ul>
           </div>
@@ -253,7 +282,7 @@
             <div class="episode-copy">
               <div class="episode-kicker"><span class="episode-number">Episode 03</span><span class="episode-badge">Background</span></div>
               <h3>The Four Layers of Allocation Alpha</h3>
-              <p>This episode introduces the staged framework: static baseline, strategy selection, asset selection, and AI-assisted review with position size multiplier behavior.</p>
+              <p>This episode introduces the staged framework: static baseline, strategy selection, asset selection, and AI-assisted review with position size multiple behavior.</p>
               <ul class="episode-points">
                 <li>What changed in the run?</li>
                 <li>Which layer actually helped?</li>

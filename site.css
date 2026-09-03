@@ -1239,6 +1239,15 @@ button.timeline-item h3::before,
   object-fit: contain;
 }
 
+.podcast-video-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #05070b;
+}
+
 .episode-actions {
   grid-column: 2;
   margin-top: -8px;

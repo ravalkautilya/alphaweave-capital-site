@@ -1,0 +1,13 @@
+asof_date,asset,command,event,price,psm,reason
+2026-02-02T13:30:00,AAPL,BUY,ENTER_LONG,187.25,0.92,initial measured-window allocation
+2026-02-02T13:30:00,MSFT,BUY,ENTER_LONG,409.4,0.92,initial measured-window allocation
+2026-02-03T19:30:00,AAPL,SELL,EXIT_LONG,189.1,0.86,rotation out after weaker relative momentum
+2026-02-03T19:30:00,NVDA,BUY,ENTER_LONG,704.8,0.86,rotation into stronger risk-adjusted momentum
+2026-02-05T13:30:00,MSFT,RESIZE,RESIZE_LONG,414.55,0.78,PSM resize after lower portfolio drawdown pressure
+2026-02-06T19:30:00,COIN,BUY,ENTER_LONG,154.2,0.84,asset switch adds COIN as higher-beta crypto-linked exposure after stronger relative fit
+2026-02-10T13:30:00,MSFT,SELL,EXIT_LONG,418.9,0.81,capital moved from lower signal strength
+2026-02-10T13:30:00,AMD,BUY,ENTER_LONG,172.35,0.81,new semiconductor exposure selected
+2026-02-11T19:30:00,COIN,RESIZE,RESIZE_LONG,160.15,0.74,PSM resize with positive path but higher volatility
+2026-02-13T13:30:00,NVDA,RESIZE,RESIZE_LONG,719.5,0.88,trim to respect risk-capped position weights
+2026-02-13T19:30:00,AMD,SELL,EXIT_LONG,176.45,0.9,end-of-window risk reduction
+2026-02-13T19:30:00,AAPL,BUY,ENTER_LONG,193.05,0.9,fresh allocation after measured recovery
