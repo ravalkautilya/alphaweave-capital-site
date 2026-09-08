@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlphaWeave Capital Platform | AI Decision Infrastructure for Investment Teams</title>
+  <meta name="description" content="AlphaWeave Capital is AI decision infrastructure for investment teams: plug into existing strategies, data, risk, execution, and reporting systems, then govern and replay allocation decisions.">
+  <link rel="icon" href="assets/alphaweave-capital-mark.png">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand brand-logo" href="./" aria-label="AlphaWeave Capital home"><img src="assets/alphaweave-capital-logo-bright.png" alt="AlphaWeave Capital"></a>
+      <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links" data-nav-links>
+        <a href="product.html">Product</a>
+        <a href="platform.html" aria-current="page">Platform</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="pipeline.html">Pipeline</a>
+        <a href="market-neutral.html">Market Neutral</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="podcasts.html">Podcasts</a>
+        <a class="nav-cta" href="contact.html">A Walkthrough</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero compact" style="--hero-image: var(--stock-data-infrastructure)">
+      <div class="container">
+        <p class="eyebrow">Institutional AI decision infrastructure</p>
+        <h1>Not another black-box model. A governed decision layer.</h1>
+        <p class="lede">AlphaWeave Capital plugs into the strategies, market data, risk controls, execution records, and reporting systems investment teams already use, then governs which assets, strategies, sleeves, and AI-assisted sizing changes deserve capital.</p>
+        <div class="hero-actions">
+          <a class="button" href="#platform-preview">Preview the workflow</a>
+          <a class="button secondary" href="pricing.html">View commercial model</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section value-ribbon">
+      <div class="container ribbon-grid">
+        <div><span>Measure AI</span><strong>Separate where AI helps returns from where it damages performance.</strong></div>
+        <div><span>Govern capital</span><strong>Route every trade through policy, risk, and entitlement controls.</strong></div>
+        <div><span>Plug in</span><strong>Use institutional components already in place instead of replacing the stack.</strong></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">What it is</p>
+          <h2>The control layer between model output and portfolio capital.</h2>
+          <p>AlphaWeave Capital is designed for asset managers, bank trading teams, and quantamental groups that need AI-assisted allocation without losing governance. It turns signals, historical context, sleeve rules, risk caps, and model review into auditable trade decisions.</p>
+        </div>
+        <div class="proof-grid">
+          <div><span>Strategy and asset switching</span><strong>Compare candidates before replacing the incumbent exposure.</strong><p>The platform can evaluate which strategy and asset should carry the sleeve at each decision point.</p></div>
+          <div><span>AI/PSM review</span><strong>Use AI to adjust conviction, not to bypass discipline.</strong><p>PSM means position size multiple. The overlay can press, reduce, or hold size inside policy and risk limits.</p></div>
+          <div><span>Replay and attribution</span><strong>Show exactly what changed returns and drawdown.</strong><p>Trade tracker events, risk-capped weights, and run reports make the decision path inspectable after the fact.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Why it matters</p>
+          <h2>AI can add alpha, but unmanaged AI can destroy it.</h2>
+        </div>
+        <div class="pricing-copy">
+          <p>The institutional problem is not whether an LLM can produce an opinion. The problem is whether the opinion should alter capital, how much size it should receive, and whether the outcome can be explained to portfolio management, risk, compliance, and clients.</p>
+          <p>AlphaWeave makes the AI contribution measurable. It compares baseline strategy performance, asset switching, policy-only overlays, compact triage, and AI/PSM sizing so teams can keep what is economically useful and remove what is not.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="platform-preview">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Interactive platform preview</p>
+          <h2>Select assets, strategy, and risk posture to see the decision record change.</h2>
+          <p>This browser preview mirrors the operating idea: the system reviews a candidate sleeve, applies risk posture, computes risk-capped weights, assigns a position size multiple, and records a blotter-style decision trail.</p>
+        </div>
+        <div class="interactive-demo" data-allocation-demo>
+          <div class="demo-controls" aria-label="Allocation preview controls">
+            <div class="control-block">
+              <span class="control-label">Assets</span>
+              <div class="asset-picker">
+                <button type="button" class="is-active" data-demo-asset="NVDA">NVDA</button>
+                <button type="button" class="is-active" data-demo-asset="COIN">COIN</button>
+                <button type="button" data-demo-asset="MSFT">MSFT</button>
+                <button type="button" data-demo-asset="AAPL">AAPL</button>
+                <button type="button" data-demo-asset="TSLA">TSLA</button>
+              </div>
+            </div>
+            <label class="control-block">
+              <span class="control-label">Strategy family</span>
+              <select data-demo-strategy>
+                <option value="momentum">Momentum rotation</option>
+                <option value="macd_crossover">MACD crossover</option>
+                <option value="bollinger_bands">Bollinger bands</option>
+                <option value="buy_and_hold">Buy and hold incumbent</option>
+              </select>
+            </label>
+            <label class="control-block">
+              <span class="control-label">Risk posture</span>
+              <select data-demo-risk>
+                <option value="balanced">Balanced</option>
+                <option value="risk_off">Risk-off</option>
+                <option value="press">Press winners</option>
+              </select>
+            </label>
+          </div>
+          <div class="demo-output">
+            <div class="demo-run-card">
+              <div>
+                <span>Run state</span>
+                <strong data-demo-state>Two-asset sleeve, balanced risk</strong>
+              </div>
+              <div>
+                <span>Position size multiple</span>
+                <strong data-demo-psm>1.00</strong>
+              </div>
+              <div>
+                <span>Risk-capped weights</span>
+                <strong data-demo-weights>NVDA 50% / COIN 50%</strong>
+              </div>
+            </div>
+            <div class="demo-chart" aria-label="Preview capital path">
+              <svg viewBox="0 0 640 180" role="img" aria-labelledby="demo-chart-title">
+                <title id="demo-chart-title">Preview capital path with trade events</title>
+                <g class="demo-grid">
+                  <line x1="36" y1="36" x2="616" y2="36"></line>
+                  <line x1="36" y1="86" x2="616" y2="86"></line>
+                  <line x1="36" y1="136" x2="616" y2="136"></line>
+                </g>
+                <polyline data-demo-line points="36,120 180,108 324,78 468,88 616,52"></polyline>
+                <g data-demo-markers></g>
+              </svg>
+            </div>
+            <div class="demo-blotter-wrap">
+              <table class="demo-blotter">
+                <thead>
+                  <tr><th>Time</th><th>Asset</th><th>Action</th><th>PSM</th><th>Reason</th></tr>
+                </thead>
+                <tbody data-demo-blotter></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Enterprise deployment</p>
+          <h2>Designed for SaaS, internal deployment, and white-labeled strategy workflows.</h2>
+          <p>The platform can run as a hosted application or inside a customer-controlled environment. Authentication, entitlements, usage metering, control databases, flat-file run exports, and dashboard replay support both operating models.</p>
+        </div>
+        <div class="package-grid">
+          <article>
+            <h3>Asset Managers</h3>
+            <p>White-label strategy overlays, generate client-facing evidence, and show how asset selection, strategy selection, risk caps, and AI/PSM changed outcomes.</p>
+            <span>White-label allocation intelligence</span>
+          </article>
+          <article>
+            <h3>Banks</h3>
+            <p>Deploy behind the firewall with existing data, risk, execution, and compliance controls while preserving audit records for production runs.</p>
+            <span>Internal AI governance layer</span>
+          </article>
+          <article>
+            <h3>Quantamental Teams</h3>
+            <p>Combine systematic signals with AI review, policy simulation, risk-capped sizing, and replayable trade records.</p>
+            <span>Research-to-forward-test workflow</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="container cta-panel">
+        <h2>Give every AI-assisted allocation decision a policy, a weight, a risk check, and a replayable record.</h2>
+        <a class="button" href="contact.html">A Walkthrough</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><p>AlphaWeave Capital builds allocation intelligence software for systematic trading teams. It is not investment advice.</p><div class="footer-links"><a href="./">Home</a><a href="platform.html">Platform</a><a href="pricing.html">Pricing</a><a href="contact.html">Walkthrough and Contact</a></div></div></footer>
+  <script src="site.js"></script>
+</body>
+</html>
