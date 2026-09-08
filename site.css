@@ -1667,6 +1667,226 @@ button.timeline-item h3::before,
   border-bottom: 0;
 }
 
+.portal-shell {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.portal-sidebar,
+.portal-card,
+.portal-status-grid > div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(12, 17, 27, 0.78);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+}
+
+.portal-sidebar {
+  padding: 14px;
+  display: grid;
+  gap: 14px;
+}
+
+.portal-account,
+.portal-entitlements {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(5, 7, 11, 0.58);
+}
+
+.portal-account span,
+.portal-entitlements > span,
+.portal-card-heading span,
+.portal-status-grid span,
+.portal-kpis span,
+.portal-usage-grid span,
+.portal-form-grid label > span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portal-account strong {
+  font-size: 1rem;
+}
+
+.portal-account em {
+  color: #b8c7dc;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.portal-menu {
+  display: grid;
+  gap: 8px;
+}
+
+.portal-menu button,
+.portal-run-list button {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(5, 7, 11, 0.64);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 850;
+  min-height: 38px;
+  padding: 9px 10px;
+  text-align: left;
+}
+
+.portal-menu button.is-active,
+.portal-run-list button.is-active,
+.portal-menu button:hover,
+.portal-run-list button:hover {
+  border-color: rgba(83, 234, 217, 0.68);
+  background: rgba(83, 234, 217, 0.14);
+}
+
+.portal-entitlements label {
+  color: #dce7f4;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+}
+
+.portal-main {
+  min-width: 0;
+}
+
+.portal-view {
+  display: none;
+}
+
+.portal-view.is-active {
+  display: grid;
+  gap: 14px;
+}
+
+.portal-card {
+  padding: 16px;
+}
+
+.portal-card-heading {
+  display: grid;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+
+.portal-card-heading strong {
+  font-size: 1.15rem;
+}
+
+.portal-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.portal-form-grid label {
+  display: grid;
+  gap: 6px;
+}
+
+.portal-form-grid input,
+.portal-form-grid select {
+  min-height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(5, 7, 11, 0.82);
+  color: var(--text);
+  padding: 0 10px;
+}
+
+.portal-run-button {
+  margin-top: 14px;
+}
+
+.portal-status-grid,
+.portal-kpis,
+.portal-usage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.portal-kpis,
+.portal-usage-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 12px;
+}
+
+.portal-status-grid > div,
+.portal-kpis > div,
+.portal-usage-grid > div {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(5, 7, 11, 0.52);
+  padding: 10px;
+}
+
+.portal-status-grid strong,
+.portal-kpis strong,
+.portal-usage-grid strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.portal-run-list {
+  display: grid;
+  gap: 10px;
+}
+
+.portal-run-list button {
+  display: grid;
+  gap: 5px;
+}
+
+.portal-run-list span,
+.portal-run-list em {
+  color: #9fb0c4;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.portal-empty {
+  color: var(--muted);
+  margin: 0;
+}
+
+.portal-chart {
+  margin-top: 12px;
+}
+
+.portal-chart [data-portal-line] {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 10px rgba(83, 234, 217, 0.32));
+}
+
+.portal-code {
+  white-space: pre-wrap;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: #05070b;
+  color: #dce7f4;
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  padding: 12px;
+}
+
 .ops-console {
   width: min(var(--max), calc(100% - 32px));
   margin: 0 auto;

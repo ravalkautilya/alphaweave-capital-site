@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlphaWeave Capital Demo Portal | Backtest, Policy, and Trade Replay Preview</title>
+  <meta name="description" content="Preview the AlphaWeave Capital demo portal for governed backtests, AI/PSM review, policy simulation, trade replay, entitlements, and usage records.">
+  <link rel="icon" href="assets/alphaweave-capital-mark.png">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand brand-logo" href="./" aria-label="AlphaWeave Capital home"><img src="assets/alphaweave-capital-logo-bright.png" alt="AlphaWeave Capital"></a>
+      <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links" data-nav-links>
+        <a href="product.html">Product</a>
+        <a href="platform.html">Platform</a>
+        <a href="portal.html" aria-current="page">Portal</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="pipeline.html">Pipeline</a>
+        <a href="market-neutral.html">Market Neutral</a>
+        <a href="architecture.html">Architecture</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="podcasts.html">Podcasts</a>
+        <a class="nav-cta" href="contact.html">A Walkthrough</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero compact" style="--hero-image: var(--stock-analytics-dashboard)">
+      <div class="container">
+        <p class="eyebrow">Hosted demo portal</p>
+        <h1>Try the governed allocation workflow before enterprise integration.</h1>
+        <p class="lede">The demo portal shows how a customer account can configure a research run, check licensed modules, generate a sample blotter, replay decisions, and see usage records. The public website version runs entirely in the browser for preview.</p>
+        <div class="hero-actions">
+          <a class="button" href="#demo-portal">Open demo portal</a>
+          <a class="button secondary" href="platform.html">View platform</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section value-ribbon">
+      <div class="container ribbon-grid">
+        <div><span>Customer account</span><strong>Show organization, role, scopes, and enabled modules.</strong></div>
+        <div><span>Governed run</span><strong>Configure assets, strategies, risk posture, and AI/PSM controls.</strong></div>
+        <div><span>Replay evidence</span><strong>View run summary, trade events, weights, and usage metering.</strong></div>
+      </div>
+    </section>
+
+    <section class="section" id="demo-portal">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Demo workspace</p>
+          <h2>Launch a sample governed backtest and inspect the records it creates.</h2>
+          <p>This is a static SaaS preview suitable for GitHub Pages. Production SaaS would connect these panels to the AlphaWeave API, control database, auth config, run database, and worker queue.</p>
+        </div>
+
+        <div class="portal-shell" data-demo-portal>
+          <aside class="portal-sidebar">
+            <div class="portal-account">
+              <span>Signed in as</span>
+              <strong data-portal-user>demo-admin@alphaweave</strong>
+              <em data-portal-org>organization: asset-manager-demo</em>
+            </div>
+            <div class="portal-menu" role="tablist" aria-label="Demo portal sections">
+              <button type="button" class="is-active" data-portal-view="setup">Run setup</button>
+              <button type="button" data-portal-view="runs">Saved runs</button>
+              <button type="button" data-portal-view="replay">Trade replay</button>
+              <button type="button" data-portal-view="usage">Usage and billing</button>
+            </div>
+            <div class="portal-entitlements">
+              <span>Enabled modules</span>
+              <label><input type="checkbox" data-portal-module="backtest" checked> Backtest</label>
+              <label><input type="checkbox" data-portal-module="ai_psm" checked> AI/PSM</label>
+              <label><input type="checkbox" data-portal-module="policy" checked> Policy simulator</label>
+              <label><input type="checkbox" data-portal-module="paper" checked> Paper trade replay</label>
+              <label><input type="checkbox" data-portal-module="live"> Live trading governance</label>
+            </div>
+          </aside>
+
+          <section class="portal-main">
+            <div class="portal-view is-active" data-portal-panel="setup">
+              <div class="portal-card">
+                <div class="portal-card-heading">
+                  <span>Run setup</span>
+                  <strong>Configure the sample allocation run.</strong>
+                </div>
+                <div class="portal-form-grid">
+                  <label>
+                    <span>Run name</span>
+                    <input data-portal-run-name value="Demo AI allocation review">
+                  </label>
+                  <label>
+                    <span>Run type</span>
+                    <select data-portal-run-type>
+                      <option value="sample_backtest">Sample backtest</option>
+                      <option value="paper_trade_scheduler">Paper trade replay</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Asset universe</span>
+                    <select data-portal-assets>
+                      <option value="NVDA,COIN">NVDA, COIN</option>
+                      <option value="NVDA,COIN,MSFT,AAPL">NVDA, COIN, MSFT, AAPL</option>
+                      <option value="NVDA,COIN,MSFT,AAPL,TSLA">NVDA, COIN, MSFT, AAPL, TSLA</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Candidate strategies</span>
+                    <select data-portal-strategies>
+                      <option value="momentum,macd_crossover">Momentum, MACD</option>
+                      <option value="momentum,macd_crossover,bollinger_bands">Momentum, MACD, Bollinger</option>
+                      <option value="momentum,macd_crossover,bollinger_bands,buy_and_hold">Full demo set</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Risk posture</span>
+                    <select data-portal-risk>
+                      <option value="balanced">Balanced</option>
+                      <option value="risk_off">Risk-off</option>
+                      <option value="press">Press winners</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Granularity</span>
+                    <select data-portal-granularity>
+                      <option value="6h">6h</option>
+                      <option value="1d">1d</option>
+                      <option value="15m">15m</option>
+                    </select>
+                  </label>
+                </div>
+                <button class="button portal-run-button" type="button" data-portal-run>Generate sample run</button>
+              </div>
+              <div class="portal-status-grid">
+                <div><span>Entitlement check</span><strong data-portal-entitlement>Status pending</strong></div>
+                <div><span>Decision modules</span><strong data-portal-module-summary>Backtest / AI/PSM / Policy / Paper</strong></div>
+                <div><span>Configured breadth</span><strong data-portal-counts>2 assets / 2 strategies / 1 sleeve</strong></div>
+              </div>
+            </div>
+
+            <div class="portal-view" data-portal-panel="runs">
+              <div class="portal-card">
+                <div class="portal-card-heading">
+                  <span>Saved runs</span>
+                  <strong>Review generated demo runs.</strong>
+                </div>
+                <div class="portal-run-list" data-portal-run-list></div>
+              </div>
+            </div>
+
+            <div class="portal-view" data-portal-panel="replay">
+              <div class="portal-card">
+                <div class="portal-card-heading">
+                  <span>Trade replay</span>
+                  <strong data-portal-replay-title>No run selected</strong>
+                </div>
+                <div class="portal-kpis">
+                  <div><span>Return</span><strong data-portal-return>0.00%</strong></div>
+                  <div><span>Max drawdown</span><strong data-portal-drawdown>0.00%</strong></div>
+                  <div><span>Final PSM</span><strong data-portal-psm>1.00</strong></div>
+                  <div><span>Risk-capped weights</span><strong data-portal-weights>None</strong></div>
+                </div>
+                <div class="demo-chart portal-chart" aria-label="Demo portal replay path">
+                  <svg viewBox="0 0 640 180" role="img" aria-labelledby="portal-chart-title">
+                    <title id="portal-chart-title">Demo portal replay path</title>
+                    <g class="demo-grid">
+                      <line x1="36" y1="36" x2="616" y2="36"></line>
+                      <line x1="36" y1="86" x2="616" y2="86"></line>
+                      <line x1="36" y1="136" x2="616" y2="136"></line>
+                    </g>
+                    <polyline data-portal-line points="36,120 180,108 324,78 468,88 616,52"></polyline>
+                    <g data-portal-markers></g>
+                  </svg>
+                </div>
+                <div class="demo-blotter-wrap">
+                  <table class="demo-blotter">
+                    <thead>
+                      <tr><th>Time</th><th>Asset</th><th>Strategy</th><th>Event</th><th>Action</th><th>PSM</th><th>Weight</th><th>Reason</th></tr>
+                    </thead>
+                    <tbody data-portal-events></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="portal-view" data-portal-panel="usage">
+              <div class="portal-card">
+                <div class="portal-card-heading">
+                  <span>Usage and billing controls</span>
+                  <strong>See what a control DB usage report would meter.</strong>
+                </div>
+                <div class="portal-usage-grid">
+                  <div><span>Backtest runs</span><strong data-usage-runs>0</strong></div>
+                  <div><span>Configured assets</span><strong data-usage-assets>0</strong></div>
+                  <div><span>Configured strategies</span><strong data-usage-strategies>0</strong></div>
+                  <div><span>Dashboard views</span><strong data-usage-views>0</strong></div>
+                </div>
+                <div class="portal-code" data-usage-json>{}</div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><p>AlphaWeave Capital builds allocation intelligence software for systematic trading teams. It is not investment advice.</p><div class="footer-links"><a href="./">Home</a><a href="platform.html">Platform</a><a href="portal.html">Portal</a><a href="pricing.html">Pricing</a><a href="contact.html">Walkthrough and Contact</a></div></div></footer>
+  <script src="site.js"></script>
+</body>
+</html>
