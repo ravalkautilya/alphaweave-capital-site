@@ -1478,13 +1478,15 @@ button.timeline-item h3::before,
   text-transform: uppercase;
 }
 
-.asset-picker {
+.asset-picker,
+.module-picker {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
 
 .asset-picker button,
+.module-picker button,
 .control-block select {
   min-height: 38px;
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1499,7 +1501,17 @@ button.timeline-item h3::before,
   cursor: pointer;
 }
 
-.asset-picker button.is-active {
+.module-picker {
+  grid-template-columns: 1fr;
+}
+
+.asset-picker button,
+.module-picker button {
+  cursor: pointer;
+}
+
+.asset-picker button.is-active,
+.module-picker button.is-active {
   border-color: rgba(83, 234, 217, 0.74);
   background: rgba(83, 234, 217, 0.18);
   color: #eafffb;
@@ -1517,7 +1529,7 @@ button.timeline-item h3::before,
 
 .demo-run-card {
   display: grid;
-  grid-template-columns: 1.05fr 0.7fr 1.45fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
   margin-bottom: 12px;
 }
@@ -1610,7 +1622,7 @@ button.timeline-item h3::before,
 
 .demo-blotter {
   width: 100%;
-  min-width: 680px;
+  min-width: 880px;
   border-collapse: collapse;
   font-size: 12px;
 }

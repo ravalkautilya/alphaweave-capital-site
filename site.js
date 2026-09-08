@@ -104,11 +104,15 @@ window.addEventListener("pageshow", () => {
 
 document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
   const assetButtons = Array.from(demo.querySelectorAll("[data-demo-asset]"));
+  const moduleButtons = Array.from(demo.querySelectorAll("[data-demo-module]"));
   const strategySelect = demo.querySelector("[data-demo-strategy]");
   const riskSelect = demo.querySelector("[data-demo-risk]");
   const stateEl = demo.querySelector("[data-demo-state]");
   const psmEl = demo.querySelector("[data-demo-psm]");
   const weightsEl = demo.querySelector("[data-demo-weights]");
+  const modulesEl = demo.querySelector("[data-demo-modules]");
+  const entitlementEl = demo.querySelector("[data-demo-entitlement]");
+  const riskMetricsEl = demo.querySelector("[data-demo-risk-metrics]");
   const lineEl = demo.querySelector("[data-demo-line]");
   const markerEl = demo.querySelector("[data-demo-markers]");
   const blotterEl = demo.querySelector("[data-demo-blotter]");
@@ -122,9 +126,9 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
   };
 
   const riskProfiles = {
-    balanced: {psm: 1.0, cap: 0.48, drift: 0},
-    risk_off: {psm: 0.72, cap: 0.36, drift: 18},
-    press: {psm: 1.18, cap: 0.58, drift: -16}
+    balanced: {label: "Balanced", psm: 1.0, cap: 0.48, drift: 0, returnBps: 42, drawdownBps: -18},
+    risk_off: {label: "Risk-off", psm: 0.72, cap: 0.36, drift: 18, returnBps: 25, drawdownBps: -9},
+    press: {label: "Press winners", psm: 1.18, cap: 0.58, drift: -16, returnBps: 68, drawdownBps: -31}
   };
 
   const strategyLabels = {
@@ -132,6 +136,21 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
     macd_crossover: "MACD crossover",
     bollinger_bands: "Bollinger bands",
     buy_and_hold: "Buy and hold incumbent"
+  };
+
+  const moduleLabels = {
+    backtest: "Backtest",
+    ai_psm: "AI/PSM",
+    policy: "Policy",
+    paper: "Paper trade",
+    replay: "Replay"
+  };
+
+  const scopeForModules = (modules) => {
+    if (modules.includes("paper")) return "trades:paper:create";
+    if (modules.includes("replay")) return "dashboard_replay:read";
+    if (modules.includes("policy")) return "policies:simulate";
+    return "backtests:create";
   };
 
   const actionFor = (asset, index, riskMode) => {
@@ -163,6 +182,17 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
     const riskMode = riskSelect?.value || "balanced";
     const strategy = strategySelect?.value || "momentum";
     const risk = riskProfiles[riskMode] || riskProfiles.balanced;
+    let modules = moduleButtons
+      .filter((button) => button.classList.contains("is-active"))
+      .map((button) => button.dataset.demoModule)
+      .filter(Boolean);
+
+    if (!modules.length && moduleButtons.length) {
+      modules = ["backtest"];
+      const backtest = moduleButtons.find((button) => button.dataset.demoModule === "backtest");
+      if (backtest) backtest.classList.add("is-active");
+    }
+
     const ranked = [...assets].sort((a, b) => (assetProfiles[b]?.score || 0) - (assetProfiles[a]?.score || 0));
     const rawWeight = Math.min(risk.cap, 1 / Math.max(ranked.length, 1));
     const weights = ranked.map((asset) => `${asset} ${(rawWeight * 100).toFixed(0)}%`);
@@ -186,6 +216,19 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
     if (weightsEl) {
       weightsEl.textContent = weights.join(" / ");
     }
+    if (modulesEl) {
+      modulesEl.textContent = modules.map((module) => moduleLabels[module] || module).join(" / ");
+    }
+    if (entitlementEl) {
+      entitlementEl.textContent = `${scopeForModules(modules)} | assets ${ranked.length} | strategies 1 | sleeves 1`;
+    }
+    if (riskMetricsEl) {
+      const moduleLift = modules.includes("ai_psm") ? 12 : 0;
+      const policyLift = modules.includes("policy") ? 6 : 0;
+      const expectedReturn = (risk.returnBps + moduleLift + policyLift) / 100;
+      const expectedDrawdown = (risk.drawdownBps + (modules.includes("policy") ? 5 : 0)) / 100;
+      riskMetricsEl.textContent = `+${expectedReturn.toFixed(2)}% / ${expectedDrawdown.toFixed(2)}%`;
+    }
     if (lineEl) {
       lineEl.setAttribute("points", points.map(([x, y]) => `${x},${y}`).join(" "));
     }
@@ -199,6 +242,10 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
         psm: psm.toFixed(2),
         x: points[Math.min(index + 1, points.length - 1)][0],
         y: points[Math.min(index + 1, points.length - 1)][1],
+        weight: `${(rawWeight * 100).toFixed(0)}%`,
+        module: action === "NO_EXEC"
+          ? "Policy"
+          : modules.includes("ai_psm") ? "AI/PSM" : "Backtest",
         reason: action === "NO_EXEC"
           ? "Policy reviewed signal and kept capital unchanged"
           : `${strategyLabels[strategy] || strategy} cleared sleeve and risk checks`
@@ -221,8 +268,11 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
         <tr>
           <td>${event.time}</td>
           <td>${event.asset}</td>
+          <td>${strategyLabels[strategy] || strategy}</td>
           <td>${event.action}</td>
           <td>${event.psm}</td>
+          <td>${event.weight}</td>
+          <td>${event.module}</td>
           <td>${event.reason}</td>
         </tr>
       `).join("");
@@ -230,6 +280,13 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
   };
 
   assetButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      button.classList.toggle("is-active");
+      renderDemo();
+    });
+  });
+
+  moduleButtons.forEach((button) => {
     button.addEventListener("click", () => {
       button.classList.toggle("is-active");
       renderDemo();

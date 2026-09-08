@@ -112,6 +112,16 @@
                 <option value="press">Press winners</option>
               </select>
             </label>
+            <div class="control-block">
+              <span class="control-label">Modules</span>
+              <div class="module-picker">
+                <button type="button" class="is-active" data-demo-module="backtest">Backtest</button>
+                <button type="button" class="is-active" data-demo-module="ai_psm">AI/PSM</button>
+                <button type="button" class="is-active" data-demo-module="policy">Policy</button>
+                <button type="button" data-demo-module="paper">Paper trade</button>
+                <button type="button" data-demo-module="replay">Replay</button>
+              </div>
+            </div>
           </div>
           <div class="demo-output">
             <div class="demo-run-card">
@@ -126,6 +136,18 @@
               <div>
                 <span>Risk-capped weights</span>
                 <strong data-demo-weights>NVDA 50% / COIN 50%</strong>
+              </div>
+              <div>
+                <span>Licensed modules</span>
+                <strong data-demo-modules>Backtest / AI/PSM / Policy</strong>
+              </div>
+              <div>
+                <span>Entitlement scope</span>
+                <strong data-demo-entitlement>backtests:create</strong>
+              </div>
+              <div>
+                <span>Expected return / drawdown</span>
+                <strong data-demo-risk-metrics>+0.42% / -0.18%</strong>
               </div>
             </div>
             <div class="demo-chart" aria-label="Preview capital path">
@@ -143,7 +165,7 @@
             <div class="demo-blotter-wrap">
               <table class="demo-blotter">
                 <thead>
-                  <tr><th>Time</th><th>Asset</th><th>Action</th><th>PSM</th><th>Reason</th></tr>
+                  <tr><th>Time</th><th>Asset</th><th>Strategy</th><th>Action</th><th>PSM</th><th>Weight</th><th>Module</th><th>Reason</th></tr>
                 </thead>
                 <tbody data-demo-blotter></tbody>
               </table>
