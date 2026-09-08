@@ -106,6 +106,8 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
   const assetButtons = Array.from(demo.querySelectorAll("[data-demo-asset]"));
   const moduleButtons = Array.from(demo.querySelectorAll("[data-demo-module]"));
   const strategySelect = demo.querySelector("[data-demo-strategy]");
+  const currentStrategySelect = demo.querySelector("[data-demo-current-strategy]");
+  const targetAssetsSelect = demo.querySelector("[data-demo-target-assets]");
   const riskSelect = demo.querySelector("[data-demo-risk]");
   const stateEl = demo.querySelector("[data-demo-state]");
   const psmEl = demo.querySelector("[data-demo-psm]");
@@ -113,16 +115,27 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
   const modulesEl = demo.querySelector("[data-demo-modules]");
   const entitlementEl = demo.querySelector("[data-demo-entitlement]");
   const riskMetricsEl = demo.querySelector("[data-demo-risk-metrics]");
+  const assetSwitchEl = demo.querySelector("[data-demo-asset-switch]");
+  const assetSwitchReasonEl = demo.querySelector("[data-demo-asset-switch-reason]");
+  const strategySwitchEl = demo.querySelector("[data-demo-strategy-switch]");
+  const strategySwitchReasonEl = demo.querySelector("[data-demo-strategy-switch-reason]");
   const lineEl = demo.querySelector("[data-demo-line]");
   const markerEl = demo.querySelector("[data-demo-markers]");
   const blotterEl = demo.querySelector("[data-demo-blotter]");
 
   const assetProfiles = {
-    NVDA: {score: 0.91, beta: 1.24},
-    COIN: {score: 0.82, beta: 1.68},
-    MSFT: {score: 0.72, beta: 0.92},
-    AAPL: {score: 0.66, beta: 0.98},
-    TSLA: {score: 0.58, beta: 1.55}
+    NVDA: {score: 0.91, beta: 1.24, incumbent: true},
+    COIN: {score: 0.82, beta: 1.68, incumbent: true},
+    MSFT: {score: 0.72, beta: 0.92, incumbent: false},
+    AAPL: {score: 0.66, beta: 0.98, incumbent: false},
+    TSLA: {score: 0.58, beta: 1.55, incumbent: false}
+  };
+
+  const strategyScores = {
+    momentum: 0.83,
+    macd_crossover: 0.74,
+    bollinger_bands: 0.62,
+    buy_and_hold: 0.58
   };
 
   const riskProfiles = {
@@ -161,6 +174,24 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
     return "NO_EXEC";
   };
 
+  const switchStateForAsset = (asset, selectedAssets) => {
+    const profile = assetProfiles[asset] || {};
+    if (profile.incumbent && selectedAssets.includes(asset)) return "retained";
+    if (profile.incumbent && !selectedAssets.includes(asset)) return "dropped";
+    if (!profile.incumbent && selectedAssets.includes(asset)) return "selected";
+    return "not selected";
+  };
+
+  const actionForSwitchState = (switchState, index, riskMode) => {
+    if (switchState === "dropped") return "SELL";
+    if (switchState === "retained") {
+      if (riskMode === "press") return "RESIZE";
+      return index === 0 ? "RESIZE" : "NO_EXEC";
+    }
+    if (switchState === "selected") return "BUY";
+    return "NO_EXEC";
+  };
+
   const markerClass = (action) => {
     if (action === "BUY") return "demo-marker-buy";
     if (action === "SELL") return "demo-marker-sell";
@@ -181,6 +212,8 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
 
     const riskMode = riskSelect?.value || "balanced";
     const strategy = strategySelect?.value || "momentum";
+    const currentStrategy = currentStrategySelect?.value || "buy_and_hold";
+    const targetAssets = Math.max(1, Number(targetAssetsSelect?.value || 2));
     const risk = riskProfiles[riskMode] || riskProfiles.balanced;
     let modules = moduleButtons
       .filter((button) => button.classList.contains("is-active"))
@@ -194,10 +227,17 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
     }
 
     const ranked = [...assets].sort((a, b) => (assetProfiles[b]?.score || 0) - (assetProfiles[a]?.score || 0));
-    const rawWeight = Math.min(risk.cap, 1 / Math.max(ranked.length, 1));
-    const weights = ranked.map((asset) => `${asset} ${(rawWeight * 100).toFixed(0)}%`);
-    const avgBeta = ranked.reduce((sum, asset) => sum + (assetProfiles[asset]?.beta || 1), 0) / ranked.length;
+    const activeAssets = ranked.slice(0, Math.min(targetAssets, ranked.length));
+    const reviewedAssets = Array.from(new Set([...activeAssets, ...ranked.filter((asset) => assetProfiles[asset]?.incumbent)]));
+    const droppedAssets = ranked.filter((asset) => assetProfiles[asset]?.incumbent && !activeAssets.includes(asset));
+    const newAssets = activeAssets.filter((asset) => !assetProfiles[asset]?.incumbent);
+    const rawWeight = Math.min(risk.cap, 1 / Math.max(activeAssets.length, 1));
+    const weights = activeAssets.map((asset) => `${asset} ${(rawWeight * 100).toFixed(0)}%`);
+    const avgBeta = activeAssets.reduce((sum, asset) => sum + (assetProfiles[asset]?.beta || 1), 0) / activeAssets.length;
     const psm = Math.max(0.5, risk.psm - Math.max(0, avgBeta - 1.15) * 0.08);
+    const strategyDelta = (strategyScores[strategy] || 0.5) - (strategyScores[currentStrategy] || 0.5);
+    const strategySwitchAllowed = strategy === currentStrategy || strategyDelta >= 0.1 || riskMode === "press";
+    const activeStrategy = strategySwitchAllowed ? strategy : currentStrategy;
     const yShift = risk.drift + ranked.length * -4;
     const points = [
       [36, 118 + yShift],
@@ -208,7 +248,7 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
     ];
 
     if (stateEl) {
-      stateEl.textContent = `${ranked.length}-asset sleeve, ${strategyLabels[strategy] || strategy}`;
+      stateEl.textContent = `${activeAssets.length} active of ${ranked.length} candidates, ${strategyLabels[activeStrategy] || activeStrategy}`;
     }
     if (psmEl) {
       psmEl.textContent = psm.toFixed(2);
@@ -220,7 +260,7 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
       modulesEl.textContent = modules.map((module) => moduleLabels[module] || module).join(" / ");
     }
     if (entitlementEl) {
-      entitlementEl.textContent = `${scopeForModules(modules)} | assets ${ranked.length} | strategies 1 | sleeves 1`;
+      entitlementEl.textContent = `${scopeForModules(modules)} | configured assets ${ranked.length} | run assets ${activeAssets.length} | strategies 2 | sleeves 1`;
     }
     if (riskMetricsEl) {
       const moduleLift = modules.includes("ai_psm") ? 12 : 0;
@@ -229,26 +269,49 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
       const expectedDrawdown = (risk.drawdownBps + (modules.includes("policy") ? 5 : 0)) / 100;
       riskMetricsEl.textContent = `+${expectedReturn.toFixed(2)}% / ${expectedDrawdown.toFixed(2)}%`;
     }
+    if (assetSwitchEl) {
+      const selectedText = activeAssets.join(", ");
+      const droppedText = droppedAssets.length ? `; dropped ${droppedAssets.join(", ")}` : "";
+      assetSwitchEl.textContent = `Active assets: ${selectedText}${droppedText}`;
+    }
+    if (assetSwitchReasonEl) {
+      assetSwitchReasonEl.textContent = newAssets.length
+        ? `${newAssets.join(", ")} entered because their edge scores fit the target active asset count and risk cap.`
+        : "Incumbent assets stayed active because no candidate had enough score advantage to replace them.";
+    }
+    if (strategySwitchEl) {
+      strategySwitchEl.textContent = strategy === currentStrategy
+        ? `Strategy retained: ${strategyLabels[currentStrategy] || currentStrategy}`
+        : `${strategyLabels[currentStrategy] || currentStrategy} to ${strategyLabels[strategy] || strategy}`;
+    }
+    if (strategySwitchReasonEl) {
+      strategySwitchReasonEl.textContent = strategySwitchAllowed
+        ? `Switch accepted: candidate score advantage ${(strategyDelta * 100).toFixed(0)} points cleared policy.`
+        : `Switch held: candidate advantage ${(strategyDelta * 100).toFixed(0)} points did not clear policy.`;
+    }
     if (lineEl) {
       lineEl.setAttribute("points", points.map(([x, y]) => `${x},${y}`).join(" "));
     }
 
-    const events = ranked.slice(0, 4).map((asset, index) => {
-      const action = actionFor(asset, index, riskMode);
+    const events = reviewedAssets.slice(0, 5).map((asset, index) => {
+      const switchState = switchStateForAsset(asset, activeAssets);
+      const action = actionForSwitchState(switchState, index, riskMode);
       return {
         time: `2026-09-0${index + 1} ${index % 2 ? "15:30" : "09:30"}`,
         asset,
+        strategy: strategyLabels[activeStrategy] || activeStrategy,
+        switchState,
         action,
         psm: psm.toFixed(2),
         x: points[Math.min(index + 1, points.length - 1)][0],
         y: points[Math.min(index + 1, points.length - 1)][1],
-        weight: `${(rawWeight * 100).toFixed(0)}%`,
+        weight: activeAssets.includes(asset) ? `${(rawWeight * 100).toFixed(0)}%` : "0%",
         module: action === "NO_EXEC"
           ? "Policy"
           : modules.includes("ai_psm") ? "AI/PSM" : "Backtest",
         reason: action === "NO_EXEC"
-          ? "Policy reviewed signal and kept capital unchanged"
-          : `${strategyLabels[strategy] || strategy} cleared sleeve and risk checks`
+          ? `${switchState} after policy review; capital unchanged`
+          : `${switchState} by asset ranking; ${strategySwitchAllowed ? "strategy policy cleared" : "strategy held"}`
       };
     });
 
@@ -268,7 +331,8 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
         <tr>
           <td>${event.time}</td>
           <td>${event.asset}</td>
-          <td>${strategyLabels[strategy] || strategy}</td>
+          <td>${event.strategy}</td>
+          <td>${event.switchState}</td>
           <td>${event.action}</td>
           <td>${event.psm}</td>
           <td>${event.weight}</td>
@@ -294,6 +358,8 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
   });
 
   strategySelect?.addEventListener("change", renderDemo);
+  currentStrategySelect?.addEventListener("change", renderDemo);
+  targetAssetsSelect?.addEventListener("change", renderDemo);
   riskSelect?.addEventListener("change", renderDemo);
   renderDemo();
 });

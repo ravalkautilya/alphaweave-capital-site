@@ -96,12 +96,29 @@
               </div>
             </div>
             <label class="control-block">
-              <span class="control-label">Strategy family</span>
+              <span class="control-label">Current strategy</span>
+              <select data-demo-current-strategy>
+                <option value="buy_and_hold">Buy and hold incumbent</option>
+                <option value="momentum">Momentum rotation</option>
+                <option value="macd_crossover">MACD crossover</option>
+                <option value="bollinger_bands">Bollinger bands</option>
+              </select>
+            </label>
+            <label class="control-block">
+              <span class="control-label">Candidate strategy</span>
               <select data-demo-strategy>
                 <option value="momentum">Momentum rotation</option>
                 <option value="macd_crossover">MACD crossover</option>
                 <option value="bollinger_bands">Bollinger bands</option>
                 <option value="buy_and_hold">Buy and hold incumbent</option>
+              </select>
+            </label>
+            <label class="control-block">
+              <span class="control-label">Target active assets</span>
+              <select data-demo-target-assets>
+                <option value="2">2 assets</option>
+                <option value="3">3 assets</option>
+                <option value="4">4 assets</option>
               </select>
             </label>
             <label class="control-block">
@@ -150,6 +167,18 @@
                 <strong data-demo-risk-metrics>+0.42% / -0.18%</strong>
               </div>
             </div>
+            <div class="switching-panels">
+              <div>
+                <span>Asset switching</span>
+                <strong data-demo-asset-switch>NVDA and COIN selected from candidate universe</strong>
+                <p data-demo-asset-switch-reason>Higher edge scores clear the sleeve target and risk cap.</p>
+              </div>
+              <div>
+                <span>Strategy switching</span>
+                <strong data-demo-strategy-switch>buy_and_hold to momentum</strong>
+                <p data-demo-strategy-switch-reason>Candidate has enough score advantage to replace the incumbent.</p>
+              </div>
+            </div>
             <div class="demo-chart" aria-label="Preview capital path">
               <svg viewBox="0 0 640 180" role="img" aria-labelledby="demo-chart-title">
                 <title id="demo-chart-title">Preview capital path with trade events</title>
@@ -165,7 +194,7 @@
             <div class="demo-blotter-wrap">
               <table class="demo-blotter">
                 <thead>
-                  <tr><th>Time</th><th>Asset</th><th>Strategy</th><th>Action</th><th>PSM</th><th>Weight</th><th>Module</th><th>Reason</th></tr>
+                  <tr><th>Time</th><th>Asset</th><th>Strategy</th><th>Switch</th><th>Action</th><th>PSM</th><th>Weight</th><th>Module</th><th>Reason</th></tr>
                 </thead>
                 <tbody data-demo-blotter></tbody>
               </table>

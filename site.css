@@ -1534,7 +1534,8 @@ button.timeline-item h3::before,
   margin-bottom: 12px;
 }
 
-.demo-run-card > div {
+.demo-run-card > div,
+.switching-panels > div {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   padding: 10px;
@@ -1542,7 +1543,8 @@ button.timeline-item h3::before,
   min-width: 0;
 }
 
-.demo-run-card span {
+.demo-run-card span,
+.switching-panels span {
   display: block;
   color: #94abc0;
   font-size: 10px;
@@ -1551,12 +1553,27 @@ button.timeline-item h3::before,
   letter-spacing: 0.08em;
 }
 
-.demo-run-card strong {
+.demo-run-card strong,
+.switching-panels strong {
   display: block;
   margin-top: 5px;
   color: #fff;
   font-size: 15px;
   line-height: 1.25;
+}
+
+.switching-panels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.switching-panels p {
+  margin: 7px 0 0;
+  color: #c9d5ea;
+  font-size: 12px;
+  line-height: 1.45;
 }
 
 .demo-chart {
