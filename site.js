@@ -101,3 +101,142 @@ window.addEventListener("pageshow", () => {
     }
   });
 });
+
+document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
+  const assetButtons = Array.from(demo.querySelectorAll("[data-demo-asset]"));
+  const strategySelect = demo.querySelector("[data-demo-strategy]");
+  const riskSelect = demo.querySelector("[data-demo-risk]");
+  const stateEl = demo.querySelector("[data-demo-state]");
+  const psmEl = demo.querySelector("[data-demo-psm]");
+  const weightsEl = demo.querySelector("[data-demo-weights]");
+  const lineEl = demo.querySelector("[data-demo-line]");
+  const markerEl = demo.querySelector("[data-demo-markers]");
+  const blotterEl = demo.querySelector("[data-demo-blotter]");
+
+  const assetProfiles = {
+    NVDA: {score: 0.91, beta: 1.24},
+    COIN: {score: 0.82, beta: 1.68},
+    MSFT: {score: 0.72, beta: 0.92},
+    AAPL: {score: 0.66, beta: 0.98},
+    TSLA: {score: 0.58, beta: 1.55}
+  };
+
+  const riskProfiles = {
+    balanced: {psm: 1.0, cap: 0.48, drift: 0},
+    risk_off: {psm: 0.72, cap: 0.36, drift: 18},
+    press: {psm: 1.18, cap: 0.58, drift: -16}
+  };
+
+  const strategyLabels = {
+    momentum: "Momentum rotation",
+    macd_crossover: "MACD crossover",
+    bollinger_bands: "Bollinger bands",
+    buy_and_hold: "Buy and hold incumbent"
+  };
+
+  const actionFor = (asset, index, riskMode) => {
+    if (riskMode === "risk_off" && index > 1) return "SELL";
+    if (riskMode === "press" && index === 0) return "RESIZE";
+    if (index === 0) return "BUY";
+    if (index === 1) return "RESIZE";
+    return "NO_EXEC";
+  };
+
+  const markerClass = (action) => {
+    if (action === "BUY") return "demo-marker-buy";
+    if (action === "SELL") return "demo-marker-sell";
+    return "demo-marker-resize";
+  };
+
+  const renderDemo = () => {
+    let assets = assetButtons
+      .filter((button) => button.classList.contains("is-active"))
+      .map((button) => button.dataset.demoAsset)
+      .filter(Boolean);
+
+    if (!assets.length) {
+      assets = ["NVDA"];
+      const nvda = assetButtons.find((button) => button.dataset.demoAsset === "NVDA");
+      if (nvda) nvda.classList.add("is-active");
+    }
+
+    const riskMode = riskSelect?.value || "balanced";
+    const strategy = strategySelect?.value || "momentum";
+    const risk = riskProfiles[riskMode] || riskProfiles.balanced;
+    const ranked = [...assets].sort((a, b) => (assetProfiles[b]?.score || 0) - (assetProfiles[a]?.score || 0));
+    const rawWeight = Math.min(risk.cap, 1 / Math.max(ranked.length, 1));
+    const weights = ranked.map((asset) => `${asset} ${(rawWeight * 100).toFixed(0)}%`);
+    const avgBeta = ranked.reduce((sum, asset) => sum + (assetProfiles[asset]?.beta || 1), 0) / ranked.length;
+    const psm = Math.max(0.5, risk.psm - Math.max(0, avgBeta - 1.15) * 0.08);
+    const yShift = risk.drift + ranked.length * -4;
+    const points = [
+      [36, 118 + yShift],
+      [180, 104 + yShift],
+      [324, 72 + yShift],
+      [468, 88 + yShift],
+      [616, 54 + yShift]
+    ];
+
+    if (stateEl) {
+      stateEl.textContent = `${ranked.length}-asset sleeve, ${strategyLabels[strategy] || strategy}`;
+    }
+    if (psmEl) {
+      psmEl.textContent = psm.toFixed(2);
+    }
+    if (weightsEl) {
+      weightsEl.textContent = weights.join(" / ");
+    }
+    if (lineEl) {
+      lineEl.setAttribute("points", points.map(([x, y]) => `${x},${y}`).join(" "));
+    }
+
+    const events = ranked.slice(0, 4).map((asset, index) => {
+      const action = actionFor(asset, index, riskMode);
+      return {
+        time: `2026-09-0${index + 1} ${index % 2 ? "15:30" : "09:30"}`,
+        asset,
+        action,
+        psm: psm.toFixed(2),
+        x: points[Math.min(index + 1, points.length - 1)][0],
+        y: points[Math.min(index + 1, points.length - 1)][1],
+        reason: action === "NO_EXEC"
+          ? "Policy reviewed signal and kept capital unchanged"
+          : `${strategyLabels[strategy] || strategy} cleared sleeve and risk checks`
+      };
+    });
+
+    if (markerEl) {
+      markerEl.innerHTML = events.map((event, index) => {
+        const labelY = Math.max(22, event.y - 26 - index * 4);
+        return `
+          <line x1="${event.x}" y1="${event.y}" x2="${event.x}" y2="${labelY + 8}" stroke="rgba(255,255,255,0.28)" stroke-width="1"></line>
+          <circle class="${markerClass(event.action)}" cx="${event.x}" cy="${event.y}" r="7"></circle>
+          <text class="demo-marker-label" x="${event.x + 10}" y="${labelY}">${event.action} ${event.asset}</text>
+        `;
+      }).join("");
+    }
+
+    if (blotterEl) {
+      blotterEl.innerHTML = events.map((event) => `
+        <tr>
+          <td>${event.time}</td>
+          <td>${event.asset}</td>
+          <td>${event.action}</td>
+          <td>${event.psm}</td>
+          <td>${event.reason}</td>
+        </tr>
+      `).join("");
+    }
+  };
+
+  assetButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      button.classList.toggle("is-active");
+      renderDemo();
+    });
+  });
+
+  strategySelect?.addEventListener("change", renderDemo);
+  riskSelect?.addEventListener("change", renderDemo);
+  renderDemo();
+});

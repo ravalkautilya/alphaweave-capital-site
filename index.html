@@ -51,6 +51,7 @@
         <a href="pipeline.html">Pipeline</a>
         <a href="market-neutral.html">Market Neutral</a>
         <a href="architecture.html">Architecture</a>
+        <a href="pricing.html">Pricing</a>
         <a href="podcasts.html">Podcasts</a>
         <a class="nav-cta" href="contact.html">A Walkthrough</a>
       </div>
@@ -106,6 +107,89 @@
           <p>Institutional platforms have already proven the demand for portfolio analytics, risk controls, and performance attribution. The gap is focused allocation intelligence software for systematic teams that need to govern strategy selection, asset selection, sleeve mandates, and AI-assisted sizing without replacing their current stack.</p>
           <p>AlphaWeave Capital is designed to plug into existing institutional components: market data, strategy libraries, portfolio systems, risk limits, execution logs, and reporting workflows. It sits above those components like decision infrastructure for software-driven portfolios, reviewing the signal, checking context, sizing conviction, and recording what happened afterward.</p>
           <p>The result is a repeatable decision layer for research and trading: clearer trade justification, cleaner attribution, and a memory loop that helps the next decision start from what the system has already learned.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section interactive-demo-section" id="allocation-demo">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Interactive allocation preview</p>
+          <h2>Select a portfolio sleeve and see how the blotter changes.</h2>
+          <p>Choose a small asset universe, strategy family, and risk posture to preview how AlphaWeave records allocation decisions, position size multiple, and the resulting trade blotter.</p>
+        </div>
+        <div class="interactive-demo" data-allocation-demo>
+          <div class="demo-controls" aria-label="Allocation preview controls">
+            <div class="control-block">
+              <span class="control-label">Assets</span>
+              <div class="asset-picker">
+                <button type="button" class="is-active" data-demo-asset="NVDA">NVDA</button>
+                <button type="button" class="is-active" data-demo-asset="COIN">COIN</button>
+                <button type="button" data-demo-asset="MSFT">MSFT</button>
+                <button type="button" data-demo-asset="AAPL">AAPL</button>
+                <button type="button" data-demo-asset="TSLA">TSLA</button>
+              </div>
+            </div>
+            <label class="control-block">
+              <span class="control-label">Strategy family</span>
+              <select data-demo-strategy>
+                <option value="momentum">Momentum rotation</option>
+                <option value="macd_crossover">MACD crossover</option>
+                <option value="bollinger_bands">Bollinger bands</option>
+                <option value="buy_and_hold">Buy and hold incumbent</option>
+              </select>
+            </label>
+            <label class="control-block">
+              <span class="control-label">Risk posture</span>
+              <select data-demo-risk>
+                <option value="balanced">Balanced</option>
+                <option value="risk_off">Risk-off</option>
+                <option value="press">Press winners</option>
+              </select>
+            </label>
+          </div>
+          <div class="demo-output">
+            <div class="demo-run-card">
+              <div>
+                <span>Run state</span>
+                <strong data-demo-state>Two-asset sleeve, balanced risk</strong>
+              </div>
+              <div>
+                <span>Position size multiple</span>
+                <strong data-demo-psm>1.00</strong>
+              </div>
+              <div>
+                <span>Risk-capped weights</span>
+                <strong data-demo-weights>NVDA 50% / COIN 50%</strong>
+              </div>
+            </div>
+            <div class="demo-chart" aria-label="Preview capital path">
+              <svg viewBox="0 0 640 180" role="img" aria-labelledby="demo-chart-title">
+                <title id="demo-chart-title">Preview capital path with trade events</title>
+                <g class="demo-grid">
+                  <line x1="36" y1="36" x2="616" y2="36"></line>
+                  <line x1="36" y1="86" x2="616" y2="86"></line>
+                  <line x1="36" y1="136" x2="616" y2="136"></line>
+                </g>
+                <polyline data-demo-line points="36,120 180,108 324,78 468,88 616,52"></polyline>
+                <g data-demo-markers></g>
+              </svg>
+            </div>
+            <div class="demo-blotter-wrap">
+              <table class="demo-blotter">
+                <thead>
+                  <tr>
+                    <th>Time</th>
+                    <th>Asset</th>
+                    <th>Action</th>
+                    <th>PSM</th>
+                    <th>Reason</th>
+                  </tr>
+                </thead>
+                <tbody data-demo-blotter></tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </section>

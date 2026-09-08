@@ -186,6 +186,77 @@ button.timeline-item,
   z-index: 1;
 }
 
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.pricing-card,
+.package-grid > article {
+  border: 1px solid rgba(83, 234, 217, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(12, 17, 27, 0.92), rgba(7, 10, 16, 0.96)),
+    var(--stock-data-infrastructure);
+  background-position: center;
+  background-size: cover;
+  padding: 26px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.pricing-card-wide {
+  grid-column: 1 / -1;
+}
+
+.pricing-card > span,
+.package-grid > article > span {
+  display: inline-flex;
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.pricing-card h3,
+.package-grid h3 {
+  margin: 0 0 12px;
+  font-size: clamp(1.25rem, 2vw, 1.9rem);
+}
+
+.pricing-card p,
+.package-grid p,
+.pricing-copy p {
+  color: #c9d5ea;
+}
+
+.pricing-card ul {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0;
+  padding-left: 20px;
+  color: #dfe8f7;
+}
+
+.pricing-card strong {
+  display: block;
+  color: var(--accent-3);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.pricing-copy {
+  display: grid;
+  gap: 14px;
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
 .site-header {
   position: fixed;
   z-index: 40;
@@ -1367,6 +1438,205 @@ button.timeline-item h3::before,
   font-size: 0.95rem;
 }
 
+.interactive-demo-section {
+  padding-top: 64px;
+}
+
+.interactive-demo {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.demo-controls,
+.demo-output {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(12, 17, 27, 0.76);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.26);
+}
+
+.demo-controls {
+  padding: 16px;
+  display: grid;
+  gap: 16px;
+}
+
+.control-block {
+  display: grid;
+  gap: 8px;
+  color: var(--text);
+}
+
+.control-label {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.asset-picker {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.asset-picker button,
+.control-block select {
+  min-height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(5, 7, 11, 0.78);
+  color: var(--text);
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.asset-picker button {
+  cursor: pointer;
+}
+
+.asset-picker button.is-active {
+  border-color: rgba(83, 234, 217, 0.74);
+  background: rgba(83, 234, 217, 0.18);
+  color: #eafffb;
+}
+
+.control-block select {
+  width: 100%;
+  padding: 0 10px;
+}
+
+.demo-output {
+  padding: 14px;
+  min-width: 0;
+}
+
+.demo-run-card {
+  display: grid;
+  grid-template-columns: 1.05fr 0.7fr 1.45fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.demo-run-card > div {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  background: rgba(5, 7, 11, 0.52);
+  min-width: 0;
+}
+
+.demo-run-card span {
+  display: block;
+  color: #94abc0;
+  font-size: 10px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.demo-run-card strong {
+  display: block;
+  margin-top: 5px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.demo-chart {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: #061019;
+  overflow: hidden;
+}
+
+.demo-chart svg {
+  display: block;
+  width: 100%;
+  min-height: 190px;
+}
+
+.demo-grid line {
+  stroke: rgba(148, 171, 192, 0.18);
+  stroke-width: 1;
+}
+
+[data-demo-line] {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 10px rgba(83, 234, 217, 0.32));
+}
+
+.demo-marker-buy,
+.demo-marker-resize,
+.demo-marker-sell {
+  stroke-width: 2;
+}
+
+.demo-marker-buy {
+  fill: var(--accent);
+  stroke: #bffff7;
+}
+
+.demo-marker-resize {
+  fill: var(--accent-3);
+  stroke: #ffe2a0;
+}
+
+.demo-marker-sell {
+  fill: var(--danger);
+  stroke: #ffc0cf;
+}
+
+.demo-marker-label {
+  fill: #f7f9fc;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.demo-blotter-wrap {
+  overflow-x: auto;
+  margin-top: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.demo-blotter {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.demo-blotter th,
+.demo-blotter td {
+  padding: 9px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+}
+
+.demo-blotter th {
+  color: var(--accent);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  background: rgba(5, 7, 11, 0.74);
+}
+
+.demo-blotter td {
+  color: #dce7f4;
+}
+
+.demo-blotter tr:last-child td {
+  border-bottom: 0;
+}
+
 .ops-console {
   width: min(var(--max), calc(100% - 32px));
   margin: 0 auto;
@@ -2380,12 +2650,20 @@ button.is-active .inline-detail,
   .feature-grid,
   .illustration-grid,
   .metric-strip,
+  .interactive-demo,
+  .demo-run-card,
   .ops-console,
   .audit-ledger,
   .timeline,
   .feature-lanes,
-  .policy-steps {
+  .policy-steps,
+  .pricing-grid,
+  .package-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pricing-card-wide {
+    grid-column: auto;
   }
 
   .positioning-rows div {
