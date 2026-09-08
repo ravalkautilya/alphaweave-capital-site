@@ -269,13 +269,13 @@ button.timeline-item,
 }
 
 .nav {
-  width: min(var(--max), calc(100% - 32px));
+  width: min(1360px, calc(100% - 32px));
   margin: 0 auto;
-  min-height: 128px;
+  min-height: 112px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 18px;
 }
 
 .brand {
@@ -287,8 +287,8 @@ button.timeline-item,
 }
 
 .brand img {
-  width: 208px;
-  height: 112px;
+  width: 184px;
+  height: 96px;
   object-fit: contain;
   object-position: left center;
 }
@@ -300,9 +300,10 @@ button.timeline-item,
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 16px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
+  white-space: nowrap;
 }
 
 .nav-links a[aria-current="page"],
@@ -327,7 +328,7 @@ button.timeline-item,
   background-size: cover;
   color: #03100f;
   font-weight: 800;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .nav-cta::before,
