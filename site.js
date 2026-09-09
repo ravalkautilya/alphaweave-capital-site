@@ -119,9 +119,15 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
   const assetSwitchReasonEl = demo.querySelector("[data-demo-asset-switch-reason]");
   const strategySwitchEl = demo.querySelector("[data-demo-strategy-switch]");
   const strategySwitchReasonEl = demo.querySelector("[data-demo-strategy-switch-reason]");
+  const replayButton = demo.querySelector("[data-demo-replay]");
+  const replayProgressEl = demo.querySelector("[data-demo-replay-progress]");
+  const replayStatusEl = demo.querySelector("[data-demo-replay-status]");
   const lineEl = demo.querySelector("[data-demo-line]");
   const markerEl = demo.querySelector("[data-demo-markers]");
   const blotterEl = demo.querySelector("[data-demo-blotter]");
+  let replayTimer = null;
+  let replayStep = null;
+  let lastEventCount = 0;
 
   const assetProfiles = {
     NVDA: {score: 0.91, beta: 1.24, incumbent: true},
@@ -198,7 +204,17 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
     return "demo-marker-resize";
   };
 
-  const renderDemo = () => {
+  const stopReplay = (resetStep = true) => {
+    if (replayTimer) {
+      window.clearInterval(replayTimer);
+      replayTimer = null;
+    }
+    if (resetStep) replayStep = null;
+    if (replayButton) replayButton.textContent = "Play replay";
+  };
+
+  const renderDemo = (options = {}) => {
+    const visibleCountOverride = Number.isInteger(options.visibleCount) ? options.visibleCount : null;
     let assets = assetButtons
       .filter((button) => button.classList.contains("is-active"))
       .map((button) => button.dataset.demoAsset)
@@ -236,7 +252,8 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
     const avgBeta = activeAssets.reduce((sum, asset) => sum + (assetProfiles[asset]?.beta || 1), 0) / activeAssets.length;
     const psm = Math.max(0.5, risk.psm - Math.max(0, avgBeta - 1.15) * 0.08);
     const strategyDelta = (strategyScores[strategy] || 0.5) - (strategyScores[currentStrategy] || 0.5);
-    const strategySwitchAllowed = strategy === currentStrategy || strategyDelta >= 0.1 || riskMode === "press";
+    const strategySwitchThreshold = riskMode === "press" ? 0.04 : 0.1;
+    const strategySwitchAllowed = strategy === currentStrategy || strategyDelta >= strategySwitchThreshold;
     const activeStrategy = strategySwitchAllowed ? strategy : currentStrategy;
     const yShift = risk.drift + ranked.length * -4;
     const points = [
@@ -285,14 +302,14 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
         : `${strategyLabels[currentStrategy] || currentStrategy} to ${strategyLabels[strategy] || strategy}`;
     }
     if (strategySwitchReasonEl) {
-      strategySwitchReasonEl.textContent = strategySwitchAllowed
-        ? `Switch accepted: candidate score advantage ${(strategyDelta * 100).toFixed(0)} points cleared policy.`
-        : `Switch held: candidate advantage ${(strategyDelta * 100).toFixed(0)} points did not clear policy.`;
+      if (strategy === currentStrategy) {
+        strategySwitchReasonEl.textContent = "Strategy retained: candidate and incumbent are the same strategy.";
+      } else if (strategySwitchAllowed) {
+        strategySwitchReasonEl.textContent = `Switch accepted: candidate score advantage ${(strategyDelta * 100).toFixed(0)} points cleared the ${Math.round(strategySwitchThreshold * 100)} point policy hurdle.`;
+      } else {
+        strategySwitchReasonEl.textContent = `Switch held: candidate advantage ${(strategyDelta * 100).toFixed(0)} points did not clear the ${Math.round(strategySwitchThreshold * 100)} point policy hurdle.`;
+      }
     }
-    if (lineEl) {
-      lineEl.setAttribute("points", points.map(([x, y]) => `${x},${y}`).join(" "));
-    }
-
     const events = reviewedAssets.slice(0, 5).map((asset, index) => {
       const switchState = switchStateForAsset(asset, activeAssets);
       const action = actionForSwitchState(switchState, index, riskMode);
@@ -314,9 +331,37 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
           : `${switchState} by asset ranking; ${strategySwitchAllowed ? "strategy policy cleared" : "strategy held"}`
       };
     });
+    lastEventCount = events.length;
+    const visibleCount = visibleCountOverride === null
+      ? events.length
+      : Math.max(0, Math.min(events.length, visibleCountOverride));
+    const visibleEvents = events.slice(0, visibleCount);
+    const chartPointCount = visibleCountOverride === null
+      ? points.length
+      : Math.max(2, Math.min(points.length, visibleCount + 1));
+    const visiblePoints = points.slice(0, chartPointCount);
+
+    if (lineEl) {
+      lineEl.classList.toggle("is-replaying", visibleCountOverride !== null);
+      lineEl.setAttribute("points", visiblePoints.map(([x, y]) => `${x},${y}`).join(" "));
+    }
+    if (replayProgressEl) {
+      const pct = events.length ? Math.round((visibleCount / events.length) * 100) : 0;
+      replayProgressEl.style.width = `${visibleCountOverride === null ? 100 : pct}%`;
+    }
+    if (replayStatusEl) {
+      if (visibleCountOverride === null) {
+        replayStatusEl.textContent = `Ready: ${events.length} decision timestamps`;
+      } else if (visibleCount === 0) {
+        replayStatusEl.textContent = "Replay queued at measured start";
+      } else {
+        const event = visibleEvents[visibleEvents.length - 1];
+        replayStatusEl.textContent = `${event.time} | ${event.action} ${event.asset} | PSM ${event.psm}`;
+      }
+    }
 
     if (markerEl) {
-      markerEl.innerHTML = events.map((event, index) => {
+      markerEl.innerHTML = visibleEvents.map((event, index) => {
         const labelY = Math.max(22, event.y - 26 - index * 4);
         return `
           <line x1="${event.x}" y1="${event.y}" x2="${event.x}" y2="${labelY + 8}" stroke="rgba(255,255,255,0.28)" stroke-width="1"></line>
@@ -327,7 +372,7 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
     }
 
     if (blotterEl) {
-      blotterEl.innerHTML = events.map((event) => `
+      blotterEl.innerHTML = visibleEvents.map((event) => `
         <tr>
           <td>${event.time}</td>
           <td>${event.asset}</td>
@@ -341,10 +386,27 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
         </tr>
       `).join("");
     }
+    return {eventCount: events.length};
+  };
+
+  const startReplay = () => {
+    stopReplay(false);
+    replayStep = 0;
+    renderDemo({visibleCount: replayStep});
+    if (replayButton) replayButton.textContent = "Pause replay";
+    replayTimer = window.setInterval(() => {
+      replayStep = Number(replayStep || 0) + 1;
+      renderDemo({visibleCount: replayStep});
+      if (replayStep >= lastEventCount) {
+        stopReplay(false);
+        if (replayButton) replayButton.textContent = "Replay again";
+      }
+    }, 900);
   };
 
   assetButtons.forEach((button) => {
     button.addEventListener("click", () => {
+      stopReplay();
       button.classList.toggle("is-active");
       renderDemo();
     });
@@ -352,15 +414,25 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
 
   moduleButtons.forEach((button) => {
     button.addEventListener("click", () => {
+      stopReplay();
       button.classList.toggle("is-active");
       renderDemo();
     });
   });
 
-  strategySelect?.addEventListener("change", renderDemo);
-  currentStrategySelect?.addEventListener("change", renderDemo);
-  targetAssetsSelect?.addEventListener("change", renderDemo);
-  riskSelect?.addEventListener("change", renderDemo);
+  replayButton?.addEventListener("click", () => {
+    if (replayTimer) {
+      stopReplay(false);
+      return;
+    }
+    startReplay();
+  });
+  [strategySelect, currentStrategySelect, targetAssetsSelect, riskSelect].forEach((input) => {
+    input?.addEventListener("change", () => {
+      stopReplay();
+      renderDemo();
+    });
+  });
   renderDemo();
 });
 

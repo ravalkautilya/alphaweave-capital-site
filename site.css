@@ -1576,6 +1576,48 @@ button.timeline-item h3::before,
   line-height: 1.45;
 }
 
+.demo-replay-bar {
+  display: grid;
+  grid-template-columns: auto minmax(140px, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(5, 7, 11, 0.52);
+}
+
+.demo-replay-bar .button {
+  min-height: 34px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.demo-replay-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(148, 171, 192, 0.18);
+}
+
+.demo-replay-track span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--accent-3));
+  transition: width 0.42s ease;
+  box-shadow: 0 0 14px rgba(83, 234, 217, 0.42);
+}
+
+.demo-replay-bar strong {
+  color: #c9d5ea;
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: right;
+}
+
 .demo-chart {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
@@ -1601,12 +1643,18 @@ button.timeline-item h3::before,
   stroke-linecap: round;
   stroke-linejoin: round;
   filter: drop-shadow(0 0 10px rgba(83, 234, 217, 0.32));
+  transition: all 0.34s ease;
+}
+
+[data-demo-line].is-replaying {
+  animation: replayLinePulse 0.9s ease-in-out infinite alternate;
 }
 
 .demo-marker-buy,
 .demo-marker-resize,
 .demo-marker-sell {
   stroke-width: 2;
+  animation: markerPop 0.28s ease-out both;
 }
 
 .demo-marker-buy {
@@ -1628,6 +1676,7 @@ button.timeline-item h3::before,
   fill: #f7f9fc;
   font-size: 12px;
   font-weight: 850;
+  animation: markerPop 0.28s ease-out both;
 }
 
 .demo-blotter-wrap {
@@ -1663,8 +1712,43 @@ button.timeline-item h3::before,
   color: #dce7f4;
 }
 
+.demo-blotter tbody tr {
+  animation: blotterSlide 0.26s ease-out both;
+}
+
 .demo-blotter tr:last-child td {
   border-bottom: 0;
+}
+
+@keyframes replayLinePulse {
+  from {
+    filter: drop-shadow(0 0 6px rgba(83, 234, 217, 0.28));
+  }
+  to {
+    filter: drop-shadow(0 0 16px rgba(83, 234, 217, 0.58));
+  }
+}
+
+@keyframes markerPop {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blotterSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .portal-shell {
