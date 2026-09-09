@@ -372,8 +372,9 @@ document.querySelectorAll("[data-demo-portal]").forEach((portal) => {
   const runButton = portal.querySelector("[data-portal-run]");
   const runName = portal.querySelector("[data-portal-run-name]");
   const runType = portal.querySelector("[data-portal-run-type]");
-  const assetSelect = portal.querySelector("[data-portal-assets]");
-  const strategySelect = portal.querySelector("[data-portal-strategies]");
+  const assetButtons = Array.from(portal.querySelectorAll("[data-portal-asset]"));
+  const strategyButtons = Array.from(portal.querySelectorAll("[data-portal-strategy]"));
+  const targetAssetsSelect = portal.querySelector("[data-portal-target-assets]");
   const riskSelect = portal.querySelector("[data-portal-risk]");
   const granularitySelect = portal.querySelector("[data-portal-granularity]");
   const entitlementEl = portal.querySelector("[data-portal-entitlement]");
@@ -411,6 +412,7 @@ document.querySelectorAll("[data-demo-portal]").forEach((portal) => {
   const strategyLabels = {
     momentum: "Momentum",
     macd_crossover: "MACD",
+    rsi_strategy: "RSI",
     bollinger_bands: "Bollinger",
     buy_and_hold: "Buy and hold"
   };
@@ -445,17 +447,24 @@ document.querySelectorAll("[data-demo-portal]").forEach((portal) => {
   };
 
   const currentSetup = () => {
-    const assets = String(assetSelect?.value || "NVDA,COIN").split(",").map((item) => item.trim()).filter(Boolean);
-    const strategies = String(strategySelect?.value || "momentum,macd_crossover").split(",").map((item) => item.trim()).filter(Boolean);
+    const assets = assetButtons
+      .filter((button) => button.classList.contains("is-active"))
+      .map((button) => button.dataset.portalAsset)
+      .filter(Boolean);
+    const strategies = strategyButtons
+      .filter((button) => button.classList.contains("is-active"))
+      .map((button) => button.dataset.portalStrategy)
+      .filter(Boolean);
     const modules = activeModules();
     const risk = riskProfiles[riskSelect?.value || "balanced"] || riskProfiles.balanced;
     return {
       name: String(runName?.value || "Demo AI allocation review").trim() || "Demo AI allocation review",
       type: runType?.value || "sample_backtest",
-      assets,
-      strategies,
+      assets: assets.length ? assets : ["NVDA"],
+      strategies: strategies.length ? strategies : ["momentum"],
       modules,
       risk,
+      targetAssets: Number(targetAssetsSelect?.value || 2),
       granularity: granularitySelect?.value || "6h"
     };
   };
@@ -473,7 +482,8 @@ document.querySelectorAll("[data-demo-portal]").forEach((portal) => {
         : "No modules selected";
     }
     if (countsEl) {
-      countsEl.textContent = `${setup.assets.length} assets / ${setup.strategies.length} strategies / 1 sleeve`;
+      const activeAssets = Math.min(setup.targetAssets, setup.assets.length);
+      countsEl.textContent = `${setup.assets.length} candidate assets / ${activeAssets} active / ${setup.strategies.length} strategies / 1 sleeve`;
     }
   };
 
@@ -481,7 +491,7 @@ document.querySelectorAll("[data-demo-portal]").forEach((portal) => {
     const setup = currentSetup();
     const allowed = setup.type !== "paper_trade_scheduler" || setup.modules.includes("paper");
     const now = new Date();
-    const topAssets = setup.assets.slice(0, Math.min(3, setup.assets.length));
+    const topAssets = setup.assets.slice(0, Math.min(setup.targetAssets, setup.assets.length));
     const activeStrategy = setup.strategies[0] || "momentum";
     const weight = `${Math.round(100 / Math.max(topAssets.length, 1))}%`;
     const psm = setup.modules.includes("ai_psm") ? setup.risk.psm : 1.0;
@@ -629,8 +639,21 @@ document.querySelectorAll("[data-demo-portal]").forEach((portal) => {
       renderAll();
     });
   });
+  const wireToggleGroup = (buttons) => {
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const activeCount = buttons.filter((item) => item.classList.contains("is-active")).length;
+        if (button.classList.contains("is-active") && activeCount === 1) return;
+        button.classList.toggle("is-active");
+        renderSetup();
+      });
+    });
+  };
+
+  wireToggleGroup(assetButtons);
+  wireToggleGroup(strategyButtons);
   moduleChecks.forEach((input) => input.addEventListener("change", renderSetup));
-  [runName, runType, assetSelect, strategySelect, riskSelect, granularitySelect].forEach((input) => {
+  [runName, runType, targetAssetsSelect, riskSelect, granularitySelect].forEach((input) => {
     input?.addEventListener("input", renderSetup);
     input?.addEventListener("change", renderSetup);
   });

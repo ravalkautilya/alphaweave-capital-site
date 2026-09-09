@@ -99,20 +99,36 @@
                       <option value="paper_trade_scheduler">Paper trade replay</option>
                     </select>
                   </label>
+                  <div class="control-block portal-picker-block">
+                    <span class="control-label">Candidate assets</span>
+                    <div class="asset-picker portal-picker" data-portal-asset-picker>
+                      <button type="button" class="is-active" data-portal-asset="NVDA">NVDA</button>
+                      <button type="button" class="is-active" data-portal-asset="COIN">COIN</button>
+                      <button type="button" data-portal-asset="MSFT">MSFT</button>
+                      <button type="button" data-portal-asset="AAPL">AAPL</button>
+                      <button type="button" data-portal-asset="TSLA">TSLA</button>
+                      <button type="button" data-portal-asset="GOOGL">GOOGL</button>
+                      <button type="button" data-portal-asset="AMD">AMD</button>
+                      <button type="button" data-portal-asset="AMZN">AMZN</button>
+                    </div>
+                  </div>
+                  <div class="control-block portal-picker-block">
+                    <span class="control-label">Candidate strategies</span>
+                    <div class="asset-picker portal-picker" data-portal-strategy-picker>
+                      <button type="button" class="is-active" data-portal-strategy="momentum">Momentum</button>
+                      <button type="button" class="is-active" data-portal-strategy="macd_crossover">MACD</button>
+                      <button type="button" data-portal-strategy="rsi_strategy">RSI</button>
+                      <button type="button" data-portal-strategy="bollinger_bands">Bollinger</button>
+                      <button type="button" data-portal-strategy="buy_and_hold">Buy and hold</button>
+                    </div>
+                  </div>
                   <label>
-                    <span>Asset universe</span>
-                    <select data-portal-assets>
-                      <option value="NVDA,COIN">NVDA, COIN</option>
-                      <option value="NVDA,COIN,MSFT,AAPL">NVDA, COIN, MSFT, AAPL</option>
-                      <option value="NVDA,COIN,MSFT,AAPL,TSLA">NVDA, COIN, MSFT, AAPL, TSLA</option>
-                    </select>
-                  </label>
-                  <label>
-                    <span>Candidate strategies</span>
-                    <select data-portal-strategies>
-                      <option value="momentum,macd_crossover">Momentum, MACD</option>
-                      <option value="momentum,macd_crossover,bollinger_bands">Momentum, MACD, Bollinger</option>
-                      <option value="momentum,macd_crossover,bollinger_bands,buy_and_hold">Full demo set</option>
+                    <span>Target active assets</span>
+                    <select data-portal-target-assets>
+                      <option value="1">1 asset</option>
+                      <option value="2" selected>2 assets</option>
+                      <option value="3">3 assets</option>
+                      <option value="4">4 assets</option>
                     </select>
                   </label>
                   <label>
