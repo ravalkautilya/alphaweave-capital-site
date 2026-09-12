@@ -109,6 +109,9 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
   const currentStrategySelect = demo.querySelector("[data-demo-current-strategy]");
   const targetAssetsSelect = demo.querySelector("[data-demo-target-assets]");
   const riskSelect = demo.querySelector("[data-demo-risk]");
+  const apiInput = demo.querySelector("[data-demo-api-input]");
+  const apiRunButton = demo.querySelector("[data-demo-api-run]");
+  const apiStatusEl = demo.querySelector("[data-demo-api-status]");
   const stateEl = demo.querySelector("[data-demo-state]");
   const psmEl = demo.querySelector("[data-demo-psm]");
   const weightsEl = demo.querySelector("[data-demo-weights]");
@@ -128,6 +131,7 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
   let replayTimer = null;
   let replayStep = null;
   let lastEventCount = 0;
+  let apiReplayPayload = null;
 
   const assetProfiles = {
     NVDA: {score: 0.91, beta: 1.24, incumbent: true},
@@ -204,6 +208,183 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
     return "demo-marker-resize";
   };
 
+  const normalizeApiBase = (value) => String(value || "").trim().replace(/\/+$/, "");
+
+  const configuredApiBase = () => normalizeApiBase(
+    apiInput?.value
+    || demo.dataset.demoApiBase
+    || window.localStorage.getItem("alphaweave-demo-api-base")
+    || new URLSearchParams(window.location.search).get("api")
+    || ""
+  );
+
+  const setApiStatus = (text, mode = "") => {
+    if (!apiStatusEl) return;
+    apiStatusEl.textContent = text;
+    apiStatusEl.dataset.status = mode;
+  };
+
+  const activeAssetsFromButtons = () => {
+    const assets = assetButtons
+      .filter((button) => button.classList.contains("is-active"))
+      .map((button) => button.dataset.demoAsset)
+      .filter(Boolean);
+    return assets.length ? assets : ["NVDA"];
+  };
+
+  const activeModulesFromButtons = () => {
+    const modules = moduleButtons
+      .filter((button) => button.classList.contains("is-active"))
+      .map((button) => button.dataset.demoModule)
+      .filter(Boolean);
+    return modules.length ? modules : ["backtest"];
+  };
+
+  const apiModuleNames = (modules) => {
+    const map = {
+      backtest: "asset_switching",
+      ai_psm: "risk_position_sizing",
+      policy: "policy_simulator",
+      paper: "paper_trade",
+      replay: "trade_replay"
+    };
+    return modules.map((module) => map[module] || module);
+  };
+
+  const strategyName = (strategy) => strategyLabels[strategy] || String(strategy || "").replaceAll("_", " ");
+
+  const currentPayload = () => ({
+    client_id: "website-demo",
+    assets: activeAssetsFromButtons(),
+    strategy: strategySelect?.value || "momentum",
+    strategies: [
+      currentStrategySelect?.value || "buy_and_hold",
+      strategySelect?.value || "momentum"
+    ].filter(Boolean),
+    risk_posture: riskSelect?.value || "balanced",
+    execution_mode: activeModulesFromButtons().includes("paper") ? "paper" : "demo",
+    target_active_assets: Math.max(1, Number(targetAssetsSelect?.value || 2)),
+    granularity: "6h",
+    modules: apiModuleNames(activeModulesFromButtons())
+  });
+
+  const chartPointsFromCapital = (capitalSeries) => {
+    const rows = Array.isArray(capitalSeries) && capitalSeries.length ? capitalSeries : [];
+    if (!rows.length) {
+      return [
+        [36, 120],
+        [180, 108],
+        [324, 78],
+        [468, 88],
+        [616, 52]
+      ];
+    }
+    const values = rows.map((row) => Number(row.pnl_pct ?? row.capital ?? 0)).filter(Number.isFinite);
+    const min = Math.min(...values);
+    const max = Math.max(...values);
+    const span = Math.max(max - min, 0.0001);
+    return rows.map((row, index) => {
+      const value = Number(row.pnl_pct ?? row.capital ?? 0);
+      const x = 36 + (580 * index / Math.max(rows.length - 1, 1));
+      const y = 138 - ((value - min) / span) * 86;
+      return [Math.round(x), Math.round(y)];
+    });
+  };
+
+  const actionWeight = (payload, asset) => {
+    const weights = payload?.risk_capped_weights || {};
+    const value = Number(weights[asset]);
+    return Number.isFinite(value) ? `${Math.round(value * 100)}%` : "unchanged";
+  };
+
+  const renderApiReplay = (payload, options = {}) => {
+    if (!payload) return {eventCount: 0};
+    const visibleCountOverride = Number.isInteger(options.visibleCount) ? options.visibleCount : null;
+    const events = Array.isArray(payload.events) ? payload.events : [];
+    const modules = Array.isArray(payload.modules) ? payload.modules : [];
+    const points = chartPointsFromCapital(payload.capital_series);
+    const visibleCount = visibleCountOverride === null
+      ? events.length
+      : Math.max(0, Math.min(events.length, visibleCountOverride));
+    const visibleEvents = events.slice(0, visibleCount);
+    const chartPointCount = visibleCountOverride === null
+      ? points.length
+      : Math.max(2, Math.min(points.length, visibleCount + 1));
+    const visiblePoints = points.slice(0, chartPointCount);
+    const assets = Object.keys(payload.risk_capped_weights || {});
+    const psm = Number(payload.summary?.risk_capped_position_size_multiplier || events[0]?.psm || 1);
+
+    if (stateEl) {
+      stateEl.textContent = `${assets.length || events.length} active assets, ${strategyName(payload.strategy)} | API replay ${payload.run_id || ""}`;
+    }
+    if (psmEl) psmEl.textContent = psm.toFixed(2);
+    if (weightsEl) {
+      weightsEl.textContent = assets.length
+        ? assets.map((asset) => `${asset} ${actionWeight(payload, asset)}`).join(" / ")
+        : "No active weights returned";
+    }
+    if (modulesEl) modulesEl.textContent = modules.map((module) => module.replaceAll("_", " ")).join(" / ") || "Demo replay";
+    if (entitlementEl) {
+      entitlementEl.textContent = `API-backed replay | ${payload.execution_mode || "demo"} | ${payload.granularity || "6h"} | ${payload.sleeve_id || "sleeve"}`;
+    }
+    if (riskMetricsEl) {
+      const last = Array.isArray(payload.capital_series) ? payload.capital_series[payload.capital_series.length - 1] : null;
+      const pnl = Number(last?.pnl_pct || 0) * 100;
+      riskMetricsEl.textContent = `${pnl >= 0 ? "+" : ""}${pnl.toFixed(2)}% / replay path`;
+    }
+    if (assetSwitchEl) assetSwitchEl.textContent = `Active assets: ${assets.join(", ") || activeAssetsFromButtons().join(", ")}`;
+    if (assetSwitchReasonEl) assetSwitchReasonEl.textContent = "Returned by the hosted demo API from the selected candidate universe.";
+    if (strategySwitchEl) strategySwitchEl.textContent = `Strategies reviewed: ${(payload.strategies || [payload.strategy]).map(strategyName).join(" / ")}`;
+    if (strategySwitchReasonEl) strategySwitchReasonEl.textContent = "The browser created a replay-ready hosted demo run and rendered the returned decision trail.";
+
+    lastEventCount = events.length;
+    if (lineEl) {
+      lineEl.classList.toggle("is-replaying", visibleCountOverride !== null);
+      lineEl.setAttribute("points", visiblePoints.map(([x, y]) => `${x},${y}`).join(" "));
+    }
+    if (replayProgressEl) {
+      const pct = events.length ? Math.round((visibleCount / events.length) * 100) : 0;
+      replayProgressEl.style.width = `${visibleCountOverride === null ? 100 : pct}%`;
+    }
+    if (replayStatusEl) {
+      if (visibleCountOverride === null) {
+        replayStatusEl.textContent = `API replay ready: ${events.length} decision timestamps`;
+      } else if (visibleCount === 0) {
+        replayStatusEl.textContent = "API replay queued at measured start";
+      } else {
+        const event = visibleEvents[visibleEvents.length - 1];
+        replayStatusEl.textContent = `${event.asof_date || event.time} | ${event.action} ${event.asset} | PSM ${Number(event.psm || 1).toFixed(2)}`;
+      }
+    }
+    if (markerEl) {
+      markerEl.innerHTML = visibleEvents.map((event, index) => {
+        const [x, y] = points[Math.min(index, points.length - 1)] || [180 + index * 120, 90];
+        const labelY = Math.max(22, y - 26 - index * 4);
+        return `
+          <line x1="${x}" y1="${y}" x2="${x}" y2="${labelY + 8}" stroke="rgba(255,255,255,0.28)" stroke-width="1"></line>
+          <circle class="${markerClass(event.action)}" cx="${x}" cy="${y}" r="7"></circle>
+          <text class="demo-marker-label" x="${x + 10}" y="${labelY}">${event.action} ${event.asset}</text>
+        `;
+      }).join("");
+    }
+    if (blotterEl) {
+      blotterEl.innerHTML = visibleEvents.map((event) => `
+        <tr>
+          <td>${event.asof_date || event.time || ""}</td>
+          <td>${event.asset || ""}</td>
+          <td>${strategyName(event.strategy || payload.strategy)}</td>
+          <td>${event.event_type || "api_replay"}</td>
+          <td>${event.action || ""}</td>
+          <td>${Number(event.psm || psm).toFixed(2)}</td>
+          <td>${actionWeight(payload, event.asset)}</td>
+          <td>${event.event_type === "decision_path_no_exec" ? "Policy" : "API replay"}</td>
+          <td>${event.reason || "hosted demo replay"}</td>
+        </tr>
+      `).join("");
+    }
+    return {eventCount: events.length};
+  };
+
   const stopReplay = (resetStep = true) => {
     if (replayTimer) {
       window.clearInterval(replayTimer);
@@ -214,6 +395,9 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
   };
 
   const renderDemo = (options = {}) => {
+    if (apiReplayPayload) {
+      return renderApiReplay(apiReplayPayload, options);
+    }
     const visibleCountOverride = Number.isInteger(options.visibleCount) ? options.visibleCount : null;
     let assets = assetButtons
       .filter((button) => button.classList.contains("is-active"))
@@ -404,9 +588,49 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
     }, 900);
   };
 
+  const runApiPreview = async () => {
+    const apiBase = configuredApiBase();
+    if (!apiBase) {
+      setApiStatus("Enter a local or Railway API URL first.", "warn");
+      return;
+    }
+    if (apiInput) {
+      apiInput.value = apiBase;
+      window.localStorage.setItem("alphaweave-demo-api-base", apiBase);
+    }
+    stopReplay();
+    setApiStatus("Calling demo API...", "pending");
+    if (apiRunButton) apiRunButton.disabled = true;
+    try {
+      const createResponse = await fetch(`${apiBase}/demo-runs`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(currentPayload())
+      });
+      if (!createResponse.ok) {
+        throw new Error(`POST /demo-runs returned ${createResponse.status}`);
+      }
+      const created = await createResponse.json();
+      const replayResponse = await fetch(`${apiBase}/demo-runs/${encodeURIComponent(created.run_id)}/replay`);
+      if (!replayResponse.ok) {
+        throw new Error(`GET /replay returned ${replayResponse.status}`);
+      }
+      apiReplayPayload = await replayResponse.json();
+      renderApiReplay(apiReplayPayload);
+      setApiStatus(`Connected to API. Rendered ${created.run_id}.`, "ok");
+    } catch (error) {
+      apiReplayPayload = null;
+      renderDemo();
+      setApiStatus(`API unavailable: ${error.message}. Showing local browser preview.`, "warn");
+    } finally {
+      if (apiRunButton) apiRunButton.disabled = false;
+    }
+  };
+
   assetButtons.forEach((button) => {
     button.addEventListener("click", () => {
       stopReplay();
+      apiReplayPayload = null;
       button.classList.toggle("is-active");
       renderDemo();
     });
@@ -415,6 +639,7 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
   moduleButtons.forEach((button) => {
     button.addEventListener("click", () => {
       stopReplay();
+      apiReplayPayload = null;
       button.classList.toggle("is-active");
       renderDemo();
     });
@@ -427,12 +652,18 @@ document.querySelectorAll("[data-allocation-demo]").forEach((demo) => {
     }
     startReplay();
   });
+  apiRunButton?.addEventListener("click", () => {
+    runApiPreview();
+  });
   [strategySelect, currentStrategySelect, targetAssetsSelect, riskSelect].forEach((input) => {
     input?.addEventListener("change", () => {
       stopReplay();
+      apiReplayPayload = null;
       renderDemo();
     });
   });
+  const initialApiBase = configuredApiBase();
+  if (apiInput && initialApiBase) apiInput.value = initialApiBase;
   renderDemo();
 });
 

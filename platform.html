@@ -36,6 +36,7 @@
         <p class="lede">AlphaWeave Capital plugs into the strategies, market data, risk controls, execution records, and reporting systems investment teams already use, then governs which assets, strategies, sleeves, and AI-assisted sizing changes deserve capital.</p>
         <div class="hero-actions">
           <a class="button" href="portal.html">Open demo portal</a>
+          <a class="button secondary" href="trade-blotter.html">Play trade blotter</a>
           <a class="button secondary" href="pricing.html">View commercial model</a>
         </div>
       </div>
@@ -83,17 +84,26 @@
           <p class="eyebrow">Interactive platform preview</p>
           <h2>Select assets, strategy, and risk posture to see the decision record change.</h2>
           <p>This browser preview mirrors the operating idea: the system reviews a candidate sleeve, applies risk posture, computes risk-capped weights, assigns a position size multiple, and records a blotter-style decision trail.</p>
+          <p><a class="text-link" href="trade-blotter.html">Open the full JavaScript trade blotter replay with named regimes.</a></p>
         </div>
-        <div class="interactive-demo" data-allocation-demo>
+        <div class="interactive-demo" data-allocation-demo data-demo-api-base="">
           <div class="demo-controls" aria-label="Allocation preview controls">
+            <div class="control-block demo-api-control">
+              <span class="control-label">Demo API</span>
+              <div class="demo-api-row">
+                <input type="url" data-demo-api-input placeholder="http://127.0.0.1:8788 or Railway URL" aria-label="Demo API URL">
+                <button type="button" data-demo-api-run data-help="Call the live demo API to create a replay-ready run, then render the returned replay in this page.">Run via API</button>
+              </div>
+              <em data-demo-api-status>Browser preview is local until an API URL is supplied.</em>
+            </div>
             <div class="control-block">
               <span class="control-label">Assets</span>
               <div class="asset-picker">
-                <button type="button" class="is-active" data-demo-asset="NVDA">NVDA</button>
-                <button type="button" class="is-active" data-demo-asset="COIN">COIN</button>
-                <button type="button" data-demo-asset="MSFT">MSFT</button>
-                <button type="button" data-demo-asset="AAPL">AAPL</button>
-                <button type="button" data-demo-asset="TSLA">TSLA</button>
+                <button type="button" class="is-active" data-demo-asset="NVDA" data-help="Add or remove NVDA from the candidate asset universe reviewed by the sleeve.">NVDA</button>
+                <button type="button" class="is-active" data-demo-asset="COIN" data-help="Add or remove COIN from the candidate universe. High beta affects risk-capped sizing.">COIN</button>
+                <button type="button" data-demo-asset="MSFT" data-help="Add MSFT as a lower-beta candidate that can enter when the active asset count expands.">MSFT</button>
+                <button type="button" data-demo-asset="AAPL" data-help="Add AAPL as a candidate asset. If selected, it appears as a BUY in the decision trail.">AAPL</button>
+                <button type="button" data-demo-asset="TSLA" data-help="Add TSLA as a high-beta candidate. It can be reviewed but may be excluded by ranking or risk.">TSLA</button>
               </div>
             </div>
             <label class="control-block">
@@ -133,11 +143,11 @@
             <div class="control-block">
               <span class="control-label">Modules</span>
               <div class="module-picker">
-                <button type="button" class="is-active" data-demo-module="backtest">Backtest</button>
-                <button type="button" class="is-active" data-demo-module="ai_psm">AI/PSM</button>
-                <button type="button" class="is-active" data-demo-module="policy">Policy</button>
-                <button type="button" data-demo-module="paper">Paper trade</button>
-                <button type="button" data-demo-module="replay">Replay</button>
+                <button type="button" class="is-active" data-demo-module="backtest" data-help="Enable research-run behavior: rank assets, compare strategies, and create a decision record.">Backtest</button>
+                <button type="button" class="is-active" data-demo-module="ai_psm" data-help="Enable AI-assisted position size multiple review. PSM changes the sizing shown in events.">AI/PSM</button>
+                <button type="button" class="is-active" data-demo-module="policy" data-help="Enable policy checks and simulated return/drawdown impact in the preview.">Policy</button>
+                <button type="button" data-demo-module="paper" data-help="Switch the entitlement scope to paper trading. This means a governed paper run could be created.">Paper trade</button>
+                <button type="button" data-demo-module="replay" data-help="Enable replay access. Use Play replay to animate timestamps, markers, weights, and blotter rows.">Replay</button>
               </div>
             </div>
           </div>

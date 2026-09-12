@@ -102,24 +102,24 @@
                   <div class="control-block portal-picker-block">
                     <span class="control-label">Candidate assets</span>
                     <div class="asset-picker portal-picker" data-portal-asset-picker>
-                      <button type="button" class="is-active" data-portal-asset="NVDA">NVDA</button>
-                      <button type="button" class="is-active" data-portal-asset="COIN">COIN</button>
-                      <button type="button" data-portal-asset="MSFT">MSFT</button>
-                      <button type="button" data-portal-asset="AAPL">AAPL</button>
-                      <button type="button" data-portal-asset="TSLA">TSLA</button>
-                      <button type="button" data-portal-asset="GOOGL">GOOGL</button>
-                      <button type="button" data-portal-asset="AMD">AMD</button>
-                      <button type="button" data-portal-asset="AMZN">AMZN</button>
+                      <button type="button" class="is-active" data-portal-asset="NVDA" data-help="Include NVDA in the hosted demo run's candidate asset universe.">NVDA</button>
+                      <button type="button" class="is-active" data-portal-asset="COIN" data-help="Include COIN in the candidate universe and replay weight output.">COIN</button>
+                      <button type="button" data-portal-asset="MSFT" data-help="Include MSFT as a candidate that may become active in the generated replay.">MSFT</button>
+                      <button type="button" data-portal-asset="AAPL" data-help="Include AAPL as a candidate for asset switching and paper replay.">AAPL</button>
+                      <button type="button" data-portal-asset="TSLA" data-help="Include TSLA as a candidate; selection depends on target active assets.">TSLA</button>
+                      <button type="button" data-portal-asset="GOOGL" data-help="Include GOOGL in the configured asset count and run payload.">GOOGL</button>
+                      <button type="button" data-portal-asset="AMD" data-help="Include AMD in the candidate universe sent to the demo API.">AMD</button>
+                      <button type="button" data-portal-asset="AMZN" data-help="Include AMZN in the replay-ready demo request.">AMZN</button>
                     </div>
                   </div>
                   <div class="control-block portal-picker-block">
                     <span class="control-label">Candidate strategies</span>
                     <div class="asset-picker portal-picker" data-portal-strategy-picker>
-                      <button type="button" class="is-active" data-portal-strategy="momentum">Momentum</button>
-                      <button type="button" class="is-active" data-portal-strategy="macd_crossover">MACD</button>
-                      <button type="button" data-portal-strategy="rsi_strategy">RSI</button>
-                      <button type="button" data-portal-strategy="bollinger_bands">Bollinger</button>
-                      <button type="button" data-portal-strategy="buy_and_hold">Buy and hold</button>
+                      <button type="button" class="is-active" data-portal-strategy="momentum" data-help="Include momentum as a candidate strategy for the run.">Momentum</button>
+                      <button type="button" class="is-active" data-portal-strategy="macd_crossover" data-help="Include MACD crossover as a candidate strategy.">MACD</button>
+                      <button type="button" data-portal-strategy="rsi_strategy" data-help="Include RSI as a candidate strategy in the configured strategy count.">RSI</button>
+                      <button type="button" data-portal-strategy="bollinger_bands" data-help="Include Bollinger bands as a candidate strategy.">Bollinger</button>
+                      <button type="button" data-portal-strategy="buy_and_hold" data-help="Include buy and hold as an incumbent or fallback strategy candidate.">Buy and hold</button>
                     </div>
                   </div>
                   <label>

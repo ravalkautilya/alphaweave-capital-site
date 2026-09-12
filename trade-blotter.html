@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlphaWeave Capital Trade Blotter Replay</title>
+  <meta name="description" content="Interactive AlphaWeave Capital trade blotter replay with named market regimes, simulated sleeve events, risk-capped weights, and PSM resizing.">
+  <link rel="icon" href="assets/alphaweave-capital-mark.png">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .blotter-page {
+      background: #05080d;
+      color: #f6fbff;
+    }
+    .blotter-shell {
+      padding: 24px 0 56px;
+    }
+    .blotter-app {
+      --panel: #0b121a;
+      --panel-2: #071019;
+      --line: #204154;
+      --muted: #93aabc;
+      --cyan: #42ead7;
+      --green: #42f59a;
+      --yellow: #ffd05e;
+      --red: #ff5e83;
+      display: grid;
+      gap: 14px;
+      font-size: 13px;
+    }
+    .blotter-note {
+      color: var(--muted);
+      max-width: 920px;
+    }
+    .blotter-panel,
+    .blotter-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(11, 18, 26, 0.95);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+    }
+    .blotter-panel {
+      padding: 14px;
+    }
+    .blotter-toolbar {
+      display: grid;
+      grid-template-columns: minmax(260px, 1.4fr) repeat(4, auto);
+      gap: 12px;
+      align-items: end;
+    }
+    .blotter-field {
+      display: grid;
+      gap: 6px;
+    }
+    .blotter-field label,
+    .blotter-title {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .blotter-field select,
+    .blotter-field input,
+    .blotter-button {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-2);
+      color: #f6fbff;
+      min-height: 36px;
+      padding: 0 11px;
+      font-weight: 800;
+    }
+    .blotter-button {
+      cursor: pointer;
+      background: #0d2230;
+    }
+    .blotter-button.primary {
+      background: var(--cyan);
+      border-color: var(--cyan);
+      color: #031015;
+    }
+    .blotter-button:hover {
+      filter: brightness(1.12);
+    }
+    .blotter-control-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1.2fr repeat(3, minmax(130px, 0.7fr));
+      gap: 12px;
+    }
+    .blotter-checks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .blotter-checks label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel-2);
+      padding: 8px 10px;
+      color: #f6fbff;
+      font-weight: 850;
+    }
+    .blotter-cards {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .blotter-card {
+      padding: 13px;
+      min-width: 0;
+    }
+    .blotter-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    .blotter-card strong {
+      display: block;
+      margin-top: 5px;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 18px;
+    }
+    .blotter-sim-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1.1fr;
+      gap: 12px;
+    }
+    .blotter-sim-box {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      background: var(--panel-2);
+      padding: 10px;
+      min-height: 98px;
+    }
+    .blotter-sim-box strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 15px;
+    }
+    .blotter-sim-box p {
+      margin: 6px 0 0;
+      color: #c8d7e5;
+    }
+    .blotter-feed {
+      display: grid;
+      gap: 5px;
+      max-height: 106px;
+      overflow: auto;
+    }
+    .blotter-feed div {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 4px 0;
+      color: #dcecff;
+    }
+    .blotter-feed span {
+      color: var(--muted);
+    }
+    .blotter-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 12px;
+    }
+    .blotter-chart {
+      min-height: 330px;
+      overflow-x: auto;
+    }
+    .blotter-chart-inner {
+      min-width: 980px;
+    }
+    .blotter-chart svg {
+      width: 100%;
+      height: 300px;
+    }
+    .blotter-grid line {
+      stroke: #173142;
+    }
+    .blotter-path {
+      fill: none;
+      stroke: var(--cyan);
+      stroke-width: 4;
+      filter: drop-shadow(0 0 7px rgba(66, 234, 215, 0.65));
+    }
+    .blotter-axis {
+      stroke: #476273;
+    }
+    .blotter-marker-line {
+      stroke: rgba(255, 255, 255, 0.35);
+      stroke-dasharray: 3 5;
+    }
+    .blotter-buy {
+      fill: var(--green);
+    }
+    .blotter-sell {
+      fill: var(--red);
+    }
+    .blotter-resize,
+    .blotter-no-exec {
+      fill: var(--yellow);
+    }
+    .blotter-label {
+      font-size: 12px;
+      font-weight: 900;
+      paint-order: stroke;
+      stroke: #071019;
+      stroke-width: 4px;
+    }
+    .blotter-buy-text {
+      fill: var(--green);
+    }
+    .blotter-sell-text {
+      fill: var(--red);
+    }
+    .blotter-resize-text,
+    .blotter-no-exec-text {
+      fill: var(--yellow);
+    }
+    .blotter-weights {
+      display: grid;
+      gap: 4px;
+    }
+    .blotter-weight-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 7px 0;
+    }
+    .blotter-weight-row strong {
+      color: var(--yellow);
+    }
+    .blotter-table-wrap {
+      overflow: auto;
+      max-height: 380px;
+    }
+    .blotter-table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+    }
+    .blotter-table th,
+    .blotter-table td {
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 8px 9px;
+      vertical-align: top;
+    }
+    .blotter-table th {
+      color: var(--cyan);
+      font-size: 10px;
+      text-transform: uppercase;
+      background: #0b1924;
+      position: sticky;
+      top: 0;
+    }
+    .blotter-pill {
+      display: inline-flex;
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 11px;
+      font-weight: 900;
+    }
+    .blotter-pill.BUY {
+      background: rgba(66, 245, 154, 0.18);
+      color: var(--green);
+    }
+    .blotter-pill.SELL {
+      background: rgba(255, 94, 131, 0.16);
+      color: var(--red);
+    }
+    .blotter-pill.RESIZE {
+      background: rgba(255, 208, 94, 0.16);
+      color: var(--yellow);
+    }
+    .blotter-pill.NO_EXEC {
+      background: rgba(147, 170, 188, 0.16);
+      color: #bdd1df;
+    }
+    .blotter-current td {
+      background: rgba(66, 234, 215, 0.08);
+      box-shadow: inset 3px 0 0 var(--cyan);
+    }
+    @media (max-width: 980px) {
+      .blotter-toolbar,
+      .blotter-control-grid,
+      .blotter-cards,
+      .blotter-sim-grid,
+      .blotter-layout {
+        grid-template-columns: 1fr;
+      }
+      .blotter-chart-inner {
+        min-width: 760px;
+      }
+    }
+  </style>
+</head>
+<body class="blotter-page">
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand brand-logo" href="./" aria-label="AlphaWeave Capital home"><img src="assets/alphaweave-capital-logo-bright.png" alt="AlphaWeave Capital"></a>
+      <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links" data-nav-links>
+        <a href="product.html">Product</a>
+        <a href="platform.html">Platform</a>
+        <a href="portal.html">Portal</a>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="pipeline.html">Pipeline</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="podcasts.html">Podcasts</a>
+        <a class="nav-cta" href="contact.html">A Walkthrough</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero compact" style="--hero-image: var(--stock-analytics-dashboard)">
+      <div class="container">
+        <p class="eyebrow">Interactive trade blotter</p>
+        <h1>Play forward one rotatable sleeve across market regimes.</h1>
+        <p class="lede">Select a named regime, replay BUY, SELL, RESIZE, and NO_EXEC events, and watch risk-capped weights, position size multiple, and simulated sleeve state change through time.</p>
+        <div class="hero-actions">
+          <a class="button" href="#blotter">Open replay</a>
+          <a class="button secondary" href="platform.html">Back to platform</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section blotter-shell" id="blotter">
+      <div class="container blotter-app" data-static-trade-blotter>
+        <div>
+          <p class="eyebrow">Browser-only GitHub Pages demo</p>
+          <h2>One sleeve, multiple candidate assets and strategies.</h2>
+          <p class="blotter-note">This static page demonstrates the trade-dashboard interaction model in JavaScript. The replay is simulated: it does not run the production strategy engine or fetch market data. It shows how a single sleeve can rotate assets, associate strategy labels, resize with PSM, and keep an auditable blotter trail.</p>
+        </div>
+
+        <section class="blotter-toolbar blotter-panel">
+          <div class="blotter-field">
+            <label for="regimeSelect">Named regime</label>
+            <select id="regimeSelect" data-regime-select></select>
+          </div>
+          <button class="blotter-button primary" type="button" data-play>Play replay</button>
+          <button class="blotter-button" type="button" data-step>Step event</button>
+          <button class="blotter-button" type="button" data-reset>Reset</button>
+          <div class="blotter-field">
+            <label for="replaySpeed">Speed</label>
+            <select id="replaySpeed" data-speed>
+              <option value="1200">slow</option>
+              <option value="750" selected>normal</option>
+              <option value="350">fast</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="blotter-panel blotter-control-grid">
+          <div class="blotter-field">
+            <label>Candidate assets</label>
+            <div class="blotter-checks">
+              <label><input type="checkbox" checked disabled>AAPL</label>
+              <label><input type="checkbox" checked disabled>MSFT</label>
+              <label><input type="checkbox" checked disabled>NVDA</label>
+              <label><input type="checkbox" checked disabled>COIN</label>
+              <label><input type="checkbox" checked disabled>AMD</label>
+              <label><input type="checkbox" disabled>TSLA</label>
+            </div>
+          </div>
+          <div class="blotter-field">
+            <label>Candidate strategies</label>
+            <div class="blotter-checks">
+              <label><input type="checkbox" checked disabled>Buy/hold</label>
+              <label><input type="checkbox" checked disabled>MACD</label>
+              <label><input type="checkbox" checked disabled>Bollinger</label>
+              <label><input type="checkbox" checked disabled>Momentum</label>
+            </div>
+          </div>
+          <div class="blotter-field">
+            <label>Target active assets</label>
+            <input value="regime-defined" disabled>
+          </div>
+          <div class="blotter-field">
+            <label>Risk posture</label>
+            <input value="regime-defined" disabled>
+          </div>
+          <div class="blotter-field">
+            <label>Scope</label>
+            <input value="single rotatable sleeve" disabled>
+          </div>
+        </section>
+
+        <section class="blotter-cards">
+          <div class="blotter-card"><span>Run</span><strong data-run-id title="static replay">static replay</strong></div>
+          <div class="blotter-card"><span>Annual return</span><strong data-annual-return>0.0%</strong></div>
+          <div class="blotter-card"><span>Max drawdown</span><strong data-max-drawdown>0.00%</strong></div>
+          <div class="blotter-card"><span>Sharpe</span><strong data-sharpe>0.00</strong></div>
+          <div class="blotter-card"><span>PSM</span><strong data-psm>1.00</strong></div>
+        </section>
+
+        <section class="blotter-panel blotter-sim-grid">
+          <div class="blotter-sim-box">
+            <span class="blotter-title">Current event</span>
+            <strong data-current-event>Measured start</strong>
+            <p data-current-reason>No event has been processed yet.</p>
+          </div>
+          <div class="blotter-sim-box">
+            <span class="blotter-title">Simulated position state</span>
+            <div class="blotter-feed" data-position-state></div>
+          </div>
+          <div class="blotter-sim-box">
+            <span class="blotter-title">Event feed</span>
+            <div class="blotter-feed" data-event-feed></div>
+          </div>
+        </section>
+
+        <section class="blotter-layout">
+          <div class="blotter-panel blotter-chart">
+            <span class="blotter-title">Measured-window capital path with trade events</span>
+            <div class="blotter-chart-inner">
+              <svg viewBox="0 0 980 300" role="img" aria-label="Capital path and trade markers">
+                <g class="blotter-grid">
+                  <line x1="40" y1="52" x2="948" y2="52"></line>
+                  <line x1="40" y1="112" x2="948" y2="112"></line>
+                  <line x1="40" y1="172" x2="948" y2="172"></line>
+                  <line x1="40" y1="232" x2="948" y2="232"></line>
+                </g>
+                <line class="blotter-axis" x1="40" y1="250" x2="948" y2="250"></line>
+                <polyline class="blotter-path" data-path points=""></polyline>
+                <g data-markers></g>
+              </svg>
+            </div>
+          </div>
+          <div class="blotter-panel">
+            <span class="blotter-title">Risk-capped position weights</span>
+            <div class="blotter-weights" data-weights></div>
+          </div>
+        </section>
+
+        <section class="blotter-panel">
+          <span class="blotter-title">Trade blotter</span>
+          <div class="blotter-table-wrap">
+            <table class="blotter-table">
+              <thead>
+                <tr><th>Time</th><th>Asset</th><th>Strategy</th><th>Action</th><th>Event</th><th>Price</th><th>PSM</th><th>Weight</th><th>Reason</th></tr>
+              </thead>
+              <tbody data-rows></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner"><p>AlphaWeave Capital builds allocation intelligence software for systematic trading teams. It is not investment advice.</p><div class="footer-links"><a href="./">Home</a><a href="platform.html">Platform</a><a href="portal.html">Portal</a><a href="pricing.html">Pricing</a><a href="contact.html">Walkthrough and Contact</a></div></div></footer>
+  <script src="site.js"></script>
+  <script>
+    (() => {
+      const app = document.querySelector("[data-static-trade-blotter]");
+      if (!app) return;
+      const regimes = {
+        goldilocks: {
+          label: "Goldilocks Rotation - constructive breadth",
+          runId: "static_goldilocks_rotation",
+          metrics: { annualReturn: 0.512, maxDrawdown: 0.0148, sharpe: 1.37, psm: 0.90 },
+          weights: { AAPL: 0.333, COIN: 0.333, MSFT: 0.333 },
+          events: [
+            ["2026-02-02T13:30:00", "AAPL", "buy_and_hold", "BUY", "ENTER_LONG", 187.25, 0.92, 0.475, "initial measured-window allocation"],
+            ["2026-02-02T13:30:00", "MSFT", "buy_and_hold", "BUY", "ENTER_LONG", 409.40, 0.92, 0.475, "initial measured-window allocation"],
+            ["2026-02-03T19:30:00", "AAPL", "buy_and_hold", "SELL", "EXIT_LONG", 189.10, 0.86, 0.475, "rotation out after weaker relative momentum"],
+            ["2026-02-03T19:30:00", "NVDA", "macd_crossover", "BUY", "ENTER_LONG", 704.80, 0.86, 0.475, "rotation into stronger risk-adjusted momentum"],
+            ["2026-02-05T13:30:00", "MSFT", "buy_and_hold", "RESIZE", "RESIZE_LONG", 414.55, 0.78, 0.410, "PSM resize after lower portfolio drawdown pressure"],
+            ["2026-02-06T19:30:00", "COIN", "bollinger_bands", "BUY", "ENTER_LONG", 154.20, 0.84, 0.333, "asset switch adds COIN after stronger relative fit"],
+            ["2026-02-10T13:30:00", "MSFT", "buy_and_hold", "SELL", "EXIT_LONG", 418.90, 0.81, 0, "capital moved from lower signal strength"],
+            ["2026-02-10T13:30:00", "AMD", "momentum", "BUY", "ENTER_LONG", 172.35, 0.81, 0.333, "new semiconductor exposure selected"],
+            ["2026-02-11T19:30:00", "COIN", "bollinger_bands", "RESIZE", "RESIZE_LONG", 160.15, 0.74, 0.280, "PSM resize with positive path but higher volatility"],
+            ["2026-02-13T13:30:00", "NVDA", "macd_crossover", "RESIZE", "RESIZE_LONG", 719.50, 0.88, 0.333, "trim to respect risk-capped position weights"],
+            ["2026-02-13T19:30:00", "AMD", "momentum", "SELL", "EXIT_LONG", 176.45, 0.90, 0, "end-of-window risk reduction"],
+            ["2026-02-13T19:30:00", "AAPL", "buy_and_hold", "BUY", "ENTER_LONG", 193.05, 0.90, 0.333, "fresh allocation after measured recovery"]
+          ],
+          capital: [100000, 100310, 100120, 100690, 100510, 101240, 100980, 101730, 102190, 102910, 102420, 105920]
+        },
+        aiMeltup: {
+          label: "AI Mega-Cap Melt-Up - leadership chase",
+          runId: "static_ai_megacap_meltup",
+          metrics: { annualReturn: 0.842, maxDrawdown: 0.0188, sharpe: 1.86, psm: 1.22 },
+          weights: { NVDA: 0.360, MSFT: 0.240, GOOGL: 0.220, AMD: 0.180 },
+          events: [
+            ["2026-06-01T13:30:00", "NVDA", "momentum", "BUY", "ENTER_LONG", 771.20, 1.10, 0.300, "AI leadership ranked first after earnings revision strength"],
+            ["2026-06-01T19:30:00", "MSFT", "buy_and_hold", "BUY", "ENTER_LONG", 441.80, 1.08, 0.260, "platform AI exposure selected as lower-volatility anchor"],
+            ["2026-06-02T13:30:00", "NVDA", "momentum", "RESIZE", "RESIZE_LONG", 789.40, 1.24, 0.360, "PSM pressed winner after capital path confirmed upside"],
+            ["2026-06-02T19:30:00", "GOOGL", "macd_crossover", "BUY", "ENTER_LONG", 169.10, 1.16, 0.220, "asset switch added advertising/cloud AI participation"],
+            ["2026-06-03T13:30:00", "AAPL", "buy_and_hold", "SELL", "EXIT_LONG", 203.50, 1.02, 0, "lower AI sensitivity dropped from active sleeve"],
+            ["2026-06-03T19:30:00", "AMD", "momentum", "BUY", "ENTER_LONG", 184.30, 1.18, 0.180, "semiconductor beta added with capped weight"],
+            ["2026-06-04T13:30:00", "NVDA", "momentum", "RESIZE", "RESIZE_LONG", 806.75, 1.28, 0.360, "continued press subject to concentration cap"],
+            ["2026-06-04T19:30:00", "MSFT", "buy_and_hold", "RESIZE", "RESIZE_LONG", 448.20, 1.15, 0.240, "risk budget rebalanced toward durable cash-flow name"]
+          ],
+          capital: [100000, 100520, 101380, 102260, 101980, 103120, 104640, 105910]
+        },
+        ratesShock: {
+          label: "Rates Shock - duration selloff",
+          runId: "static_rates_shock",
+          metrics: { annualReturn: -0.094, maxDrawdown: 0.0315, sharpe: -0.22, psm: 0.62 },
+          weights: { AAPL: 0.340, MSFT: 0.330, GOOGL: 0.330 },
+          events: [
+            ["2026-07-06T13:30:00", "NVDA", "momentum", "BUY", "ENTER_LONG", 742.10, 0.94, 0.330, "opening exposure before yield shock"],
+            ["2026-07-06T19:30:00", "COIN", "bollinger_bands", "BUY", "ENTER_LONG", 181.90, 0.92, 0.330, "high-beta sleeve candidate accepted initially"],
+            ["2026-07-07T13:30:00", "COIN", "bollinger_bands", "SELL", "EXIT_LONG", 174.20, 0.64, 0, "rising-rate pressure removed highest beta exposure"],
+            ["2026-07-07T19:30:00", "NVDA", "momentum", "RESIZE", "RESIZE_LONG", 731.30, 0.62, 0.250, "duration-sensitive growth exposure cut by PSM"],
+            ["2026-07-08T13:30:00", "AAPL", "buy_and_hold", "BUY", "ENTER_LONG", 198.70, 0.66, 0.340, "risk-off replacement selected for quality balance"],
+            ["2026-07-08T19:30:00", "MSFT", "buy_and_hold", "BUY", "ENTER_LONG", 436.40, 0.68, 0.330, "cash-flow quality added after yield spike"],
+            ["2026-07-09T13:30:00", "NVDA", "momentum", "SELL", "EXIT_LONG", 728.80, 0.62, 0, "policy exited residual high-duration position"],
+            ["2026-07-09T19:30:00", "GOOGL", "buy_and_hold", "BUY", "ENTER_LONG", 163.60, 0.70, 0.330, "final replacement completed lower-beta active book"]
+          ],
+          capital: [100000, 100070, 99380, 99140, 99480, 99710, 98960, 99220]
+        },
+        softLanding: {
+          label: "Soft Landing Grind - steady risk-on climb",
+          runId: "static_soft_landing_grind",
+          metrics: { annualReturn: 0.326, maxDrawdown: 0.0068, sharpe: 1.52, psm: 1.08 },
+          weights: { AAPL: 0.250, MSFT: 0.250, GOOGL: 0.250, AMZN: 0.250 },
+          events: [
+            ["2026-10-05T13:30:00", "AAPL", "buy_and_hold", "BUY", "ENTER_LONG", 207.30, 1.02, 0.250, "stable macro backdrop supported quality allocation"],
+            ["2026-10-05T19:30:00", "MSFT", "buy_and_hold", "BUY", "ENTER_LONG", 452.60, 1.02, 0.250, "cash-flow compounder selected"],
+            ["2026-10-06T13:30:00", "GOOGL", "macd_crossover", "BUY", "ENTER_LONG", 174.80, 1.04, 0.250, "strategy signal improved without volatility penalty"],
+            ["2026-10-06T19:30:00", "AMZN", "bollinger_bands", "BUY", "ENTER_LONG", 190.40, 1.04, 0.250, "broad participation added to sleeve"],
+            ["2026-10-07T13:30:00", "AAPL", "buy_and_hold", "NO_EXEC", "NO_EXEC", 208.10, 1.06, 0.250, "policy retained existing position after small gain"],
+            ["2026-10-07T19:30:00", "MSFT", "buy_and_hold", "RESIZE", "RESIZE_LONG", 456.20, 1.08, 0.250, "PSM modestly pressed durable uptrend"],
+            ["2026-10-08T13:30:00", "GOOGL", "macd_crossover", "NO_EXEC", "NO_EXEC", 176.10, 1.08, 0.250, "candidate switch did not improve economic contract"],
+            ["2026-10-08T19:30:00", "AMZN", "bollinger_bands", "RESIZE", "RESIZE_LONG", 192.80, 1.10, 0.250, "small PSM increase after low drawdown path"]
+          ],
+          capital: [100000, 100190, 100430, 100680, 100740, 101120, 101210, 101620]
+        },
+        rangeBound: {
+          label: "Range-Bound Chop - no-edge policy review",
+          runId: "static_range_bound_chop",
+          metrics: { annualReturn: 0.061, maxDrawdown: 0.0042, sharpe: 0.58, psm: 1.00 },
+          weights: { AAPL: 0.500, MSFT: 0.500 },
+          events: [
+            ["2026-05-04T13:30:00", "AAPL", "buy_and_hold", "BUY", "ENTER_LONG", 188.40, 1.00, 0.500, "initial active asset selected"],
+            ["2026-05-04T19:30:00", "MSFT", "buy_and_hold", "BUY", "ENTER_LONG", 412.60, 1.00, 0.500, "initial active asset selected"],
+            ["2026-05-05T13:30:00", "AAPL", "buy_and_hold", "NO_EXEC", "NO_EXEC", 189.05, 1.00, 0.500, "policy check found no superior switch"],
+            ["2026-05-05T19:30:00", "MSFT", "buy_and_hold", "NO_EXEC", "NO_EXEC", 413.20, 1.00, 0.500, "strategy review retained incumbent"],
+            ["2026-05-06T13:30:00", "COIN", "bollinger_bands", "NO_EXEC", "NO_EXEC", 158.60, 1.00, 0, "candidate asset failed risk-adjusted acceptance gate"],
+            ["2026-05-06T19:30:00", "NVDA", "momentum", "NO_EXEC", "NO_EXEC", 733.10, 1.00, 0, "candidate strategy did not clear economic contract"],
+            ["2026-05-07T13:30:00", "AAPL", "buy_and_hold", "NO_EXEC", "NO_EXEC", 189.90, 1.00, 0.500, "heartbeat with decision path completed"],
+            ["2026-05-07T19:30:00", "MSFT", "buy_and_hold", "NO_EXEC", "NO_EXEC", 414.05, 1.00, 0.500, "end-of-window policy review retained book"]
+          ],
+          capital: [100000, 100090, 100120, 100160, 100130, 100210, 100250, 100310]
+        }
+      };
+
+      const q = (selector) => app.querySelector(selector);
+      const select = q("[data-regime-select]");
+      const playButton = q("[data-play]");
+      const speedSelect = q("[data-speed]");
+      let activeKey = "goldilocks";
+      let visible = 0;
+      let timer = null;
+
+      const toEvents = (regime) => regime.events.map((row, index) => ({
+        time: row[0],
+        asset: row[1],
+        strategy: row[2],
+        action: row[3],
+        event: row[4],
+        price: row[5],
+        psm: row[6],
+        weight: row[7],
+        reason: row[8],
+        capital: regime.capital[index]
+      }));
+
+      const stop = () => {
+        if (timer) clearInterval(timer);
+        timer = null;
+        playButton.textContent = "Play replay";
+      };
+
+      const markerClass = (action) => action === "BUY" ? "buy" : action === "SELL" ? "sell" : action === "NO_EXEC" ? "no-exec" : "resize";
+
+      const positions = (events) => {
+        const map = new Map();
+        events.forEach((event) => {
+          if (event.action === "SELL") map.delete(event.asset);
+          if (event.action === "BUY" || event.action === "RESIZE") {
+            map.set(event.asset, { strategy: event.strategy, weight: Number(event.weight || 0), psm: Number(event.psm || 1) });
+          }
+        });
+        return [...map.entries()];
+      };
+
+      const render = () => {
+        const regime = regimes[activeKey];
+        const events = toEvents(regime);
+        const shown = events.slice(0, visible);
+        const current = shown[shown.length - 1];
+        q("[data-run-id]").textContent = regime.runId;
+        q("[data-run-id]").title = regime.runId;
+        q("[data-annual-return]").textContent = `${(regime.metrics.annualReturn * 100).toFixed(1)}%`;
+        q("[data-max-drawdown]").textContent = `${(regime.metrics.maxDrawdown * 100).toFixed(2)}%`;
+        q("[data-sharpe]").textContent = regime.metrics.sharpe.toFixed(2);
+        q("[data-psm]").textContent = regime.metrics.psm.toFixed(2);
+
+        const values = events.map((event) => Number(event.capital)).filter(Number.isFinite);
+        const min = Math.min(...values);
+        const max = Math.max(...values);
+        const span = Math.max(max - min, 1);
+        const points = shown.map((event, index) => {
+          const x = 50 + index * (880 / Math.max(events.length - 1, 1));
+          const y = 238 - ((Number(event.capital) - min) / span) * 174;
+          return `${x},${y}`;
+        });
+        q("[data-path]").setAttribute("points", points.join(" "));
+        q("[data-markers]").innerHTML = shown.map((event, index) => {
+          const x = 50 + index * (880 / Math.max(events.length - 1, 1));
+          const y = 238 - ((Number(event.capital) - min) / span) * 174;
+          const labelY = Math.max(24, y - 28 - (index % 2) * 16);
+          const cls = markerClass(event.action);
+          return `<line class="blotter-marker-line" x1="${x}" y1="${y}" x2="${x}" y2="252"></line><circle class="blotter-${cls}" cx="${x}" cy="${y}" r="7"></circle><text class="blotter-label blotter-${cls}-text" x="${x + 9}" y="${labelY}">${event.action} ${event.asset}</text>`;
+        }).join("");
+
+        q("[data-weights]").innerHTML = Object.entries(regime.weights).map(([asset, weight]) => `<div class="blotter-weight-row"><span>${asset}</span><strong>${(Number(weight) * 100).toFixed(1)}%</strong></div>`).join("");
+        q("[data-rows]").innerHTML = shown.map((event, index) => `<tr class="${index === shown.length - 1 ? "blotter-current" : ""}"><td>${event.time}</td><td>${event.asset}</td><td>${event.strategy.replaceAll("_", " ")}</td><td><span class="blotter-pill ${event.action}">${event.action}</span></td><td>${event.event}</td><td>$${Number(event.price).toFixed(2)}</td><td>${Number(event.psm).toFixed(2)}</td><td>${event.weight ? `${(Number(event.weight) * 100).toFixed(1)}%` : ""}</td><td>${event.reason}</td></tr>`).join("");
+
+        q("[data-current-event]").textContent = current ? `${current.time} | ${current.action} ${current.asset}` : "Measured start";
+        q("[data-current-reason]").textContent = current ? `${current.strategy.replaceAll("_", " ")} | PSM ${Number(current.psm).toFixed(2)} | ${current.reason}` : "No event has been processed yet.";
+        const pos = positions(shown);
+        q("[data-position-state]").innerHTML = pos.length ? pos.map(([asset, state]) => `<div><strong>${asset}</strong><span>${(state.weight * 100).toFixed(1)}% | PSM ${state.psm.toFixed(2)} | ${state.strategy.replaceAll("_", " ")}</span></div>`).join("") : `<div><strong>cash</strong><span>no active simulated positions</span></div>`;
+        q("[data-event-feed]").innerHTML = shown.slice(-5).reverse().map((event) => `<div><strong>${event.action} ${event.asset}</strong><span>${event.time.slice(5).replace("T", " ")}</span></div>`).join("");
+      };
+
+      const setVisible = (count) => {
+        visible = Math.max(0, Math.min(regimes[activeKey].events.length, count));
+        render();
+      };
+
+      select.innerHTML = Object.entries(regimes).map(([key, regime]) => `<option value="${key}">${regime.label}</option>`).join("");
+      select.value = activeKey;
+      select.addEventListener("change", () => {
+        stop();
+        activeKey = select.value;
+        setVisible(0);
+      });
+      q("[data-reset]").addEventListener("click", () => {
+        stop();
+        setVisible(0);
+      });
+      q("[data-step]").addEventListener("click", () => {
+        stop();
+        setVisible(visible + 1);
+      });
+      playButton.addEventListener("click", () => {
+        if (timer) {
+          stop();
+          return;
+        }
+        visible = 0;
+        render();
+        playButton.textContent = "Pause replay";
+        timer = setInterval(() => {
+          visible += 1;
+          render();
+          if (visible >= regimes[activeKey].events.length) {
+            stop();
+            playButton.textContent = "Replay again";
+          }
+        }, Number(speedSelect.value || 750));
+      });
+      setVisible(0);
+    })();
+  </script>
+</body>
+</html>
