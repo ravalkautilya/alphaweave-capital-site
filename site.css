@@ -11,14 +11,14 @@
   --accent-4: #ff6b8a;
   --danger: #ff6b8a;
   --max: 1120px;
-  --stock-trading-desk: url("https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1800&q=82");
-  --stock-market-laptop: url("https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=1800&q=82");
-  --stock-analytics-dashboard: url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=82");
-  --stock-research-desk: url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1800&q=82");
-  --stock-data-infrastructure: url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1800&q=82");
-  --stock-finance-review: url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=82");
-  --stock-team-review: url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=82");
-  --cartoon-advisor-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' rx='14' fill='%230a1620'/%3E%3Ccircle cx='18' cy='16' r='7' fill='%23f7c65f'/%3E%3Cpath d='M8 38c2-9 7-14 14-14s12 5 14 14' fill='%2353ead9'/%3E%3Cpath d='M29 28l4-5 4 3 5-8' fill='none' stroke='%238a7dff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14 16h2m4 0h2' stroke='%23031720' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M15 20c2 2 5 2 7 0' fill='none' stroke='%23031720' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  --stock-trading-desk: url("assets/alphaweave-weave.svg");
+  --stock-market-laptop: url("assets/alphaweave-weave.svg");
+  --stock-analytics-dashboard: url("assets/alphaweave-weave.svg");
+  --stock-research-desk: url("assets/alphaweave-weave.svg");
+  --stock-data-infrastructure: url("assets/alphaweave-weave.svg");
+  --stock-finance-review: url("assets/alphaweave-weave.svg");
+  --stock-team-review: url("assets/alphaweave-weave.svg");
+  --cartoon-advisor-icon: url("assets/alphaweave-home-assistant.png");
 }
 
 * {
@@ -3286,3 +3286,18 @@ button.is-active .inline-detail,
 }
 
 
+
+/* Shared emerald brand and assistant artwork. */
+.brand-logo img{width:240px;height:auto;max-width:100%;filter:none}.illustration-panel img[src*="alphaweave-"]{object-fit:contain;aspect-ratio:4/3;background:#fafaf4}
+
+/* Ivory weave replaces stock trading photography; content panels retain contrast. */
+body{background-image:linear-gradient(#07110fee,#07110fee),url("assets/alphaweave-weave.svg");background-size:cover;background-attachment:fixed}
+.hero{background-image:url("assets/alphaweave-weave.svg");color:#142321}.hero::after{display:none}.hero h1{color:#142321}.hero .eyebrow{color:#075644}.hero .lede{color:#40564b}.hero .button{background:#075644;color:#fff;border-color:#075644}.hero .button.secondary{background:#fafaf4;color:#075644;border-color:#075644}.hero .button::before,.nav-cta::before,.mobile-toggle::before{display:none}
+.hero.assistant-scene>.container{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:center;gap:25px}.assistant-scene-copy{min-width:0}.assistant-scene-copy h1{font-size:clamp(32px,3.4vw,52px)}.assistant-scene-art{margin:0;min-width:0;background:#fafaf4;border-radius:22px;overflow:hidden}.assistant-scene-art img{display:block;width:100%;height:auto;mix-blend-mode:multiply}.assistant-scene-art figcaption{color:#40564b;font-size:11px;padding:10px 15px}.hero.assistant-scene{padding-bottom:65px}
+@media(max-width:760px){.hero.assistant-scene>.container{grid-template-columns:1fr}.assistant-scene-art{max-width:480px;width:100%;margin:auto}.hero.assistant-scene{padding-top:130px}}
+
+.hero .hero-overlay{display:none}.hero .hero-copy{color:#40564b}.hero.assistant-scene>.container{position:relative;z-index:1}
+
+/* Match the public homepage banner, including expanded mobile navigation. */
+.site-header{background:#fafaf4;border-bottom:1px solid #d2dcd4;backdrop-filter:none;color:#142321}.site-header .nav-links{color:#40564b}.site-header .nav-links a:hover,.site-header .nav-links a[aria-current="page"]{color:#075644}.site-header .nav-cta{background:#075644;color:#fff;border-color:#075644}.site-header .mobile-toggle{background:#fafaf4;color:#075644;border-color:#075644}.site-header .nav-links.open{background:#fafaf4;color:#142321}
+@media(max-width:980px){.site-header .nav-links{background:#fafaf4;border-color:#d2dcd4}}

@@ -1,161 +1,146 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AlphaWeave Capital Architecture | Allocation Decision Infrastructure</title>
-  <meta name="description" content="AlphaWeave Capital connects institutional data, strategy, risk, execution, reporting, and memory components into inspectable allocation decision infrastructure.">
-  <link rel="icon" href="assets/alphaweave-capital-mark.png">
-  <link rel="stylesheet" href="site.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>AlphaWeave Capital Architecture | Allocation Decision Infrastructure</title>
+<meta content="AlphaWeave Capital connects institutional data, strategy, risk, execution, reporting, and memory components into inspectable allocation decision infrastructure." name="description"/>
+<link href="assets/alphaweave-brand-mark.svg" rel="icon"/>
+<link href="site.css?v=20260927-white-nav-2" rel="stylesheet"/>
+<link href="site-header.css?v=3" rel="stylesheet"/><link href="light-theme.css?v=2" rel="stylesheet"/>
+<link href="site-footer.css?v=1" rel="stylesheet"/>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand brand-logo" href="./" aria-label="AlphaWeave Capital home"><img src="assets/alphaweave-capital-logo-bright.png" alt="AlphaWeave Capital"></a>
-      <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button>
-      <div class="nav-links" data-nav-links>
-      <a href="product.html">Product</a>
-      <a href="platform.html">Platform</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="pipeline.html">Pipeline</a>
-      <a href="market-neutral.html">Market Neutral</a>
-      <a href="architecture.html" aria-current="page">Architecture</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="podcasts.html">Podcasts</a>
-      <a class="nav-cta" href="contact.html">Walkthrough and Contact</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero compact" style="--hero-image: var(--stock-data-infrastructure)">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <p class="eyebrow">Architecture</p>
-        <h1>Allocation intelligence your organization can inspect.</h1>
-        <p class="hero-copy">AlphaWeave Capital breaks the path from signal to capital into visible reviewers, deterministic controls, and audit-ready reports. It is built to plug into institutional data, model, risk, execution, and reporting components so AI can help summarize and compare evidence without hiding the handoffs, attribution, or final allocation logic.</p>
-      </div>
-    </section>
-
-    <section class="section value-ribbon">
-      <div class="container ribbon-grid">
-        <div><span>Visible</span><strong>Teams can see who reviewed what, and what reached the decision.</strong></div>
-        <div><span>Controlled</span><strong>Rules handle mandates, risk, parsing, caching, and routing where precision matters.</strong></div>
-        <div><span>Auditable</span><strong>Prompts, responses, cache matches, and outcomes stay inspectable for review.</strong></div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="architecture-interactive">
-        <div class="feature-grid three architecture-grid">
-          <button class="feature-card image-card" style="--card-image: var(--stock-team-review)" type="button" data-click-card data-title="Agent crews" data-detail="Agent crews work like a trading-floor desk: each reviewer owns a specific job, and the handoff is visible."><h3>Agent crews</h3><p>Coordinate evidence, review, risk, portfolio construction, and reporting without collapsing them into one opaque step.</p></button>
-          <button class="feature-card image-card" style="--card-image: var(--stock-research-desk)" type="button" data-click-card data-title="Prompt templates" data-detail="Prompt templates are the briefing forms: they tell each reviewer exactly what to answer and in what structure."><h3>Prompt templates</h3><p>Keep language-model output concise, structured, and easier for downstream checks to validate.</p></button>
-          <button class="feature-card image-card" style="--card-image: var(--stock-data-infrastructure)" type="button" data-click-card data-title="Cache and memory" data-detail="Cache and memory act like a research archive: prior context can be reused, but the match is still reviewable."><h3>Cache and memory</h3><p>Preserve prompt context, responses, chart commentary, semantic matches, and realized feedback.</p></button>
-          <button class="feature-card image-card" style="--card-image: var(--stock-analytics-dashboard)" type="button" data-click-card data-title="Model routing" data-detail="Model routing is the switchboard: provider and model choices stay explicit rather than buried in the code path."><h3>Model routing</h3><p>Make model selection auditable so provider changes do not quietly alter a run.</p></button>
-          <button class="feature-card image-card" style="--card-image: var(--stock-finance-review)" type="button" data-click-card data-title="Risk layer" data-detail="The risk layer is the circuit breaker: exposure, sizing, neutrality, and execution controls stay separate from narrative reasoning."><h3>Risk layer</h3><p>Separate portfolio constraints and sizing controls from AI-generated explanations.</p></button>
-          <button class="feature-card image-card" style="--card-image: var(--stock-trading-desk)" type="button" data-click-card data-title="Performance attribution" data-detail="Performance attribution is the scoreboard: it separates the base strategy from asset selection, strategy switching, and AI/PSM contribution."><h3>Performance attribution</h3><p>Show which layer added value and which layer dragged.</p></button>
-        </div>
-        <p class="detail-note" data-card-detail>Select an architecture block to inspect its role in the system.</p>
-      </div>
-    </section>
-
-    <section class="section band">
-      <div class="section-heading">
-        <p class="eyebrow">Why it matters</p>
-        <h2>Specialized reviewers, not one giant black box.</h2>
-        <p>An agent is a software reviewer responsible for one part of the workflow. An LLM, or large language model, is an AI model trained to read and generate text; AlphaWeave Capital uses LLMs where judgment and summarization help, while rules handle the parts that must be exact.</p>
-      </div>
-      <div class="timeline agent-chain">
-        <button class="timeline-item image-card" style="--card-image: var(--stock-market-laptop)" type="button" data-click-card data-title="Current evidence reviewer" data-detail="This reviewer gathers current market facts such as news, macro, earnings, and financial data."><span>01</span><h3>Current evidence reviewer</h3><p>Prepares the market backdrop before the decision is judged.</p></button>
-        <button class="timeline-item image-card" style="--card-image: var(--stock-finance-review)" type="button" data-click-card data-title="Historical evidence reviewer" data-detail="This reviewer asks what happened in comparable historical cases before a new signal is trusted."><span>02</span><h3>Historical evidence reviewer</h3><p>Looks for prior patterns, signal behavior, and comparable evidence.</p></button>
-        <button class="timeline-item image-card" style="--card-image: var(--stock-analytics-dashboard)" type="button" data-click-card data-title="Chart and signal reviewer" data-detail="This reviewer condenses chart behavior, signal quality, and realized decision evidence across time horizons."><span>03</span><h3>Chart and signal reviewer</h3><p>Turns visual evidence into short-, medium-, and long-term context.</p></button>
-        <button class="timeline-item image-card" style="--card-image: var(--stock-research-desk)" type="button" data-click-card data-title="Longer-horizon reviewer" data-detail="This reviewer slows the process down and compares recent decisions with actual execution outcomes."><span>04</span><h3>Longer-horizon reviewer</h3><p>Checks decision history, performance outcomes, and improvement guidance.</p></button>
-        <button class="timeline-item image-card" style="--card-image: var(--stock-trading-desk)" type="button" data-click-card data-title="Decision reviewer" data-detail="This reviewer turns the evidence into a role judgment, action, duration, confidence, and explanation."><span>05</span><h3>Decision reviewer</h3><p>Converts evidence into a practical allocation decision.</p></button>
-        <button class="timeline-item image-card" style="--card-image: var(--stock-data-infrastructure)" type="button" data-click-card data-title="Outcome and reporting reviewers" data-detail="These reviewers compare the decision with actual position results and write the outcome back for future runs."><span>06</span><h3>Outcome and reporting reviewers</h3><p>Close the loop with reports, validation, and memory updates.</p></button>
-      </div>
-      <p class="detail-note" data-card-detail>Click an agent to see what it contributes to the chain.</p>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Operational value</p>
-        <h2>Every evaluation follows the same route from data to memory.</h2>
-        <p>At each bar, AlphaWeave Capital loads data, selects assets, selects strategies, generates raw signals, triages whether deeper AI review is needed, converts conviction into portfolio intent, applies risk controls, and stores the outcome for future attribution.</p>
-      </div>
-      <div class="diagnostic-list">
-        <button type="button" data-click-card data-title="Selection first" data-detail="The active asset set and strategy set are chosen before the signal is treated as a capital decision."><strong>Selection first</strong><span>Assets and strategies are co-dependent inputs, not afterthoughts.</span></button>
-        <button type="button" data-click-card data-title="AI only when useful" data-detail="A triage layer decides whether full market intelligence, reflection, and decision review are warranted."><strong>Triage before AI</strong><span>Routine bars can take the fast path; complex bars get deeper review.</span></button>
-        <button type="button" data-click-card data-title="PSM becomes capital through controls" data-detail="The position size multiplier expresses conviction, but portfolio and risk layers convert it into constrained weights."><strong>Conviction to capital</strong><span>PSM does not place trades directly; portfolio and risk layers make it executable.</span></button>
-        <button type="button" data-click-card data-title="Memory closes the loop" data-detail="Reports and realized outcomes are stored so future decisions can learn from what worked, failed, or needed adjustment."><strong>Memory closes the loop</strong><span>Decision reviews become reusable evidence.</span></button>
-      </div>
-      <p class="detail-note" data-card-detail>Click a flow checkpoint to see why it matters.</p>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Control plane</p>
-        <h2>The guardrails that keep the reviewers honest.</h2>
-        <p>These controls make AI useful inside a governed process: outputs are parsed, expensive review is routed only when justified, and reused evidence is traceable instead of mysterious.</p>
-      </div>
-      <div class="control-plane-list">
-        <button type="button" data-click-card data-title="Structured parsing" data-detail="Structured parsing turns model prose into validated fields, with repair paths for common formatting issues."><span>Parse</span><strong>Structured parsing</strong><em>Normalize model responses before they enter the decision record.</em></button>
-        <button type="button" data-click-card data-title="Triage policy" data-detail="Triage works like a routing desk: it sends only the dates that deserve deeper language-model review."><span>Route</span><strong>Triage policy</strong><em>Reserve deeper review for meaningful decision moments.</em></button>
-        <button type="button" data-click-card data-title="Cache scopes" data-detail="Cache scopes make reuse accountable by tracking the decision context, prompt signature, image caption, match type, and stored response."><span>Reuse</span><strong>Cache scopes</strong><em>Reuse prior work only when the match can be inspected.</em></button>
-      </div>
-      <p class="detail-note" data-card-detail>Click a control-plane block to see how it protects the system.</p>
-    </section>
-
-    <section class="section market-context">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">Why this architecture matters</p>
-          <h2>AI in trading needs controls, not just predictions.</h2>
-          <p>Industry guidance keeps pointing to the same tension: AI can help process information faster, but trading teams still need explainability, model risk controls, data integrity, supervision, and decision attribution. AlphaWeave Capital is built around that reality.</p>
-        </div>
-        <div class="context-panels">
-          <a class="context-panel" href="https://www.finra.org/rules-guidance/key-topics/fintech/report/artificial-intelligence-in-the-securities-industry/key-challenges" target="_blank" rel="noopener">
-            <span>Industry guidance</span>
-            <strong>Model risk management matters.</strong>
-            <p>AI workflows need review around explainability, data integrity, and privacy.</p>
-          </a>
-          <a class="context-panel" href="https://fmsb.com/wp-content/uploads/2026/02/FMSB-AI-in-Trading_Final_12.02.26_FINAL.pdf" target="_blank" rel="noopener">
-            <span>Trading controls</span>
-            <strong>Real-time controls stay central.</strong>
-            <p>AI trading needs monitoring and control frameworks, especially as models become less transparent.</p>
-          </a>
-          <a class="context-panel" href="https://www.gao.gov/assets/gao-25-107197.pdf" target="_blank" rel="noopener">
-            <span>Supervision</span>
-            <strong>Testing and explainability are not optional.</strong>
-            <p>AI use in financial workflows should be evaluated through governance, testing, and supervision.</p>
-          </a>
-        </div>
-        <p class="market-note">AlphaWeave Capital is not trying to be a one-click trading oracle. It is strategy-agnostic, plug-and-play decision infrastructure: connect existing institutional components, review evidence, select assets and strategies, apply sleeve constraints, scale conviction through PSM, preserve the audit trail, and attribute what actually changed returns.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow">AI routing</p>
-          <h2>Use AI where judgment helps, and rules where control matters.</h2>
-          <p>A large language model, or LLM, is an AI model trained to read and generate text. AlphaWeave Capital uses LLMs like specialist analysts for summarizing evidence and comparing context, while rules handle selection, risk, caching, and reporting.</p>
-        </div>
-        <div class="feature-lanes">
-          <button class="lane-item" type="button" data-click-card data-title="Selective AI review" data-detail="Routine moments stay on rails; deeper AI review is reserved for context that deserves attention."><span>01</span><strong>Call AI when it matters</strong><em>Avoid expensive review on every routine bar.</em></button>
-          <button class="lane-item" type="button" data-click-card data-title="Traceable handoffs" data-detail="Market evidence, historical review, chart context, decision logic, and reporting move through a visible chain."><span>02</span><strong>Keep the trail visible</strong><em>Know what evidence reached each decision step.</em></button>
-          <button class="lane-item" type="button" data-click-card data-title="Safe reuse" data-detail="Prior work can be reused, but the system records what matched, what was recomputed, and what changed."><span>03</span><strong>Reuse without guessing</strong><em>Show what was reused, recomputed, and delivered.</em></button>
-          <button class="lane-item" type="button" data-click-card data-title="Stage attribution" data-detail="Monthly reports separate base strategy performance from asset selection, strategy switching, and AI-assisted position sizing."><span>04</span><strong>Measure each layer</strong><em>Separate asset, strategy, and AI contribution.</em></button>
-          <button class="lane-item" type="button" data-click-card data-title="Execution-aware review" data-detail="Decision results and actual position results are tracked separately so good ideas are not confused with poor timing or sizing."><span>05</span><strong>Separate idea from execution</strong><em>Distinguish signal quality from trade implementation.</em></button>
-          <button class="lane-item" type="button" data-click-card data-title="Uncertainty discipline" data-detail="When evidence is incomplete, uncertainty is labeled instead of being dressed up as confidence."><span>06</span><strong>Label uncertainty</strong><em>Keep weak evidence separate from confident review.</em></button>
-        </div>
-        <p class="detail-note" data-card-detail>Click an item to see why it matters.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer"><div class="footer-inner"><p>AlphaWeave Capital builds allocation intelligence software for systematic trading teams. It is not investment advice.</p><div class="footer-links"><a href="./">Home</a><a href="contact.html">Walkthrough and Contact</a></div></div></footer>
-  <script src="site.js"></script>
+<header class="site-header aw-site-header">
+<nav aria-label="Primary navigation" class="nav">
+<a aria-label="AlphaWeave Capital home" class="brand" href="./"><img alt="AlphaWeave Capital" height="62" src="assets/alphaweave-brand.svg" width="240"/></a>
+<div class="nav-links" data-nav-links="" id="home-navigation">
+<a href="product.html">Product</a><a href="platform.html">Platform</a><a href="how-it-works.html">How it works</a><a aria-current="page" href="architecture.html">Architecture</a><a href="pricing.html">Pricing</a>
+<a href="presentation-20260816.html">Presentation</a><a href="podcasts.html">Podcasts</a><a href="pipeline.html">Pipeline</a><a href="market-neutral.html">Market neutral</a><a href="trade-blotter.html">Trade blotter</a>
+<a class="portal-link" href="portal.html">Demo portal</a><a class="button compact" href="contact.html">Book a walkthrough <span aria-hidden="true">→</span></a>
+</div>
+</nav>
+</header>
+<main>
+<section class="hero compact assistant-scene" style="--hero-image: var(--stock-data-infrastructure)">
+<div class="hero-overlay"></div>
+<div class="container"><div class="assistant-scene-copy">
+<p class="eyebrow">Architecture</p>
+<h1>Allocation intelligence your organization can inspect.</h1>
+<p class="hero-copy">AlphaWeave Capital breaks the path from signal to capital into visible reviewers, deterministic controls, and audit-ready reports. It is built to plug into institutional data, model, risk, execution, and reporting components so AI can help summarize and compare evidence without hiding the handoffs, attribution, or final allocation logic.</p>
+</div><figure class="assistant-scene-art"><img alt="Assistant connecting modular software components" height="1086" src="assets/alphaweave-assistant-workflow.png" width="1448"/><figcaption>See how the platform components fit together.</figcaption></figure></div>
+</section>
+<section class="section value-ribbon">
+<div class="container ribbon-grid">
+<div><span>Visible</span><strong>Teams can see who reviewed what, and what reached the decision.</strong></div>
+<div><span>Controlled</span><strong>Rules handle mandates, risk, parsing, caching, and routing where precision matters.</strong></div>
+<div><span>Auditable</span><strong>Prompts, responses, cache matches, and outcomes stay inspectable for review.</strong></div>
+</div>
+</section>
+<section class="section">
+<div class="architecture-interactive">
+<div class="feature-grid three architecture-grid">
+<button class="feature-card image-card" data-click-card="" data-content-icon="ai" data-detail="Agent crews work like a trading-floor desk: each reviewer owns a specific job, and the handoff is visible." data-title="Agent crews" style="--card-image: var(--stock-team-review)" type="button"><h3><svg aria-hidden="true" class="action-icon" data-icon="ai" focusable="false" viewbox="0 0 24 24"><path d="M7 7h10v10H7z M9 1v6M15 1v6M9 17v6M15 17v6M1 9h6M1 15h6M17 9h6M17 15h6"></path></svg>Agent crews</h3><p>Coordinate evidence, review, risk, portfolio construction, and reporting without collapsing them into one opaque step.</p></button>
+<button class="feature-card image-card" data-click-card="" data-content-icon="ai" data-detail="Prompt templates are the briefing forms: they tell each reviewer exactly what to answer and in what structure." data-title="Prompt templates" style="--card-image: var(--stock-research-desk)" type="button"><h3><svg aria-hidden="true" class="action-icon" data-icon="ai" focusable="false" viewbox="0 0 24 24"><path d="M7 7h10v10H7z M9 1v6M15 1v6M9 17v6M15 17v6M1 9h6M1 15h6M17 9h6M17 15h6"></path></svg>Prompt templates</h3><p>Keep language-model output concise, structured, and easier for downstream checks to validate.</p></button>
+<button class="feature-card image-card" data-click-card="" data-content-icon="memory" data-detail="Cache and memory act like a research archive: prior context can be reused, but the match is still reviewable." data-title="Cache and memory" style="--card-image: var(--stock-data-infrastructure)" type="button"><h3><svg aria-hidden="true" class="action-icon" data-icon="memory" focusable="false" viewbox="0 0 24 24"><path d="M3 7h7l2 3h9v11H3z M3 7V4h7l2 3"></path></svg>Cache and memory</h3><p>Preserve prompt context, responses, chart commentary, semantic matches, and realized feedback.</p></button>
+<button class="feature-card image-card" data-click-card="" data-content-icon="ai" data-detail="Model routing is the switchboard: provider and model choices stay explicit rather than buried in the code path." data-title="Model routing" style="--card-image: var(--stock-analytics-dashboard)" type="button"><h3><svg aria-hidden="true" class="action-icon" data-icon="ai" focusable="false" viewbox="0 0 24 24"><path d="M7 7h10v10H7z M9 1v6M15 1v6M9 17v6M15 17v6M1 9h6M1 15h6M17 9h6M17 15h6"></path></svg>Model routing</h3><p>Make model selection auditable so provider changes do not quietly alter a run.</p></button>
+<button class="feature-card image-card" data-click-card="" data-content-icon="risk" data-detail="The risk layer is the circuit breaker: exposure, sizing, neutrality, and execution controls stay separate from narrative reasoning." data-title="Risk layer" style="--card-image: var(--stock-finance-review)" type="button"><h3><svg aria-hidden="true" class="action-icon" data-icon="risk" focusable="false" viewbox="0 0 24 24"><path d="M12 3 20 6v6c0 5-8 9-8 9S4 17 4 12V6z M8 12l3 3 5-6"></path></svg>Risk layer</h3><p>Separate portfolio constraints and sizing controls from AI-generated explanations.</p></button>
+<button class="feature-card image-card" data-click-card="" data-content-icon="report" data-detail="Performance attribution is the scoreboard: it separates the base strategy from asset selection, strategy switching, and AI/PSM contribution." data-title="Performance attribution" style="--card-image: var(--stock-trading-desk)" type="button"><h3><svg aria-hidden="true" class="action-icon" data-icon="report" focusable="false" viewbox="0 0 24 24"><path d="M4 3v18h17 M8 16l4-5 4 2 5-7"></path></svg>Performance attribution</h3><p>Show which layer added value and which layer dragged.</p></button>
+</div>
+<p class="detail-note" data-card-detail="">Select an architecture block to inspect its role in the system.</p>
+</div>
+</section>
+<section class="section band">
+<div class="section-heading">
+<p class="eyebrow">Why it matters</p>
+<h2>Specialized reviewers, not one giant black box.</h2>
+<p>An agent is a software reviewer responsible for one part of the workflow. An LLM, or large language model, is an AI model trained to read and generate text; AlphaWeave Capital uses LLMs where judgment and summarization help, while rules handle the parts that must be exact.</p>
+</div>
+<div class="timeline agent-chain">
+<button class="timeline-item image-card" data-click-card="" data-content-icon="review" data-detail="This reviewer gathers current market facts such as news, macro, earnings, and financial data." data-title="Current evidence reviewer" style="--card-image: var(--stock-market-laptop)" type="button"><span>01</span><h3><svg aria-hidden="true" class="action-icon" data-icon="review" focusable="false" viewbox="0 0 24 24"><path d="M14 14l7 7 M17 9a8 8 0 1 1-16 0 8 8 0 0 1 16 0 M5 9l3 3 5-6"></path></svg>Current evidence reviewer</h3><p>Prepares the market backdrop before the decision is judged.</p></button>
+<button class="timeline-item image-card" data-click-card="" data-content-icon="memory" data-detail="This reviewer asks what happened in comparable historical cases before a new signal is trusted." data-title="Historical evidence reviewer" style="--card-image: var(--stock-finance-review)" type="button"><span>02</span><h3><svg aria-hidden="true" class="action-icon" data-icon="memory" focusable="false" viewbox="0 0 24 24"><path d="M3 7h7l2 3h9v11H3z M3 7V4h7l2 3"></path></svg>Historical evidence reviewer</h3><p>Looks for prior patterns, signal behavior, and comparable evidence.</p></button>
+<button class="timeline-item image-card" data-click-card="" data-content-icon="strategy" data-detail="This reviewer condenses chart behavior, signal quality, and realized decision evidence across time horizons." data-title="Chart and signal reviewer" style="--card-image: var(--stock-analytics-dashboard)" type="button"><span>03</span><h3><svg aria-hidden="true" class="action-icon" data-icon="strategy" focusable="false" viewbox="0 0 24 24"><path d="M4 20V4h16 M4 16l5-6 5 3 6-7 M16 6h4v4"></path></svg>Chart and signal reviewer</h3><p>Turns visual evidence into short-, medium-, and long-term context.</p></button>
+<button class="timeline-item image-card" data-click-card="" data-content-icon="review" data-detail="This reviewer slows the process down and compares recent decisions with actual execution outcomes." data-title="Longer-horizon reviewer" style="--card-image: var(--stock-research-desk)" type="button"><span>04</span><h3><svg aria-hidden="true" class="action-icon" data-icon="review" focusable="false" viewbox="0 0 24 24"><path d="M14 14l7 7 M17 9a8 8 0 1 1-16 0 8 8 0 0 1 16 0 M5 9l3 3 5-6"></path></svg>Longer-horizon reviewer</h3><p>Checks decision history, performance outcomes, and improvement guidance.</p></button>
+<button class="timeline-item image-card" data-click-card="" data-content-icon="review" data-detail="This reviewer turns the evidence into a role judgment, action, duration, confidence, and explanation." data-title="Decision reviewer" style="--card-image: var(--stock-trading-desk)" type="button"><span>05</span><h3><svg aria-hidden="true" class="action-icon" data-icon="review" focusable="false" viewbox="0 0 24 24"><path d="M14 14l7 7 M17 9a8 8 0 1 1-16 0 8 8 0 0 1 16 0 M5 9l3 3 5-6"></path></svg>Decision reviewer</h3><p>Converts evidence into a practical allocation decision.</p></button>
+<button class="timeline-item image-card" data-click-card="" data-content-icon="report" data-detail="These reviewers compare the decision with actual position results and write the outcome back for future runs." data-title="Outcome and reporting reviewers" style="--card-image: var(--stock-data-infrastructure)" type="button"><span>06</span><h3><svg aria-hidden="true" class="action-icon" data-icon="report" focusable="false" viewbox="0 0 24 24"><path d="M4 3v18h17 M8 16l4-5 4 2 5-7"></path></svg>Outcome and reporting reviewers</h3><p>Close the loop with reports, validation, and memory updates.</p></button>
+</div>
+<p class="detail-note" data-card-detail="">Click an agent to see what it contributes to the chain.</p>
+</section>
+<section class="section">
+<div class="section-heading">
+<p class="eyebrow">Operational value</p>
+<h2>Every evaluation follows the same route from data to memory.</h2>
+<p>At each bar, AlphaWeave Capital loads data, selects assets, selects strategies, generates raw signals, triages whether deeper AI review is needed, converts conviction into portfolio intent, applies risk controls, and stores the outcome for future attribution.</p>
+</div>
+<div class="diagnostic-list">
+<button data-click-card="" data-content-icon="strategy" data-detail="The active asset set and strategy set are chosen before the signal is treated as a capital decision." data-title="Selection first" type="button"><strong><svg aria-hidden="true" class="action-icon" data-icon="strategy" focusable="false" viewbox="0 0 24 24"><path d="M4 20V4h16 M4 16l5-6 5 3 6-7 M16 6h4v4"></path></svg>Selection first</strong><span>Assets and strategies are co-dependent inputs, not afterthoughts.</span></button>
+<button data-click-card="" data-content-icon="ai" data-detail="A triage layer decides whether full market intelligence, reflection, and decision review are warranted." data-title="AI only when useful" type="button"><strong><svg aria-hidden="true" class="action-icon" data-icon="ai" focusable="false" viewbox="0 0 24 24"><path d="M7 7h10v10H7z M9 1v6M15 1v6M9 17v6M15 17v6M1 9h6M1 15h6M17 9h6M17 15h6"></path></svg>Triage before AI</strong><span>Routine bars can take the fast path; complex bars get deeper review.</span></button>
+<button data-click-card="" data-content-icon="settings" data-detail="The position size multiplier expresses conviction, but portfolio and risk layers convert it into constrained weights." data-title="PSM becomes capital through controls" type="button"><strong><svg aria-hidden="true" class="action-icon" data-icon="settings" focusable="false" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16 M8 3v6M16 9v6M10 15v6"></path></svg>Conviction to capital</strong><span>PSM does not place trades directly; portfolio and risk layers make it executable.</span></button>
+<button data-click-card="" data-content-icon="memory" data-detail="Reports and realized outcomes are stored so future decisions can learn from what worked, failed, or needed adjustment." data-title="Memory closes the loop" type="button"><strong><svg aria-hidden="true" class="action-icon" data-icon="memory" focusable="false" viewbox="0 0 24 24"><path d="M3 7h7l2 3h9v11H3z M3 7V4h7l2 3"></path></svg>Memory closes the loop</strong><span>Decision reviews become reusable evidence.</span></button>
+</div>
+<p class="detail-note" data-card-detail="">Click a flow checkpoint to see why it matters.</p>
+</section>
+<section class="section">
+<div class="section-heading">
+<p class="eyebrow">Control plane</p>
+<h2>The guardrails that keep the reviewers honest.</h2>
+<p>These controls make AI useful inside a governed process: outputs are parsed, expensive review is routed only when justified, and reused evidence is traceable instead of mysterious.</p>
+</div>
+<div class="control-plane-list">
+<button data-click-card="" data-content-icon="document" data-detail="Structured parsing turns model prose into validated fields, with repair paths for common formatting issues." data-title="Structured parsing" type="button"><span>Parse</span><strong><svg aria-hidden="true" class="action-icon" data-icon="document" focusable="false" viewbox="0 0 24 24"><path d="M5 2h9l5 5v15H5z M14 2v5h5M8 12h8M8 16h8"></path></svg>Structured parsing</strong><em>Normalize model responses before they enter the decision record.</em></button>
+<button data-click-card="" data-content-icon="settings" data-detail="Triage works like a routing desk: it sends only the dates that deserve deeper language-model review." data-title="Triage policy" type="button"><span>Route</span><strong><svg aria-hidden="true" class="action-icon" data-icon="settings" focusable="false" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16 M8 3v6M16 9v6M10 15v6"></path></svg>Triage policy</strong><em>Reserve deeper review for meaningful decision moments.</em></button>
+<button data-click-card="" data-content-icon="memory" data-detail="Cache scopes make reuse accountable by tracking the decision context, prompt signature, image caption, match type, and stored response." data-title="Cache scopes" type="button"><span>Reuse</span><strong><svg aria-hidden="true" class="action-icon" data-icon="memory" focusable="false" viewbox="0 0 24 24"><path d="M3 7h7l2 3h9v11H3z M3 7V4h7l2 3"></path></svg>Cache scopes</strong><em>Reuse prior work only when the match can be inspected.</em></button>
+</div>
+<p class="detail-note" data-card-detail="">Click a control-plane block to see how it protects the system.</p>
+</section>
+<section class="section market-context">
+<div class="container">
+<div class="section-heading">
+<p class="eyebrow">Why this architecture matters</p>
+<h2>AI in trading needs controls, not just predictions.</h2>
+<p>Industry guidance keeps pointing to the same tension: AI can help process information faster, but trading teams still need explainability, model risk controls, data integrity, supervision, and decision attribution. AlphaWeave Capital is built around that reality.</p>
+</div>
+<div class="context-panels">
+<a class="context-panel" href="https://www.finra.org/rules-guidance/key-topics/fintech/report/artificial-intelligence-in-the-securities-industry/key-challenges" rel="noopener" target="_blank">
+<span>Industry guidance</span>
+<strong>Model risk management matters.</strong>
+<p>AI workflows need review around explainability, data integrity, and privacy.</p>
+</a>
+<a class="context-panel" href="https://fmsb.com/wp-content/uploads/2026/02/FMSB-AI-in-Trading_Final_12.02.26_FINAL.pdf" rel="noopener" target="_blank">
+<span>Trading controls</span>
+<strong>Real-time controls stay central.</strong>
+<p>AI trading needs monitoring and control frameworks, especially as models become less transparent.</p>
+</a>
+<a class="context-panel" href="https://www.gao.gov/assets/gao-25-107197.pdf" rel="noopener" target="_blank">
+<span>Supervision</span>
+<strong>Testing and explainability are not optional.</strong>
+<p>AI use in financial workflows should be evaluated through governance, testing, and supervision.</p>
+</a>
+</div>
+<p class="market-note">AlphaWeave Capital is not trying to be a one-click trading oracle. It is strategy-agnostic, plug-and-play decision infrastructure: connect existing institutional components, review evidence, select assets and strategies, apply sleeve constraints, scale conviction through PSM, preserve the audit trail, and attribute what actually changed returns.</p>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="section-heading">
+<p class="eyebrow">AI routing</p>
+<h2>Use AI where judgment helps, and rules where control matters.</h2>
+<p>A large language model, or LLM, is an AI model trained to read and generate text. AlphaWeave Capital uses LLMs like specialist analysts for summarizing evidence and comparing context, while rules handle selection, risk, caching, and reporting.</p>
+</div>
+<div class="feature-lanes">
+<button class="lane-item" data-click-card="" data-content-icon="review" data-detail="Routine moments stay on rails; deeper AI review is reserved for context that deserves attention." data-title="Selective AI review" type="button"><span>01</span><strong><svg aria-hidden="true" class="action-icon" data-icon="review" focusable="false" viewbox="0 0 24 24"><path d="M14 14l7 7 M17 9a8 8 0 1 1-16 0 8 8 0 0 1 16 0 M5 9l3 3 5-6"></path></svg>Call AI when it matters</strong><em>Avoid expensive review on every routine bar.</em></button>
+<button class="lane-item" data-click-card="" data-content-icon="document" data-detail="Market evidence, historical review, chart context, decision logic, and reporting move through a visible chain." data-title="Traceable handoffs" type="button"><span>02</span><strong><svg aria-hidden="true" class="action-icon" data-icon="document" focusable="false" viewbox="0 0 24 24"><path d="M5 2h9l5 5v15H5z M14 2v5h5M8 12h8M8 16h8"></path></svg>Keep the trail visible</strong><em>Know what evidence reached each decision step.</em></button>
+<button class="lane-item" data-click-card="" data-content-icon="document" data-detail="Prior work can be reused, but the system records what matched, what was recomputed, and what changed." data-title="Safe reuse" type="button"><span>03</span><strong><svg aria-hidden="true" class="action-icon" data-icon="document" focusable="false" viewbox="0 0 24 24"><path d="M5 2h9l5 5v15H5z M14 2v5h5M8 12h8M8 16h8"></path></svg>Reuse without guessing</strong><em>Show what was reused, recomputed, and delivered.</em></button>
+<button class="lane-item" data-click-card="" data-content-icon="report" data-detail="Monthly reports separate base strategy performance from asset selection, strategy switching, and AI-assisted position sizing." data-title="Stage attribution" type="button"><span>04</span><strong><svg aria-hidden="true" class="action-icon" data-icon="report" focusable="false" viewbox="0 0 24 24"><path d="M4 3v18h17 M8 16l4-5 4 2 5-7"></path></svg>Measure each layer</strong><em>Separate asset, strategy, and AI contribution.</em></button>
+<button class="lane-item" data-click-card="" data-content-icon="review" data-detail="Decision results and actual position results are tracked separately so good ideas are not confused with poor timing or sizing." data-title="Execution-aware review" type="button"><span>05</span><strong><svg aria-hidden="true" class="action-icon" data-icon="review" focusable="false" viewbox="0 0 24 24"><path d="M14 14l7 7 M17 9a8 8 0 1 1-16 0 8 8 0 0 1 16 0 M5 9l3 3 5-6"></path></svg>Separate idea from execution</strong><em>Distinguish signal quality from trade implementation.</em></button>
+<button class="lane-item" data-click-card="" data-content-icon="document" data-detail="When evidence is incomplete, uncertainty is labeled instead of being dressed up as confidence." data-title="Uncertainty discipline" type="button"><span>06</span><strong><svg aria-hidden="true" class="action-icon" data-icon="document" focusable="false" viewbox="0 0 24 24"><path d="M5 2h9l5 5v15H5z M14 2v5h5M8 12h8M8 16h8"></path></svg>Label uncertainty</strong><em>Keep weak evidence separate from confident review.</em></button>
+</div>
+<p class="detail-note" data-card-detail="">Click an item to see why it matters.</p>
+</div>
+</section>
+</main>
+<footer class="site-footer aw-site-footer"><div class="footer-inner"><nav class="footer-links" aria-label="Footer navigation"><a href="./">Home</a><a href="platform.html">Platform</a><a href="pricing.html">Pricing</a><a href="presentation-20260816.html">Presentation</a><a href="podcasts.html">Podcasts</a><a href="portal.html">Demo portal</a><a href="contact.html">Contact / walkthrough</a><a href="disclaimer.html">Disclaimer</a></nav></div></footer>
+<script src="site.js"></script>
 </body>
 </html>
-
-

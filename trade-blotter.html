@@ -1,13 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AlphaWeave Capital Trade Blotter Replay</title>
-  <meta name="description" content="Interactive AlphaWeave Capital trade blotter replay with named market regimes, simulated sleeve events, risk-capped weights, and PSM resizing.">
-  <link rel="icon" href="assets/alphaweave-capital-mark.png">
-  <link rel="stylesheet" href="site.css">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>AlphaWeave Capital Trade Blotter Replay</title>
+<meta content="Interactive AlphaWeave Capital trade blotter replay with named market regimes, simulated sleeve events, risk-capped weights, and PSM resizing." name="description"/>
+<link href="assets/alphaweave-brand-mark.svg" rel="icon"/>
+<link href="site.css?v=20260927-white-nav-2" rel="stylesheet"/>
+<style>
     .blotter-page {
       background: #05080d;
       color: #f6fbff;
@@ -302,164 +303,151 @@
       }
     }
   </style>
+<link href="site-header.css?v=3" rel="stylesheet"/><link href="light-theme.css?v=2" rel="stylesheet"/>
+<link href="site-footer.css?v=1" rel="stylesheet"/>
 </head>
 <body class="blotter-page">
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand brand-logo" href="./" aria-label="AlphaWeave Capital home"><img src="assets/alphaweave-capital-logo-bright.png" alt="AlphaWeave Capital"></a>
-      <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button>
-      <div class="nav-links" data-nav-links>
-        <a href="product.html">Product</a>
-        <a href="platform.html">Platform</a>
-        <a href="portal.html">Portal</a>
-        <a href="how-it-works.html">How It Works</a>
-        <a href="pipeline.html">Pipeline</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="podcasts.html">Podcasts</a>
-        <a class="nav-cta" href="contact.html">A Walkthrough</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero compact" style="--hero-image: var(--stock-analytics-dashboard)">
-      <div class="container">
-        <p class="eyebrow">Interactive trade blotter</p>
-        <h1>Play forward one rotatable sleeve across market regimes.</h1>
-        <p class="lede">Select a named regime, replay BUY, SELL, RESIZE, and NO_EXEC events, and watch risk-capped weights, position size multiple, and simulated sleeve state change through time.</p>
-        <div class="hero-actions">
-          <a class="button" href="#blotter">Open replay</a>
-          <a class="button secondary" href="platform.html">Back to platform</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section blotter-shell" id="blotter">
-      <div class="container blotter-app" data-static-trade-blotter>
-        <div>
-          <p class="eyebrow">Browser-only GitHub Pages demo</p>
-          <h2>One sleeve, multiple candidate assets and strategies.</h2>
-          <p class="blotter-note">This static page demonstrates the trade-dashboard interaction model in JavaScript. The replay is simulated: it does not run the production strategy engine or fetch market data. It shows how a single sleeve can rotate assets, associate strategy labels, resize with PSM, and keep an auditable blotter trail.</p>
-        </div>
-
-        <section class="blotter-toolbar blotter-panel">
-          <div class="blotter-field">
-            <label for="regimeSelect">Named regime</label>
-            <select id="regimeSelect" data-regime-select></select>
-          </div>
-          <button class="blotter-button primary" type="button" data-play>Play replay</button>
-          <button class="blotter-button" type="button" data-step>Step event</button>
-          <button class="blotter-button" type="button" data-reset>Reset</button>
-          <div class="blotter-field">
-            <label for="replaySpeed">Speed</label>
-            <select id="replaySpeed" data-speed>
-              <option value="1200">slow</option>
-              <option value="750" selected>normal</option>
-              <option value="350">fast</option>
-            </select>
-          </div>
-        </section>
-
-        <section class="blotter-panel blotter-control-grid">
-          <div class="blotter-field">
-            <label>Candidate assets</label>
-            <div class="blotter-checks">
-              <label><input type="checkbox" checked disabled>AAPL</label>
-              <label><input type="checkbox" checked disabled>MSFT</label>
-              <label><input type="checkbox" checked disabled>NVDA</label>
-              <label><input type="checkbox" checked disabled>COIN</label>
-              <label><input type="checkbox" checked disabled>AMD</label>
-              <label><input type="checkbox" disabled>TSLA</label>
-            </div>
-          </div>
-          <div class="blotter-field">
-            <label>Candidate strategies</label>
-            <div class="blotter-checks">
-              <label><input type="checkbox" checked disabled>Buy/hold</label>
-              <label><input type="checkbox" checked disabled>MACD</label>
-              <label><input type="checkbox" checked disabled>Bollinger</label>
-              <label><input type="checkbox" checked disabled>Momentum</label>
-            </div>
-          </div>
-          <div class="blotter-field">
-            <label>Target active assets</label>
-            <input value="regime-defined" disabled>
-          </div>
-          <div class="blotter-field">
-            <label>Risk posture</label>
-            <input value="regime-defined" disabled>
-          </div>
-          <div class="blotter-field">
-            <label>Scope</label>
-            <input value="single rotatable sleeve" disabled>
-          </div>
-        </section>
-
-        <section class="blotter-cards">
-          <div class="blotter-card"><span>Run</span><strong data-run-id title="static replay">static replay</strong></div>
-          <div class="blotter-card"><span>Annual return</span><strong data-annual-return>0.0%</strong></div>
-          <div class="blotter-card"><span>Max drawdown</span><strong data-max-drawdown>0.00%</strong></div>
-          <div class="blotter-card"><span>Sharpe</span><strong data-sharpe>0.00</strong></div>
-          <div class="blotter-card"><span>PSM</span><strong data-psm>1.00</strong></div>
-        </section>
-
-        <section class="blotter-panel blotter-sim-grid">
-          <div class="blotter-sim-box">
-            <span class="blotter-title">Current event</span>
-            <strong data-current-event>Measured start</strong>
-            <p data-current-reason>No event has been processed yet.</p>
-          </div>
-          <div class="blotter-sim-box">
-            <span class="blotter-title">Simulated position state</span>
-            <div class="blotter-feed" data-position-state></div>
-          </div>
-          <div class="blotter-sim-box">
-            <span class="blotter-title">Event feed</span>
-            <div class="blotter-feed" data-event-feed></div>
-          </div>
-        </section>
-
-        <section class="blotter-layout">
-          <div class="blotter-panel blotter-chart">
-            <span class="blotter-title">Measured-window capital path with trade events</span>
-            <div class="blotter-chart-inner">
-              <svg viewBox="0 0 980 300" role="img" aria-label="Capital path and trade markers">
-                <g class="blotter-grid">
-                  <line x1="40" y1="52" x2="948" y2="52"></line>
-                  <line x1="40" y1="112" x2="948" y2="112"></line>
-                  <line x1="40" y1="172" x2="948" y2="172"></line>
-                  <line x1="40" y1="232" x2="948" y2="232"></line>
-                </g>
-                <line class="blotter-axis" x1="40" y1="250" x2="948" y2="250"></line>
-                <polyline class="blotter-path" data-path points=""></polyline>
-                <g data-markers></g>
-              </svg>
-            </div>
-          </div>
-          <div class="blotter-panel">
-            <span class="blotter-title">Risk-capped position weights</span>
-            <div class="blotter-weights" data-weights></div>
-          </div>
-        </section>
-
-        <section class="blotter-panel">
-          <span class="blotter-title">Trade blotter</span>
-          <div class="blotter-table-wrap">
-            <table class="blotter-table">
-              <thead>
-                <tr><th>Time</th><th>Asset</th><th>Strategy</th><th>Action</th><th>Event</th><th>Price</th><th>PSM</th><th>Weight</th><th>Reason</th></tr>
-              </thead>
-              <tbody data-rows></tbody>
-            </table>
-          </div>
-        </section>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer"><div class="footer-inner"><p>AlphaWeave Capital builds allocation intelligence software for systematic trading teams. It is not investment advice.</p><div class="footer-links"><a href="./">Home</a><a href="platform.html">Platform</a><a href="portal.html">Portal</a><a href="pricing.html">Pricing</a><a href="contact.html">Walkthrough and Contact</a></div></div></footer>
-  <script src="site.js"></script>
-  <script>
+<header class="site-header aw-site-header">
+<nav aria-label="Primary navigation" class="nav">
+<a aria-label="AlphaWeave Capital home" class="brand" href="./"><img alt="AlphaWeave Capital" height="62" src="assets/alphaweave-brand.svg" width="240"/></a>
+<div class="nav-links" data-nav-links="" id="home-navigation">
+<a href="product.html">Product</a><a href="platform.html">Platform</a><a href="how-it-works.html">How it works</a><a href="architecture.html">Architecture</a><a href="pricing.html">Pricing</a>
+<a href="presentation-20260816.html">Presentation</a><a href="podcasts.html">Podcasts</a><a href="pipeline.html">Pipeline</a><a href="market-neutral.html">Market neutral</a><a aria-current="page" href="trade-blotter.html">Trade blotter</a>
+<a class="portal-link" href="portal.html">Demo portal</a><a class="button compact" href="contact.html">Book a walkthrough <span aria-hidden="true">→</span></a>
+</div>
+</nav>
+</header>
+<main>
+<section class="hero compact" style="--hero-image: var(--stock-analytics-dashboard)">
+<div class="container">
+<p class="eyebrow">Interactive trade blotter</p>
+<h1>Play forward one rotatable sleeve across market regimes.</h1>
+<p class="lede">Select a named regime, replay BUY, SELL, RESIZE, and NO_EXEC events, and watch risk-capped weights, position size multiple, and simulated sleeve state change through time.</p>
+<div class="hero-actions">
+<a class="button" href="#blotter">Open replay</a>
+<a class="button secondary" data-content-icon="workflow" href="platform.html"><svg aria-hidden="true" class="action-icon" data-icon="workflow" focusable="false" viewBox="0 0 24 24"><path d="M3 3h6v6H3z M15 15h6v6h-6z M6 9v9h9 M9 6h9v9"></path></svg>Back to platform</a>
+</div>
+</div>
+</section>
+<section class="section blotter-shell" id="blotter">
+<div class="container blotter-app" data-static-trade-blotter="">
+<div>
+<p class="eyebrow">Browser-only GitHub Pages demo</p>
+<h2>One sleeve, multiple candidate assets and strategies.</h2>
+<p class="blotter-note">This static page demonstrates the trade-dashboard interaction model in JavaScript. The replay is simulated: it does not run the production strategy engine or fetch market data. It shows how a single sleeve can rotate assets, associate strategy labels, resize with PSM, and keep an auditable blotter trail.</p>
+</div>
+<section class="blotter-toolbar blotter-panel">
+<div class="blotter-field">
+<label for="regimeSelect">Named regime</label>
+<select data-regime-select="" id="regimeSelect"></select>
+</div>
+<button class="blotter-button primary" data-play="" type="button">Play replay</button>
+<button class="blotter-button" data-step="" type="button">Step event</button>
+<button class="blotter-button" data-reset="" type="button">Reset</button>
+<div class="blotter-field">
+<label for="replaySpeed">Speed</label>
+<select data-speed="" id="replaySpeed">
+<option value="1200">slow</option>
+<option selected="" value="750">normal</option>
+<option value="350">fast</option>
+</select>
+</div>
+</section>
+<section class="blotter-panel blotter-control-grid">
+<div class="blotter-field">
+<label>Candidate assets</label>
+<div class="blotter-checks">
+<label><input checked="" disabled="" type="checkbox"/>AAPL</label>
+<label><input checked="" disabled="" type="checkbox"/>MSFT</label>
+<label><input checked="" disabled="" type="checkbox"/>NVDA</label>
+<label><input checked="" disabled="" type="checkbox"/>COIN</label>
+<label><input checked="" disabled="" type="checkbox"/>AMD</label>
+<label><input disabled="" type="checkbox"/>TSLA</label>
+</div>
+</div>
+<div class="blotter-field">
+<label>Candidate strategies</label>
+<div class="blotter-checks">
+<label><input checked="" disabled="" type="checkbox"/>Buy/hold</label>
+<label><input checked="" disabled="" type="checkbox"/>MACD</label>
+<label><input checked="" disabled="" type="checkbox"/>Bollinger</label>
+<label><input checked="" disabled="" type="checkbox"/>Momentum</label>
+</div>
+</div>
+<div class="blotter-field">
+<label>Target active assets</label>
+<input disabled="" value="regime-defined"/>
+</div>
+<div class="blotter-field">
+<label>Risk posture</label>
+<input disabled="" value="regime-defined"/>
+</div>
+<div class="blotter-field">
+<label>Scope</label>
+<input disabled="" value="single rotatable sleeve"/>
+</div>
+</section>
+<section class="blotter-cards">
+<div class="blotter-card"><span>Run</span><strong data-run-id="" title="static replay">static replay</strong></div>
+<div class="blotter-card"><span>Annual return</span><strong data-annual-return="">0.0%</strong></div>
+<div class="blotter-card"><span>Max drawdown</span><strong data-max-drawdown="">0.00%</strong></div>
+<div class="blotter-card"><span>Sharpe</span><strong data-sharpe="">0.00</strong></div>
+<div class="blotter-card"><span>PSM</span><strong data-psm="">1.00</strong></div>
+</section>
+<section class="blotter-panel blotter-sim-grid">
+<div class="blotter-sim-box">
+<span class="blotter-title">Current event</span>
+<strong data-current-event="">Measured start</strong>
+<p data-current-reason="">No event has been processed yet.</p>
+</div>
+<div class="blotter-sim-box">
+<span class="blotter-title">Simulated position state</span>
+<div class="blotter-feed" data-position-state=""></div>
+</div>
+<div class="blotter-sim-box">
+<span class="blotter-title">Event feed</span>
+<div class="blotter-feed" data-event-feed=""></div>
+</div>
+</section>
+<section class="blotter-layout">
+<div class="blotter-panel blotter-chart">
+<span class="blotter-title">Measured-window capital path with trade events</span>
+<div class="blotter-chart-inner">
+<svg aria-label="Capital path and trade markers" role="img" viewbox="0 0 980 300">
+<g class="blotter-grid">
+<line x1="40" x2="948" y1="52" y2="52"></line>
+<line x1="40" x2="948" y1="112" y2="112"></line>
+<line x1="40" x2="948" y1="172" y2="172"></line>
+<line x1="40" x2="948" y1="232" y2="232"></line>
+</g>
+<line class="blotter-axis" x1="40" x2="948" y1="250" y2="250"></line>
+<polyline class="blotter-path" data-path="" points=""></polyline>
+<g data-markers=""></g>
+</svg>
+</div>
+</div>
+<div class="blotter-panel">
+<span class="blotter-title">Risk-capped position weights</span>
+<div class="blotter-weights" data-weights=""></div>
+</div>
+</section>
+<section class="blotter-panel">
+<span class="blotter-title">Trade blotter</span>
+<div class="blotter-table-wrap">
+<table class="blotter-table">
+<thead>
+<tr><th>Time</th><th>Asset</th><th>Strategy</th><th>Action</th><th>Event</th><th>Price</th><th>PSM</th><th>Weight</th><th>Reason</th></tr>
+</thead>
+<tbody data-rows=""></tbody>
+</table>
+</div>
+</section>
+</div>
+</section>
+</main>
+<footer class="site-footer aw-site-footer"><div class="footer-inner"><nav class="footer-links" aria-label="Footer navigation"><a href="./">Home</a><a href="platform.html">Platform</a><a href="pricing.html">Pricing</a><a href="presentation-20260816.html">Presentation</a><a href="podcasts.html">Podcasts</a><a href="portal.html">Demo portal</a><a href="contact.html">Contact / walkthrough</a><a href="disclaimer.html">Disclaimer</a></nav></div></footer>
+<script src="site.js"></script>
+<script>
     (() => {
       const app = document.querySelector("[data-static-trade-blotter]");
       if (!app) return;

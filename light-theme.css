@@ -1,0 +1,417 @@
+/* Shared ivory/sage theme. Loaded last on every public page. */
+:root{color-scheme:light;--bg:#fafaf4;--bg-light:#fafaf4;--bg-dark:#eef2eb;--panel:#ffffff;--panel-2:#eef2eb;--text:#142321;--ink:#142321;--muted:#50615d;--line:#cad8ce;--accent:#075644;--accent-2:#526f83;--accent-3:#896117;--accent-4:#a13649;--danger:#a13649}
+body,.blotter-page{background:#fafaf4!important;color:#142321!important}.blotter-app{--panel:#fff;--panel-2:#eef2eb;--line:#cad8ce;--muted:#50615d;--cyan:#075644;--green:#147342;--yellow:#896117;--red:#a13649}
+.card-icon{border:1px solid #cad8ce;background:#eef2eb}
+button.card p,
+button.feature-card p,
+button.timeline-item p,
+.metric-strip > button > span{color:#142321}
+button.card:hover,
+button.feature-card:hover,
+button.timeline-item:hover,
+.metric-strip > button:hover,
+.lane-item:hover,
+.policy-steps button:hover,
+.diagnostic-list button:hover,
+.control-plane-list button:hover,
+button.card.is-active,
+button.feature-card.is-active,
+button.timeline-item.is-active,
+.metric-strip > button.is-active,
+.lane-item.is-active,
+.policy-steps button.is-active,
+.diagnostic-list button.is-active,
+.control-plane-list button.is-active{border-color:#cad8ce;box-shadow:none}
+button.card.is-active,
+button.feature-card.is-active,
+button.timeline-item.is-active,
+.metric-strip > button.is-active,
+.pipeline-card button.is-active,
+.lane-item.is-active,
+.policy-steps button.is-active,
+.diagnostic-list button.is-active,
+.control-plane-list button.is-active{background-image:linear-gradient(180deg, #eef2eb, #eef2eb),
+    var(--card-image, var(--stock-data-infrastructure)) !important}
+.image-card{background-image:linear-gradient(180deg, #eef2eb, #eef2eb),
+    var(--card-image) !important}
+.pricing-card,
+.package-grid > article{border:1px solid #cad8ce;background:linear-gradient(180deg, #eef2eb, #eef2eb),
+    var(--stock-data-infrastructure);box-shadow:none}
+.pricing-card p,
+.package-grid p,
+.pricing-copy p{color:#142321}
+.pricing-card ul{color:#142321}
+.site-header{border-bottom:1px solid #cad8ce;background:#eef2eb}
+.nav-cta,
+.button{border:1px solid #cad8ce;background:linear-gradient(90deg, #eef2eb, #eef2eb),
+    var(--stock-market-laptop)}
+.nav-cta::before,
+.button::before,
+.mobile-toggle::before{box-shadow:none}
+.button.secondary{background:linear-gradient(90deg, #eef2eb, #eef2eb),
+    var(--stock-analytics-dashboard);border-color:#cad8ce}
+.mobile-toggle{border:1px solid #cad8ce;background:linear-gradient(135deg, #eef2eb, #eef2eb),
+    var(--stock-data-infrastructure)}
+.hero{background-image:linear-gradient(90deg, #eef2eb, #eef2eb 45%, #eef2eb), var(--hero-image)}
+.hero-copy{color:#142321}
+.hero-bullets span{border-left:2px solid #cad8ce;background:#eef2eb;color:#142321}
+.lede{color:#142321}
+.pipeline-card,
+.metric-panel{background:#eef2eb;box-shadow:none}
+.hero-review-card{border:1px solid #cad8ce;background:linear-gradient(135deg, #eef2eb, #fafaf4),
+    #eef2eb;box-shadow:none}
+.hero-review-card img{background:#eef2eb;border:1px solid #cad8ce}
+.hero-review-card strong{color:#142321}
+.hero-review-card p{color:#142321}
+.compact-pipeline{box-shadow:none}
+.pipeline-card span,
+.pipeline-card button{border:1px solid #cad8ce;background-image:linear-gradient(160deg, #eef2eb, #eef2eb),
+    var(--stock-market-laptop);color:#142321}
+.pipeline-card span:nth-child(2),
+.pipeline-card button:nth-child(2){background-image:linear-gradient(160deg, #fafaf4, #eef2eb),
+    var(--stock-analytics-dashboard)}
+.pipeline-card span:nth-child(3),
+.pipeline-card button:nth-child(3){background-image:linear-gradient(160deg, #fafaf4, #eef2eb),
+    var(--stock-finance-review)}
+.pipeline-card span:nth-child(4),
+.pipeline-card button:nth-child(4){background-image:linear-gradient(160deg, #fafaf4, #eef2eb),
+    var(--stock-team-review)}
+.pipeline-card button:nth-child(5){background-image:linear-gradient(160deg, #eef2eb, #eef2eb),
+    var(--stock-research-desk)}
+.pipeline-card button:nth-child(6){background-image:linear-gradient(160deg, #fafaf4, #eef2eb),
+    var(--stock-data-infrastructure)}
+.pipeline-card button:hover,
+.pipeline-card button.is-active{border-color:#cad8ce;box-shadow:none}
+.pipeline-item{border:1px solid #cad8ce;color:#142321}
+.presentation-copy{color:#142321}
+.presentation-copy p:first-child{color:#142321}
+.video-heading p:not(.eyebrow){color:#142321}
+.demo-video-section .video-frame{border-color:#cad8ce}
+.video-tile p{color:#142321}
+.video-copy p:not(.eyebrow){color:#142321}
+.video-frame{border:1px solid #cad8ce;background:linear-gradient(135deg, #eef2eb, #fafaf4),
+    #eef2eb;box-shadow:none}
+.video-frame video{background:#eef2eb}
+.ribbon-grid{border:1px solid #cad8ce;box-shadow:none}
+.ribbon-grid div{background:#eef2eb;border-right:1px solid #cad8ce}
+.ribbon-grid strong{color:#142321}
+.intro-points p{color:#142321}
+.intro-points strong{color:#142321}
+.proof-grid{border:1px solid #cad8ce}
+.proof-grid div{background:#eef2eb}
+.proof-grid strong{color:#142321}
+.proof-grid p{color:#142321}
+.positioning-rows{border-top:1px solid #cad8ce;border-bottom:1px solid #cad8ce}
+.positioning-rows div{border-bottom:1px solid #cad8ce}
+.positioning-rows strong{color:#142321}
+.positioning-rows p{color:#142321}
+.context-panel{border:1px solid #cad8ce;background:linear-gradient(150deg, #eef2eb, #eef2eb),
+    var(--stock-data-infrastructure)}
+.context-panel:nth-child(2){background:linear-gradient(150deg, #fafaf4, #eef2eb),
+    var(--stock-trading-desk)}
+.context-panel:nth-child(3){background:linear-gradient(150deg, #fafaf4, #eef2eb),
+    var(--stock-finance-review)}
+.context-panel strong{color:#142321}
+button.card h3::before,
+button.feature-card h3::before,
+button.timeline-item h3::before,
+.context-panel strong::before,
+.metric-strip > button > strong::before,
+.ops-console button > strong::before,
+.audit-ledger button > strong::before,
+.lane-item > strong::before,
+.policy-steps button > strong::before,
+.diagnostic-list button > strong::before,
+.control-plane-list button > strong::before{box-shadow:none}
+.context-panel p,
+.market-note{color:#142321}
+.illustration-panel{border:1px solid #cad8ce;background:radial-gradient(circle at 18% 0%, #eef2eb, transparent 34%),
+    rgba(255, 255, 255, 0.032)}
+.illustration-panel img{background:#eef2eb}
+.illustration-panel p{color:#142321}
+.section-heading::after,
+.section-header::after{background:linear-gradient(90deg, #eef2eb, #fafaf4, transparent)}
+.podcast-episode-card{border:1px solid #cad8ce;background:radial-gradient(circle at 12% 0%, #eef2eb, transparent 35%),
+    linear-gradient(135deg, #eef2eb, #eef2eb);box-shadow:none}
+.podcast-episode-card:nth-child(2n){border-color:#cad8ce;background:radial-gradient(circle at 12% 0%, #fafaf4, transparent 35%),
+    linear-gradient(135deg, #eef2eb, #eef2eb)}
+.podcast-episode-card:nth-child(3n){border-color:#cad8ce;background:radial-gradient(circle at 12% 0%, #fafaf4, transparent 35%),
+    linear-gradient(135deg, #fafaf4, #eef2eb)}
+.podcast-episode-card::before{background:linear-gradient(90deg, rgba(255, 255, 255, 0.045), transparent 32%, #eef2eb)}
+.episode-copy p{color:#142321}
+.episode-points{color:#142321}
+.episode-points li::before{box-shadow:none}
+.episode-badge{border:1px solid #cad8ce;color:#40564b;background:#fafaf4}
+.podcast-video-frame{border-color:#cad8ce;background:#eef2eb;box-shadow:none}
+.podcast-video-frame img{background:#eef2eb}
+.card,
+.feature-card,
+.timeline-item,
+.metric-strip > button{background:radial-gradient(circle at 12% 0%, #eef2eb, transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.026))}
+.card:nth-child(2n),
+.feature-card:nth-child(2n),
+.timeline-item:nth-child(2n),
+.metric-strip > button:nth-child(2n){background:radial-gradient(circle at 12% 0%, #fafaf4, transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.026))}
+.card:nth-child(3n),
+.feature-card:nth-child(3n),
+.timeline-item:nth-child(3n),
+.metric-strip > button:nth-child(3n){background:radial-gradient(circle at 12% 0%, #fafaf4, transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.026))}
+.card:nth-child(4n),
+.feature-card:nth-child(4n),
+.timeline-item:nth-child(4n),
+.metric-strip > button:nth-child(4n){background:radial-gradient(circle at 12% 0%, #fafaf4, transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.026))}
+.demo-controls,
+.demo-output{background:#eef2eb;box-shadow:none}
+.demo-api-row input,
+.demo-api-row button,
+.asset-picker button,
+.module-picker button,
+.control-block select{border:1px solid #cad8ce;background:#eef2eb}
+.demo-api-control em{color:#40564b}
+.demo-api-control em[data-status="pending"]{color:#142321}
+.asset-picker button.is-active,
+.module-picker button.is-active{border-color:#cad8ce;background:#eef2eb;color:#142321}
+.asset-picker button[data-help]::before,
+.module-picker button[data-help]::before{border:1px solid #cad8ce;background:#eef2eb;color:#142321;box-shadow:none}
+.asset-picker button[data-help]::after,
+.module-picker button[data-help]::after{border-top-color:#cad8ce}
+.demo-run-card > div,
+.switching-panels > div{border:1px solid #cad8ce;background:#eef2eb}
+.demo-run-card span,
+.switching-panels span{color:#40564b}
+.demo-run-card strong,
+.switching-panels strong{color:#142321}
+.switching-panels p{color:#142321}
+.demo-replay-bar{border:1px solid #cad8ce;background:#eef2eb}
+.demo-replay-track{background:#fafaf4}
+.demo-replay-track span{box-shadow:none}
+.demo-replay-bar strong{color:#142321}
+.demo-chart{border:1px solid #cad8ce;background:#eef2eb}
+.demo-blotter-wrap{border:1px solid #cad8ce}
+.demo-blotter th,
+.demo-blotter td{border-bottom:1px solid #cad8ce}
+.demo-blotter th{background:#eef2eb}
+.demo-blotter td{color:#142321}
+.portal-sidebar,
+.portal-card,
+.portal-status-grid > div{background:#eef2eb;box-shadow:none}
+.portal-account,
+.portal-entitlements{background:#eef2eb}
+.portal-account em{color:#40564b}
+.portal-menu button,
+.portal-run-list button{border:1px solid #cad8ce;background:#eef2eb}
+.portal-menu button.is-active,
+.portal-run-list button.is-active,
+.portal-menu button:hover,
+.portal-run-list button:hover{border-color:#cad8ce;background:#eef2eb}
+.portal-entitlements label{color:#142321}
+.portal-form-grid input,
+.portal-form-grid select{border:1px solid #cad8ce;background:#eef2eb}
+.portal-status-grid > div,
+.portal-kpis > div,
+.portal-usage-grid > div{border:1px solid #cad8ce;background:#eef2eb}
+.portal-run-list span,
+.portal-run-list em{color:#40564b}
+.portal-code{border:1px solid #cad8ce;background:#eef2eb;color:#142321}
+.ops-console{border:1px solid #cad8ce;background:linear-gradient(180deg, #eef2eb, rgba(255, 255, 255, 0.015)),
+    rgba(255, 255, 255, 0.025)}
+.ops-console button{border-right:1px solid #cad8ce;background:linear-gradient(180deg, #eef2eb, #eef2eb),
+    var(--stock-trading-desk)}
+.ops-console button:nth-child(2){background:linear-gradient(180deg, #eef2eb, #eef2eb),
+    var(--stock-finance-review)}
+.ops-console button:nth-child(3){background:linear-gradient(180deg, #eef2eb, #eef2eb),
+    var(--stock-data-infrastructure)}
+.ops-console button:nth-child(2) > span{color:#142321}
+.ops-console button > em{color:#142321}
+.ops-console button:hover,
+.ops-console button.is-active{background:#eef2eb}
+.audit-ledger{border-top:1px solid #cad8ce;border-bottom:1px solid #cad8ce;background:linear-gradient(180deg, #eef2eb, #eef2eb),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 25%)}
+.audit-ledger button{border-right:1px solid #cad8ce;background:linear-gradient(180deg, #eef2eb, #eef2eb),
+    var(--stock-finance-review)}
+.audit-ledger button:nth-child(2){background:linear-gradient(180deg, #eef2eb, #eef2eb),
+    var(--stock-data-infrastructure)}
+.audit-ledger button:nth-child(3){background:linear-gradient(180deg, #eef2eb, #eef2eb),
+    var(--stock-analytics-dashboard)}
+.audit-ledger button:nth-child(4){background:linear-gradient(180deg, #eef2eb, #eef2eb),
+    var(--stock-trading-desk)}
+.audit-ledger button > span{color:#075644}
+.audit-ledger button > span::before{color:#40564b}
+.audit-ledger button > span::after{color:#40564b}
+.audit-ledger button > em{color:#142321}
+.audit-ledger button:hover,
+.audit-ledger button.is-active{background:#eef2eb}
+.step{border-left:2px solid #cad8ce}
+.agent-chain .timeline-item{border:1px solid #cad8ce;background:linear-gradient(135deg, #eef2eb, #eef2eb),
+    var(--stock-data-infrastructure) !important;box-shadow:none}
+.agent-chain .timeline-item:nth-child(2n){background:linear-gradient(135deg, #eef2eb, #eef2eb),
+    var(--stock-finance-review) !important}
+.agent-chain .timeline-item:nth-child(3n){background:linear-gradient(135deg, #eef2eb, #eef2eb),
+    var(--stock-analytics-dashboard) !important}
+.agent-chain .timeline-item::before{background:linear-gradient(180deg, var(--accent), #eef2eb)}
+.agent-chain .timeline-item > span:not(.inline-detail){color:#075644;box-shadow:none}
+.agent-chain .timeline-item:hover,
+.agent-chain .timeline-item.is-active{box-shadow:none}
+.agent-chain .timeline-item:hover > span:not(.inline-detail),
+.agent-chain .timeline-item.is-active > span:not(.inline-detail){box-shadow:none}
+.process-chain .timeline-item{border:1px solid #cad8ce;border-bottom:1px solid #cad8ce;background:linear-gradient(90deg, #eef2eb, #eef2eb),
+    var(--stock-research-desk) !important;box-shadow:none}
+.process-chain .timeline-item:nth-child(2n){background:linear-gradient(90deg, #eef2eb, #eef2eb),
+    var(--stock-market-laptop) !important}
+.process-chain .timeline-item:nth-child(3n){background:linear-gradient(90deg, #eef2eb, #eef2eb),
+    var(--stock-team-review) !important}
+.process-chain .timeline-item::before{background:#eef2eb}
+.process-chain .timeline-item > span:not(.inline-detail){box-shadow:none}
+.process-chain .timeline-item:nth-child(2n) > span:not(.inline-detail){color:#142321}
+.process-chain .timeline-item:nth-child(4n) > span:not(.inline-detail){color:#142321}
+.process-chain .timeline-item:hover,
+.process-chain .timeline-item.is-active{border-color:#cad8ce;box-shadow:none}
+.feature-lanes{border-top:1px solid #cad8ce;border-bottom:1px solid #cad8ce}
+.lane-item{border-bottom:1px solid #cad8ce;background:linear-gradient(135deg, #eef2eb, #eef2eb),
+    var(--stock-trading-desk)}
+.lane-item:nth-child(2n){background:linear-gradient(135deg, #fafaf4, #eef2eb),
+    var(--stock-analytics-dashboard)}
+.lane-item:nth-child(3n){background:linear-gradient(135deg, #fafaf4, #eef2eb),
+    var(--stock-data-infrastructure)}
+.lane-item > span{background:linear-gradient(135deg, #eef2eb, #fafaf4);border:1px solid #cad8ce}
+.lane-item > strong{color:#142321}
+.lane-item > em{color:#142321}
+.lane-item:hover,
+.lane-item.is-active{background:linear-gradient(90deg, #eef2eb, #eef2eb),
+    var(--stock-trading-desk);box-shadow:none}
+.policy-steps button{border-left:2px solid #cad8ce;background:linear-gradient(90deg, #eef2eb, #eef2eb 70%),
+    var(--stock-market-laptop)}
+.policy-steps button:nth-child(2){border-left-color:#cad8ce;background:linear-gradient(90deg, #fafaf4, #eef2eb 70%),
+    var(--stock-analytics-dashboard)}
+.policy-steps button:nth-child(3){border-left-color:#cad8ce;background:linear-gradient(90deg, #fafaf4, #eef2eb 70%),
+    var(--stock-finance-review)}
+.policy-steps button > span{border:1px solid #cad8ce}
+.policy-steps button > em{color:#142321}
+.diagnostic-list{border-top:1px solid #cad8ce}
+.diagnostic-list button{border-bottom:1px solid #cad8ce;background:linear-gradient(90deg, #eef2eb, #eef2eb),
+    var(--stock-data-infrastructure)}
+.diagnostic-list button:nth-child(2n){background:linear-gradient(90deg, #eef2eb, #eef2eb),
+    var(--stock-research-desk)}
+.diagnostic-list button:nth-child(3n){background:linear-gradient(90deg, #eef2eb, #eef2eb),
+    var(--stock-team-review)}
+.diagnostic-list button > span{color:#142321}
+.diagnostic-list button:hover,
+.diagnostic-list button.is-active{background:linear-gradient(90deg, #eef2eb, transparent 70%);box-shadow:none}
+.control-plane-list{border-top:1px solid #cad8ce;border-bottom:1px solid #cad8ce;background:linear-gradient(180deg, #eef2eb, #eef2eb),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.026) 0 1px, transparent 1px 38px)}
+.control-plane-list button{border-bottom:1px solid #cad8ce;background:linear-gradient(90deg, #eef2eb, #eef2eb),
+    var(--stock-data-infrastructure)}
+.control-plane-list button:hover,
+.control-plane-list button.is-active{box-shadow:none;border-color:#cad8ce;background:#eef2eb}
+.control-plane-list button:nth-child(2){background:linear-gradient(90deg, #eef2eb, #eef2eb),
+    var(--stock-market-laptop)}
+.control-plane-list button:nth-child(3){background:linear-gradient(90deg, #fafaf4, #eef2eb),
+    var(--stock-research-desk)}
+.control-plane-list button > em{color:#142321}
+.list li{border-bottom:1px solid #cad8ce;color:#142321}
+.cta-panel{border:1px solid #cad8ce;background:radial-gradient(circle at 12% 10%, #eef2eb, transparent 34%), rgba(255, 255, 255, 0.035)}
+.inline-detail{border:1px solid #cad8ce;background:#eef2eb;color:#142321;box-shadow:none}
+.inline-detail strong{color:#142321}
+.inline-detail span{color:#142321}
+.timeline-item .inline-detail,
+.agent-chain .timeline-item .inline-detail,
+.process-chain .timeline-item .inline-detail{color:#142321}
+button.is-active .inline-detail,
+.pipeline-card button.is-active .inline-detail,
+.lane-item.is-active .inline-detail,
+.policy-steps button.is-active .inline-detail,
+.diagnostic-list button.is-active .inline-detail,
+.control-plane-list button.is-active .inline-detail,
+.ops-console button.is-active .inline-detail,
+.audit-ledger button.is-active .inline-detail{background:#eef2eb;color:#142321}
+.site-footer{border-top:1px solid #cad8ce}
+.contact-panel{background:linear-gradient(180deg, #eef2eb, #eef2eb),
+    rgba(255, 255, 255, 0.032)}
+.contact-form input:focus,
+.contact-form textarea:focus{border-color:#cad8ce;box-shadow:none}
+.nav-links{background:#eef2eb}
+.ribbon-grid div,
+  .proof-grid div{border-bottom:1px solid #cad8ce}
+.audit-ledger{background:linear-gradient(180deg, #eef2eb, rgba(255, 255, 255, 0.012))}
+.audit-ledger button{border-bottom:1px solid #cad8ce}
+.ops-console button{border-bottom:1px solid #cad8ce}
+.agent-chain .timeline-item{border-bottom:1px solid #cad8ce}
+body{background-image:linear-gradient(#eef2eb,#eef2eb),url("assets/alphaweave-weave.svg")}
+.hero .button{background:#eef2eb;color:#142321;border-color:#cad8ce}
+.hero .button.secondary{border-color:#cad8ce}
+.site-header{border-bottom:1px solid #cad8ce}
+.site-header .nav-cta{background:#eef2eb;color:#142321;border-color:#cad8ce}
+.site-header .mobile-toggle{border-color:#cad8ce}
+.site-header .nav-links{border-color:#cad8ce}
+header{background:radial-gradient(1000px 500px at 10% -10%, #eef2eb, transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, #fafaf4, transparent 55%),
+        linear-gradient(135deg, #eef2eb 0%, #eef2eb 50%, #eef2eb 100%);color:#142321}
+.badge{border:1px solid #cad8ce;color:#142321}
+section{box-shadow:none}
+.tag{color:#142321}
+.tag.data{background:#eef2eb}
+.tag.orchestration{background:#eef2eb}
+.tag.reflection{background:#eef2eb}
+.tag.memory{background:#eef2eb}
+.callout.dark{background:linear-gradient(135deg,#eef2eb,#eef2eb);color:#142321;border-left-color:#cad8ce}
+.callout.dark strong{color:#40564b}
+.card{box-shadow:none;border:1px solid #cad8ce}
+.card::before{background:radial-gradient(400px 120px at 20% 0%, #eef2eb, transparent 60%)}
+.dot.data{background:#eef2eb}
+.dot.sky{background:#eef2eb}
+.dot.slate{background:#fafaf4}
+.subcard{border:1px solid #cad8ce;box-shadow:none}
+.pill{border:1px solid #cad8ce}
+.pill.ref{border-color:#cad8ce}
+.diagram{border:1px solid #cad8ce}
+.comp{border:1px solid #cad8ce;box-shadow:none}
+.comp .label{border:1px solid #cad8ce}
+footer{color:#40564b}
+table{border:1px solid #cad8ce}
+th,td{border-bottom:1px solid #cad8ce}
+td code{border:1px solid #cad8ce}
+.performance-table + .footnote,
+.footnote{color:#40564b}
+.brand-subtitle{color:#40564b}
+.gold{color:#40564b}
+.commercial-matrix th,.commercial-matrix td{border:1px solid #cad8ce}
+.blotter-page{background:#eef2eb;color:#142321}
+.blotter-panel,
+    .blotter-card{background:#eef2eb;box-shadow:none}
+.blotter-field select,
+    .blotter-field input,
+    .blotter-button{color:#142321}
+.blotter-button{background:#eef2eb}
+.blotter-checks label{color:#142321}
+.blotter-sim-box{border:1px solid #cad8ce}
+.blotter-sim-box p{color:#142321}
+.blotter-feed div{border-bottom:1px solid #cad8ce;color:#142321}
+.blotter-weight-row{border-bottom:1px solid #cad8ce}
+.blotter-table th,
+    .blotter-table td{border-bottom:1px solid #cad8ce}
+.blotter-table th{background:#eef2eb}
+.blotter-pill.BUY{background:#eef2eb}
+.blotter-pill.SELL{background:#fafaf4}
+.blotter-pill.RESIZE{background:#fafaf4}
+.blotter-pill.NO_EXEC{background:#fafaf4;color:#142321}
+.blotter-current td{background:#eef2eb;box-shadow:none}
+
+body{background:#fafaf4!important;color:#142321!important}
+.hero,.brand-header{background:url("assets/alphaweave-weave.svg") center/cover!important;color:#142321!important}
+.hero::after{display:none}.hero h1,.brand-header h1,.brand-header p{color:#142321!important}
+.section:nth-of-type(even){background-color:#eef2eb}
+.site-footer,footer{background:#eef2eb;color:#40564b;border-color:#cad8ce}
+input,select,textarea{background:#fff!important;color:#142321!important;border-color:#9db4a7!important}input::placeholder,textarea::placeholder{color:#627469!important}
+table{color:#142321}th{background:#e5eee5!important;color:#075644!important}td{border-color:#cad8ce}
+.button,.nav-cta{background:#075644!important;color:#fff!important;border-color:#075644!important}.button.secondary{background:#fafaf4!important;color:#075644!important}.mobile-toggle{background:#fafaf4!important;color:#075644!important}
+.eyebrow{color:#075644!important}.is-active{border-color:#075644!important}
+:focus-visible{outline-color:#896117!important}
+.blotter-button{background:#fafaf4!important;color:#075644!important;border-color:#9db4a7!important}.blotter-button.primary{background:#075644!important;color:#fff!important}
+
+/* Use content-specific SVGs instead of a repeated mascot thumbnail. */
+.button::before,button.card h3::before,button.feature-card h3::before,button.timeline-item h3::before,.context-panel strong::before,.metric-strip>button>strong::before,.ops-console button>strong::before,.audit-ledger button>strong::before,.lane-item>strong::before,.policy-steps button>strong::before,.diagnostic-list button>strong::before,.control-plane-list button>strong::before{display:none!important}
+.action-icon{display:inline-block;vertical-align:middle;width:24px;height:24px;flex:0 0 24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-right:10px;color:inherit}.button .action-icon{width:20px;height:20px;flex-basis:20px;margin-right:0}[data-click-card] .action-icon{color:#075644}

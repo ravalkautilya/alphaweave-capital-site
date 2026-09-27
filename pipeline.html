@@ -1,95 +1,83 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AlphaWeave Capital Pipeline and Reports | Monitor, Restore, and Review Runs</title>
-  <meta name="description" content="AlphaWeave Capital includes plug-and-play run orchestration, configuration management, reporting, evidence reuse checks, flow validation, and attribution for allocation intelligence workflows.">
-  <link rel="icon" href="assets/alphaweave-capital-mark.png">
-  <link rel="stylesheet" href="site.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>AlphaWeave Capital Pipeline and Reports | Monitor, Restore, and Review Runs</title>
+<meta content="AlphaWeave Capital includes plug-and-play run orchestration, configuration management, reporting, evidence reuse checks, flow validation, and attribution for allocation intelligence workflows." name="description"/>
+<link href="assets/alphaweave-brand-mark.svg" rel="icon"/>
+<link href="site.css?v=20260927-white-nav-2" rel="stylesheet"/>
+<link href="site-header.css?v=3" rel="stylesheet"/><link href="light-theme.css?v=2" rel="stylesheet"/>
+<link href="site-footer.css?v=1" rel="stylesheet"/>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand brand-logo" href="./" aria-label="AlphaWeave Capital home"><img src="assets/alphaweave-capital-logo-bright.png" alt="AlphaWeave Capital"></a>
-      <button class="mobile-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">Menu</button>
-      <div class="nav-links" data-nav-links>
-      <a href="product.html">Product</a>
-      <a href="platform.html">Platform</a>
-      <a href="how-it-works.html">How It Works</a>
-      <a href="pipeline.html" aria-current="page">Pipeline</a>
-      <a href="market-neutral.html">Market Neutral</a>
-      <a href="architecture.html">Architecture</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="podcasts.html">Podcasts</a>
-      <a class="nav-cta" href="contact.html">Walkthrough and Contact</a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero compact" style="--hero-image: var(--stock-analytics-dashboard)">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <p class="eyebrow">Operations</p>
-        <h1>Run allocation research with an institutional-grade decision trail.</h1>
-        <p class="hero-copy">AlphaWeave Capital gives research and portfolio teams operating infrastructure for long allocation experiments. It plugs into existing configuration, data, run, report, and recovery workflows so teams can inspect what changed, reuse evidence safely, and explain whether asset selection, strategy selection, or AI-assisted sizing helped performance.</p>
-      </div>
-    </section>
-
-    <section class="section value-ribbon">
-      <div class="container ribbon-grid">
-        <div><span>Recover</span><strong>Protect long-running research from restarts, interruptions, and lost context.</strong></div>
-        <div><span>Inspect</span><strong>Give teams the exact evidence, model inputs, and outputs behind each decision.</strong></div>
-        <div><span>Attribute</span><strong>Show whether asset selection, strategy selection, AI sizing, or execution added value.</strong></div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="ops-console">
-        <button type="button" data-click-card data-title="Pipeline GUI" data-detail="The pipeline GUI is the mission console: start staged experiments, recover interrupted work, and compare each layer of contribution."><span>Run</span><strong>Pipeline GUI</strong><em>Staged experiments, recovery, and stage comparison.</em></button>
-        <button type="button" data-click-card data-title="Report GUI" data-detail="The report GUI is the research binder: monthly tables, model input review, cache checks, flow validation, and risk artifacts in one review surface."><span>Inspect</span><strong>Report GUI</strong><em>Monthly tables, model review, cache checks, and risk artifacts.</em></button>
-        <button type="button" data-click-card data-title="Config Management" data-detail="Config management is the rulebook: portfolio mandates, strategies, assets, policy, and model routing stay explicit and versionable."><span>Configure</span><strong>Config Management</strong><em>Mandates, strategies, assets, routing, and policy settings.</em></button>
-      </div>
-      <p class="detail-note" data-card-detail>Click an operations surface to see what it controls.</p>
-    </section>
-
-    <section class="section band">
-      <div class="section-heading">
-        <p class="eyebrow">Audit trail</p>
-        <h2>A flight recorder for every reviewed decision.</h2>
-        <p>When a run succeeds or disappoints, the team can review what happened instead of guessing. The pipeline preserves the context needed for research review, risk oversight, and management reporting.</p>
-      </div>
-      <div class="audit-ledger">
-        <button type="button" data-click-card data-title="Model input record" data-detail="The model input record preserves the conversation trail: the exact input and raw response by date and reviewer."><span>record</span><strong>Model Input Record</strong><em>Exact model input and raw response.</em></button>
-        <button type="button" data-click-card data-title="Cache Review" data-detail="Cache review is the evidence ledger: it shows which prior result was reused, why it matched, and what was recomputed."><span>cache</span><strong>Cache Review</strong><em>Reuse, recompute, miss, and store history.</em></button>
-        <button type="button" data-click-card data-title="Flow Validation" data-detail="Flow validation is the handoff check: it confirms upstream evidence actually reached the next reviewer."><span>flow</span><strong>Flow Validation</strong><em>Verify evidence moved through the chain.</em></button>
-        <button type="button" data-click-card data-title="Performance Tables" data-detail="Performance tables are the attribution scoreboard: static base, asset selection, strategy switching, and AI/PSM contribution are separated."><span>return</span><strong>Performance Tables</strong><em>See which layer added or removed return.</em></button>
-      </div>
-      <p class="detail-note" data-card-detail>Click a report artifact to see why it matters.</p>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Diagnostics</p>
-        <h2>Diagnostics that explain the result, not just the return.</h2>
-        <p>The organization gets more than a performance number. It gets evidence about model behavior, cache reuse, chart interpretation, handoffs, execution state, and monthly contribution by stage.</p>
-      </div>
-      <div class="diagnostic-list">
-        <button type="button" data-click-card data-title="Model cache rebuild" data-detail="Model cache rebuild checks the route map before a long trip, so unavailable models are caught before the run depends on them."><strong>Model cache rebuild</strong><span>Check provider and model availability before long runs.</span></button>
-        <button type="button" data-click-card data-title="Image cache validation" data-detail="Image cache validation keeps chart interpretation tied to the rendered evidence instead of stale or invented captions."><strong>Image cache validation</strong><span>Keep chart commentary tied to the actual chart.</span></button>
-        <button type="button" data-click-card data-title="Agent flow validation" data-detail="Agent flow validation checks the relay race: every handoff should carry the right content forward."><strong>Agent flow validation</strong><span>Confirm evidence arrives at the next reviewer.</span></button>
-        <button type="button" data-click-card data-title="Paired model audit" data-detail="Paired audits make model behavior reviewable without digging through raw folders."><strong>Paired model audit</strong><span>Review exact model inputs and responses.</span></button>
-        <button type="button" data-click-card data-title="Cache scope review" data-detail="Cache scope review shows whether reused content matched the right date, asset, strategy, mandate, and prompt."><strong>Cache scope review</strong><span>Inspect what matched and what did not.</span></button>
-        <button type="button" data-click-card data-title="Monthly rollup" data-detail="Monthly rollups turn many stage runs into one board-level attribution view."><strong>Monthly rollup</strong><span>Combine stage runs into a clear performance table.</span></button>
-      </div>
-      <p class="detail-note" data-card-detail>Click a diagnostic report to see what it verifies.</p>
-    </section>
-  </main>
-
-  <footer class="site-footer"><div class="footer-inner"><p>AlphaWeave Capital builds allocation intelligence software for systematic trading teams. It is not investment advice.</p><div class="footer-links"><a href="./">Home</a><a href="contact.html">Walkthrough and Contact</a></div></div></footer>
-  <script src="site.js"></script>
+<header class="site-header aw-site-header">
+<nav aria-label="Primary navigation" class="nav">
+<a aria-label="AlphaWeave Capital home" class="brand" href="./"><img alt="AlphaWeave Capital" height="62" src="assets/alphaweave-brand.svg" width="240"/></a>
+<div class="nav-links" data-nav-links="" id="home-navigation">
+<a href="product.html">Product</a><a href="platform.html">Platform</a><a href="how-it-works.html">How it works</a><a href="architecture.html">Architecture</a><a href="pricing.html">Pricing</a>
+<a href="presentation-20260816.html">Presentation</a><a href="podcasts.html">Podcasts</a><a aria-current="page" href="pipeline.html">Pipeline</a><a href="market-neutral.html">Market neutral</a><a href="trade-blotter.html">Trade blotter</a>
+<a class="portal-link" href="portal.html">Demo portal</a><a class="button compact" href="contact.html">Book a walkthrough <span aria-hidden="true">→</span></a>
+</div>
+</nav>
+</header>
+<main>
+<section class="hero compact assistant-scene" style="--hero-image: var(--stock-analytics-dashboard)">
+<div class="hero-overlay"></div>
+<div class="container"><div class="assistant-scene-copy">
+<p class="eyebrow">Operations</p>
+<h1>Run allocation research with an institutional-grade decision trail.</h1>
+<p class="hero-copy">AlphaWeave Capital gives research and portfolio teams operating infrastructure for long allocation experiments. It plugs into existing configuration, data, run, report, and recovery workflows so teams can inspect what changed, reuse evidence safely, and explain whether asset selection, strategy selection, or AI-assisted sizing helped performance.</p>
+</div><figure class="assistant-scene-art"><img alt="Assistant guiding connected pipeline stages" height="1086" src="assets/alphaweave-assistant-workflow.png" width="1448"/><figcaption>Follow each stage from data to decision to report.</figcaption></figure></div>
+</section>
+<section class="section value-ribbon">
+<div class="container ribbon-grid">
+<div><span>Recover</span><strong>Protect long-running research from restarts, interruptions, and lost context.</strong></div>
+<div><span>Inspect</span><strong>Give teams the exact evidence, model inputs, and outputs behind each decision.</strong></div>
+<div><span>Attribute</span><strong>Show whether asset selection, strategy selection, AI sizing, or execution added value.</strong></div>
+</div>
+</section>
+<section class="section">
+<div class="ops-console">
+<button data-click-card="" data-content-icon="workflow" data-detail="The pipeline GUI is the mission console: start staged experiments, recover interrupted work, and compare each layer of contribution." data-title="Pipeline GUI" type="button"><span>Run</span><strong><svg aria-hidden="true" class="action-icon" data-icon="workflow" focusable="false" viewbox="0 0 24 24"><path d="M3 3h6v6H3z M15 15h6v6h-6z M6 9v9h9 M9 6h9v9"></path></svg>Pipeline GUI</strong><em>Staged experiments, recovery, and stage comparison.</em></button>
+<button data-click-card="" data-content-icon="report" data-detail="The report GUI is the research binder: monthly tables, model input review, cache checks, flow validation, and risk artifacts in one review surface." data-title="Report GUI" type="button"><span>Inspect</span><strong><svg aria-hidden="true" class="action-icon" data-icon="report" focusable="false" viewbox="0 0 24 24"><path d="M4 3v18h17 M8 16l4-5 4 2 5-7"></path></svg>Report GUI</strong><em>Monthly tables, model review, cache checks, and risk artifacts.</em></button>
+<button data-click-card="" data-content-icon="settings" data-detail="Config management is the rulebook: portfolio mandates, strategies, assets, policy, and model routing stay explicit and versionable." data-title="Config Management" type="button"><span>Configure</span><strong><svg aria-hidden="true" class="action-icon" data-icon="settings" focusable="false" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16 M8 3v6M16 9v6M10 15v6"></path></svg>Config Management</strong><em>Mandates, strategies, assets, routing, and policy settings.</em></button>
+</div>
+<p class="detail-note" data-card-detail="">Click an operations surface to see what it controls.</p>
+</section>
+<section class="section band">
+<div class="section-heading">
+<p class="eyebrow">Audit trail</p>
+<h2>A flight recorder for every reviewed decision.</h2>
+<p>When a run succeeds or disappoints, the team can review what happened instead of guessing. The pipeline preserves the context needed for research review, risk oversight, and management reporting.</p>
+</div>
+<div class="audit-ledger">
+<button data-click-card="" data-content-icon="ai" data-detail="The model input record preserves the conversation trail: the exact input and raw response by date and reviewer." data-title="Model input record" type="button"><span>record</span><strong><svg aria-hidden="true" class="action-icon" data-icon="ai" focusable="false" viewbox="0 0 24 24"><path d="M7 7h10v10H7z M9 1v6M15 1v6M9 17v6M15 17v6M1 9h6M1 15h6M17 9h6M17 15h6"></path></svg>Model Input Record</strong><em>Exact model input and raw response.</em></button>
+<button data-click-card="" data-content-icon="memory" data-detail="Cache review is the evidence ledger: it shows which prior result was reused, why it matched, and what was recomputed." data-title="Cache Review" type="button"><span>cache</span><strong><svg aria-hidden="true" class="action-icon" data-icon="memory" focusable="false" viewbox="0 0 24 24"><path d="M3 7h7l2 3h9v11H3z M3 7V4h7l2 3"></path></svg>Cache Review</strong><em>Reuse, recompute, miss, and store history.</em></button>
+<button data-click-card="" data-content-icon="review" data-detail="Flow validation is the handoff check: it confirms upstream evidence actually reached the next reviewer." data-title="Flow Validation" type="button"><span>flow</span><strong><svg aria-hidden="true" class="action-icon" data-icon="review" focusable="false" viewbox="0 0 24 24"><path d="M14 14l7 7 M17 9a8 8 0 1 1-16 0 8 8 0 0 1 16 0 M5 9l3 3 5-6"></path></svg>Flow Validation</strong><em>Verify evidence moved through the chain.</em></button>
+<button data-click-card="" data-content-icon="report" data-detail="Performance tables are the attribution scoreboard: static base, asset selection, strategy switching, and AI/PSM contribution are separated." data-title="Performance Tables" type="button"><span>return</span><strong><svg aria-hidden="true" class="action-icon" data-icon="report" focusable="false" viewbox="0 0 24 24"><path d="M4 3v18h17 M8 16l4-5 4 2 5-7"></path></svg>Performance Tables</strong><em>See which layer added or removed return.</em></button>
+</div>
+<p class="detail-note" data-card-detail="">Click a report artifact to see why it matters.</p>
+</section>
+<section class="section">
+<div class="section-heading">
+<p class="eyebrow">Diagnostics</p>
+<h2>Diagnostics that explain the result, not just the return.</h2>
+<p>The organization gets more than a performance number. It gets evidence about model behavior, cache reuse, chart interpretation, handoffs, execution state, and monthly contribution by stage.</p>
+</div>
+<div class="diagnostic-list">
+<button data-click-card="" data-content-icon="memory" data-detail="Model cache rebuild checks the route map before a long trip, so unavailable models are caught before the run depends on them." data-title="Model cache rebuild" type="button"><strong><svg aria-hidden="true" class="action-icon" data-icon="memory" focusable="false" viewbox="0 0 24 24"><path d="M3 7h7l2 3h9v11H3z M3 7V4h7l2 3"></path></svg>Model cache rebuild</strong><span>Check provider and model availability before long runs.</span></button>
+<button data-click-card="" data-content-icon="memory" data-detail="Image cache validation keeps chart interpretation tied to the rendered evidence instead of stale or invented captions." data-title="Image cache validation" type="button"><strong><svg aria-hidden="true" class="action-icon" data-icon="memory" focusable="false" viewbox="0 0 24 24"><path d="M3 7h7l2 3h9v11H3z M3 7V4h7l2 3"></path></svg>Image cache validation</strong><span>Keep chart commentary tied to the actual chart.</span></button>
+<button data-click-card="" data-content-icon="review" data-detail="Agent flow validation checks the relay race: every handoff should carry the right content forward." data-title="Agent flow validation" type="button"><strong><svg aria-hidden="true" class="action-icon" data-icon="review" focusable="false" viewbox="0 0 24 24"><path d="M14 14l7 7 M17 9a8 8 0 1 1-16 0 8 8 0 0 1 16 0 M5 9l3 3 5-6"></path></svg>Agent flow validation</strong><span>Confirm evidence arrives at the next reviewer.</span></button>
+<button data-click-card="" data-content-icon="review" data-detail="Paired audits make model behavior reviewable without digging through raw folders." data-title="Paired model audit" type="button"><strong><svg aria-hidden="true" class="action-icon" data-icon="review" focusable="false" viewbox="0 0 24 24"><path d="M14 14l7 7 M17 9a8 8 0 1 1-16 0 8 8 0 0 1 16 0 M5 9l3 3 5-6"></path></svg>Paired model audit</strong><span>Review exact model inputs and responses.</span></button>
+<button data-click-card="" data-content-icon="memory" data-detail="Cache scope review shows whether reused content matched the right date, asset, strategy, mandate, and prompt." data-title="Cache scope review" type="button"><strong><svg aria-hidden="true" class="action-icon" data-icon="memory" focusable="false" viewbox="0 0 24 24"><path d="M3 7h7l2 3h9v11H3z M3 7V4h7l2 3"></path></svg>Cache scope review</strong><span>Inspect what matched and what did not.</span></button>
+<button data-click-card="" data-content-icon="report" data-detail="Monthly rollups turn many stage runs into one board-level attribution view." data-title="Monthly rollup" type="button"><strong><svg aria-hidden="true" class="action-icon" data-icon="report" focusable="false" viewbox="0 0 24 24"><path d="M4 3v18h17 M8 16l4-5 4 2 5-7"></path></svg>Monthly rollup</strong><span>Combine stage runs into a clear performance table.</span></button>
+</div>
+<p class="detail-note" data-card-detail="">Click a diagnostic report to see what it verifies.</p>
+</section>
+</main>
+<footer class="site-footer aw-site-footer"><div class="footer-inner"><nav class="footer-links" aria-label="Footer navigation"><a href="./">Home</a><a href="platform.html">Platform</a><a href="pricing.html">Pricing</a><a href="presentation-20260816.html">Presentation</a><a href="podcasts.html">Podcasts</a><a href="portal.html">Demo portal</a><a href="contact.html">Contact / walkthrough</a><a href="disclaimer.html">Disclaimer</a></nav></div></footer>
+<script src="site.js"></script>
 </body>
 </html>
-
-

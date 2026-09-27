@@ -240,12 +240,30 @@
   .gold {
     color: #c9a646;
   }
-  </style>
+      .commercial-matrix{max-width:100%;overflow-x:auto;margin:20px 0;}
+    .commercial-matrix table{width:100%;border-collapse:collapse;min-width:600px;}
+    .commercial-matrix th,.commercial-matrix td{padding:12px;text-align:left;vertical-align:top;border:1px solid #dbe3ee;}
+    .commercial-matrix caption{text-align:left;font-weight:700;padding:10px 0;}
+    #commercial-comparison .comparison{grid-template-columns:repeat(2,minmax(0,1fr));} @media(max-width:700px){#commercial-comparison .comparison{grid-template-columns:minmax(0,1fr);}}
+    #commercial-comparison .comp{min-width:0;overflow-wrap:anywhere;}
+</style>
+<link href="assets/alphaweave-brand-mark.svg" rel="icon"/>
+<link href="site-header.css?v=3" rel="stylesheet"/><link href="light-theme.css?v=2" rel="stylesheet"/>
+<link href="site-footer.css?v=1" rel="stylesheet"/>
 </head>
-<body>
+<body><header class="site-header aw-site-header">
+<nav aria-label="Primary navigation" class="nav">
+<a aria-label="AlphaWeave Capital home" class="brand" href="./"><img alt="AlphaWeave Capital" height="62" src="assets/alphaweave-brand.svg" width="240"/></a>
+<div class="nav-links" data-nav-links="" id="home-navigation">
+<a href="product.html">Product</a><a href="platform.html">Platform</a><a href="how-it-works.html">How it works</a><a href="architecture.html">Architecture</a><a href="pricing.html">Pricing</a>
+<a aria-current="page" href="presentation-20260816.html">Presentation</a><a href="podcasts.html">Podcasts</a><a href="pipeline.html">Pipeline</a><a href="market-neutral.html">Market neutral</a><a href="trade-blotter.html">Trade blotter</a>
+<a class="portal-link" href="portal.html">Demo portal</a><a class="button compact" href="contact.html">Book a walkthrough <span aria-hidden="true">→</span></a>
+</div>
+</nav>
+</header>
 <div class="wrap">
 <header class="brand-header">
-<img alt="AlphaWeave logo" class="brand-icon" src="assets/alphaweave-icon.png"/>
+<img alt="AlphaWeave logo" class="brand-icon" src="assets/alphaweave-brand-mark.svg"/>
 <div>
 <h1 class="brand-title">
 <span class="gold">AlphaWeave Capital</span>
@@ -349,6 +367,7 @@
     outcome memory, and performance attribution.
   </p>
 <h3 id="competitive-placement">Competitive Placement: Where AlphaWeave Capital Fits</h3>
+<p><a href="#commercial-comparison">Compare Aquata, Chadsel, InvestiQuant and Bracket22</a> alongside the open-source frameworks below.</p>
 <p>
   The open-source trading ecosystem already proves there is large demand for algorithmic
   trading infrastructure. The most popular free GitHub systems are strong, but they mostly
@@ -439,6 +458,76 @@
   alpha, strategy-selection alpha, AI/PSM execution alpha, and attribution proof are measured as
   distinct layers rather than blended into a single headline backtest.
 </p>
+<section aria-labelledby="commercial-comparison-title" id="commercial-comparison">
+<h3 id="commercial-comparison-title">Commercial Landscape: Data, Services, Autotrading and AI Research</h3>
+<p class="caption">Research updated September 26, 2026. This update postdates the presentation filename. Descriptions reflect public vendor material and interview coverage; comparison and product lessons are our assessment, not a hands-on benchmark.</p>
+<div class="callout dark" id="alphaweave-buyer-value"><strong>AlphaWeave's value: control the investment process and measure which decisions contributed.</strong>
+<p>AlphaWeave gives a portfolio team a configurable workflow from sleeve and basket-leg construction through allocation, asset and strategy selection, run execution and evidence review. Its attribution tooling separates a fixed baseline, strategy switching, asset switching, policy controls and the incremental AI/PSM overlay where the required evidence is available.</p>
+<p><b>The buyer's question:</b> Did changing the strategy, changing the assets or adding AI improve this portfolio after costs and risk? AlphaWeave is built to investigate that question with explicit configurations and comparison reports. The value is the ability to test and inspect investment decisions; positive investment results still have to be demonstrated.</p>
+</div>
+<h4>What a team gets from AlphaWeave</h4>
+<ul>
+<li><b>Portfolio control:</b> define reusable sleeves, basket legs, allocations and initial/candidate asset and strategy groups within the desk's permitted catalog.</li>
+<li><b>A repeatable operating workflow:</b> configure a run, review readiness, submit work to a worker, monitor progress and inspect resulting reports.</li>
+<li><b>Evidence for capital decisions:</b> compare selection and overlay contributions against specified baselines rather than relying only on a headline return.</li>
+<li><b>Optional AI with explicit scope:</b> supported non-AI runs remain available; AI-assisted workflows and application actions are subject to configured controls and entitlements.</li>
+</ul>
+<div class="comparison">
+<article class="comp">
+<span class="label">Aquata / Arcesium</span>
+<strong>Investment data infrastructure and AI-enabled operations</strong>
+<p>Aquata connects investment data sources, normalizes records, checks data quality and tracks lineage. Its public offering includes document extraction, reporting, access controls and MCP connectivity for AI tools. Arcesium also describes agent orchestration across its data and operational platforms.</p>
+<p><b>AlphaWeave comparison:</b> overlap in governed data, analytics and AI-assisted workflows. AlphaWeave's narrower emphasis is configuration-driven strategy and asset selection, portfolio runs and attribution. Aquata is a potential upstream data platform; an integration is a possibility, not an implemented connector or partnership.</p>
+<p class="caption">Sources: <a href="https://aquata.ai/">Aquata platform</a>; <a href="https://www.businesswire.com/news/home/20260520686508/en/Arcesium-Launches-Comprehensive-AI-Platform-to-Operationalize-Agentic-AI-for-Institutional-Investment">Arcesium's May 20, 2026 announcement</a>.</p>
+</article>
+<article class="comp">
+<span class="label">Chadsel LLC</span>
+<strong>IT consulting, managed infrastructure and custom AI integration</strong>
+<p>Chadsel serves financial firms and other businesses with cybersecurity, cloud infrastructure, virtual CTO services and trading-system support. Its AI work integrates existing agent and model tools into client workflows, with local, hybrid or cloud deployment selected for the engagement.</p>
+<p><b>AlphaWeave comparison:</b> Chadsel sells implementation and operating expertise; AlphaWeave supplies a specific investment workflow application. A firm with that service model could help deploy or integrate a system such as AlphaWeave, but no commercial relationship is established here.</p>
+<p class="caption">Sources: <a href="https://www.chadsel.com/">Chadsel services</a>; <a href="https://www.chadsel.com/business-it/ai-agent-integration/">AI integration and deployment models</a>.</p>
+</article>
+<article class="comp">
+<span class="label">InvestiQuant</span>
+<strong>Professionally overseen, automated trading programs</strong>
+<p>InvestiQuant markets proprietary quantitative and AI/ML-based programs executed through clients' brokerage accounts. Its program page emphasizes intraday stock-index futures strategies and a hands-off investor experience.</p>
+<p><b>AlphaWeave comparison:</b> InvestiQuant offers participation in its strategies; AlphaWeave lets an operator configure and evaluate portfolio structures and runs. InvestiQuant reduces the investor's setup burden. AlphaWeave offers more configuration responsibility and flexibility. Program results cannot be compared with AlphaWeave backtests without matching instruments, dates, leverage, costs and measurement methods.</p>
+<p class="caption">Sources: <a href="https://www.investiquant.com/">InvestiQuant overview</a>; <a href="https://www.investiquant.com/hedge-fund-strategies-for-investors">Autotrading programs and brokerage workflow</a>.</p>
+</article>
+<article class="comp">
+<span class="label">Bracket22 / Brian Kelly</span>
+<strong>An investment manager using specialist AI research agents</strong>
+<p>In the September 8 CNBC interview, Kelly describes agents supporting market monitoring, technical analysis and quantitative research, with shared memory and human judgment over the final decision. This is an example of an AI-assisted investment operation; the reviewed material does not establish an equivalent self-service portfolio platform.</p>
+<p><b>AlphaWeave comparison:</b> both use AI to assist investment work. AlphaWeave's intended distinction is the explicit connection between configured portfolio decisions, run controls and measured attribution. Kelly's reported productivity and cost savings do not establish investment outperformance.</p>
+<p class="caption">Sources: <a href="https://www.cnbc.com/2026/09/08/brian-kelly-bracket22-ai-agents.html">CNBC article supplied for comparison</a>; <a href="https://podcasts.apple.com/ca/podcast/metas-latest-ai-agent-and-an-ai-powered-hedge-fund-9-8-26/id215529509?i=1000788542866">CNBC episode listing</a>; <a href="https://podsearch.io/episodes/meta-s-latest-ai-agent-and-an-ai-powered-hedge-fund-9-8-26">third-party machine transcript, interview from 29:31</a>; <a href="https://bracket22.com/">Bracket22</a>.</p>
+<p class="caption">Source limitation: direct CNBC article access was blocked. Interview details above use the machine transcript and should be checked against the recording before external quotation.</p>
+</article>
+</div>
+<div aria-label="Commercial value comparison table" class="commercial-matrix" role="region" tabindex="0">
+<table>
+<caption>Where each offering provides more value: buyer-fit assessment, not a performance ranking</caption>
+<thead><tr><th scope="col">Compared with</th><th scope="col">AlphaWeave offers</th><th scope="col">When AlphaWeave has more potential value</th><th scope="col">When the alternative is the better fit</th></tr></thead>
+<tbody>
+<tr><th scope="row">Aquata</th><td>Configurable portfolio decisions, backtest/trading workflows and selection/overlay attribution.</td><td>The team already has usable data and needs to evaluate how to deploy capital across assets and strategies.</td><td>The main problem is connecting, normalizing and governing fragmented institutional data. Aquata's published focus is closer to that need.</td></tr>
+<tr><th scope="row">Chadsel</th><td>An existing investment application with domain-specific structures, run controls and reporting.</td><td>The team wants this portfolio workflow without commissioning its entire application from scratch.</td><td>The need is a responsible implementation team, infrastructure operations or custom integration. Software alone does not supply those services.</td></tr>
+<tr><th scope="row">InvestiQuant</th><td>Operator choice over supported assets, coded strategies, portfolio construction and experiments.</td><td>A manager wants to develop and control a differentiated process and inspect the reasons behind results.</td><td>An investor wants a professionally overseen trading program with less configuration and operational work.</td></tr>
+<tr><th scope="row">Bracket22</th><td>A structured application linking portfolio definitions, jobs, controls and attribution reports.</td><td>A team needs a repeatable, shared process for evaluating decisions alongside AI assistance.</td><td>The immediate aim is specialist research assistance for a discretionary manager. Bracket22 illustrates that operating model; an equivalent purchasable product was not verified.</td></tr>
+</tbody>
+</table>
+</div>
+<h4>Which has more value?</h4>
+<p><b>For a portfolio team building and operating its own systematic investment process, AlphaWeave has the strongest fit among these descriptions when configurable decisions and attribution are the priority.</b> This is a buyer-fit judgment. Aquata addresses data foundations; Chadsel addresses implementation and operations; InvestiQuant addresses delegated strategy execution; Bracket22 illustrates AI-supported research. A firm can need more than one of these capabilities.</p>
+<p><b>Economic value must be measured:</b> shorter setup and review time, fewer configuration errors, reproducible decisions, and better net risk-adjusted outcomes against the same baseline. AlphaWeave's extra flexibility also creates configuration, data and operating work. No comparable total-cost study or independently verified head-to-head return comparison is available in this review, so a universal value or ROI winner cannot be established.</p>
+<h4>What AlphaWeave should learn from these offerings</h4>
+<ul>
+<li><b>Aquata:</b> make source provenance and data-quality exceptions easy to inspect before a run.</li>
+<li><b>Chadsel:</b> explain deployment ownership, support and data boundaries as clearly as application features.</li>
+<li><b>InvestiQuant:</b> offer a guided starter path with few decisions, while keeping expert configuration available.</li>
+<li><b>Bracket22:</b> make each assistant's role, evidence and human decision point explicit.</li>
+<li><b>AlphaWeave:</b> carry the selected parent through sleeve, basket leg, allocation and asset/strategy lists; show the associated children and one clear next action.</li>
+</ul>
+<div class="callout"><strong>Positioning to demonstrate:</strong> AlphaWeave connects portfolio configuration and optional AI review to run evidence and attribution. Demonstrate that claim with reproducible runs, baseline comparisons and desk-scoped access tests. This review does not establish superior returns, stronger security, regulatory readiness or better usability than the other offerings. Public marketing pages are not comparable to testing their authenticated products.</div>
+</section>
 <div class="callout dark">
 <strong>Research update: why AlphaWeave treats LLMs as underwriters, not oracles.</strong>
   Recent LLM-trading research points toward the same architecture AlphaWeave is moving into:
@@ -597,7 +686,7 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
   added return and whether drawdown improved or worsened relative to the prior layer.
 </p>
 <p>
-  <strong>Time frame:</strong> Each row reports returns obtained over a
+<strong>Time frame:</strong> Each row reports returns obtained over a
   <strong>10-business-day measured trading window</strong> selected inside the named calendar month;
   it is not a full-month or full-year backtest. The table therefore reports realized stage behavior
   for comparable 10-day windows, while the total row summarizes the combined sampled evidence across
@@ -632,7 +721,7 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
     out most broad market beta.
   </p>
 <p>
-    <strong>Time frame:</strong> The measured figures in this section are not long-horizon annual returns. They are sampled
+<strong>Time frame:</strong> The measured figures in this section are not long-horizon annual returns. They are sampled
     10-business-day attribution results from the latest completed run, summed across the same 12
     calendar-month buckets used in the monthly performance table.
   </p>
@@ -1423,7 +1512,7 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
     compact triage + AI/PSM on top of it.
   </p>
 <p>
-    <strong>Run basis:</strong> Twelve representative 10-business-day measured windows,
+<strong>Run basis:</strong> Twelve representative 10-business-day measured windows,
     <strong>6h</strong> bars, <strong>momentum</strong> baseline, and row-specific assets/candidate
     universes shown in the monthly performance table. The table below reports measured-window
     deltas, not annualized return claims.
@@ -1489,7 +1578,7 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
 <strong>holding duration</strong>, and <strong>capital allocation via position sizing (PSM)</strong>.
     </p>
 <p>
-      <strong>Time frame:</strong> The controls comparison is periodic in the same way as the triage test: each configuration is
+<strong>Time frame:</strong> The controls comparison is periodic in the same way as the triage test: each configuration is
       evaluated on the same short measured window so that duration control, PSM control, and full
       AI/PSM can be compared against the same price path. The periodicity is part of the experiment,
       because short windows stress whether the control can add value quickly without leaking training
@@ -2073,7 +2162,7 @@ flowchart TD
     over that policy path.
   </p>
 <p>
-    <strong>Time frame:</strong> Periodicity is explicit here: all variants use the same measured start and end dates, while only
+<strong>Time frame:</strong> Periodicity is explicit here: all variants use the same measured start and end dates, while only
     the bar interval changes. A 1d run therefore has fewer decision points in the same calendar
     window, while 6h, 3h, 1h, and 15m runs expose progressively more opportunities for triage,
     duration changes, and PSM changes. The comparison should be read as "same period, different bar
@@ -2212,7 +2301,7 @@ flowchart TD
     than claims of realized alpha.
   </p>
 <p>
-    <strong>Time frame:</strong> Return ranges in this section are annualized estimates for future
+<strong>Time frame:</strong> Return ranges in this section are annualized estimates for future
     validation. They are separate from the realized 10-business-day sampled-window results elsewhere
     in the presentation.
   </p>
@@ -2351,7 +2440,7 @@ flowchart TD
     especially how conviction signals translate into capital deployment.
   </p>
 <p>
-    <strong>Time frame:</strong> Return figures in this enhancement section are <strong>directional annualized estimates</strong>
+<strong>Time frame:</strong> Return figures in this enhancement section are <strong>directional annualized estimates</strong>
     for future validation work. They are separate from the realized 10-day sampled-window returns
     reported in the monthly performance table above.
   </p>
@@ -2612,8 +2701,6 @@ flowchart TD
 </p>
 </section>
 </main>
-<footer>
-  AlphaWeave Capital - allocation intelligence decision infrastructure
-</footer>
+<footer class="site-footer aw-site-footer"><div class="footer-inner"><nav class="footer-links" aria-label="Footer navigation"><a href="./">Home</a><a href="platform.html">Platform</a><a href="pricing.html">Pricing</a><a href="presentation-20260816.html">Presentation</a><a href="podcasts.html">Podcasts</a><a href="portal.html">Demo portal</a><a href="contact.html">Contact / walkthrough</a><a href="disclaimer.html">Disclaimer</a></nav></div></footer>
 </div></body>
 </html>

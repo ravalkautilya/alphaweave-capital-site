@@ -1,0 +1,9 @@
+/* One compact, consistent footer on every public page. */
+footer.aw-site-footer{display:block;width:100%;margin:0;padding:28px 4%;border-top:1px solid #cad8ce;background:#eef2eb;color:#50615d;text-align:left;font:14px/1.6 Arial,Helvetica,sans-serif}
+.aw-site-footer .footer-inner{display:flex;flex-direction:column;align-items:flex-start;gap:16px;width:100%;max-width:1325px;margin:0 auto;padding:0}
+.aw-site-footer .footer-links{display:flex;flex-wrap:wrap;align-items:center;gap:4px 24px;margin:0;padding:0}
+.aw-site-footer .footer-links a{display:inline-flex;align-items:center;min-height:44px;color:#075644;font-size:14px;text-decoration:none}
+.aw-site-footer .footer-links a:hover{text-decoration:underline}
+.aw-site-footer a:focus-visible{outline:3px solid #b77d26;outline-offset:3px}
+.aw-site-footer p.footer-disclaimer{width:100%;max-width:1000px;margin:0;padding:0;color:#50615d;font:13px/1.6 Arial,Helvetica,sans-serif}
+@media(max-width:600px){footer.aw-site-footer{padding:24px 6%}.aw-site-footer .footer-links{gap:4px 20px}}
