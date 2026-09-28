@@ -20,7 +20,7 @@
 <meta property="og:image:alt" content="AlphaWeave assistant comparing asset and strategy choices"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://alphaweavecapital.com/#organization", "name": "AlphaWeave Capital", "url": "https://alphaweavecapital.com/", "logo": "https://alphaweavecapital.com/assets/alphaweave-brand.svg?v=emerald-1"}, {"@type": "WebSite", "@id": "https://alphaweavecapital.com/#website", "name": "AlphaWeave Capital", "url": "https://alphaweavecapital.com/", "publisher": {"@id": "https://alphaweavecapital.com/#organization"}}, {"@type": "WebPage", "@id": "https://alphaweavecapital.com/platform.html#webpage", "url": "https://alphaweavecapital.com/platform.html", "name": "AlphaWeave Capital Platform | AI Decision Infrastructure for Investment Teams", "description": "AlphaWeave Capital is AI decision infrastructure for investment teams: plug into existing strategies, data, risk, execution, and reporting systems, then govern and replay allocation decisions.", "isPartOf": {"@id": "https://alphaweavecapital.com/#website"}}]}</script>
 <link href="mascot-cards.css?v=1" rel="stylesheet"/>
-<link href="platform-topics.css?v=1" rel="stylesheet"/>
+<link href="platform-topics.css?v=3" rel="stylesheet"/>
 </head>
 <body>
 <header class="site-header aw-site-header">
@@ -70,6 +70,29 @@
 <div><span>AI/PSM review</span><strong>Use AI to adjust conviction, not to bypass discipline.</strong><p>PSM means position size multiple. The overlay can press, reduce, or hold size inside policy and risk limits.</p></div>
 <div><span>Replay and attribution</span><strong>Show exactly what changed returns and drawdown.</strong><p>Trade tracker events, risk-capped weights, and run reports make the decision path inspectable after the fact.</p></div>
 </div>
+</div>
+</section>
+<section class="section risk-management" id="risk-management" aria-labelledby="risk-management-title">
+<div class="container">
+<div class="section-heading">
+<h2 id="risk-management-title">Risk Management</h2>
+<p>Keep portfolio decisions within configured exposure, position-size, drawdown, and mandate constraints. Risk controls constrain proposed allocations before execution, independently of AI-generated recommendations.</p>
+</div>
+<section class="capital-management" id="capital-management" aria-labelledby="capital-management-title">
+<div class="section-heading">
+<h3 id="capital-management-title">Capital Management</h3>
+<p><strong>Decide where capital goes, how much is deployed, and why.</strong></p>
+<p>AlphaWeave connects asset and strategy selection to portfolio allocation. The capital management layer translates selected opportunities into position sizes within the configured capital budget, sleeve allocations, and portfolio limits.</p>
+</div>
+<ol class="capital-flow">
+<li><h4>Set the capital budget</h4><p>Start with the run's configured capital and cash reserve. These settings establish the budget for portfolio allocation.</p></li>
+<li><h4>Allocate across sleeves</h4><p>A sleeve is a portion of the portfolio with its own assets and strategies. Allocation groups define how capital is distributed within the configured portfolio structure.</p></li>
+<li><h4>Size each position</h4><p>Translate the allocation into position weights. A position size multiplier (PSM) can increase or reduce the proposed size according to the configured policy and decision review.</p></li>
+<li><h4>Apply portfolio limits</h4><p>Check proposed exposure against position, gross and net exposure, and other configured risk constraints. Sizing recommendations remain subject to the risk management layer.</p></li>
+<li><h4>Measure the outcome</h4><p>Use trade events, portfolio weights, and capital-weighted reports to follow capital changes and assess the contribution of selection, sizing, and execution.</p></li>
+</ol>
+<p class="capital-boundary"><strong>Capital management and risk management work together.</strong> Capital management determines the proposed allocation and size; risk management constrains what the portfolio is allowed to hold. AI-assisted conviction does not override those limits.</p>
+</section>
 </div>
 </section>
 <section class="section band">
