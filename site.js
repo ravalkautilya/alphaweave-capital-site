@@ -79,7 +79,10 @@ document.querySelectorAll("video").forEach((video) => {
     }
   };
 
-  video.addEventListener("loadedmetadata", resetVideoStart, {once: true});
+  video.addEventListener("loadedmetadata", () => {
+    // Do not interrupt a visitor who pressed Play while metadata was loading.
+    if (video.paused && video.currentTime !== 0) video.currentTime = 0;
+  }, {once: true});
   video.addEventListener("ended", resetVideoStart);
 });
 

@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>AlphaWeave Capital Trade Blotter Replay</title>
 <meta content="Interactive AlphaWeave Capital trade blotter replay with named market regimes, simulated sleeve events, risk-capped weights, and PSM resizing." name="description"/>
-<link href="assets/alphaweave-brand-mark.svg" rel="icon"/>
+<link href="assets/alphaweave-brand-mark.svg?v=emerald-1" rel="icon"/>
 <link href="site.css?v=20260927-white-nav-2" rel="stylesheet"/>
 <style>
     .blotter-page {
@@ -85,7 +85,7 @@
     }
     .blotter-control-grid {
       display: grid;
-      grid-template-columns: 1.2fr 1.2fr repeat(3, minmax(130px, 0.7fr));
+      grid-template-columns: repeat(2, minmax(0, 1.2fr)) repeat(3, minmax(0, 0.7fr));
       gap: 12px;
     }
     .blotter-checks {
@@ -303,7 +303,7 @@
       }
     }
   </style>
-<link href="site-header.css?v=3" rel="stylesheet"/><link href="light-theme.css?v=2" rel="stylesheet"/>
+<link href="site-header.css?v=4" rel="stylesheet"/><link href="light-theme.css?v=2" rel="stylesheet"/>
 <link href="site-footer.css?v=1" rel="stylesheet"/>
 <link rel="canonical" href="https://alphaweavecapital.com/trade-blotter.html"/>
 <meta property="og:type" content="website"/>
@@ -313,16 +313,27 @@
 <meta property="og:url" content="https://alphaweavecapital.com/trade-blotter.html"/>
 <meta property="og:image" content="https://alphaweavecapital.com/assets/alphaweave-assistant-selection.png"/>
 <meta property="og:image:alt" content="AlphaWeave assistant comparing asset and strategy choices"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://alphaweavecapital.com/#organization", "name": "AlphaWeave Capital", "url": "https://alphaweavecapital.com/", "logo": "https://alphaweavecapital.com/assets/alphaweave-brand.svg"}, {"@type": "WebSite", "@id": "https://alphaweavecapital.com/#website", "name": "AlphaWeave Capital", "url": "https://alphaweavecapital.com/", "publisher": {"@id": "https://alphaweavecapital.com/#organization"}}, {"@type": "WebPage", "@id": "https://alphaweavecapital.com/trade-blotter.html#webpage", "url": "https://alphaweavecapital.com/trade-blotter.html", "name": "AlphaWeave Capital Trade Blotter Replay", "description": "Interactive AlphaWeave Capital trade blotter replay with named market regimes, simulated sleeve events, risk-capped weights, and PSM resizing.", "isPartOf": {"@id": "https://alphaweavecapital.com/#website"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://alphaweavecapital.com/#organization", "name": "AlphaWeave Capital", "url": "https://alphaweavecapital.com/", "logo": "https://alphaweavecapital.com/assets/alphaweave-brand.svg?v=emerald-1"}, {"@type": "WebSite", "@id": "https://alphaweavecapital.com/#website", "name": "AlphaWeave Capital", "url": "https://alphaweavecapital.com/", "publisher": {"@id": "https://alphaweavecapital.com/#organization"}}, {"@type": "WebPage", "@id": "https://alphaweavecapital.com/trade-blotter.html#webpage", "url": "https://alphaweavecapital.com/trade-blotter.html", "name": "AlphaWeave Capital Trade Blotter Replay", "description": "Interactive AlphaWeave Capital trade blotter replay with named market regimes, simulated sleeve events, risk-capped weights, and PSM resizing.", "isPartOf": {"@id": "https://alphaweavecapital.com/#website"}}]}</script>
+<style>
+.blotter-app .blotter-field{min-width:0;align-content:start}
+.blotter-app .blotter-field select{min-width:0;max-width:100%;width:100%;box-sizing:border-box}
+.blotter-app .blotter-fixed-value{min-width:0;max-width:100%;padding:12px;border:1px solid #a6bcb0;border-radius:8px;background:#fffef9;color:#142321;font-weight:700;line-height:1.5;overflow-wrap:anywhere;box-sizing:border-box}
+.blotter-app .blotter-checks{min-width:0;flex-wrap:wrap}
+</style>
 </head>
 <body class="blotter-page">
 <header class="site-header aw-site-header">
 <nav aria-label="Primary navigation" class="nav">
-<a aria-label="AlphaWeave Capital home" class="brand" href="./"><img alt="AlphaWeave Capital" height="62" src="assets/alphaweave-brand.svg" width="240"/></a>
+<a aria-label="AlphaWeave Capital home" class="brand" href="./"><img alt="AlphaWeave Capital" height="62" src="assets/alphaweave-brand.svg?v=emerald-1" width="240"/></a>
 <div class="nav-links" data-nav-links="" id="home-navigation">
-<a href="product.html">Product</a><a href="platform.html">Platform</a><a href="how-it-works.html">How it works</a><a href="architecture.html">Architecture</a><a href="pricing.html">Pricing</a>
-<a href="presentation-20260816.html">Presentation</a><a href="podcasts.html">Podcasts</a><a href="pipeline.html">Pipeline</a><a href="market-neutral.html">Market neutral</a><a aria-current="page" href="trade-blotter.html">Trade blotter</a>
-<a class="portal-link" href="portal.html">Demo portal</a><a class="button compact" href="contact.html">Book a walkthrough <span aria-hidden="true">→</span></a>
+<a href="./">Home</a>
+<a href="platform.html">Platform</a>
+<a href="pricing.html">Pricing</a>
+<a href="presentation-20260816.html">Presentation</a>
+<a href="podcasts.html">Podcasts</a>
+<a href="portal.html">Demo portal</a>
+<a href="contact.html">Contact / walkthrough</a>
+<a href="disclaimer.html">Disclaimer</a>
 </div>
 </nav>
 </header>
@@ -334,7 +345,7 @@
 <p class="lede">Select a named regime, replay BUY, SELL, RESIZE, and NO_EXEC events, and watch risk-capped weights, position size multiple, and simulated sleeve state change through time.</p>
 <div class="hero-actions">
 <a class="button" href="#blotter">Open replay</a>
-<a class="button secondary" data-content-icon="workflow" href="platform.html"><svg aria-hidden="true" class="action-icon" data-icon="workflow" focusable="false" viewBox="0 0 24 24"><path d="M3 3h6v6H3z M15 15h6v6h-6z M6 9v9h9 M9 6h9v9"></path></svg>Back to platform</a>
+<a class="button secondary" data-content-icon="workflow" href="portal.html"><svg aria-hidden="true" class="action-icon" data-icon="workflow" focusable="false" viewBox="0 0 24 24"><path d="M3 3h6v6H3z M15 15h6v6h-6z M6 9v9h9 M9 6h9v9"></path></svg>Back to demo portal</a>
 </div>
 </div>
 </section>
@@ -384,16 +395,16 @@
 </div>
 </div>
 <div class="blotter-field">
-<label>Target active assets</label>
-<input disabled="" value="regime-defined"/>
+<span class="blotter-title">Target active assets</span>
+<div class="blotter-fixed-value">Regime-defined</div>
 </div>
 <div class="blotter-field">
-<label>Risk posture</label>
-<input disabled="" value="regime-defined"/>
+<span class="blotter-title">Risk posture</span>
+<div class="blotter-fixed-value">Regime-defined</div>
 </div>
 <div class="blotter-field">
-<label>Scope</label>
-<input disabled="" value="single rotatable sleeve"/>
+<span class="blotter-title">Scope</span>
+<div class="blotter-fixed-value">Single rotatable sleeve</div>
 </div>
 </section>
 <section class="blotter-cards">
@@ -455,7 +466,7 @@
 </section>
 </main>
 <footer class="site-footer aw-site-footer"><div class="footer-inner"><nav class="footer-links" aria-label="Footer navigation"><a href="./">Home</a><a href="platform.html">Platform</a><a href="pricing.html">Pricing</a><a href="presentation-20260816.html">Presentation</a><a href="podcasts.html">Podcasts</a><a href="portal.html">Demo portal</a><a href="contact.html">Contact / walkthrough</a><a href="disclaimer.html">Disclaimer</a></nav></div></footer>
-<script src="site.js"></script>
+<script src="site.js?v=20260928-media"></script>
 <script>
     (() => {
       const app = document.querySelector("[data-static-trade-blotter]");

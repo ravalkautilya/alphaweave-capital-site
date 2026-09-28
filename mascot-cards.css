@@ -1,0 +1,6 @@
+/* Content-specific mascot scenes sit above, never behind, button text. */
+html body main button[data-click-card][data-title]:not(:disabled){background-image:none!important;background-color:#fffef9!important;overflow:hidden;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start}
+html body main button[data-click-card][data-title]:not(:disabled)::after{background:none!important}
+html body main button[data-click-card][data-title]:not(:disabled) .mascot-card-scene{display:block;position:relative;width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;grid-column:1/-1;flex:0 0 auto;margin:0 0 16px;border-radius:8px;opacity:1;filter:none;background:#eef2eb}
+html body main button[data-click-card][data-title]:not(:disabled):hover{background-color:#f4f8f0!important}
+html body main button[data-click-card][data-title]:not(:disabled).is-active{background-color:#e2eee5!important}

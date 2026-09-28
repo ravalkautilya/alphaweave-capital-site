@@ -13,20 +13,20 @@
 .aw-site-header .nav-links .button:hover,.aw-site-header .nav-links .button[aria-current=page]{background:#093e33;color:white}
 .aw-site-header+main>.hero{padding-top:64px}
 .site-header.aw-site-header{padding:0;margin:0;min-height:0;border-radius:0;box-shadow:none;text-align:left}
-/* Equal link cells keep both rows aligned and every destination visible. */
-.aw-site-header .nav{display:grid;grid-template-columns:240px minmax(0,1fr);align-items:center;gap:32px;padding:20px 4%}
-.aw-site-header .nav-links{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));width:100%;gap:8px 12px;font-size:11px;white-space:normal}
-.aw-site-header .nav-links>a:not(.button),.aw-site-header .nav-links>.button{display:flex;align-items:center;justify-content:center;min-height:48px;height:100%;padding:10px 8px;text-align:center;white-space:normal;line-height:1.4}
-.aw-site-header .nav-links .portal-link{border-left:0;padding-left:8px;color:#075644}
-.aw-site-header .nav-links .button{gap:6px}
+/* Give the menu the full width below the brand, with one desktop row. */
+.aw-site-header .nav{display:flex;flex-direction:column;align-items:center;gap:12px;max-width:1600px;padding:18px 24px 10px}
+.aw-site-header .nav-links{display:flex;flex-wrap:nowrap;justify-content:space-between;width:100%;gap:12px;font-size:12px;font-weight:600;text-transform:none;white-space:nowrap}
+.aw-site-header .nav-links>a:not(.button),.aw-site-header .nav-links>.button{display:flex;align-items:center;justify-content:center;flex:0 0 auto;min-height:44px;padding:10px 4px;text-align:center;white-space:nowrap;line-height:1.4}
+.aw-site-header .nav-links .portal-link{border-left:0;padding-left:4px!important;color:#075644}
+.aw-site-header .nav-links .button{gap:6px;padding:10px 12px;font-size:12px;text-transform:none;letter-spacing:0}
 .aw-site-header a:focus-visible{outline:3px solid #b77d26;outline-offset:4px}
-@media(max-width:1150px){
- .aw-site-header .nav{grid-template-columns:1fr;gap:16px}
- .aw-site-header .nav-links{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:1199px){
+ .aw-site-header .nav-links{flex-wrap:wrap;justify-content:center;gap:4px 20px}
 }
 @media(max-width:600px){
  .aw-site-header .nav{padding:16px 6%;gap:12px}
  .aw-site-header .brand img{width:210px}
- .aw-site-header .nav-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 12px}
+ .aw-site-header .nav-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 12px}
+ .aw-site-header .nav-links>a:not(.button),.aw-site-header .nav-links>.button{white-space:normal}
  .aw-site-header+main>.hero{padding-top:40px}
 }
