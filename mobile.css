@@ -1,3 +1,11 @@
+/* Long presentation examples scroll inside their own container. */
+.presentation-page,.presentation-page *{box-sizing:border-box}
+.presentation-page main,.presentation-page main>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+.presentation-page pre{max-width:100%;overflow:auto}
+.presentation-page code{overflow-wrap:anywhere;white-space:normal}
+.presentation-page pre code{white-space:pre}
+.presentation-page main table{display:block;max-width:100%;overflow-x:auto}
+.presentation-page .footer-inner{max-width:100%;min-width:0}
 /* Phone layout: visible navigation, readable controls, and stacked content. */
 @media(max-width:600px){
  .aw-site-header .nav-links{font-size:14px}

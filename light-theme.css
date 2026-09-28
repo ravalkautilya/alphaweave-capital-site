@@ -415,3 +415,11 @@ table{color:#142321}th{background:#e5eee5!important;color:#075644!important}td{b
 /* Use content-specific SVGs instead of a repeated mascot thumbnail. */
 .button::before,button.card h3::before,button.feature-card h3::before,button.timeline-item h3::before,.context-panel strong::before,.metric-strip>button>strong::before,.ops-console button>strong::before,.audit-ledger button>strong::before,.lane-item>strong::before,.policy-steps button>strong::before,.diagnostic-list button>strong::before,.control-plane-list button>strong::before{display:none!important}
 .action-icon{display:inline-block;vertical-align:middle;width:24px;height:24px;flex:0 0 24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-right:10px;color:inherit}.button .action-icon{width:20px;height:20px;flex-basis:20px;margin-right:0}[data-click-card] .action-icon{color:#075644}
+
+/* Stronger text contrast wherever decorative artwork sits behind card copy.
+   Keep artwork, numbered badges, and original card geometry unchanged. */
+html body main :is(.platform-graph-card,[data-pricing-scene],button[data-click-card][data-title]){
+  --text:#0b1916;--muted:#10221b;color:#0b1916!important;
+}
+html body main :is(.platform-graph-card,[data-pricing-scene],button[data-click-card][data-title]) :is(h2,h3,h4,strong){color:#0b1916!important}
+html body main :is(.platform-graph-card,[data-pricing-scene],button[data-click-card][data-title]) :is(p,li,em,small,.inline-detail){color:#10221b!important}

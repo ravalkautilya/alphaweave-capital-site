@@ -248,7 +248,7 @@
     #commercial-comparison .comp{min-width:0;overflow-wrap:anywhere;}
 </style>
 <link href="assets/alphaweave-brand-mark.svg?v=brand-colors-2" rel="icon"/>
-<link href="site-header.css?v=4" rel="stylesheet"/><link href="light-theme.css?v=2" rel="stylesheet"/>
+<link href="site-header.css?v=4" rel="stylesheet"/><link href="light-theme.css?v=3" rel="stylesheet"/>
 <link href="site-footer.css?v=1" rel="stylesheet"/>
 <meta name="description" content="Explore AlphaWeave Capital: systematic portfolio allocation, strategy selection, AI-assisted review, risk controls, and performance attribution."/>
 <link rel="canonical" href="https://alphaweavecapital.com/presentation-20260816.html"/>
@@ -262,18 +262,18 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://alphaweavecapital.com/#organization", "name": "AlphaWeave Capital", "url": "https://alphaweavecapital.com/", "logo": "https://alphaweavecapital.com/assets/alphaweave-brand.svg?v=brand-colors-2"}, {"@type": "WebSite", "@id": "https://alphaweavecapital.com/#website", "name": "AlphaWeave Capital", "url": "https://alphaweavecapital.com/", "publisher": {"@id": "https://alphaweavecapital.com/#organization"}}, {"@type": "WebPage", "@id": "https://alphaweavecapital.com/presentation-20260816.html#webpage", "url": "https://alphaweavecapital.com/presentation-20260816.html", "name": "AlphaWeave Capital - Allocation Intelligence Decision Infrastructure", "description": "Explore AlphaWeave Capital: systematic portfolio allocation, strategy selection, AI-assisted review, risk controls, and performance attribution.", "isPartOf": {"@id": "https://alphaweavecapital.com/#website"}}]}</script>
 <link href="mobile.css?v=1" rel="stylesheet"/>
 </head>
-<body><header class="site-header aw-site-header">
+<body class="presentation-page"><header class="site-header aw-site-header">
 <nav aria-label="Primary navigation" class="nav">
 <a aria-label="AlphaWeave Capital home" class="brand" href="./"><img alt="AlphaWeave Capital" height="62" src="assets/alphaweave-brand.svg?v=brand-colors-2" width="240"/></a>
 <div class="nav-links" data-nav-links="" id="home-navigation">
 <a href="./">Home</a>
 <a href="platform.html">Platform</a>
 <a href="pricing.html">Pricing</a>
-<a aria-current="page" href="presentation-20260816.html">Presentation</a>
 <a href="podcasts.html">Podcasts</a>
 <a href="portal.html">Demo portal</a>
 <a href="contact.html">Contact / walkthrough</a>
 <a href="disclaimer.html">Disclaimer</a>
+<a aria-current="page" href="presentation-20260816.html">For Nerds</a>
 </div>
 </nav>
 </header>
@@ -301,30 +301,30 @@
 <section id="executive-summary">
 <h2>Executive Summary</h2>
 <p>
-    AlphaWeave Capital is <strong>allocation intelligence decision infrastructure</strong>
+    AlphaWeave Capital is allocation intelligence decision infrastructure
     designed to improve the governance, risk profile, and measured contribution of existing strategies.
     Rather than replacing strategies with opaque AI predictions, AlphaWeave Capital augments them
     through a structured decision process that determines:
-    <strong>which strategy to run, which assets to trade, how to allocate capital, and how to measure what helped</strong>
+    which strategy to run, which assets to trade, how to allocate capital, and how to measure what helped
     under current market conditions.
   </p>
 <p>
-<strong>AlphaWeave Capital is a governed allocation layer built on top of strategies - not a strategy itself.</strong>
+AlphaWeave Capital is a governed allocation layer built on top of strategies - not a strategy itself.
 </p>
 <p>
-    The system operates in a <strong>sleeve-based architecture</strong>, where each sleeve represents
+    The system operates in a sleeve-based architecture, where each sleeve represents
     a distinct objective (e.g., directional or market-neutral). Within each sleeve,
-    <strong>AssetAllocationAgent</strong> selects the most relevant assets using a combination of
-    market data, statistical signals, and <strong>strategy-specific asset fit profiles</strong>.
-    In parallel, <strong>StrategyAllocationAgent</strong> evaluates candidate strategies based on
+    AssetAllocationAgent selects the most relevant assets using a combination of
+    market data, statistical signals, and strategy-specific asset fit profiles.
+    In parallel, StrategyAllocationAgent evaluates candidate strategies based on
     current regime conditions and recent performance, selecting the
-    <strong>most appropriate strategy or set of strategies</strong> for deployment.
-    This ensures that <strong>strategy selection and asset selection are co-dependent</strong>.
+    most appropriate strategy or set of strategies for deployment.
+    This ensures that strategy selection and asset selection are co-dependent.
   </p>
 <p>
-    For market-neutral or basket sleeves, AlphaWeave evaluates <strong>cross-asset relationships</strong>
+    For market-neutral or basket sleeves, AlphaWeave evaluates cross-asset relationships
     such as correlation stability, volatility alignment, liquidity compatibility, and spread behavior.
-    This allows the system to construct portfolios aligned with the <strong>functional objective of the sleeve</strong>,
+    This allows the system to construct portfolios aligned with the functional objective of the sleeve,
     rather than selecting standalone assets in isolation.
   </p>
 <p>
@@ -334,30 +334,30 @@
     In compact mode, prior realized outcomes, cached intelligence, and transition-tape evidence are
     compressed into the DecisionMakingAgent packet. In expanded mode, DecisionReviewAgent and the
     intelligence/reflection agents can run as separate context builders for diagnostics.
-    The DecisionMakingAgent then produces both a <strong>trade action</strong> (BUY / SELL / HOLD) and a
-    <strong>position_size_multiplier (PSM)</strong>, which represents conviction.
+    The DecisionMakingAgent then produces both a trade action (BUY / SELL / HOLD) and a
+    position_size_multiplier (PSM), which represents conviction.
   </p>
 <p>
     This PSM is passed to the PortfolioAgent, which converts conviction into
-    <strong>realized capital allocation</strong>. As a result, AlphaWeave does not simply refine execution -
-    it dynamically determines <strong>how much capital to deploy</strong>, scaling exposure up for
+    realized capital allocation. As a result, AlphaWeave does not simply refine execution -
+    it dynamically determines how much capital to deploy, scaling exposure up for
     high-confidence opportunities and reducing exposure when conviction is weaker.
-    Execution is therefore driven by <strong>timing, holding horizon, and conviction-based sizing</strong>,
+    Execution is therefore driven by timing, holding horizon, and conviction-based sizing,
     rather than binary trade decisions alone.
   </p>
 <p>
-    At the portfolio level, <strong>PortfolioAgent</strong> manages both
-    <strong>intra-sleeve</strong> and <strong>inter-sleeve</strong> allocation, translating
+    At the portfolio level, PortfolioAgent manages both
+    intra-sleeve and inter-sleeve allocation, translating
     PSM-adjusted signals into consistent portfolio weights across assets, strategies, and sleeves.
-    <strong>RiskManagerAgent</strong> enforces constraints and can override or scale positions when
+    RiskManagerAgent enforces constraints and can override or scale positions when
     risk thresholds are breached, ensuring that conviction-based allocation remains within the
     overall risk budget.
   </p>
 <p>
     Empirically, this layered approach should be evaluated through stage attribution rather than
     through a single opaque performance number. Improvements can come from two sources:
-    <strong>(1) better selection</strong> (strategy rotation and strategy-aware asset selection) and
-    <strong>(2) better execution</strong> (conviction-based capital allocation via PSM, combined with timing and risk control).
+    (1) better selection (strategy rotation and strategy-aware asset selection) and
+    (2) better execution (conviction-based capital allocation via PSM, combined with timing and risk control).
     The result is a clearer separation between signal quality, asset selection, strategy selection,
     AI-assisted sizing, execution quality, and risk control.
   </p>
@@ -368,8 +368,8 @@
     synthetic scenarios or annualized estimates.
   </p>
 <p>
-<strong>Bottom line:</strong> AlphaWeave Capital determines
-    <strong>what to trade, when to trade, how much capital to allocate, and what actually added value</strong>,
+Bottom line: AlphaWeave Capital determines
+    what to trade, when to trade, how much capital to allocate, and what actually added value,
     using a unified framework that integrates selection, sizing, risk management,
     outcome memory, and performance attribution.
   </p>
@@ -2708,6 +2708,6 @@ flowchart TD
 </p>
 </section>
 </main>
-<footer class="site-footer aw-site-footer"><div class="footer-inner"><nav class="footer-links" aria-label="Footer navigation"><a href="./">Home</a><a href="platform.html">Platform</a><a href="pricing.html">Pricing</a><a href="presentation-20260816.html">Presentation</a><a href="podcasts.html">Podcasts</a><a href="portal.html">Demo portal</a><a href="contact.html">Contact / walkthrough</a><a href="disclaimer.html">Disclaimer</a></nav></div></footer>
+<footer class="site-footer aw-site-footer"><div class="footer-inner"><nav class="footer-links" aria-label="Footer navigation"><a href="./">Home</a><a href="platform.html">Platform</a><a href="pricing.html">Pricing</a><a href="podcasts.html">Podcasts</a><a href="portal.html">Demo portal</a><a href="contact.html">Contact / walkthrough</a><a href="disclaimer.html">Disclaimer</a><a href="presentation-20260816.html">For Nerds</a></nav></div></footer>
 </div></body>
 </html>
