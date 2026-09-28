@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>AlphaWeave Capital Pricing | Platform, Modules, Usage, and Enterprise Deployment</title>
 <meta content="AlphaWeave Capital pricing is structured around platform access, modules, usage volume, enterprise integration, and carefully governed performance-linked arrangements where appropriate." name="description"/>
-<link href="assets/alphaweave-brand-mark.svg?v=emerald-1" rel="icon"/>
+<link href="assets/alphaweave-brand-mark.svg?v=brand-colors-2" rel="icon"/>
 <link href="site.css?v=20260927-white-nav-2" rel="stylesheet"/>
 <link href="site-header.css?v=4" rel="stylesheet"/><link href="light-theme.css?v=2" rel="stylesheet"/>
 <link href="site-footer.css?v=1" rel="stylesheet"/>
@@ -18,12 +18,14 @@
 <meta property="og:url" content="https://alphaweavecapital.com/pricing.html"/>
 <meta property="og:image" content="https://alphaweavecapital.com/assets/alphaweave-assistant-selection.png"/>
 <meta property="og:image:alt" content="AlphaWeave assistant comparing asset and strategy choices"/>
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://alphaweavecapital.com/#organization", "name": "AlphaWeave Capital", "url": "https://alphaweavecapital.com/", "logo": "https://alphaweavecapital.com/assets/alphaweave-brand.svg?v=emerald-1"}, {"@type": "WebSite", "@id": "https://alphaweavecapital.com/#website", "name": "AlphaWeave Capital", "url": "https://alphaweavecapital.com/", "publisher": {"@id": "https://alphaweavecapital.com/#organization"}}, {"@type": "WebPage", "@id": "https://alphaweavecapital.com/pricing.html#webpage", "url": "https://alphaweavecapital.com/pricing.html", "name": "AlphaWeave Capital Pricing | Platform, Modules, Usage, and Enterprise Deployment", "description": "AlphaWeave Capital pricing is structured around platform access, modules, usage volume, enterprise integration, and carefully governed performance-linked arrangements where appropriate.", "isPartOf": {"@id": "https://alphaweavecapital.com/#website"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://alphaweavecapital.com/#organization", "name": "AlphaWeave Capital", "url": "https://alphaweavecapital.com/", "logo": "https://alphaweavecapital.com/assets/alphaweave-brand.svg?v=brand-colors-2"}, {"@type": "WebSite", "@id": "https://alphaweavecapital.com/#website", "name": "AlphaWeave Capital", "url": "https://alphaweavecapital.com/", "publisher": {"@id": "https://alphaweavecapital.com/#organization"}}, {"@type": "WebPage", "@id": "https://alphaweavecapital.com/pricing.html#webpage", "url": "https://alphaweavecapital.com/pricing.html", "name": "AlphaWeave Capital Pricing | Platform, Modules, Usage, and Enterprise Deployment", "description": "AlphaWeave Capital pricing is structured around platform access, modules, usage volume, enterprise integration, and carefully governed performance-linked arrangements where appropriate.", "isPartOf": {"@id": "https://alphaweavecapital.com/#website"}}]}</script>
+<link href="mobile.css?v=1" rel="stylesheet"/>
+<link href="pricing-scenes.css?v=2" rel="stylesheet"/>
 </head>
 <body>
 <header class="site-header aw-site-header">
 <nav aria-label="Primary navigation" class="nav">
-<a aria-label="AlphaWeave Capital home" class="brand" href="./"><img alt="AlphaWeave Capital" height="62" src="assets/alphaweave-brand.svg?v=emerald-1" width="240"/></a>
+<a aria-label="AlphaWeave Capital home" class="brand" href="./"><img alt="AlphaWeave Capital" height="62" src="assets/alphaweave-brand.svg?v=brand-colors-2" width="240"/></a>
 <div class="nav-links" data-nav-links="" id="home-navigation">
 <a href="./">Home</a>
 <a href="platform.html">Platform</a>
@@ -63,7 +65,7 @@
 <p>The cleanest model separates the always-on platform from optional modules and measurable usage. That gives smaller teams a practical entry point while giving banks and asset managers a way to expand into deeper integrations, more desks, and stricter governance.</p>
 </div>
 <div class="pricing-grid">
-<article class="pricing-card">
+<article class="pricing-card" data-pricing-scene="base-platform">
 <span>01</span>
 <h3>Base Platform Fee</h3>
 <p>The base platform fee covers the core decision infrastructure: authenticated access, organization controls, run records, entitlement checks, audit trails, dashboard replay contracts, and the shared workflow for strategy, asset, sleeve, risk, and policy review.</p>
@@ -76,7 +78,7 @@
 </ul>
 <strong>Economic logic: customers pay for the operating layer that makes allocation decisions inspectable and repeatable.</strong>
 </article>
-<article class="pricing-card">
+<article class="pricing-card" data-pricing-scene="modules">
 <span>02</span>
 <h3>Module Fees</h3>
 <p>Modules price the specialized capabilities layered onto the platform. A research team may start with backtesting and attribution, while a trading desk may add paper trading, live trade scheduling, policy simulation, or white-label reporting.</p>
@@ -90,7 +92,7 @@
 </ul>
 <strong>Economic logic: teams pay for the capabilities they actually deploy instead of buying one oversized bundle.</strong>
 </article>
-<article class="pricing-card">
+<article class="pricing-card" data-pricing-scene="usage">
 <span>03</span>
 <h3>Usage And Volume Fees</h3>
 <p>Usage fees meter the workload created by the platform. The natural units are not page views; they are investment workflow units: assets reviewed, strategies compared, sleeves governed, backtests run, AI reviews completed, trade windows scheduled, and reports generated.</p>
@@ -104,7 +106,7 @@
 </ul>
 <strong>Economic logic: cost scales with the customer footprint and compute-intensive decision work.</strong>
 </article>
-<article class="pricing-card">
+<article class="pricing-card" data-pricing-scene="integration">
 <span>04</span>
 <h3>Enterprise Support And Integration Fee</h3>
 <p>Enterprise deployments often require more than software access. They may need private cloud or internal deployment, security review, custom data connectors, broker integration, model governance, report packaging, SSO, network controls, and desk-specific rollout support.</p>
@@ -118,7 +120,7 @@
 </ul>
 <strong>Economic logic: enterprise value comes from fit, control, and successful adoption inside existing infrastructure.</strong>
 </article>
-<article class="pricing-card pricing-card-wide">
+<article class="pricing-card pricing-card-wide" data-pricing-scene="performance-contract">
 <span>05</span>
 <h3>Optional Performance-Linked Contract</h3>
 <p>Performance-linked terms can make sense in limited cases, but they should be handled carefully. AlphaWeave Capital should usually price as software and infrastructure first. A performance-linked component may be appropriate only where the customer, mandate, legal structure, attribution method, and compliance posture support it.</p>
@@ -172,12 +174,7 @@
 </div>
 </div>
 </section>
-<section class="section band">
-<div class="container cta-panel">
-<h2>Price AlphaWeave Capital around the workflow it governs: decisions, capital, risk, and evidence.</h2>
 
-</div>
-</section>
 </main>
 <footer class="site-footer aw-site-footer"><div class="footer-inner"><nav class="footer-links" aria-label="Footer navigation"><a href="./">Home</a><a href="platform.html">Platform</a><a href="pricing.html">Pricing</a><a href="presentation-20260816.html">Presentation</a><a href="podcasts.html">Podcasts</a><a href="portal.html">Demo portal</a><a href="contact.html">Contact / walkthrough</a><a href="disclaimer.html">Disclaimer</a></nav></div></footer>
 <script src="site.js?v=20260928-media"></script>

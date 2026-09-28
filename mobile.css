@@ -1,0 +1,16 @@
+/* Phone layout: visible navigation, readable controls, and stacked content. */
+@media(max-width:600px){
+ .aw-site-header .nav-links{font-size:14px}
+ .aw-site-header .nav-links>a{min-height:44px}
+ main input:not([type=checkbox]):not([type=radio]),main select,main textarea{font-size:16px;max-width:100%;box-sizing:border-box}
+ main button,main a.button{min-height:44px}
+ .hero.assistant-scene>.container{grid-template-columns:minmax(0,1fr);gap:24px}
+ .assistant-scene-art{width:100%;max-width:100%;margin:0}
+ .hero-art .market-scene{flex-direction:column;min-height:0;gap:12px}
+ .hero-art .market-assistant{width:42%;align-self:center;margin:0}
+ .hero-art .market-chart{width:100%;max-width:100%;margin:0}
+ .market-history figcaption{font-size:12px;line-height:1.6}
+ .portal-form-grid{grid-template-columns:minmax(0,1fr)}
+ .portal-form-grid>*{min-width:0}
+ .platform-topic>summary{min-height:44px}
+}

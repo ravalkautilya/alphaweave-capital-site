@@ -18,12 +18,13 @@
 .capital-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:0;list-style:none;counter-reset:capital-step}
 .capital-flow>li{counter-increment:capital-step;background:#fffef9;border:1px solid #cad8ce;border-radius:12px;padding:22px;min-width:0}
 .capital-flow>li::before{content:counter(capital-step);display:inline-grid;place-items:center;width:32px;height:32px;background:#075644;color:white;border-radius:50%;font-weight:700}
-.capital-flow h4{font-size:19px;margin:14px 0 10px;color:#142321}
+.capital-flow h3{font-size:19px;margin:14px 0 10px;color:#142321}
 .capital-flow p,.capital-boundary{line-height:1.65;color:#40564b}
 .capital-boundary{margin-top:24px;max-width:960px}
 @media(max-width:900px){.capital-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.capital-flow{grid-template-columns:1fr}}
 
 .risk-management{background:#eef2eb;color:#142321}
-.risk-management .capital-management{margin-top:32px;border-top:1px solid #cad8ce;padding-top:24px}
-#capital-management-title{font-size:26px;color:#142321}
+.capital-management{border-top:1px solid #cad8ce}
+
+.capital-risk-controls{background:#eef2eb;color:#142321;border-top:1px solid #cad8ce}

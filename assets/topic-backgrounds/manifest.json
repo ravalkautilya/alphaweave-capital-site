@@ -1,0 +1,230 @@
+[
+  {
+    "key": "measure-ai",
+    "label": "Measure AI",
+    "description": "Baseline and overlay contributions on opposite sides of a neutral line.",
+    "asset": "assets/topic-backgrounds/measure-ai.svg"
+  },
+  {
+    "key": "govern-capital",
+    "label": "Govern capital",
+    "description": "Capital passes policy, risk, and access gates.",
+    "asset": "assets/topic-backgrounds/govern-capital.svg"
+  },
+  {
+    "key": "plug-in",
+    "label": "Plug in",
+    "description": "Existing data, strategy, and execution components connect to one adapter.",
+    "asset": "assets/topic-backgrounds/plug-in.svg"
+  },
+  {
+    "key": "switch-selection",
+    "label": "Strategy and asset switching",
+    "description": "Incumbent and candidate paths meet a comparison gate.",
+    "asset": "assets/topic-backgrounds/switch-selection.svg"
+  },
+  {
+    "key": "conviction-review",
+    "label": "AI/PSM review",
+    "description": "Reviewed conviction moves size within lower and upper bounds.",
+    "asset": "assets/topic-backgrounds/conviction-review.svg"
+  },
+  {
+    "key": "replay-attribution",
+    "label": "Replay and attribution",
+    "description": "A replay timeline connects decisions to positive and negative contributions.",
+    "asset": "assets/topic-backgrounds/replay-attribution.svg"
+  },
+  {
+    "key": "capital-budget",
+    "label": "Set the capital budget",
+    "description": "Capital is split between deployed allocation and retained cash.",
+    "asset": "assets/topic-backgrounds/capital-budget.svg"
+  },
+  {
+    "key": "sleeve-allocation",
+    "label": "Allocate across sleeves",
+    "description": "A portfolio budget branches into three sleeve allocations.",
+    "asset": "assets/topic-backgrounds/sleeve-allocation.svg"
+  },
+  {
+    "key": "position-sizing",
+    "label": "Size each position",
+    "description": "A base position passes through a size multiplier to a proposed weight.",
+    "asset": "assets/topic-backgrounds/position-sizing.svg"
+  },
+  {
+    "key": "portfolio-limits",
+    "label": "Apply portfolio limits",
+    "description": "Position exposure bars remain beneath a configured limit.",
+    "asset": "assets/topic-backgrounds/portfolio-limits.svg"
+  },
+  {
+    "key": "capital-outcome",
+    "label": "Measure the outcome",
+    "description": "Recorded weights connect to capital-weighted outcome rows.",
+    "asset": "assets/topic-backgrounds/capital-outcome.svg"
+  },
+  {
+    "key": "market-regimes",
+    "label": "Regime replay",
+    "description": "Distinct trend, shock, and range segments appear along a replay path.",
+    "asset": "assets/topic-backgrounds/market-regimes.svg"
+  },
+  {
+    "key": "sleeve-state",
+    "label": "Sleeve state",
+    "description": "Selected assets, strategy, and position weights share a sleeve record.",
+    "asset": "assets/topic-backgrounds/sleeve-state.svg"
+  },
+  {
+    "key": "decision-record",
+    "label": "Decision record",
+    "description": "Timestamped event rows record changing positions.",
+    "asset": "assets/topic-backgrounds/decision-record.svg"
+  },
+  {
+    "key": "asset-managers",
+    "label": "Asset Managers",
+    "description": "A manager mandate routes through allocation to client reports.",
+    "asset": "assets/topic-backgrounds/asset-managers.svg"
+  },
+  {
+    "key": "bank-controls",
+    "label": "Banks",
+    "description": "Internal systems sit behind a security boundary with an audit record.",
+    "asset": "assets/topic-backgrounds/bank-controls.svg"
+  },
+  {
+    "key": "quantamental",
+    "label": "Quantamental Teams",
+    "description": "Quantitative signals and reviewed evidence meet at a forward test.",
+    "asset": "assets/topic-backgrounds/quantamental.svg"
+  },
+  {
+    "key": "noise-filter",
+    "label": "Reduce noise",
+    "description": "A noisy raw signal is compared with a smoother filtered path.",
+    "asset": "assets/topic-backgrounds/noise-filter.svg"
+  },
+  {
+    "key": "governance-evidence",
+    "label": "Improve governance",
+    "description": "Context, mandate, risk, and history converge on one review.",
+    "asset": "assets/topic-backgrounds/governance-evidence.svg"
+  },
+  {
+    "key": "explain-performance",
+    "label": "Explain performance",
+    "description": "Four attribution stages show both contribution and drag.",
+    "asset": "assets/topic-backgrounds/explain-performance.svg"
+  },
+  {
+    "key": "capital-before-execution",
+    "label": "Not just execution",
+    "description": "Reviewed signal becomes capital intent before execution.",
+    "asset": "assets/topic-backgrounds/capital-before-execution.svg"
+  },
+  {
+    "key": "adaptive-exposure",
+    "label": "Not fixed exposure",
+    "description": "Allocation composition changes between two market regimes.",
+    "asset": "assets/topic-backgrounds/adaptive-exposure.svg"
+  },
+  {
+    "key": "inspectable-ai",
+    "label": "Not black-box AI",
+    "description": "Visible prompt, response, and risk packets are retained together.",
+    "asset": "assets/topic-backgrounds/inspectable-ai.svg"
+  },
+  {
+    "key": "before-review",
+    "label": "Before",
+    "description": "A signal is examined before it passes a capital gate.",
+    "asset": "assets/topic-backgrounds/before-review.svg"
+  },
+  {
+    "key": "during-decision",
+    "label": "During",
+    "description": "Reviewed evidence leads to an action, size, and risk-aware intent.",
+    "asset": "assets/topic-backgrounds/during-decision.svg"
+  },
+  {
+    "key": "after-memory",
+    "label": "After",
+    "description": "An outcome report is filed into a reusable organizational archive.",
+    "asset": "assets/topic-backgrounds/after-memory.svg"
+  },
+  {
+    "key": "recover-research",
+    "label": "Recover",
+    "description": "A paused run resumes from a preserved checkpoint.",
+    "asset": "assets/topic-backgrounds/recover-research.svg"
+  },
+  {
+    "key": "inspect-evidence",
+    "label": "Inspect",
+    "description": "Model input and output documents are examined with a magnifier.",
+    "asset": "assets/topic-backgrounds/inspect-evidence.svg"
+  },
+  {
+    "key": "attribute-stages",
+    "label": "Attribute",
+    "description": "A waterfall separates base strategy from switching and sizing effects.",
+    "asset": "assets/topic-backgrounds/attribute-stages.svg"
+  },
+  {
+    "key": "pair-relationship",
+    "label": "Pair-aware",
+    "description": "Two correlated asset paths are examined as one relationship.",
+    "asset": "assets/topic-backgrounds/pair-relationship.svg"
+  },
+  {
+    "key": "neutrality-envelope",
+    "label": "Neutrality",
+    "description": "Long and short exposures balance around a central neutrality target.",
+    "asset": "assets/topic-backgrounds/neutrality-envelope.svg"
+  },
+  {
+    "key": "basket-outcome",
+    "label": "Outcome",
+    "description": "Long and short contributions are compared with the resulting basket.",
+    "asset": "assets/topic-backgrounds/basket-outcome.svg"
+  },
+  {
+    "key": "basket-quality",
+    "label": "Basket quality",
+    "description": "A suitability matrix checks correlation, volatility, liquidity, and spread.",
+    "asset": "assets/topic-backgrounds/basket-quality.svg"
+  },
+  {
+    "key": "regime-strategy-fit",
+    "label": "Strategy fit",
+    "description": "A regime selector routes to trend or mean-reversion behavior.",
+    "asset": "assets/topic-backgrounds/regime-strategy-fit.svg"
+  },
+  {
+    "key": "long-short-capital",
+    "label": "Capital balance",
+    "description": "Relative long and short sizes remain within a sleeve budget.",
+    "asset": "assets/topic-backgrounds/long-short-capital.svg"
+  },
+  {
+    "key": "reviewer-trail",
+    "label": "Visible",
+    "description": "Named review stations leave traceable handoffs in the decision chain.",
+    "asset": "assets/topic-backgrounds/reviewer-trail.svg"
+  },
+  {
+    "key": "deterministic-controls",
+    "label": "Controlled",
+    "description": "Mandatory rules constrain routing and outputs at a control gate.",
+    "asset": "assets/topic-backgrounds/deterministic-controls.svg"
+  },
+  {
+    "key": "audit-trail",
+    "label": "Auditable",
+    "description": "Linked prompt, response, reuse, and outcome records form an audit trail.",
+    "asset": "assets/topic-backgrounds/audit-trail.svg"
+  }
+]

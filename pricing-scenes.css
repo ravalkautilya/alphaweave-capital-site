@@ -1,0 +1,11 @@
+/* Decorative scenes stay behind every pricing-card label and control. */
+.pricing-grid .pricing-card{position:relative;isolation:isolate;overflow:hidden;background:#eef2eb!important}
+.pricing-grid .pricing-card::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:var(--pricing-scene);background-repeat:no-repeat;background-position:right center;background-size:auto 100%;opacity:.12;filter:saturate(.7)}
+.pricing-grid .pricing-card>*{position:relative;z-index:1}
+@media(max-width:600px){.pricing-grid .pricing-card::before{background-position:center;opacity:.09}}
+
+[data-pricing-scene="base-platform"]{--pricing-scene:url("assets/pricing-base-platform-scene.png")}
+[data-pricing-scene="modules"]{--pricing-scene:url("assets/pricing-modules-scene.png")}
+[data-pricing-scene="usage"]{--pricing-scene:url("assets/pricing-usage-scene.png")}
+[data-pricing-scene="integration"]{--pricing-scene:url("assets/pricing-integration-scene.png")}
+[data-pricing-scene="performance-contract"]{--pricing-scene:url("assets/pricing-performance-contract-scene.png")}
