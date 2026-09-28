@@ -1,0 +1,3 @@
+Method: built-in image_gen tool; edited alphaweave-assistant-thumbs-up.png.
+Final prompt:
+Edit target: attached AlphaWeave marshmallow mascot. Create its matching concerned/frowning portfolio-health icon. Preserve the same white 3D marshmallow character, emerald green cap and shirt, existing AW monogram, rendering style and close-up square framing. Change smile to a clear gentle downturned frown and eyes to concerned eyes. Remove the raised thumbs-up hand; hands lowered out of frame. Face must remain legible at 32px. Transparent background, no scene, no text, no border, no extra objects.

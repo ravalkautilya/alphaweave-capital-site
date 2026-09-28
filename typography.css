@@ -1,0 +1,16 @@
+/* Canonical interface font for the public website and application. */
+:root {
+  --aw-font-sans: Arial, Helvetica, sans-serif;
+  --aw-font-mono: Consolas, 'Liberation Mono', monospace;
+}
+body,
+body :where(h1,h2,h3,h4,h5,h6,p,a,div,span,section,article,header,footer,nav,
+  main,aside,ul,ol,li,dl,dt,dd,table,thead,tbody,tr,th,td,caption,label,legend,
+  fieldset,form,input,select,textarea,button,option,optgroup,summary,details,
+  dialog,strong,b,em,i,small,blockquote,figcaption) {
+  font-family: var(--aw-font-sans) !important;
+}
+/* Technical evidence remains distinguishable from interface copy. */
+body :is(pre,code,kbd,samp), body :is(pre,code,kbd,samp) * {
+  font-family: var(--aw-font-mono) !important;
+}

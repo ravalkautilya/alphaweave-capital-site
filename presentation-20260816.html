@@ -12,15 +12,15 @@
       startOnLoad: true,
       theme: "base",
       flowchart: {
-        useMaxWidth: true,
+        useMaxWidth: false,
         curve: "basis",
         nodeSpacing: 40,
         rankSpacing: 55,
         padding: 12
       },
       themeVariables: {
-        fontFamily: "Inter, system-ui, sans-serif",
-        fontSize: "16px",
+        fontFamily: "Arial, Helvetica, sans-serif",
+        fontSize: "20px",
         primaryColor: "#eef2ff",
         primaryTextColor: "#0f172a",
         primaryBorderColor: "#3b82f6",
@@ -48,7 +48,7 @@
       color:#e8efff;padding:70px 28px 62px;overflow:hidden;
     }
     header .wrap{max-width:1200px;margin:0 auto;}
-    header h1{font-size:44px;margin:0 0 12px;font-weight:900;letter-spacing:-.02em;}
+    header h1{font-size:44px;margin:0 0 12px;font-weight:700;letter-spacing:-.02em;}
     header p{max-width:980px;font-size:18px;opacity:.95;margin:0 0 18px;}
     .hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
     .badge{font-size:12px;font-weight:700;letter-spacing:.02em;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.20);background:rgba(255,255,255,.08);color:#f1f5ff;backdrop-filter:blur(8px);}
@@ -57,12 +57,12 @@
     section{background:#fff;border-radius:18px;padding:30px 34px;margin-bottom:28px;box-shadow:var(--shadow);border:var(--border);}
     section.first-section{margin-top:26px;padding-top:42px;}
 
-    h2{margin-top:0;font-size:28px;font-weight:900;letter-spacing:-.01em;}
-    h3{margin-top:22px;font-size:20px;font-weight:800;}
+    h2{margin-top:0;font-size:28px;font-weight:700;letter-spacing:-.01em;}
+    h3{margin-top:22px;font-size:20px;font-weight:600;}
     p{margin:10px 0;} ul{margin:10px 0 0 20px;}
 
     .tags{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 16px;}
-    .tag{font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;color:#fff;}
+    .tag{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;color:#fff;}
     .tag.data{background:#111827;}
     .tag.orchestration{background:#334155;}
     .tag.research{background:var(--cyan);}
@@ -98,7 +98,7 @@
       background:radial-gradient(400px 120px at 20% 0%, rgba(59,130,246,.12), transparent 60%);
       pointer-events:none;
     }
-    .card .title{font-weight:900;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+    .card .title{font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:10px;}
 
     .dot{width:10px;height:10px;border-radius:999px;display:inline-block;}
     .dot.data{background:#111827;}
@@ -114,8 +114,8 @@
 
     .subsections{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:8px;}
     .subcard{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:12px 12px 10px;box-shadow:0 6px 16px rgba(15,23,42,.06);}
-    .subcard h4{margin:0 0 8px;font-size:14px;font-weight:900;letter-spacing:-.01em;display:flex;align-items:center;gap:8px;}
-    .pill{display:inline-block;font-size:11px;font-weight:900;padding:2px 8px;border-radius:999px;background:#ecfeff;border:1px solid #bae6fd;color:#0f172a;}
+    .subcard h4{margin:0 0 8px;font-size:14px;font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:8px;}
+    .pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:#ecfeff;border:1px solid #bae6fd;color:#0f172a;}
     .pill.ref{background:#e0f2fe;border-color:#bae6fd;}
     .subcard ul{margin:0 0 0 18px;padding:0;}
     .submeta{color:var(--muted);font-size:12px;margin-top:8px;font-weight:700;}
@@ -135,8 +135,8 @@
     .comparison{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:16px;}
     .comp{border-radius:16px;border:1px solid #e6e9ef;background:linear-gradient(180deg,#ffffff,#f8fafc);padding:18px;box-shadow:0 8px 22px rgba(15,23,42,.08);}
     .comp strong{display:block;margin-bottom:8px;font-size:16px;}
-    .comp .label{font-size:12px;font-weight:800;color:#0f172a;display:inline-block;padding:4px 10px;border-radius:999px;background:#eef2ff;border:1px solid #dbeafe;margin-bottom:10px;}
-    .comp em{font-style:normal;font-weight:800;color:#1d4ed8;}
+    .comp .label{font-size:12px;font-weight:600;color:#0f172a;display:inline-block;padding:4px 10px;border-radius:999px;background:#eef2ff;border:1px solid #dbeafe;margin-bottom:10px;}
+    .comp em{font-style:normal;font-weight:600;color:#1d4ed8;}
 
     footer{text-align:center;color:#64748b;font-size:13px;padding:30px 20px 50px;}
 
@@ -261,6 +261,9 @@
 <meta property="og:image:alt" content="AlphaWeave assistant comparing asset and strategy choices"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://alphaweavecapital.com/#organization", "name": "AlphaWeave Capital", "url": "https://alphaweavecapital.com/", "logo": "https://alphaweavecapital.com/assets/alphaweave-brand.svg?v=brand-colors-2"}, {"@type": "WebSite", "@id": "https://alphaweavecapital.com/#website", "name": "AlphaWeave Capital", "url": "https://alphaweavecapital.com/", "publisher": {"@id": "https://alphaweavecapital.com/#organization"}}, {"@type": "WebPage", "@id": "https://alphaweavecapital.com/presentation-20260816.html#webpage", "url": "https://alphaweavecapital.com/presentation-20260816.html", "name": "AlphaWeave Capital - Allocation Intelligence Decision Infrastructure", "description": "Explore AlphaWeave Capital: systematic portfolio allocation, strategy selection, AI-assisted review, risk controls, and performance attribution.", "isPartOf": {"@id": "https://alphaweavecapital.com/#website"}}]}</script>
 <link href="mobile.css?v=1" rel="stylesheet"/>
+<link rel="stylesheet" href="button-controls.css?v=1"/>
+<link rel="stylesheet" href="typography.css?v=1"/>
+<link rel="stylesheet" href="readability.css?v=1"/>
 </head>
 <body class="presentation-page"><header class="site-header aw-site-header">
 <nav aria-label="Primary navigation" class="nav">
@@ -281,9 +284,8 @@
 <header class="brand-header">
 <div class="wrap">
 <p>
-      Allocation intelligence software for systematic research and trading - designed to
-      decide which assets, strategies, and AI-assisted actions deserve capital, and to attribute
-      what actually improved returns.
+      Technical notes on asset and strategy selection, capital allocation, risk controls,
+      AI review, and performance attribution.
     </p>
 <div class="hero-badges">
 <span class="badge">Data Layer</span>
@@ -300,89 +302,16 @@
 <main>
 <section id="executive-summary">
 <h2>Executive Summary</h2>
-<p>
-    AlphaWeave Capital is allocation intelligence decision infrastructure
-    designed to improve the governance, risk profile, and measured contribution of existing strategies.
-    Rather than replacing strategies with opaque AI predictions, AlphaWeave Capital augments them
-    through a structured decision process that determines:
-    which strategy to run, which assets to trade, how to allocate capital, and how to measure what helped
-    under current market conditions.
-  </p>
-<p>
-AlphaWeave Capital is a governed allocation layer built on top of strategies - not a strategy itself.
-</p>
-<p>
-    The system operates in a sleeve-based architecture, where each sleeve represents
-    a distinct objective (e.g., directional or market-neutral). Within each sleeve,
-    AssetAllocationAgent selects the most relevant assets using a combination of
-    market data, statistical signals, and strategy-specific asset fit profiles.
-    In parallel, StrategyAllocationAgent evaluates candidate strategies based on
-    current regime conditions and recent performance, selecting the
-    most appropriate strategy or set of strategies for deployment.
-    This ensures that strategy selection and asset selection are co-dependent.
-  </p>
-<p>
-    For market-neutral or basket sleeves, AlphaWeave evaluates cross-asset relationships
-    such as correlation stability, volatility alignment, liquidity compatibility, and spread behavior.
-    This allows the system to construct portfolios aligned with the functional objective of the sleeve,
-    rather than selecting standalone assets in isolation.
-  </p>
-<p>
-    Once strategy and asset selection are determined, AlphaWeave evaluates the interaction between
-    the selected setup and the market. A triage layer determines whether compact AI/PSM underwriting
-    is worth spending LLM cycles, or whether the deterministic policy path should continue.
-    In compact mode, prior realized outcomes, cached intelligence, and transition-tape evidence are
-    compressed into the DecisionMakingAgent packet. In expanded mode, DecisionReviewAgent and the
-    intelligence/reflection agents can run as separate context builders for diagnostics.
-    The DecisionMakingAgent then produces both a trade action (BUY / SELL / HOLD) and a
-    position_size_multiplier (PSM), which represents conviction.
-  </p>
-<p>
-    This PSM is passed to the PortfolioAgent, which converts conviction into
-    realized capital allocation. As a result, AlphaWeave does not simply refine execution -
-    it dynamically determines how much capital to deploy, scaling exposure up for
-    high-confidence opportunities and reducing exposure when conviction is weaker.
-    Execution is therefore driven by timing, holding horizon, and conviction-based sizing,
-    rather than binary trade decisions alone.
-  </p>
-<p>
-    At the portfolio level, PortfolioAgent manages both
-    intra-sleeve and inter-sleeve allocation, translating
-    PSM-adjusted signals into consistent portfolio weights across assets, strategies, and sleeves.
-    RiskManagerAgent enforces constraints and can override or scale positions when
-    risk thresholds are breached, ensuring that conviction-based allocation remains within the
-    overall risk budget.
-  </p>
-<p>
-    Empirically, this layered approach should be evaluated through stage attribution rather than
-    through a single opaque performance number. Improvements can come from two sources:
-    (1) better selection (strategy rotation and strategy-aware asset selection) and
-    (2) better execution (conviction-based capital allocation via PSM, combined with timing and risk control).
-    The result is a clearer separation between signal quality, asset selection, strategy selection,
-    AI-assisted sizing, execution quality, and risk control.
-  </p>
-<p>
-    Unless a section explicitly says otherwise, realized return figures in this presentation are measured
-    over sampled short trading windows, not annualized. The current monthly evidence uses 10-business-day
-    measured windows; simulation and market-extension sections are labeled separately when they use
-    synthetic scenarios or annualized estimates.
-  </p>
-<p>
-Bottom line: AlphaWeave Capital determines
-    what to trade, when to trade, how much capital to allocate, and what actually added value,
-    using a unified framework that integrates selection, sizing, risk management,
-    outcome memory, and performance attribution.
-  </p>
-<h3 id="competitive-placement">Competitive Placement: Where AlphaWeave Capital Fits</h3>
-<p><a href="#commercial-comparison">Compare Aquata, Chadsel, InvestiQuant and Bracket22</a> alongside the open-source frameworks below.</p>
-<p>
-  The open-source trading ecosystem already proves there is large demand for algorithmic
-  trading infrastructure. The most popular free GitHub systems are strong, but they mostly
-  cluster around three jobs: running bots, researching models, or providing execution engines.
-  AlphaWeave Capital is positioned in a different layer: <strong>allocator-grade decision infrastructure
-  and attribution</strong> across strategy selection, asset selection, AI/PSM execution review,
-  risk controls, and measured-window reporting.
-</p>
+<p>AlphaWeave Capital helps a trading team choose assets and strategies, allocate capital, and review the results. It runs existing strategies through a shared set of selection, sizing, and risk rules. Reports show what each stage changed relative to a baseline.</p>
+<p>A portfolio is divided into sleeves, each with its own objective and constraints. A sleeve can hold a directional strategy or a basket of long and short positions. AssetAllocationAgent scores candidate assets using market data, statistical signals, and strategy-specific fit profiles. StrategyAllocationAgent evaluates candidate strategies against recent performance and market conditions. The two selections depend on each other.</p>
+<p>For basket sleeves, selection also considers relationships between assets: correlation, volatility, liquidity, and spread behavior. These checks help determine whether a group of positions still fits the sleeve's objective.</p>
+<p>The triage step decides whether a proposed trade needs AI review. Otherwise, execution follows the configured policy. In compact mode, DecisionMakingAgent receives one packet containing prior outcomes, cached market context, and records of earlier decisions. Expanded mode runs the intelligence, reflection, and decision-review agents separately for diagnosis. The output is a BUY, SELL, or HOLD action and a position size multiplier (PSM).</p>
+<p>PortfolioAgent applies the PSM when calculating position weights and allocating capital within and across sleeves. The multiplier expresses the model's proposed sizing adjustment; it is not a calibrated probability of success. RiskManagerAgent can cap, reduce, or override positions that breach configured limits. Timing and holding duration are evaluated alongside size.</p>
+<p>The reports separate the effects of strategy selection, asset selection, AI-assisted sizing, execution, and risk controls. A change can help or hurt. Comparing each stage against the same baseline makes those effects visible and gives the team a basis for retaining or revising a rule.</p>
+<p>The monthly results in this presentation use sampled 10-business-day trading windows. They are not annual returns. Sections using synthetic data or annualized validation targets are labeled separately.</p>
+<h3 id="competitive-placement">Where AlphaWeave fits</h3>
+<p><a href="#quantconnect-composer">Compare the workflow and infrastructure choices of QuantConnect, Composer and AlphaWeave</a>, or <a href="#commercial-comparison">compare Aquata, Chadsel, InvestiQuant and Bracket22</a>.</p>
+<p>Open-source projects cover bot execution, model research, and trading engines. AlphaWeave focuses on the decisions made around a strategy: which assets and strategies receive capital, which adjustments are allowed, and how each adjustment affects the measured result.</p>
 <div class="comparison">
 <div class="comp">
 <span class="label">Freqtrade</span>
@@ -411,9 +340,8 @@ Bottom line: AlphaWeave Capital determines
 <strong>Financial reinforcement-learning framework.</strong>
 <p>
       FinRL focuses on train-test-trade workflows for deep reinforcement-learning agents.
-      AlphaWeave uses AI differently: not as an unconstrained trading oracle, but as a governed
-      reviewer whose actions are filtered through confidence, state, beta/risk evidence,
-      duration rules, and executable portfolio events.
+      AlphaWeave uses AI to review proposed trades. Its recommendations are checked against
+      decision state, confidence settings, beta and risk evidence, duration rules, and portfolio events.
     </p>
 </div>
 <div class="comp">
@@ -427,50 +355,51 @@ Bottom line: AlphaWeave Capital determines
     </p>
 </div>
 </div>
-<p>
-<strong>Marketable wedge:</strong> AlphaWeave Capital is not another bot, model notebook,
-  or exchange connector. It is the allocation intelligence software layer that turns raw strategy
-  signals into <strong>governed capital decisions</strong>. The system records the source of truth
-  as portfolio trade events, rebases measured P and L to the evaluation window, and shows
-  whether value came from strategy selection, asset selection, AI-assisted sizing, duration
-  control, risk exits, or execution quality.
-</p>
-<p>
-<strong>Why this matters commercially:</strong> open-source engines help teams build and run
-  strategies; AlphaWeave helps investment teams defend allocation decisions. That is the
-  institutional gap: an auditable layer that explains why capital moved, what changed versus
-  the baseline, and whether the AI/PSM overlay actually improved the measured result.
-</p>
-<div class="callout dark">
-<strong>Merit over GitHub trading agents:</strong>
-  AlphaWeave Capital should not be positioned as simply "more AI" than open-source trading bots.
-  Its merit is that it solves a different problem: turning trading signals into an auditable
-  allocation process. Most free GitHub trading systems are strongest at bot execution,
-  backtesting, exchange connectivity, model research, or reinforcement-learning experimentation.
-  AlphaWeave is strongest when the buyer needs to know why capital moved, how strategy
-  switching contributed, how asset switching contributed, how AI/PSM changed return,
-  and whether the final portfolio event agrees with the decision audit and measured P and L.
+<p>AlphaWeave records portfolio trade events and measures P and L over the evaluation window. Its reports separate strategy switching, asset switching, AI-assisted sizing, holding duration, risk exits, and execution quality.</p>
+<p>A trading team can use these records to explain a change in allocation and check whether it improved the result against the baseline.</p>
+<div class="callout">Use the portfolio events, decision log, and attribution report together. They should agree on why an allocation changed, what was executed, and the resulting P and L.</div>
+<p>The AI review can propose changes to an action, holding period, or position size. The decision log and portfolio events allow those proposals to be checked against what was executed.</p>
+<p>The framework alone does not establish a strategy's profitability. Data quality, transaction costs, market conditions, and execution still matter. Stage-by-stage attribution helps the team distinguish these effects.</p>
+<style>
+#quantconnect-composer .comp{background:#f3f6ef;color:#142321;min-width:0;overflow-wrap:anywhere}
+#quantconnect-composer .comp .label{background:#e2eee4;color:#075644;border-color:#cad8ce}
+#quantconnect-composer a{color:#075644}
+@media(max-width:700px){#quantconnect-composer .comparison{grid-template-columns:minmax(0,1fr)}}
+</style>
+<section id="quantconnect-composer" aria-labelledby="workflow-comparison-title">
+<h3 id="workflow-comparison-title">QuantConnect, Composer and AlphaWeave: different ways to organize investment work</h3>
+<p class="caption">Reviewed September 28, 2026 against public product documentation. These are separate products. This comparison describes workflow and architecture choices, not a performance benchmark or an integration.</p>
+<div class="comparison">
+<article class="comp"><span class="label">QuantConnect</span><strong>A code-first research and execution platform</strong>
+<p>A project brings together code, settings, libraries and results. Teams can organize projects in folders and collaborate within organizations. Shared libraries support code reuse; organization and member permissions are already part of the platform.</p>
+<p>Its project-centered history is a useful model: open a project, open Backtest Results, then select an execution. Strategy development and inspection of earlier results remain connected.</p>
+<p>Choose this approach when custom algorithm development and control over the implementation are central to the work. AlphaWeave does not claim broader engine capability or superior team administration.</p>
+<p class="caption">Sources: <a href="https://www.quantconnect.com/docs/v2/cloud-platform/projects/structure">project structure</a>, <a href="https://www.quantconnect.com/docs/v2/cloud-platform/backtesting/getting-started">backtest history</a>, <a href="https://www.quantconnect.com/docs/v2/cloud-platform/organizations/members">team permissions</a>.</p></article>
+<article class="comp"><span class="label">Composer</span><strong>A visual strategy editor built around a saved symphony</strong>
+<p>A symphony combines assets, allocation weights, conditions, filters and groups. Nested blocks make the strategy's relationships visible. Users can edit the strategy and inspect a backtest; investing is a separate action.</p>
+<p>The lesson for AlphaWeave is to keep related choices together and make their connections understandable. A user changing a date should not have to rebuild the structure.</p>
+<p>Composer is a useful reference for approachable strategy construction. AlphaWeave's additional named structures are worthwhile only when reuse, portfolio constraints or decision evidence justify them.</p>
+<p class="caption">Sources: <a href="https://help.composer.trade/article/54-create-tutorial">building a symphony</a> and <a href="https://help.composer.trade/article/55-discover-tutorial">strategy details, editing and investing</a>.</p></article>
+<article class="comp"><span class="label">AlphaWeave</span><strong>Configuration-driven allocation and decision evidence</strong>
+<p>AlphaWeave makes sleeves, basket legs, allocation groups, asset groups and strategy groups explicit. Capital management decides how funds are distributed and positions are sized. Risk management constrains those decisions. Optional AI review and attribution provide evidence about what changed and its measured effect.</p>
+<p>The editable object is a configuration. A workspace organizes executions under a desk; a run records one execution and its configuration snapshot. Shared desk definitions can be reused across workspaces.</p>
+<p>This structure suits teams comparing allocation choices and inspecting their consequences. It adds concepts compared with a single visual strategy, and offers less open-ended customization than writing an algorithm. More layers alone do not make a better product.</p></article>
 </div>
-<p>
-  AlphaWeave is <strong>institutional allocation intelligence software</strong>
-  that measures, governs, and improves systematic trading decisions, with AI/PSM as a controlled
-  execution overlay. The LLM contributes through action review, duration control, sizing, and
-  risk response; the system makes those contributions measurable by proving which layer added value.
-</p>
-<p>
-  Popularity in open-source trading projects is not the same as demonstrated alpha. A bot framework,
-  model research platform, or execution engine can be valuable infrastructure while still leaving
-  alpha generation to the user-supplied strategy, data, costs, regime assumptions, and live execution
-  quality. AlphaWeave's advantage is that it separates those questions: strategy alpha, asset-selection
-  alpha, strategy-selection alpha, AI/PSM execution alpha, and attribution proof are measured as
-  distinct layers rather than blended into a single headline backtest.
-</p>
+<h4>The workflow choices we made</h4>
+<ul>
+<li><b>One configuration view:</b> structure connections and run-setting summaries appear together. Existing configurations open here; changing dates or capital does not require a structure walkthrough.</li>
+<li><b>A wizard for connected changes:</b> new configurations start with sleeves, basket legs, allocations, assets and strategies. Existing configurations use the same wizard when structures need editing. Each step keeps list, select-to-edit and create controls.</li>
+<li><b>One save for the configuration:</b> structure edits are draft changes. Review and save the whole configuration, then check readiness and explicitly start the execution. Saving does not launch a backtest or place a trade.</li>
+<li><b>One place to inspect executions:</b> select a saved configuration and follow Run history to the filtered My runs list. Results, portfolio health, reports and discussion remain attached to the selected execution. Editing and rerunning uses a copy of the recorded configuration.</li>
+</ul>
+<p>History currently follows the saved configuration file path and retains access restrictions. A copied or renamed file has a separate history; this is not a version-control or strategy-lineage system. The design borrows familiar interaction patterns without requiring either competitor's service.</p>
+</section>
 <section aria-labelledby="commercial-comparison-title" id="commercial-comparison">
-<h3 id="commercial-comparison-title">Commercial Landscape: Data, Services, Autotrading and AI Research</h3>
+<h3 id="commercial-comparison-title">Other products and services</h3>
 <p class="caption">Research updated September 26, 2026. This update postdates the presentation filename. Descriptions reflect public vendor material and interview coverage; comparison and product lessons are our assessment, not a hands-on benchmark.</p>
 <div class="callout dark" id="alphaweave-buyer-value"><strong>AlphaWeave's value: control the investment process and measure which decisions contributed.</strong>
 <p>AlphaWeave gives a portfolio team a configurable workflow from sleeve and basket-leg construction through allocation, asset and strategy selection, run execution and evidence review. Its attribution tooling separates a fixed baseline, strategy switching, asset switching, policy controls and the incremental AI/PSM overlay where the required evidence is available.</p>
-<p><b>The buyer's question:</b> Did changing the strategy, changing the assets or adding AI improve this portfolio after costs and risk? AlphaWeave is built to investigate that question with explicit configurations and comparison reports. The value is the ability to test and inspect investment decisions; positive investment results still have to be demonstrated.</p>
+<p>The buyer's question: Did changing the strategy, changing the assets or adding AI improve this portfolio after costs and risk? AlphaWeave is built to investigate that question with explicit configurations and comparison reports. The value is the ability to test and inspect investment decisions; positive investment results still have to be demonstrated.</p>
 </div>
 <h4>What a team gets from AlphaWeave</h4>
 <ul>
@@ -484,28 +413,28 @@ Bottom line: AlphaWeave Capital determines
 <span class="label">Aquata / Arcesium</span>
 <strong>Investment data infrastructure and AI-enabled operations</strong>
 <p>Aquata connects investment data sources, normalizes records, checks data quality and tracks lineage. Its public offering includes document extraction, reporting, access controls and MCP connectivity for AI tools. Arcesium also describes agent orchestration across its data and operational platforms.</p>
-<p><b>AlphaWeave comparison:</b> overlap in governed data, analytics and AI-assisted workflows. AlphaWeave's narrower emphasis is configuration-driven strategy and asset selection, portfolio runs and attribution. Aquata is a potential upstream data platform; an integration is a possibility, not an implemented connector or partnership.</p>
+<p>AlphaWeave comparison: overlap in governed data, analytics and AI-assisted workflows. AlphaWeave's narrower emphasis is configuration-driven strategy and asset selection, portfolio runs and attribution. Aquata is a potential upstream data platform; an integration is a possibility, not an implemented connector or partnership.</p>
 <p class="caption">Sources: <a href="https://aquata.ai/">Aquata platform</a>; <a href="https://www.businesswire.com/news/home/20260520686508/en/Arcesium-Launches-Comprehensive-AI-Platform-to-Operationalize-Agentic-AI-for-Institutional-Investment">Arcesium's May 20, 2026 announcement</a>.</p>
 </article>
 <article class="comp">
 <span class="label">Chadsel LLC</span>
 <strong>IT consulting, managed infrastructure and custom AI integration</strong>
 <p>Chadsel serves financial firms and other businesses with cybersecurity, cloud infrastructure, virtual CTO services and trading-system support. Its AI work integrates existing agent and model tools into client workflows, with local, hybrid or cloud deployment selected for the engagement.</p>
-<p><b>AlphaWeave comparison:</b> Chadsel sells implementation and operating expertise; AlphaWeave supplies a specific investment workflow application. A firm with that service model could help deploy or integrate a system such as AlphaWeave, but no commercial relationship is established here.</p>
+<p>AlphaWeave comparison: Chadsel sells implementation and operating expertise; AlphaWeave supplies a specific investment workflow application. A firm with that service model could help deploy or integrate a system such as AlphaWeave, but no commercial relationship is established here.</p>
 <p class="caption">Sources: <a href="https://www.chadsel.com/">Chadsel services</a>; <a href="https://www.chadsel.com/business-it/ai-agent-integration/">AI integration and deployment models</a>.</p>
 </article>
 <article class="comp">
 <span class="label">InvestiQuant</span>
 <strong>Professionally overseen, automated trading programs</strong>
 <p>InvestiQuant markets proprietary quantitative and AI/ML-based programs executed through clients' brokerage accounts. Its program page emphasizes intraday stock-index futures strategies and a hands-off investor experience.</p>
-<p><b>AlphaWeave comparison:</b> InvestiQuant offers participation in its strategies; AlphaWeave lets an operator configure and evaluate portfolio structures and runs. InvestiQuant reduces the investor's setup burden. AlphaWeave offers more configuration responsibility and flexibility. Program results cannot be compared with AlphaWeave backtests without matching instruments, dates, leverage, costs and measurement methods.</p>
+<p>AlphaWeave comparison: InvestiQuant offers participation in its strategies; AlphaWeave lets an operator configure and evaluate portfolio structures and runs. InvestiQuant reduces the investor's setup burden. AlphaWeave offers more configuration responsibility and flexibility. Program results cannot be compared with AlphaWeave backtests without matching instruments, dates, leverage, costs and measurement methods.</p>
 <p class="caption">Sources: <a href="https://www.investiquant.com/">InvestiQuant overview</a>; <a href="https://www.investiquant.com/hedge-fund-strategies-for-investors">Autotrading programs and brokerage workflow</a>.</p>
 </article>
 <article class="comp">
 <span class="label">Bracket22 / Brian Kelly</span>
 <strong>An investment manager using specialist AI research agents</strong>
 <p>In the September 8 CNBC interview, Kelly describes agents supporting market monitoring, technical analysis and quantitative research, with shared memory and human judgment over the final decision. This is an example of an AI-assisted investment operation; the reviewed material does not establish an equivalent self-service portfolio platform.</p>
-<p><b>AlphaWeave comparison:</b> both use AI to assist investment work. AlphaWeave's intended distinction is the explicit connection between configured portfolio decisions, run controls and measured attribution. Kelly's reported productivity and cost savings do not establish investment outperformance.</p>
+<p>AlphaWeave comparison: both use AI to assist investment work. AlphaWeave's intended distinction is the explicit connection between configured portfolio decisions, run controls and measured attribution. Kelly's reported productivity and cost savings do not establish investment outperformance.</p>
 <p class="caption">Sources: <a href="https://www.cnbc.com/2026/09/08/brian-kelly-bracket22-ai-agents.html">CNBC article supplied for comparison</a>; <a href="https://podcasts.apple.com/ca/podcast/metas-latest-ai-agent-and-an-ai-powered-hedge-fund-9-8-26/id215529509?i=1000788542866">CNBC episode listing</a>; <a href="https://podsearch.io/episodes/meta-s-latest-ai-agent-and-an-ai-powered-hedge-fund-9-8-26">third-party machine transcript, interview from 29:31</a>; <a href="https://bracket22.com/">Bracket22</a>.</p>
 <p class="caption">Source limitation: direct CNBC article access was blocked. Interview details above use the machine transcript and should be checked against the recording before external quotation.</p>
 </article>
@@ -522,10 +451,10 @@ Bottom line: AlphaWeave Capital determines
 </tbody>
 </table>
 </div>
-<h4>Which has more value?</h4>
-<p><b>For a portfolio team building and operating its own systematic investment process, AlphaWeave has the strongest fit among these descriptions when configurable decisions and attribution are the priority.</b> This is a buyer-fit judgment. Aquata addresses data foundations; Chadsel addresses implementation and operations; InvestiQuant addresses delegated strategy execution; Bracket22 illustrates AI-supported research. A firm can need more than one of these capabilities.</p>
-<p><b>Economic value must be measured:</b> shorter setup and review time, fewer configuration errors, reproducible decisions, and better net risk-adjusted outcomes against the same baseline. AlphaWeave's extra flexibility also creates configuration, data and operating work. No comparable total-cost study or independently verified head-to-head return comparison is available in this review, so a universal value or ROI winner cannot be established.</p>
-<h4>What AlphaWeave should learn from these offerings</h4>
+<h4>Choosing a product</h4>
+<p>AlphaWeave is intended for teams that operate their own systematic process and need configurable allocation rules and attribution. Aquata focuses on data, Chadsel on implementation and operations, InvestiQuant on delegated strategy execution, and Bracket22 on AI-assisted investment research. These address different needs; a firm may use more than one.</p>
+<p>Assess value through setup and review time, configuration errors, reproducibility, and net risk-adjusted results against a common baseline. AlphaWeave also requires configuration, data, and operating work. This review includes no comparable cost study or independent head-to-head return test.</p>
+<h4>Product improvements to carry forward</h4>
 <ul>
 <li><b>Aquata:</b> make source provenance and data-quality exceptions easy to inspect before a run.</li>
 <li><b>Chadsel:</b> explain deployment ownership, support and data boundaries as clearly as application features.</li>
@@ -533,14 +462,9 @@ Bottom line: AlphaWeave Capital determines
 <li><b>Bracket22:</b> make each assistant's role, evidence and human decision point explicit.</li>
 <li><b>AlphaWeave:</b> carry the selected parent through sleeve, basket leg, allocation and asset/strategy lists; show the associated children and one clear next action.</li>
 </ul>
-<div class="callout"><strong>Positioning to demonstrate:</strong> AlphaWeave connects portfolio configuration and optional AI review to run evidence and attribution. Demonstrate that claim with reproducible runs, baseline comparisons and desk-scoped access tests. This review does not establish superior returns, stronger security, regulatory readiness or better usability than the other offerings. Public marketing pages are not comparable to testing their authenticated products.</div>
+<div class="callout"><strong>Evidence still needed:</strong> AlphaWeave connects portfolio configuration and optional AI review to run evidence and attribution. That connection needs reproducible runs, baseline comparisons, and desk-scoped access tests. This review does not establish superior returns, stronger security, regulatory readiness or better usability than the other offerings. Public marketing pages are not comparable to testing their authenticated products.</div>
 </section>
-<div class="callout dark">
-<strong>Research update: why AlphaWeave treats LLMs as underwriters, not oracles.</strong>
-  Recent LLM-trading research points toward the same architecture AlphaWeave is moving into:
-  quantitative policy creates the base trade path, while the LLM supplies contextual underwriting,
-  vetoes, duration changes, and capital permission only when it adds evidence beyond policy.
-</div>
+<div class="callout">The research below informs the evaluation approach: start with a quantitative policy, then measure the effect of adding AI review. AI may propose a veto, a different holding period, or a sizing adjustment.</div>
 <div class="comparison">
 <div class="comp">
 <span class="label">StockBench</span>
@@ -568,7 +492,7 @@ Bottom line: AlphaWeave Capital determines
 <strong>Closed-loop evaluation is still weak across the field.</strong>
 <p>
       A 2026 survey of LLM trading agents finds inconsistent execution semantics, limited cost
-      modeling, sparse reproducibility, and poor protocol comparability. This validates AlphaWeave's
+      modeling, sparse reproducibility, and poor protocol comparability. These limitations inform AlphaWeave's
       emphasis on event logs, decision audit, measured-window P and L, state-machine replay, and
       explicit portfolio trade events.
     </p>
@@ -586,14 +510,7 @@ Bottom line: AlphaWeave Capital determines
 <p class="caption"><a href="https://www.frontiersin.org/journals/artificial-intelligence/articles/10.3389/frai.2025.1608365/full">Large Language Models in Equity Markets</a></p>
 </div>
 </div>
-<p>
-<strong>Why this approach was taken:</strong> the empirical question is no longer whether the LLM
-  can sound convincing about a trade. The question is whether it can improve a known policy path.
-  AlphaWeave therefore separates <strong>policy-only overlay</strong> from
-  <strong>triage + AI/PSM</strong>. The LLM earns value only when it improves return, reduces drawdown,
-  blocks a weak policy deviation, extends a validated winner, or justifies extra capital with
-  auditable external evidence.
-</p>
+<p>The evaluation compares a policy-only run with the same policy plus triage and AI/PSM. The comparison tests whether AI changes return, drawdown, holding duration, or capital use enough to justify its cost. A plausible explanation for a trade is not evidence of an improvement.</p>
 <p class="caption">
   Public reference set reviewed: <a href="https://github.com/freqtrade/freqtrade">Freqtrade</a>,
   <a href="https://github.com/microsoft/qlib">Microsoft Qlib</a>,
@@ -602,7 +519,7 @@ Bottom line: AlphaWeave Capital determines
   <a href="https://github.com/quantconnect/Lean">QuantConnect LEAN</a>, and
   <a href="https://github.com/nautechsystems/nautilus_trader">NautilusTrader</a>.
 </p>
-<h3 id="end-to-end-decision-flow">End-to-End Decision Flow (Single Bar)</h3>
+<h3 id="end-to-end-decision-flow">What happens on each bar</h3>
 <p>
   At each evaluation point (bar), AlphaWeave executes a consistent sequence of steps.
   This ensures that selection, decision-making, capital allocation, and risk management
@@ -640,49 +557,49 @@ Bottom line: AlphaWeave Capital determines
 <li><strong>Reporting + Memory:</strong> results, decision reviews, and outcomes are stored for future learning</li>
 </ol>
 <p>
-<strong>Key insight:</strong> PSM does not directly place trades - it becomes effective only after
+Key insight: PSM does not directly place trades - it becomes effective only after
   PortfolioAgent and RiskManager layers convert it into constrained portfolio weights.
 </p>
 </section>
 <section id="performance-summary">
-<h3>Month-by-Month Sampled Performance Impact (Executive Summary)</h3>
+<h3>Results by sampled trading window</h3>
 <p>
-    The table below summarizes the <strong>realized incremental return impact</strong>
-    from the latest completed sampled-window run for <strong>directional sleeves</strong>, relative to a
-    <strong>Static Base</strong>: one strategy, one fixed asset set, no strategy rotation,
+    The table below summarizes the realized incremental return impact
+    from the latest completed sampled-window run for directional sleeves, relative to a
+    Static Base: one strategy, one fixed asset set, no strategy rotation,
     no strategy-aware asset selection, and no AI execution overlay.
   </p>
 <p>
     The current AlphaWeave logic separates uplift into three layers:
-    <strong>(1) StrategyAllocationAgent</strong>, which selects the best strategy for the sleeve/regime;
-    <strong>(2) AssetAllocationAgent</strong>, which selects assets using return, trend, volatility,
-    drawdown, liquidity, and strategy-specific <strong>asset_fit</strong>; and
-    <strong>(3) the AI execution and review layer</strong>, where DecisionReviewAgent turns prior
-    outcomes into structured feedback, DecisionMakingAgent produces <strong>position_size_multiplier</strong>,
+    (1) StrategyAllocationAgent, which selects the best strategy for the sleeve/regime;
+    (2) AssetAllocationAgent, which selects assets using return, trend, volatility,
+    drawdown, liquidity, and strategy-specific asset_fit; and
+    (3) the AI execution and review layer, where DecisionReviewAgent turns prior
+    outcomes into structured feedback, DecisionMakingAgent produces position_size_multiplier,
     and PortfolioAgent applies that conviction to capital allocation.
   </p>
 <p>
     This changes the AI overlay from a light timing/risk filter into a
-    <strong>conviction-based capital allocator</strong>. High-confidence BUY decisions receive larger
+    conviction-based capital allocator. High-confidence BUY decisions receive larger
     sizing, weak signals are reduced, and PortfolioAgent converts those conviction-adjusted decisions
     into realized portfolio weights.
   </p>
 <p>
-<strong>DecisionReviewAgent update:</strong> the current architecture includes the newer self-learning feedback loop,
+DecisionReviewAgent update: the current architecture includes the newer self-learning feedback loop,
     where prior decisions and realized outcomes become structured inputs to future decisions. The monthly
     table reports realized sampled-window attribution; any additional learning benefit should be validated
     in future rolling out-of-sample runs rather than treated as a forecast.
   </p>
 <p>
-<strong>The monthly performance table now reports the latest completed sampled short-window run.</strong>
-The baseline strategy for this update is <strong>momentum</strong>, with fixed assets and no strategy
+The monthly performance table now reports the latest completed sampled short-window run.
+The baseline strategy for this update is momentum, with fixed assets and no strategy
 rotation, no asset switching, and no execution overlay. The table replaces the older forecast ranges
 with realized stage attribution: strategy switching, asset switching, and AI execution/policy review.
 </p>
 <p class="assumptions">
-<strong>Run basis:</strong> Results come from the latest completed 12-window full-stack sampled run.
+Run basis: Results come from the latest completed 12-window full-stack sampled run.
   Each row uses one representative 10-business-day measured window inside the named calendar month,
-  measured at <strong>6h</strong> granularity. The baseline strategy is <strong>momentum</strong>.
+  measured at 6h granularity. The baseline strategy is momentum.
   Baseline assets, candidate assets, and rotatable strategies vary by row and are shown directly
   in the table. The AI execution column is the combined execution overlay:
   deterministic policy without triage plus Compact AI/PSM over that policy path.
@@ -693,8 +610,8 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
   added return and whether drawdown improved or worsened relative to the prior layer.
 </p>
 <p>
-<strong>Time frame:</strong> Each row reports returns obtained over a
-  <strong>10-business-day measured trading window</strong> selected inside the named calendar month;
+Time frame: Each row reports returns obtained over a
+  10-business-day measured trading window selected inside the named calendar month;
   it is not a full-month or full-year backtest. The table therefore reports realized stage behavior
   for comparable 10-day windows, while the total row summarizes the combined sampled evidence across
   those windows.
@@ -720,61 +637,61 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
 <tfoot><tr><td><strong>Total</strong></td><td>Additive sampled pickups</td><td></td><td></td><td></td><td>6h</td><td>12 ten-day windows</td><td>Realized sum across sampled 10-day windows</td><td><strong>+2.68%</strong></td><td><strong>-1.01%</strong></td><td><strong>+5.29%</strong></td><td><strong>+6.97%</strong></td></tr></tfoot></table>
 </section>
 <section id="market-neutral-sleeves">
-<h2>Market-Neutral Sleeves: Alpha Capture Independent of Market Direction</h2>
+<h2>Market-neutral sleeves</h2>
 <p>
-    In <strong>market-neutral (risk-neutral) sleeves</strong>, the expected return of a
-    <strong>Static Base (single strategy, 2 fixed assets)</strong> is approximately
-    <strong>0%</strong> over time, because long and short exposures are designed to hedge
+    In market-neutral (risk-neutral) sleeves, the expected return of a
+    Static Base (single strategy, 2 fixed assets) is approximately
+    0% over time, because long and short exposures are designed to hedge
     out most broad market beta.
   </p>
 <p>
-<strong>Time frame:</strong> The measured figures in this section are not long-horizon annual returns. They are sampled
+Time frame: The measured figures in this section are not long-horizon annual returns. They are sampled
     10-business-day attribution results from the latest completed run, summed across the same 12
     calendar-month buckets used in the monthly performance table.
   </p>
 <p>
-    The numeric table below is evidenced by the latest <strong>directional full-stack sampled run</strong>.
+    The numeric table below is evidenced by the latest directional full-stack sampled run.
     It proves the stage-attribution ladder over sampled 10-business-day windows. It should not be read
     as a completed market-neutral sleeve backtest; market-neutral sleeves use the same attribution
     structure but require their own dedicated validation run.
   </p>
 <p class="assumptions">
-<strong>Run basis for measured component values:</strong> The table uses the same
+Run basis for measured component values: The table uses the same
   latest completed directional sampled run as the monthly table: twelve representative
-  10-business-day measured windows, <strong>6h</strong> bars, <strong>momentum</strong> baseline,
+  10-business-day measured windows, 6h bars, momentum baseline,
   row-specific baseline assets and candidate universes shown in the monthly evidence table, and
   Compact AI/PSM measured only as incremental over deterministic policy.
 </p>
 <p>
     AlphaWeave extends this framework by replacing static pairs with a
-    <strong>dynamic basket construction and selection process</strong>. Rather than fixing two assets,
+    dynamic basket construction and selection process. Rather than fixing two assets,
     the system evaluates a universe of candidates and constructs
-    <strong>long-short baskets</strong> based on correlation structure, volatility alignment,
+    long-short baskets based on correlation structure, volatility alignment,
     liquidity compatibility, and spread behavior. This ensures that neutrality is not assumed,
-    but <strong>continuously re-validated</strong> through data.
+    but continuously re-validated through data.
   </p>
 <p>
-    The opportunity comes from <strong>alpha capture</strong>:
+    The opportunity comes from alpha capture:
     selecting better relative-value assets, rotating among more effective spread and regime-sensitive strategies,
-    and applying AI to improve <strong>timing, holding horizon, and conviction-based capital allocation</strong>.
+    and applying AI to improve timing, holding horizon, and conviction-based capital allocation.
     In this setting, AlphaWeave is not relying on market direction - it is extracting value from
     <em>cross-asset relationships</em>, <em>strategy-asset fit</em>, and
-    <strong>relative capital deployment between long and short exposures</strong>.
+    relative capital deployment between long and short exposures.
   </p>
 <p>
-<strong>AssetAllocationAgent</strong> evaluates baskets using:
+AssetAllocationAgent evaluates baskets using:
     correlation stability, volatility similarity, liquidity matching, and
-    <strong>spread mean-reversion characteristics</strong>. This allows the system to avoid
-    structurally weak pairs and construct baskets with <strong>repeatable relative-value behavior</strong>.
-    <strong>StrategyAllocationAgent</strong> selects among strategies such as
-    <strong>mean-reversion, spread trading, momentum-relative value, and regime-switching models</strong>,
+    spread mean-reversion characteristics. This allows the system to avoid
+    structurally weak pairs and construct baskets with repeatable relative-value behavior.
+    StrategyAllocationAgent selects among strategies such as
+    mean-reversion, spread trading, momentum-relative value, and regime-switching models,
     depending on whether relationships are stable, breaking down, or transitioning.
   </p>
 <p>
-    Sleeve neutrality is now documented as an explicit <strong>mandate constraint</strong>, not just
+    Sleeve neutrality is now documented as an explicit mandate constraint, not just
     a descriptive sleeve label. A market-neutral sleeve can declare <code>net_target</code>,
     <code>gross_target</code>, <code>beta_target</code>, and a <code>beta_benchmark_ticker</code>
-    such as <code>SPY</code>. <strong>SleeveConstraintAgent</strong> reads the sleeve's final
+    such as <code>SPY</code>. SleeveConstraintAgent reads the sleeve's final
     portfolio weights, pulls the benchmark price history from the same <code>market_data</code>
     context as the tradable assets, estimates asset betas over <code>beta_lookback_bars</code>,
     and records whether the sleeve remained inside its mandate.
@@ -823,18 +740,12 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
 </tr>
 </tbody>
 </table>
-<p>
-<strong>Key distinction:</strong> traditional market-neutral systems assume that a pair remains valid.
-    AlphaWeave instead continuously evaluates whether relationships are <strong>stable, degrading,
-    or improving</strong>, and dynamically adjusts both the composition of the basket and the
-    <strong>capital allocated to each side of the trade</strong>. This transforms market-neutral trading
-    from a static hedge into an <strong>adaptive, conviction-weighted alpha-generation process</strong>.
-  </p>
+<p>AlphaWeave checks whether the relationships in a basket remain stable and adjusts allocations as those relationships change. The resulting positions still have to meet the sleeve's exposure and risk limits.</p>
 </section>
 <section id="sleeve-constraint-agent">
-<h2>SleeveConstraintAgent: Mandate Enforcement and Beta Benchmarking</h2>
+<h2>Sleeve constraints and beta measurement</h2>
 <p>
-<strong>SleeveConstraintAgent</strong> is the sleeve-level mandate checker. It runs after the system has
+SleeveConstraintAgent is the sleeve-level mandate checker. It runs after the system has
     produced decision or position weights and before those weights are treated as final evidence for
     execution and reporting. Its purpose is to make sleeve intent auditable: directional sleeves should
     remain directional, market-neutral sleeves should remain close to their net/gross/beta targets, and
@@ -931,7 +842,7 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
   </div>
 </section>
 <section id="policy-files">
-<h2>Policy Files: The Governance Layer Behind the Agents</h2>
+<h2>Policy files and execution rules</h2>
 <p>
     AlphaWeave Capital does not rely on a single prompt, a hidden model opinion, or a hard-coded
     trading rule to decide whether capital moves. The system uses explicit policy files as the
@@ -940,8 +851,8 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
     change size or duration, and how every decision must be audited.
   </p>
 <p>
-    External research platforms such as <strong>Seeking Alpha</strong> fit into this architecture as
-    <strong>context providers</strong>, not execution authorities. Seeking Alpha publishes market news,
+    External research platforms such as Seeking Alpha fit into this architecture as
+    context providers, not execution authorities. Seeking Alpha publishes market news,
     investing analysis, contributor commentary, ratings context, portfolio tools, and earnings-call
     transcripts. AlphaWeave can use that material inside LatestMarketIntelligence and
     PastMarketIntelligence to describe catalysts, management commentary, crowd consensus, or
@@ -987,7 +898,7 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
 <strong><code>config/stage-acceptance-policy.json</code></strong>
 <p>
         Controls whether AI/PSM changes are executable. The current contract treats the LLM as a
-        <strong>contextual underwriter over policy</strong>: policy proposes the base action and base
+        contextual underwriter over policy: policy proposes the base action and base
         PSM, while the LLM may approve, veto, cap, press, reduce, extend, or shorten only when
         confidence and external evidence justify the increment. The file defines state-machine bands
         for fresh entries, open winners, strong winners, rebound watch, open losers, hard risk, and
@@ -1063,7 +974,7 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
   </p>
 </section>
 <section class="first-section" id="multi-agentic-ai-components">
-<h2>Multi-Agentic AI Components (Core Value Proposition)</h2>
+<h2>Agents and their responsibilities</h2>
 <div class="tags">
 <span class="tag data">Data</span>
 <span class="tag orchestration">Orchestration</span>
@@ -1077,7 +988,7 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
 <span class="tag execution">Execution</span>
 </div>
 <p>
-      AlphaWeave is built around a <strong>multi-agent architecture</strong> where each agent performs a narrow,
+      AlphaWeave is built around a multi-agent architecture where each agent performs a narrow,
       desk-like function. The system behaves like a trading organization: data ingestion, asset selection,
       strategy selection, review and reflection, decision review, decision, risk veto, intra-sleeve allocation, inter-sleeve
       capital management, execution, and post-trade learning.
@@ -1159,7 +1070,7 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
 <div class="card">
 <div class="title"><span class="dot slate"></span>Triage and Cost Control</div>
 <p>
-<strong>Triage is AlphaWeave's "should we spend tokens/latency now?" gate.</strong>
+Triage is AlphaWeave's "should we spend tokens/latency now?" gate.
           On every bar (daily or intraday), it decides whether to run AI reasoning or take the fast path.
           The default measured path is compact AI/PSM underwriting. Depending on configuration,
           the admitted reasoning path can be the full LLM stack
@@ -1199,7 +1110,7 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
 </div>
 </div>
 <p>
-<strong>State continuity:</strong>
+State continuity:
   When triage skips AI reasoning, the system does not reset.
   It carries forward:
 </p>
@@ -1211,7 +1122,7 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
 <p>
   This ensures that skipping reasoning does not introduce discontinuities
   in capital allocation or trade behavior. Triage therefore controls
-  <strong>when reasoning updates occur</strong>, not whether the system has state.
+  when reasoning updates occur, not whether the system has state.
 </p>
 <div class="meta">Analog: desk discipline - escalate only when it matters, but always run risk.</div>
 </div>
@@ -1247,7 +1158,7 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
 <div class="card">
 <div class="title"><span class="dot sky"></span>DecisionReviewAgent</div>
 <ul>
-<li><strong>Closes the self-learning loop:</strong> prior decisions and realized outcomes become structured feedback for future decisions.</li>
+<li><strong>Uses prior outcomes:</strong> prior decisions and realized outcomes become structured feedback for future decisions.</li>
 <li>Retrieves prior decisions, realized outcomes, and review notes for the current sleeve, leg, asset, strategy, and regime.</li>
 <li>Converts post-trade evidence into structured guidance before the next DecisionMakingAgent call; compact mode passes this as packet evidence, while expanded mode can run it as a separate agent step.</li>
 <li>Separates <strong>what the strategy signaled</strong> from <strong>how well the prior decision worked</strong>, so the system can learn without rewriting the base strategy.</li>
@@ -1267,7 +1178,7 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
 <li>Decides holding horizon / urgency (short vs medium vs long) alongside sizing</li>
 </ul>
 <p>
-<strong>Important distinction:</strong>
+Important distinction:
 </p>
 <ul>
 <li><strong>Signal:</strong> direction (BUY / SELL / HOLD)</li>
@@ -1289,7 +1200,7 @@ with realized stage attribution: strategy switching, asset switching, and AI exe
 <li>Produces risk metrics used in attribution, feedback loops, and strategy/agent learning</li>
 </ul>
 <p>
-<strong>Layer separation:</strong>
+Layer separation:
 </p>
 <ul>
 <li>
@@ -1364,9 +1275,9 @@ SleeveConstraintAgent adds a final mandate check for sleeve-specific net, gross,
     </div>
 </section>
 <section id="synthetic-market-data-simulation">
-<h2>Synthetic Market Data Simulation for Backtests</h2>
+<h2>Testing with synthetic market data</h2>
 <p>
-      When you want a backtest to produce <strong>dense trading activity</strong> (and therefore lots of LLM/triage decisions)
+      When you want a backtest to produce dense trading activity (and therefore lots of LLM/triage decisions)
       without relying on real-world price history, AlphaWeave can generate synthetic OHLCV bars on demand.
       This is wired through <code>DataAgent</code> and the <code>data_simulator.py</code> profiles system.
     </p>
@@ -1378,9 +1289,9 @@ SleeveConstraintAgent adds a final mandate check for sleeve-specific net, gross,
     </div>
 <h3>How DataAgent enables simulation</h3>
 <p>
-  Simulation operates at the <strong>sleeve level</strong> in the AlphaWeave pipeline.
+  Simulation operates at the sleeve level in the AlphaWeave pipeline.
   For directional sleeves, each asset is simulated independently.
-  For <strong>market-neutral / basket sleeves</strong>, simulated assets must be interpreted jointly,
+  For market-neutral / basket sleeves, simulated assets must be interpreted jointly,
   as downstream agents (PortfolioAgent and RiskManagerAgent) evaluate cross-asset relationships
   such as spread stability, correlation, and relative volatility.
 </p>
@@ -1427,7 +1338,7 @@ SleeveConstraintAgent adds a final mandate check for sleeve-specific net, gross,
 </ul>
 </div>
 </div>
-<h3>Profiles: aggressive "noisy + spikes" regimes</h3>
+<h3>Noise and spike profiles</h3>
 <p>
 <code>data_simulator_profiles_aggressive.yaml</code> defines multiple profiles under <code>profiles:</code>.
       They're calibrated to create frequent volatility bursts, jumps, and (optionally) deterministic "breach" spikes.
@@ -1442,7 +1353,7 @@ SleeveConstraintAgent adds a final mandate check for sleeve-specific net, gross,
 <li><strong>Momentum strategies:</strong> react to drift + jump regimes</li>
 </ul>
 <p>
-  As a result, aggressive profiles are designed to <strong>intentionally over-trigger strategies</strong>,
+  As a result, aggressive profiles are designed to intentionally over-trigger strategies,
   ensuring sufficient downstream activity for triage, LLM reasoning, and risk evaluation.
 </p>
 <p>
@@ -1480,7 +1391,7 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
 </tr>
 </tbody>
 </table>
-<h3>Forced breaches: guaranteeing strategy triggers</h3>
+<h3>Forced breaches for trigger testing</h3>
 <p>
       The simulator supports deterministic price shocks that intentionally breach thresholds (especially useful for Bollinger-based strategies):
       when <code>force_breaches=true</code>, the generator injects alternating +/-moves every N bars, and you can force the first breach direction.
@@ -1511,16 +1422,16 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
 </div>
 </section>
 <section id="triage-performance">
-<h2>Triage Agent: Measured Performance Impact</h2>
+<h2>Triage results</h2>
 <p>
     The table below uses the latest completed 12-window full-stack sampled run
     to separate deterministic policy from compact LLM underwriting. The baseline is
-    <strong>policy without triage</strong>; the second row is the incremental effect of allowing
+    policy without triage; the second row is the incremental effect of allowing
     compact triage + AI/PSM on top of it.
   </p>
 <p>
-<strong>Run basis:</strong> Twelve representative 10-business-day measured windows,
-    <strong>6h</strong> bars, <strong>momentum</strong> baseline, and row-specific assets/candidate
+Run basis: Twelve representative 10-business-day measured windows,
+    6h bars, momentum baseline, and row-specific assets/candidate
     universes shown in the monthly performance table. The table below reports measured-window
     deltas, not annualized return claims.
   </p>
@@ -1562,10 +1473,10 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
 <p>
   Within the AlphaWeave pipeline, TriageAgent sits between StrategyAgent and DecisionMakingAgent,
   controlling when higher-cost reasoning is applied. This makes it a key lever for both
-  <strong>performance optimization</strong> and <strong>computational efficiency</strong>.
+  performance optimization and computational efficiency.
 </p>
 <p>
-  In practice, triage acts as a <strong>control layer between strategy signals and AI reasoning</strong>,
+  In practice, triage acts as a control layer between strategy signals and AI reasoning,
   balancing responsiveness with stability.
 </p>
 <p class="footnote">
@@ -1581,24 +1492,24 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
 <p>
       Each strategy declares an <code>ai_controls</code> block that tells AlphaWeave how much discretion the AI overlay is allowed to take.
       This keeps behavior consistent across strategies: some should be "rules-only," while others benefit from LLM escalation.
-      This includes control over whether AI can influence <strong>trade decisions</strong>,
-<strong>holding duration</strong>, and <strong>capital allocation via position sizing (PSM)</strong>.
+      This includes control over whether AI can influence trade decisions,
+holding duration, and capital allocation via position sizing (PSM).
     </p>
 <p>
-<strong>Time frame:</strong> The controls comparison is periodic in the same way as the triage test: each configuration is
+Time frame: The controls comparison is periodic in the same way as the triage test: each configuration is
       evaluated on the same short measured window so that duration control, PSM control, and full
       AI/PSM can be compared against the same price path. The periodicity is part of the experiment,
       because short windows stress whether the control can add value quickly without leaking training
       capital or pre-measured P and L.
     </p>
 <p class="assumptions">
-<strong>Measured-run basis:</strong> The AI-controls numbers below use the latest completed
-      12-window full-stack sampled run: twelve representative 10-business-day windows, <strong>6h</strong>
-      granularity, <strong>momentum</strong> as the static baseline strategy, row-specific baseline
+Measured-run basis: The AI-controls numbers below use the latest completed
+      12-window full-stack sampled run: twelve representative 10-business-day windows, 6h
+      granularity, momentum as the static baseline strategy, row-specific baseline
       and candidate assets from the monthly table, and Compact AI/PSM as the LLM path.
 </p>
 <div class="callout">
-<strong>Why this matters:</strong> Sub-runs like <code>00</code> vs <code>05</code> are only comparable if you understand what the strategy permits.
+Sub-runs like <code>00</code> vs <code>05</code> are only comparable if you understand what the strategy permits.
       If a strategy sets <code>gate_entries=false</code>, then the LLM-heavy decision path is intentionally bypassed and "05" will resemble "00" (except for risk-only effects).
     </div>
 <h3>ai_controls fields</h3>
@@ -1670,11 +1581,11 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
 <strong>Operational note:</strong> Even when <code>gate_entries=false</code>, AlphaWeave still runs
       asset-level and portfolio-level risk checks. Risk can veto, limit, or liquidate positions, and can also constrain PSM-driven sizing when allocations exceed risk thresholds.
     </div>
-<h3 id="incremental-ai-controls">Incremental Impact of AI Controls (Counterfactual View)</h3>
+<h3 id="incremental-ai-controls">Comparing AI control settings</h3>
 <p class="assumptions">
-<strong>Run basis:</strong> This table is populated from the latest completed 12-window
+Run basis: This table is populated from the latest completed 12-window
       full-stack sampled run. The run used twelve representative 10-business-day measured windows,
-      <strong>6h</strong> bars, a <strong>momentum</strong> baseline, row-specific baseline assets
+      6h bars, a momentum baseline, row-specific baseline assets
       and candidate universes shown in the monthly performance table, and the official four-stage
       ladder: strategy switching, asset switching, policy-only overlay without triage, and Compact
       AI/PSM over that policy path.
@@ -1725,11 +1636,11 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
 </p>
 </section>
 <section id="tradecrew">
-<h2>TradeCrew: Live / Paper Trading Orchestration Layer</h2>
+<h2>TradeCrew: paper and live trading</h2>
 <p>
-<strong>TradeCrew</strong> is AlphaWeave's live and paper-trading orchestrator.
-    It runs the production decision stack in a <strong>sleeve-first</strong> execution pattern,
-    supports <strong>dry run / paper / simulate / live-style</strong> modes, and coordinates
+TradeCrew is AlphaWeave's live and paper-trading orchestrator.
+    It runs the production decision stack in a sleeve-first execution pattern,
+    supports dry run / paper / simulate / live-style modes, and coordinates
     strategy selection, asset selection, per-asset execution, sleeve-level portfolio construction,
     risk review, and reporting.
   </p>
@@ -1741,7 +1652,7 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
     how should capital be allocated, and how do we execute and report it safely?"</em>
 </div>
 <h3>Where TradeCrew sits in the architecture</h3>
-<p><strong>Run setup -&gt; Data -&gt; Sleeve execution -&gt; Portfolio -&gt; Portfolio risk -&gt; Reporting</strong></p>
+<p>Run setup -&gt; Data -&gt; Sleeve execution -&gt; Portfolio -&gt; Portfolio risk -&gt; Reporting</p>
 <p>
     TradeCrew does not replace strategy logic and does not bypass risk.
     Its job is orchestration: it prepares the trade context, loads data, runs the agent stack
@@ -1749,12 +1660,12 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
     and produces both sleeve-level and aggregate trade reports.
   </p>
 <p>
-<strong>Backtest vs live consistency:</strong>
+Backtest vs live consistency:
   TradeCrew mirrors the same agent sequence and sleeve-first execution structure used in backtesting.
   This ensures that results observed in backtests are structurally consistent with live execution,
   with differences arising only from market data and execution conditions.
 </p>
-<h3>What TradeCrew currently does (end-to-end)</h3>
+<h3>Current TradeCrew workflow</h3>
 <h4>1. Normalizes and enriches the trade context</h4>
 <ul>
 <li>Runs <code>RunSetupAgent</code> to standardize the execution window and run metadata</li>
@@ -1799,7 +1710,7 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
 <p>
     Inside each sleeve/date step, TradeCrew runs the deterministic selection, signal, risk,
     execution, and reporting stack. When AI/PSM is enabled, the preferred path is
-    <strong>compact underwriting</strong>: TriageAgent decides whether the bar deserves an LLM call,
+    compact underwriting: TriageAgent decides whether the bar deserves an LLM call,
     then DecisionMakingAgent receives one compact packet containing market context, selected strategy
     and assets, policy state, prior outcomes, transition tape, and forward-attribution evidence.
   </p>
@@ -1843,7 +1754,7 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
 </ul>
 <h4>10. Supports batch execution across multiple contexts</h4>
 <p>
-    At the launcher level, <strong>TradeLauncher</strong> can:
+    At the launcher level, TradeLauncher can:
   </p>
 <ul>
 <li>load explicit contexts from YAML</li>
@@ -1859,24 +1770,24 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
   </div>
 </section>
 <section id="asset-selection">
-<h2>How Assets Are Selected (AssetAllocationAgent)</h2>
+<h2>Asset selection</h2>
 <p>
-    The <strong>AssetAllocationAgent</strong> selects assets dynamically at each decision point,
-    based on both <strong>market behavior</strong> and <strong>strategy compatibility</strong>.
+    The AssetAllocationAgent selects assets dynamically at each decision point,
+    based on both market behavior and strategy compatibility.
     Instead of using a fixed asset universe, AlphaWeave continuously ranks and filters assets
     to determine which ones should be actively traded.
   </p>
 <p>
     Each candidate asset is scored using a combination of:
-    <strong>recent returns</strong> (short-term and lookback),
-    <strong>trend strength</strong>,
-    <strong>volatility</strong>,
-    <strong>drawdown</strong>, and
-    <strong>liquidity</strong>.
+    recent returns (short-term and lookback),
+    trend strength,
+    volatility,
+    drawdown, and
+    liquidity.
     These metrics are combined into a base score that reflects the asset's current trading quality.
   </p>
 <p>
-    This base score is then adjusted using the strategy's <strong>asset_fit profile</strong>.
+    This base score is then adjusted using the strategy's asset_fit profile.
     For example:
   </p>
 <ul>
@@ -1885,51 +1796,51 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
 <li><strong>MACD / breakout strategies</strong> prefer assets with clean directional moves and volatility expansion.</li>
 </ul>
 <p>
-    Assets that do not match the active strategy's behavior are <strong>penalized or excluded</strong>,
+    Assets that do not match the active strategy's behavior are penalized or excluded,
     even if their standalone performance is strong. This ensures that asset selection is
-    <strong>strategy-aware rather than purely statistical</strong>.
+    strategy-aware rather than purely statistical.
   </p>
 <p>
-    In <strong>directional sleeves</strong>, the agent selects the top-ranked assets using
-    a <strong>top-k selection process</strong>, with additional controls such as
-    <strong>minimum holding periods</strong>, <strong>cooldowns</strong>, and
-    <strong>switch thresholds</strong> to avoid excessive turnover.
+    In directional sleeves, the agent selects the top-ranked assets using
+    a top-k selection process, with additional controls such as
+    minimum holding periods, cooldowns, and
+    switch thresholds to avoid excessive turnover.
   </p>
 <p>
-    In <strong>market-neutral or basket sleeves</strong>, assets are evaluated jointly.
+    In market-neutral or basket sleeves, assets are evaluated jointly.
     The agent selects combinations of assets that satisfy:
-    <strong>correlation stability</strong>,
-    <strong>volatility alignment</strong>,
-    <strong>liquidity compatibility</strong>, and
-    <strong>spread mean-reversion characteristics</strong>.
-    This ensures that selected assets function as a coherent <strong>long-short or relative-value structure</strong>,
+    correlation stability,
+    volatility alignment,
+    liquidity compatibility, and
+    spread mean-reversion characteristics.
+    This ensures that selected assets function as a coherent long-short or relative-value structure,
     rather than independent trades.
   </p>
 <p>
     The result is a continuously evolving asset set that reflects both
-    <strong>current market conditions</strong> and the
-    <strong>behavioral requirements of the active strategy</strong>.
+    current market conditions and the
+    behavioral requirements of the active strategy.
   </p>
 </section>
 <section id="strategy-selection">
-<h2>How Strategies Are Selected (StrategyAllocationAgent)</h2>
+<h2>Strategy selection</h2>
 <p>
-    The <strong>StrategyAllocationAgent</strong> determines which strategy should be active
+    The StrategyAllocationAgent determines which strategy should be active
     within each sleeve at any point in time. Rather than committing to a single strategy,
-    AlphaWeave continuously evaluates a <strong>set of candidate strategies</strong> and
+    AlphaWeave continuously evaluates a set of candidate strategies and
     selects the one best suited to current conditions.
   </p>
 <p>
-    Each candidate strategy is <strong>shadow-run</strong> on the currently selected assets.
+    Each candidate strategy is shadow-run on the currently selected assets.
     The agent evaluates recent performance using:
-    <strong>rolling return</strong>,
-    <strong>Sharpe ratio</strong>,
-    <strong>drawdown</strong>, and
-    <strong>consistency</strong>.
+    rolling return,
+    Sharpe ratio,
+    drawdown, and
+    consistency.
   </p>
 <p>
     In addition to realized performance, strategies are evaluated using
-    <strong>regime compatibility</strong>:
+    regime compatibility:
   </p>
 <ul>
 <li><strong>Momentum strategies</strong> perform best in trending environments.</li>
@@ -1938,37 +1849,37 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
 <li><strong>Relative-value strategies</strong> perform best when cross-asset relationships are stable.</li>
 </ul>
 <p>
-    The agent also incorporates each strategy's <strong>asset_fit profile</strong>,
+    The agent also incorporates each strategy's asset_fit profile,
     ensuring that strategies are only selected when the current asset set supports them.
     This prevents situations where a strategy is selected in a regime where its underlying assumptions do not hold.
   </p>
 <p>
     Strategy switching is controlled by:
-    <strong>minimum holding periods</strong>,
-    <strong>cooldown periods</strong>, and
-    <strong>switch thresholds</strong>.
-    A new strategy is only activated if it is <strong>meaningfully better</strong>
+    minimum holding periods,
+    cooldown periods, and
+    switch thresholds.
+    A new strategy is only activated if it is meaningfully better
     than the current one, preventing unnecessary churn.
   </p>
 <p>
-    In <strong>market-neutral sleeves</strong>, strategy selection operates at the
-    <strong>basket level</strong>, choosing between relative-value, spread,
+    In market-neutral sleeves, strategy selection operates at the
+    basket level, choosing between relative-value, spread,
     and regime-sensitive strategies depending on whether asset relationships are
-    <strong>stable, dislocating, or breaking down</strong>.
+    stable, dislocating, or breaking down.
   </p>
 <p>
     The result is a system that continuously adapts not only
-    <strong>what assets are traded</strong>, but also
-    <strong>how those assets are traded</strong>,
+    what assets are traded, but also
+    how those assets are traded,
     ensuring that the active strategy is always aligned with both
     market conditions and asset behavior.
   </p>
 <p>
-<strong>Multi-strategy execution:</strong>
+Multi-strategy execution:
 </p>
 <p>
   When multiple strategies are active within a sleeve, they are not executed independently.
-  Instead, their outputs are combined through <strong>PortfolioAgent weighting</strong>.
+  Instead, their outputs are combined through PortfolioAgent weighting.
 </p>
 <ul>
 <li>Each strategy produces signals and a <strong>PSM (conviction)</strong></li>
@@ -1981,53 +1892,53 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
 </p>
 </section>
 <section id="augment-any-strategy">
-<h2>How AlphaWeave Augments Any Strategy</h2>
+<h2>How strategy signals pass through AlphaWeave</h2>
 <p>
-    AlphaWeave is <strong>strategy-agnostic</strong>. A base strategy still generates raw signals,
-    but AlphaWeave augments that strategy through <strong>two coordinated allocation layers</strong>
+    AlphaWeave is strategy-agnostic. A base strategy still generates raw signals,
+    but AlphaWeave augments that strategy through two coordinated allocation layers
     before any trade is executed:
-    <strong>StrategyAllocationAgent</strong>, which determines the <strong>active strategy set</strong> within each sleeve or leg,
-    and <strong>AssetAllocationAgent</strong>, which determines the <strong>active assets</strong> that those strategies operate on.
+    StrategyAllocationAgent, which determines the active strategy set within each sleeve or leg,
+    and AssetAllocationAgent, which determines the active assets that those strategies operate on.
   </p>
 <p>
-    These layers operate <strong>jointly rather than sequentially</strong>. Strategy selection depends on
+    These layers operate jointly rather than sequentially. Strategy selection depends on
     how well candidate strategies perform on the current asset set, while asset selection depends on
-    how well assets match each strategy's <strong>asset_fit</strong> profile. This creates a
-    <strong>continuous feedback loop between strategies and assets</strong>, ensuring that capital is deployed
+    how well assets match each strategy's asset_fit profile. This creates a
+    continuous feedback loop between strategies and assets, ensuring that capital is deployed
     only when both are aligned with current market conditions.
   </p>
 <p>
-    The system supports both <strong>single-strategy</strong> and <strong>multi-strategy</strong> configurations.
-    Strategies are added, removed, or replaced over time using <strong>switching thresholds</strong>,
-    <strong>minimum holding periods</strong>, and <strong>cooldown constraints</strong>, ensuring that
-    rotation is <strong>deliberate and stable</strong> rather than reactive to short-term noise.
+    The system supports both single-strategy and multi-strategy configurations.
+    Strategies are added, removed, or replaced over time using switching thresholds,
+    minimum holding periods, and cooldown constraints, ensuring that
+    rotation is deliberate and stable rather than reactive to short-term noise.
   </p>
 <p>
     Once the strategy-asset configuration is determined, the AI stack refines
-    <em>how</em> that setup is executed through a <strong>conviction-based execution layer</strong>.
-    AlphaWeave supports two LLM run modes. In <strong>full LLM mode</strong>, market intelligence,
+    <em>how</em> that setup is executed through a conviction-based execution layer.
+    AlphaWeave supports two LLM run modes. In full LLM mode, market intelligence,
     reflection, decision review, and decision agents each contribute context. In
-    <strong>compact underwriting mode</strong>, the system sends one concentrated decision packet to
+    compact underwriting mode, the system sends one concentrated decision packet to
     the DecisionMakingAgent so the LLM acts as an underwriter over the policy path rather than
     replacing strategy and asset selection.
   </p>
 <p>
-    The DecisionMakingAgent produces both <strong>action</strong> (BUY / SELL / HOLD) and a
-    <strong>position_size_multiplier (PSM)</strong>, which expresses the approved capital scale for the signal.
+    The DecisionMakingAgent produces both action (BUY / SELL / HOLD) and a
+    position_size_multiplier (PSM), which expresses the approved capital scale for the signal.
     This PSM is passed to the PortfolioAgent, which converts conviction into
-    <strong>realized capital allocation</strong>. As a result, AlphaWeave does not simply decide
-    <em>whether</em> to trade - it determines <strong>how much capital to deploy</strong>,
+    realized capital allocation. As a result, AlphaWeave does not simply decide
+    <em>whether</em> to trade - it determines how much capital to deploy,
     dynamically scaling exposure up for high-confidence opportunities and down for weaker signals.
   </p>
 <p>
     Execution is therefore driven by:
-    <strong>timing, holding horizon, conviction-based sizing (PSM), and risk control</strong>,
+    timing, holding horizon, conviction-based sizing (PSM), and risk control,
     with a triage layer determining when compact AI/PSM underwriting is required. Expanded full-agent
     reasoning is reserved for diagnostics, ablation, and deeper evidence generation.
   </p>
 <h3 id="learning-from-history">What learning from historic behavior means</h3>
 <p>
-    In <strong>Compact AI+PSM mode</strong>, historic behavior is compressed into a single execution packet:
+    In Compact AI+PSM mode, historic behavior is compressed into a single execution packet:
     training-window strategy fit, selected-asset behavior, live measured-window state, prior policy
     actions, transition-tape evidence, and forward attribution from earlier runs. The LLM does not
     rediscover the strategy from scratch; it underwrites whether the current strategy/asset state
@@ -2046,7 +1957,8 @@ export DATA_SIM_PROFILES_YAML="data_simulator_profiles_aggressive.yaml"</code></
 <li><strong>Forward attribution:</strong> compare accepted and rejected policy decisions against later bars so policies can be retained, revised, or deactivated after evidence accumulates</li>
 <li><strong>Explainability:</strong> maintain transition tapes and decision history that tie strategy selection, asset selection, policy decisions, compact LLM confidence, and execution adjustments to measured outcomes</li>
 </ul>
-<div class="diagram mermaid strategy-augment">
+<p class="diagram-hint">Scroll within the diagram to explore it at a readable size.</p>
+<div class="diagram mermaid strategy-augment" tabindex="0" role="region" aria-label="Scrollable architecture diagram">
 flowchart TD
 
   subgraph D0[Data Layer]
@@ -2169,13 +2081,13 @@ flowchart TD
     over that policy path.
   </p>
 <p>
-<strong>Time frame:</strong> Periodicity is explicit here: all variants use the same measured start and end dates, while only
+Time frame: Periodicity is explicit here: all variants use the same measured start and end dates, while only
     the bar interval changes. A 1d run therefore has fewer decision points in the same calendar
     window, while 6h, 3h, 1h, and 15m runs expose progressively more opportunities for triage,
     duration changes, and PSM changes. The comparison should be read as "same period, different bar
     cadence."
   </p>
-<p><strong>Assumptions and scope for all results below:</strong></p>
+<p>Assumptions and scope for all results below:</p>
 <ul>
 <li><strong>Run basis:</strong> completed full-stack granularity sweep <code>two_day_full_stack_granularity_20260825_172309</code></li>
 <li><strong>Period:</strong> August 17, 2026 through August 18, 2026</li>
@@ -2187,7 +2099,7 @@ flowchart TD
 <li><strong>Deltas:</strong> each pickup is incremental versus the preceding stage; total improvement is final overlay return minus baseline return</li>
 </ul>
 <p>
-  The <strong>TriageAgent</strong> is not only a cost-reduction mechanism. It performs:
+  The TriageAgent is not only a cost-reduction mechanism. It performs:
 </p>
 <ul>
 <li><strong>LLM gating:</strong> decides whether to invoke Compact AI/PSM underwriting, or optional full-stack reasoning agents in diagnostic mode</li>
@@ -2196,17 +2108,17 @@ flowchart TD
 <li><strong>Cadence control:</strong> ensures periodic reevaluation even in low-signal regimes</li>
 </ul>
 <p>
-    The key insight is that <strong>AI impact scales with granularity</strong>.
+    The key insight is that AI impact scales with granularity.
     At coarser resolutions, AI has fewer opportunities to intervene.
     As bar frequency increases, confidence updates, duration decisions,
-    and <strong>PSM-driven capital allocation</strong> occur more often.
+    and PSM-driven capital allocation occur more often.
     This allows the system to continuously reallocate capital toward
     higher-conviction opportunities and away from weaker signals,
     creating a compounding effect on both return and risk.
   </p>
 <p>
     At higher granularities, AlphaWeave behaves less like a static strategy
-    and more like a <strong>continuously re-optimizing capital allocation system</strong>,
+    and more like a continuously re-optimizing capital allocation system,
     where each bar provides an opportunity to rebalance conviction across positions.
   </p>
 <p>
@@ -2301,24 +2213,24 @@ flowchart TD
 <section id="ai-extensions">
 <h2>Market Extensions: Shorts, Derivatives, and Crypto</h2>
 <p>
-    This section summarizes <strong>conservative, unvalidated estimates</strong> for the expected performance impact of expanding the tradable universe
-    to include <strong>short positions</strong>, <strong>futures and options</strong>, and
-    <strong>crypto assets</strong>, evaluated under the same AI framework described earlier. These figures
+    This section summarizes conservative, unvalidated estimates for the expected performance impact of expanding the tradable universe
+    to include short positions, futures and options, and
+    crypto assets, evaluated under the same AI framework described earlier. These figures
     are not presented as completed measured-run results, and they should be read as validation targets rather
     than claims of realized alpha.
   </p>
 <p>
-<strong>Time frame:</strong> Return ranges in this section are annualized estimates for future
+Time frame: Return ranges in this section are annualized estimates for future
     validation. They are separate from the realized 10-business-day sampled-window results elsewhere
     in the presentation.
   </p>
 <p>
-    Results are shown relative to a <strong>restricted baseline</strong>:
+    Results are shown relative to a restricted baseline:
     a long-only, equity-only implementation of the same strategy and AI execution layer,
     without access to shorts, derivatives, or crypto.
   </p>
 <p>
-    This isolates the <strong>incremental value of expanded market access</strong>,
+    This isolates the incremental value of expanded market access,
     rather than differences in strategy logic or execution. These capabilities can also hurt returns:
     borrow availability, funding costs, futures roll behavior, options theta/volatility mispricing risk,
     crypto spread/slippage, liquidity gaps, and cross-asset correlation during stress can all overwhelm
@@ -2327,8 +2239,8 @@ flowchart TD
   </p>
 <p>
     The return argument is not that adding instruments magically creates alpha. The argument is that
-    AlphaWeave already separates <strong>selection</strong>, <strong>execution policy</strong>,
-    <strong>Compact AI/PSM underwriting</strong>, and <strong>risk control</strong>. New instruments
+    AlphaWeave already separates selection, execution policy,
+    Compact AI/PSM underwriting, and risk control. New instruments
     become useful only when they give that machinery a cleaner expression of an already-detected state:
     downside participation through shorts, market-beta control through index futures, bounded-risk
     convexity through options, or higher-volatility continuation/reversal through crypto. The estimated
@@ -2336,7 +2248,7 @@ flowchart TD
     conservatively, and avoid overtrading when costs dominate.
   </p>
 <p>
-    The expected-return ranges are sized as <strong>net incremental contribution</strong> over the
+    The expected-return ranges are sized as net incremental contribution over the
     restricted long-only equity baseline. They are lower than the gross opportunity because each extension
     must survive three filters before it counts: a tradable signal must exist, the policy/AI layer must
     improve expression of that signal, and risk/cost controls must leave enough net edge after execution.
@@ -2425,29 +2337,23 @@ flowchart TD
       and risk caps. Effects are indicative and not strictly additive due to correlations between mechanisms.
     </em>
 </p>
-<p>
-<strong>Key takeaway:</strong>
-    Expanding market access increases the opportunity set, but also introduces additional sources of risk.
-    The AI stack converts this flexibility into improved outcomes by dynamically controlling
-    exposure, duration, and conviction-based capital allocation, enabling shorts, derivatives,
-    and crypto to be used within a disciplined and risk-aware framework.
-  </p>
+<p>Shorts, derivatives, and crypto add trading opportunities and introduce different risks and costs. AlphaWeave applies exposure, holding-period, sizing, and risk rules to these positions. The estimates above still need validation with market-specific data and execution costs.</p>
 </section>
 <section id="ai-enhancements">
-<h2>Current Capabilities and Next-Stage Enhancements</h2>
+<h2>Implemented features and remaining work</h2>
 <p>
-    AlphaWeave has evolved from a pure <strong>AI execution overlay</strong> into a
-    <strong>multi-layer allocation and execution system</strong>. The architecture now includes:
-    <strong>strategy selection</strong>, <strong>asset selection</strong>, <strong>capital allocation</strong>,
-    <strong>decision review feedback</strong>, and a <strong>PSM-driven AI execution layer</strong>.
+    AlphaWeave has evolved from a pure AI execution overlay into a
+    multi-layer allocation and execution system. The architecture now includes:
+    strategy selection, asset selection, capital allocation,
+    decision review feedback, and a PSM-driven AI execution layer.
   </p>
 <p>
-    Many previously "planned" features are now part of the <strong>baseline system</strong>.
-    The focus going forward is on improving <strong>interaction between layers</strong>,
+    Many previously "planned" features are now part of the baseline system.
+    The focus going forward is on improving interaction between layers,
     especially how conviction signals translate into capital deployment.
   </p>
 <p>
-<strong>Time frame:</strong> Return figures in this enhancement section are <strong>directional annualized estimates</strong>
+Time frame: Return figures in this enhancement section are directional annualized estimates
     for future validation work. They are separate from the realized 10-day sampled-window returns
     reported in the monthly performance table above.
   </p>
@@ -2457,10 +2363,10 @@ flowchart TD
     <strong>selection and allocation intelligence</strong>, with the execution layer now acting as a
     <strong>conviction-based capital amplifier</strong> via position sizing (PSM).
   </div>
-<h3>Tier 1: Strategy and Asset Allocation (Already active, with selection-methodology enhancements)</h3>
+<h3>Asset and strategy allocation</h3>
 <p>
-  AlphaWeave already performs dynamic <strong>strategy selection</strong> and
-  <strong>asset selection</strong> at the sleeve or leg level using market conditions,
+  AlphaWeave already performs dynamic strategy selection and
+  asset selection at the sleeve or leg level using market conditions,
   historical performance, regime fit, and strategy-specific <code>asset_fit</code> profiles.
   The current methodology maps each strategy's declared fit profile into numeric
   <code>score_weights</code>, which are applied to computed asset metrics such as lookback return,
@@ -2474,7 +2380,7 @@ flowchart TD
 <li>Allocates capital across selected strategies and selected assets via PortfolioAgent</li>
 </ul>
 <p>
-<strong>What it already does:</strong>
+Implemented:
 </p>
 <ul>
 <li>Uses explicit strategy metadata such as <code>selection_mode</code>, <code>preferred_regimes</code>, <code>direction_aware</code>, and <code>basket_fit</code></li>
@@ -2483,7 +2389,7 @@ flowchart TD
 <li>Ranks strategies using shadow performance, regime fit, DMA overlay, and coarse asset-fit compatibility</li>
 </ul>
 <p>
-<strong>What it does not yet fully do (enhancement opportunity):</strong>
+Remaining work:
 </p>
 <ul>
 <li>
@@ -2512,30 +2418,30 @@ flowchart TD
   </li>
 </ul>
 <p>
-<strong>Measured impact:</strong>
+Measured impact:
   Allocation improvements in the current evidence set are measured as incremental performance versus a fixed
-  <strong>momentum</strong> baseline with no strategy switching, no asset switching, and no AI execution layer.
+  momentum baseline with no strategy switching, no asset switching, and no AI execution layer.
   The measured run is the latest completed 12-window full-stack sampled run: twelve representative 10-business-day windows,
-  <strong>6h</strong> bars, and row-specific baseline/candidate assets shown in the monthly table.
-  <strong>Time frame:</strong> The realized evidence shown earlier is over sampled 10-business-day measured windows; the expected
+  6h bars, and row-specific baseline/candidate assets shown in the monthly table.
+  Time frame: The realized evidence shown earlier is over sampled 10-business-day measured windows; the expected
   contribution below is an annualized validation target, not a completed measured-window result.
   Selection-methodology enhancements should also be measured by comparing the current
   <code>score_weights</code>-based allocator against an enhanced allocator that adds
   strategy-specific, regime-conditioned, and cross-asset features.
 </p>
 <p>
-<strong>Expected contribution:</strong>
+Annualized validation target (unverified):
   Directional estimates for allocation logic are
-  <strong>+3-8% annual return improvement</strong> under broader validation.
+  +3-8% annual return improvement under broader validation.
   The enhanced selection methodology is estimated to add another
-  <strong>+0.5-2.0% annual return improvement</strong>,
+  +0.5-2.0% annual return improvement,
   primarily through better asset-strategy matching,
   fewer poor-regime selections, improved basket construction,
   improved Sharpe, and reduced drawdown.
 </p>
-<h3>Tier 2: AI Execution Layer (PSM-based capital allocation)</h3>
+<h3>Position sizing and holding duration</h3>
 <p>
-  AlphaWeave already adjusts <strong>position sizing and holding duration</strong>
+  AlphaWeave already adjusts position sizing and holding duration
   using a conviction-based signal (<code>position_size_multiplier</code>, or PSM).
   PSM translates decision confidence into deployed exposure after the asset and strategy
   have already been selected.
@@ -2547,7 +2453,7 @@ flowchart TD
 <li>Applies execution logic consistently across assets, strategies, sleeves, and legs</li>
 </ul>
 <p>
-<strong>What it already does:</strong>
+Implemented:
 </p>
 <ul>
 <li>Uses <code>position_size_multiplier</code> to increase or reduce exposure relative to normal size</li>
@@ -2556,7 +2462,7 @@ flowchart TD
 <li>Supports direction-aware execution through sleeve and leg context</li>
 </ul>
 <p>
-<strong>What it does not yet fully do (enhancement opportunity):</strong>
+Remaining work:
 </p>
 <ul>
 <li>
@@ -2582,33 +2488,33 @@ flowchart TD
   </li>
 </ul>
 <p>
-<strong>Measured impact:</strong>
+Measured impact:
   Execution improvements are measured as incremental performance versus the same strategy and asset selection
   with <code>adjust_size=False</code> and <code>adjust_duration=False</code>.
   In the current evidence set, that means the latest completed 12-window full-stack sampled run: twelve representative
-  10-business-day windows, <strong>6h</strong> bars, <strong>momentum</strong> baseline, and the
+  10-business-day windows, 6h bars, momentum baseline, and the
   row-specific assets shown in the monthly table.
-  <strong>Time frame:</strong> In the current evidence set, this is measured over sampled 10-business-day windows. The expected
+  Time frame: In the current evidence set, this is measured over sampled 10-business-day windows. The expected
   contribution below is annualized only as a future validation target.
   Enhanced PSM should be measured against the current PSM implementation while holding
   selected strategies and selected assets constant.
 </p>
 <p>
-<strong>Expected contribution:</strong>
+Annualized validation target (unverified):
   Directional estimates for PSM-based execution are
-  <strong>+2-6% annual return improvement</strong> under broader validation.
+  +2-6% annual return improvement under broader validation.
   Enhanced PSM calibration is estimated to add another
-  <strong>+0.5-1.5% annual return improvement</strong>,
+  +0.5-1.5% annual return improvement,
   primarily through better capital efficiency,
   improved risk-adjusted sizing,
   reduced over-sizing of weak signals,
   faster loss throttling,
   and improved Sharpe.
 </p>
-<h3>Tier 3: Learning and Feedback (Evidence capture active; calibration still being validated)</h3>
+<h3>Outcome records and feedback</h3>
 <p>
-  AlphaWeave already records <strong>trade outcomes, strategy performance, attribution data,
-  decision history, asset-selection history, strategy-selection history, and agent reasoning</strong>.
+  AlphaWeave already records trade outcomes, strategy performance, attribution data,
+  decision history, asset-selection history, strategy-selection history, and agent reasoning.
   DecisionReviewAgent can turn these records into explicit outcome feedback, and the compact
   AI/PSM path can include prior outcomes, transition-tape evidence, and forward attribution inside
   the underwriting packet. That makes the system auditable and feedback-ready, but it should not be
@@ -2616,7 +2522,7 @@ flowchart TD
   calibration loop.
 </p>
 <p class="assumptions">
-<strong>Policy-learning boundary:</strong> AlphaWeave can replay outcomes in the simulator, classify
+Policy-learning boundary: AlphaWeave can replay outcomes in the simulator, classify
   policy wins and losses, and generate policy activation/deactivation evidence. It does not
   automatically insert new trading policy into production. Policy changes remain review-driven:
   the evidence is inspected, simulator replay is used to test the proposed change, and only then is
@@ -2631,7 +2537,7 @@ flowchart TD
 <li>Keeps policy insertion human-reviewed rather than automatically rewriting runtime rules from a single backtest</li>
 </ul>
 <p>
-<strong>What it already does:</strong>
+Implemented:
 </p>
 <ul>
 <li>Captures realized outcomes, transition tapes, and policy attribution for later review</li>
@@ -2643,7 +2549,7 @@ flowchart TD
 <li>Allows PSM and decision confidence to be constrained by prior performance context when that evidence is present</li>
 </ul>
 <p>
-<strong>What it does not yet fully do (enhancement opportunity):</strong>
+Remaining work:
 </p>
 <ul>
 <li>
@@ -2674,24 +2580,24 @@ flowchart TD
   </li>
 </ul>
 <p>
-<strong>Measured impact:</strong>
+Measured impact:
   Learning improvements should be measured by comparing rolling out-of-sample backtests
   before and after feedback updates. Evaluation should track annual return, Sharpe,
   max drawdown, turnover, selection stability, asset-switch accuracy,
   strategy-switch accuracy, and whether selected assets outperform rejected candidates
   under the same strategy.
   The current measured evidence is limited to the latest completed 12-window full-stack sampled run: twelve representative
-  10-business-day windows, <strong>6h</strong> bars, <strong>momentum</strong> baseline, row-specific
+  10-business-day windows, 6h bars, momentum baseline, row-specific
   assets from the monthly table, and Compact AI/PSM as the LLM path.
-  <strong>Time frame:</strong> No annual learning-return result is claimed here from the short-window run; the return range below
+  Time frame: No annual learning-return result is claimed here from the short-window run; the return range below
   is a longer-horizon validation target.
 </p>
 <p>
-<strong>Expected contribution:</strong>
+Annualized validation target (unverified):
   Directional estimates for learning and feedback are
-  <strong>+0.5-1.5% annual improvement</strong> under broader validation.
+  +0.5-1.5% annual improvement under broader validation.
   Enhanced selection-learning and calibration is estimated to add another
-  <strong>+0.25-1.0% annual improvement</strong>,
+  +0.25-1.0% annual improvement,
   mainly from reducing repeated selection mistakes,
   improving strategy-specific asset fit,
   stabilizing rotations,

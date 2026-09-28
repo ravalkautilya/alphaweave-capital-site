@@ -1,0 +1,20 @@
+/* Public-site reading sizes; shared app controls keep their own sizing. */
+body main :is(p,li,dd,blockquote,.inline-detail,.detail-note){font-size:18px;line-height:1.65}
+body main [data-click-card] em{font-size:18px;line-height:1.65}
+body main .platform-topic>summary span{font-size:18px;line-height:1.6}
+body main :is(.meta,.submeta,.footnote,figcaption){font-size:16px;line-height:1.6}
+body main :is(p,li,dd) code{font-size:.95em}
+body.presentation-page main{font-size:18px;line-height:1.65}
+body.presentation-page :is(.subcard h4,.table-title,.comp strong){font-size:18px;line-height:1.4}
+body.presentation-page :is(.pill,.tag,.badge,.comp .label){font-size:15px;line-height:1.5}
+body.presentation-page main :is(table,th,td,.performance-table .num,td code,small){font-size:16px;line-height:1.55}
+/* Preserve the evidence and scroll wide tables instead of squeezing the type. */
+body.presentation-page .performance-table{table-layout:auto}
+body.presentation-page .performance-table :is(th,td){min-width:100px;padding:10px;overflow-wrap:normal;word-break:normal}
+/* Mermaid renders at its native size. The surrounding region handles overflow. */
+body.presentation-page .diagram.mermaid{min-height:0;max-height:80vh;overflow:auto;max-width:100%}
+body.presentation-page .diagram.mermaid>svg{max-width:none!important}
+body.presentation-page .diagram-hint{font-size:16px;color:#40564b;margin-bottom:8px}
+body.presentation-page .diagram:focus-visible{outline:3px solid #075644;outline-offset:3px}
+/* Keep long descriptions within their column on narrow screens. */
+body main :is(p,li,dd,.inline-detail){overflow-wrap:anywhere}

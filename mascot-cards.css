@@ -1,11 +1,14 @@
 /* Decorative mascot images never participate in the original card layout. */
 html body main button[data-click-card][data-title]:not(:disabled){position:relative;isolation:isolate;background-image:none!important;background-color:#fffef9!important;overflow:hidden}
 html body main button[data-click-card][data-title]:not(:disabled)::after{background:none!important;pointer-events:none}
-html body main button[data-click-card][data-title]:not(:disabled) .mascot-card-scene{display:block;position:absolute;inset:0 0 0 auto;width:min(100%,300px);height:100%;max-height:100%;object-fit:cover;object-position:center;margin:0;border:0;border-radius:0;opacity:.10;filter:saturate(.7);pointer-events:none;z-index:-1}
+html body main button[data-click-card][data-title]:not(:disabled) .mascot-card-scene{display:block;position:absolute;inset:0 0 0 auto;width:min(80%,240px);height:100%;max-height:100%;object-fit:cover;object-position:center;margin:0;border:0;border-radius:0;opacity:.10;filter:saturate(.7);pointer-events:none;z-index:-1}
 html body main button[data-click-card][data-title]:not(:disabled):hover{background-color:#f4f8f0!important}
 html body main button[data-click-card][data-title]:not(:disabled).is-active{background-color:#e2eee5!important}
 /* Equal report columns keep labels aligned without adding image-driven height. */
 main .audit-ledger{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch}
 main .audit-ledger button[data-click-card]{min-width:0;transform:none!important;text-align:left}
+/* Vary composition without changing topic artwork or adding layout height. */
+html body main button[data-click-card][data-title]:nth-child(3n+1):not(:disabled) .mascot-card-scene{left:0;right:auto;object-position:left center}
+html body main button[data-click-card][data-title]:nth-child(3n+2):not(:disabled) .mascot-card-scene{left:50%;right:auto;transform:translateX(-25%);object-position:center}
 @media(max-width:980px){main .audit-ledger{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){main .audit-ledger{grid-template-columns:minmax(0,1fr)}html body main button[data-click-card][data-title]:not(:disabled) .mascot-card-scene{opacity:.07}}

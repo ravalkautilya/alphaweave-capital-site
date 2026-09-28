@@ -1,0 +1,51 @@
+/* Shared action-control geometry for the public website and application.
+   Illustrated cards are content layouts, not compact action controls. */
+:root{
+  --aw-control-height:48px;
+  --aw-control-radius:9px;
+  --aw-control-padding:12px 16px;
+  --aw-control-font:650 14px/20px Arial,Helvetica,sans-serif;
+}
+body :is(button,a.button,a.btn,a.blotter-button,input[type=submit],input[type=button],.aw-discussion-launcher):not(
+  .card,.feature-card,.timeline-item,.lane-item,.image-card,[data-click-card],
+  .metric-strip>button,.ops-console>button,.audit-ledger>button,
+  .policy-steps button,.diagnostic-list button,.control-plane-list button,.pipeline-card button
+){
+  box-sizing:border-box!important;
+  min-height:var(--aw-control-height)!important;
+  height:auto;
+  padding:var(--aw-control-padding)!important;
+  font:var(--aw-control-font)!important;
+  border-width:1px!important;
+  border-radius:var(--aw-control-radius)!important;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  text-align:center;
+  vertical-align:middle;
+  white-space:normal;
+  max-width:100%;
+}
+/* Floating companion actions have identical width, height, and baseline. */
+body :is(.aw-assistant-launcher,.aw-discussion-launcher){
+  width:160px!important;
+  height:48px!important;
+  min-height:48px!important;
+  bottom:18px;
+  margin:0;
+}
+body .aw-assistant-launcher{right:18px}
+body .aw-discussion-launcher{right:190px}
+/* Icon-only actions keep a square touch target. */
+body :is(.aw-assistant-close,button[aria-label="Close"],button[aria-label="Close dialog"]){
+  width:48px;min-width:48px;padding:12px!important;
+}
+@media(max-width:600px),(pointer:coarse){
+  body :is(.aw-assistant-launcher,.aw-discussion-launcher){
+    width:calc(50% - 12px)!important;
+    bottom:calc(8px + env(safe-area-inset-bottom,0px));
+  }
+  body .aw-assistant-launcher{right:8px}
+  body .aw-discussion-launcher{left:8px;right:auto}
+}
